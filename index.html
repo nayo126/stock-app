@@ -1442,9 +1442,9 @@ body > button[onclick*="auto-analysis"]:hover {
       <span class="icon">📡</span>
       <span>データ</span>
     </a>
-    <a class="bottom-nav-item" onclick="switchTab('nisa-holdings'); return false;" data-target="nisa-holdings">
-      <span class="icon">💼</span>
-      <span>NISA</span>
+    <a class="bottom-nav-item" onclick="switchTab('ai-judge'); return false;" data-target="ai-judge">
+      <span class="icon">🎯</span>
+      <span>AI判断</span>
     </a>
     <a class="bottom-nav-item" onclick="switchTab('chat'); return false;" data-target="chat">
       <span class="icon">💬</span>
@@ -1567,6 +1567,7 @@ window.switchTab = function(target) {
     <div class="tab active" data-tab="analysis">📊 詳細分析</div>
     <div class="tab" data-tab="autodata">📡 自動データ</div>
     <div class="tab" data-tab="nisa-holdings">💼 NISA口座</div>
+    <div class="tab" data-tab="ai-judge">🎯 AI判断</div>
     <div class="tab" data-tab="chat">💬 AIチャット</div>
     <div class="tab" data-tab="home">🏠 ダッシュボード</div>
     <div class="tab" data-tab="watchlist">📋 保有銘柄</div>
@@ -1633,6 +1634,174 @@ window.switchTab = function(target) {
 
   <!-- 📡自動データタブ - 既存の #auto-snapshot セクションをここにJSで移動 -->
   <div class="tab-content" id="tab-autodata"></div>
+
+  <!-- 🎯 AI判断タブ - 全自動でプラスにする戦略を15分毎更新 -->
+  <div class="tab-content" id="tab-ai-judge">
+    <div style="background:linear-gradient(135deg,rgba(0,149,246,0.15),rgba(0,212,255,0.05)); backdrop-filter:blur(28px); border:1px solid rgba(0,149,246,0.3); border-radius:14px; padding:18px; margin-bottom:14px;">
+      <h2 style="margin:0 0 4px;">🎯 全自動 AI判断</h2>
+      <div style="font-size:12px; color:#888; margin-bottom:14px;">プラスにするための具体行動 · 15分毎再判断</div>
+      <div id="aij-summary"></div>
+      <div id="aij-strategy" style="margin-top:14px; padding:12px; background:rgba(0,0,0,0.3); border-radius:10px; font-size:13px; color:#e0e0e0; line-height:1.6;"></div>
+    </div>
+    <div style="background:rgba(20,25,40,0.6); backdrop-filter:blur(28px); border:1px solid rgba(255,255,255,0.08); border-radius:14px; padding:14px; margin-bottom:14px;">
+      <h3 style="margin:0 0 10px; font-size:14px;">📋 各銘柄の判断 (優先度順)</h3>
+      <div id="aij-judgments"></div>
+    </div>
+    <div style="background:rgba(20,25,40,0.6); backdrop-filter:blur(28px); border:1px solid rgba(100,255,218,0.2); border-radius:14px; padding:14px;">
+      <h3 style="margin:0 0 10px; font-size:14px; color:#64ffda;">💎 推奨買い (損切り資金の振り向け先)</h3>
+      <div id="aij-recommended"></div>
+    </div>
+  </div>
+
+<style>
+.aij-stat {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.aij-stat .card {
+  background: rgba(0,0,0,0.3);
+  padding: 10px;
+  border-radius: 8px;
+}
+.aij-stat .lbl { font-size: 10px; color: #888; }
+.aij-stat .val { font-size: 16px; font-weight: 700; margin-top: 2px; }
+.aij-stat .val.up { color: #64ffda; }
+.aij-stat .val.dn { color: #ff7392; }
+.aij-health-bar {
+  width: 100%;
+  height: 6px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 3px;
+  margin-top: 6px;
+  overflow: hidden;
+}
+.aij-health-bar > div {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+.aij-row {
+  padding: 12px 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.aij-row .label {
+  flex-shrink: 0;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.aij-row .label.red { background: rgba(255,115,146,0.2); color: #ff7392; border:1px solid rgba(255,115,146,0.4); }
+.aij-row .label.orange { background: rgba(255,165,0,0.2); color: #ffa500; border:1px solid rgba(255,165,0,0.4); }
+.aij-row .label.yellow { background: rgba(255,209,102,0.2); color: #ffd166; border:1px solid rgba(255,209,102,0.4); }
+.aij-row .label.green { background: rgba(100,255,218,0.2); color: #64ffda; border:1px solid rgba(100,255,218,0.4); }
+.aij-row .label.blue { background: rgba(0,149,246,0.2); color: #00d4ff; border:1px solid rgba(0,149,246,0.4); }
+.aij-row .label.gray { background: rgba(255,255,255,0.06); color: #888; }
+.aij-row .body { flex: 1; min-width: 0; }
+.aij-row .name { font-weight: 700; font-size: 13px; }
+.aij-row .meta { font-size: 11px; color: #888; margin-top: 2px; }
+.aij-row .reason { font-size: 12px; color: #c8d0e0; margin-top: 4px; line-height: 1.4; }
+.aij-rec {
+  padding: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.aij-rec .head { display: flex; align-items: center; gap: 8px; }
+.aij-rec .tier { background:#0095f6; color:#fff; font-weight:800; padding:2px 8px; border-radius:6px; font-size:11px; }
+.aij-rec .tier.S { background: linear-gradient(135deg,#ff006e,#ff7392); }
+.aij-rec .tier.A { background: linear-gradient(135deg,#ffd166,#ff9f1c); color:#0a0e1a; }
+.aij-rec .name { font-weight: 700; font-size: 14px; flex:1; }
+.aij-rec .meta { font-size: 11px; color: #888; margin-top: 4px; }
+.aij-rec .gain { color: #64ffda; font-weight: 700; }
+.aij-rec table { width: 100%; margin-top: 8px; font-size: 11px; }
+.aij-rec td { padding: 4px 6px; }
+</style>
+
+<script>
+(async function() {
+  function fmtJpy(n) { return n == null ? '--' : Math.round(n).toLocaleString('ja-JP') + '円'; }
+  function fmtPct(n) { return n == null ? '' : (n >= 0 ? '+' : '') + n.toFixed(2) + '%'; }
+
+  async function loadAdvisor() {
+    try {
+      const res = await fetch('./data/advisor.json?t=' + Date.now(), {cache: 'no-store'});
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const d = await res.json();
+      render(d);
+    } catch (e) {
+      console.warn('[advisor] err', e);
+      document.getElementById('aij-summary').innerHTML = '<div style="color:#888;">advisor.json 読込中...</div>';
+    }
+  }
+
+  function render(d) {
+    const s = d.summary;
+    const healthColor = s.health_score >= 70 ? '#64ffda' : s.health_score >= 40 ? '#ffd166' : '#ff7392';
+    const plClass = s.total_pl >= 0 ? 'up' : 'dn';
+    const gainClass = s.expected_gain_3m >= 0 ? 'up' : 'dn';
+    document.getElementById('aij-summary').innerHTML = `
+      <div class="aij-stat">
+        <div class="card">
+          <div class="lbl">健全度</div>
+          <div class="val" style="color:${healthColor}">${s.health_score}/100</div>
+          <div class="aij-health-bar"><div style="width:${s.health_score}%; background:${healthColor};"></div></div>
+        </div>
+        <div class="card">
+          <div class="lbl">現状の含み損益</div>
+          <div class="val ${plClass}">${fmtJpy(s.total_pl)}</div>
+          <div style="font-size:11px;color:#888;margin-top:2px;">${fmtPct(s.total_pl_pct)}</div>
+        </div>
+        <div class="card">
+          <div class="lbl">損切り回収予定</div>
+          <div class="val" style="color:#00d4ff">${fmtJpy(s.total_recovery_if_sell)}</div>
+        </div>
+        <div class="card">
+          <div class="lbl">3ヶ月後 期待利益</div>
+          <div class="val ${gainClass}">${fmtJpy(s.expected_gain_3m)}</div>
+          <div style="font-size:11px;color:#64ffda;margin-top:2px;">高値時 最大 ${fmtJpy(s.expected_gain_3m_high)}</div>
+        </div>
+      </div>
+    `;
+    document.getElementById('aij-strategy').innerHTML = '<strong style="color:#00d4ff;">💡 戦略:</strong><br>' + d.strategy.replace(/\. /g, '.<br>');
+
+    document.getElementById('aij-judgments').innerHTML = (d.judgments || []).map(j => `
+      <div class="aij-row">
+        <div class="label ${j.color}">${j.label}</div>
+        <div class="body">
+          <div class="name">${j.name} <span style="color:#888;font-weight:400;font-size:11px;">[${j.code}]</span></div>
+          <div class="meta">${j.shares}株 · 取得${j.avg_price}円 / 現在${j.current ?? '--'}円 · 損益 ${fmtJpy(j.pl_total || 0)} (${fmtPct(j.pl_pct || 0)})</div>
+          <div class="reason">${j.reason}</div>
+        </div>
+      </div>
+    `).join('');
+
+    document.getElementById('aij-recommended').innerHTML = (d.recommended_buys || []).map(r => `
+      <div class="aij-rec">
+        <div class="head">
+          <span class="tier ${r.tier}">${r.tier}</span>
+          <span class="name">${r.name} <span style="color:#888;font-weight:400;font-size:11px;">[${r.code}]</span></span>
+        </div>
+        <div class="meta">${r.summary || ''}</div>
+        <table>
+          <tr><td>現在値</td><td style="text-align:right;">${r.current?.toLocaleString('ja-JP') || '--'}円</td></tr>
+          <tr><td>推奨購入</td><td style="text-align:right;font-weight:700;color:#00d4ff;">${r.buy_shares}株 (${fmtJpy(r.invest_amt)})</td></tr>
+          <tr><td>3ヶ月後中央予想</td><td style="text-align:right;">${fmtJpy(r.estimated_3m_value)} (${fmtPct(r.forecast_3m_pct)})</td></tr>
+          <tr><td>3ヶ月後 期待利益</td><td style="text-align:right;" class="gain">${fmtJpy(r.expected_gain_3m)}</td></tr>
+          <tr><td>高値時 最大利益</td><td style="text-align:right;color:#64ffda;">${fmtJpy(r.expected_gain_3m_high)}</td></tr>
+        </table>
+      </div>
+    `).join('');
+  }
+
+  loadAdvisor();
+  setInterval(loadAdvisor, 3 * 60 * 1000);
+})();
+</script>
 
   <!-- 💼 NISA口座タブ - 保有銘柄+snapshot.jsonから損益自動計算 -->
   <div class="tab-content" id="tab-nisa-holdings">

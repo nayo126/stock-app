@@ -39,11 +39,15 @@ jobs:
         run: python scripts/fetch_analysis.py
         continue-on-error: true
 
+      - name: Fetch AI advisor judgement
+        run: python scripts/fetch_advisor.py
+        continue-on-error: true
+
       - name: Commit & push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/snapshot.json data/analysis.json
+          git add data/snapshot.json data/analysis.json data/advisor.json data/nisa-holdings.json
           if git diff --staged --quiet; then
             echo "no changes"
             exit 0
