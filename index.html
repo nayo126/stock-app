@@ -6494,6 +6494,16 @@ document.addEventListener("keydown", e => {
   if (e.key === "Escape") closeChart();
 });
 
+// const STOCKS_xxx をINJECT scriptから参照できるように window に expose
+try {
+  window.STOCKS_MAIN = STOCKS_MAIN;
+  window.STOCKS_UNDER3000 = STOCKS_UNDER3000;
+  window.STOCKS_TENBAGGER = STOCKS_TENBAGGER;
+  if (typeof STOCKS_BENEFIT !== 'undefined') window.STOCKS_BENEFIT = STOCKS_BENEFIT;
+  if (typeof STOCKS_ALL40 !== 'undefined') window.STOCKS_ALL40 = STOCKS_ALL40;
+  window.refreshAll = refreshAll;
+} catch (e) { console.warn('[expose] err', e); }
+
 // Initial render
 refreshAll();
 </script>
@@ -6676,8 +6686,13 @@ refreshAll();
     if (!snapshot || !snapshot.stocks) return 0;
     const stocksMap = snapshot.stocks;
     let updated = 0;
+    // const宣言された変数は window に乗らないので、複数の方法で取得試行
     ['STOCKS_MAIN', 'STOCKS_UNDER3000', 'STOCKS_TENBAGGER', 'STOCKS_BENEFIT', 'STOCKS_ALL40'].forEach(name => {
-      const arr = window[name];
+      let arr = window[name];
+      // window から取れない場合は eval で global scope から取る
+      if (!Array.isArray(arr)) {
+        try { arr = eval(name); } catch (e) { return; }
+      }
       if (!Array.isArray(arr)) return;
       arr.forEach(item => {
         const live = stocksMap[item.code];
