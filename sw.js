@@ -1,15 +1,12 @@
 // Service Worker for Investment Dashboard PWA
-// Provides offline support by caching core assets
-const CACHE_NAME = "investment-dashboard-v1";
+// HTML/JSON は network-first (常に最新)、icon等は cache-first
+const CACHE_NAME = "investment-dashboard-v3-snapshot";
 const CORE_ASSETS = [
-  "./",
-  "./index.html",
   "./manifest.webmanifest",
   "./icon-192.svg",
   "./icon-512.svg"
 ];
 
-// Install: cache core assets
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
@@ -21,7 +18,6 @@ self.addEventListener("install", (event) => {
   self.skipWaiting();
 });
 
-// Activate: cleanup old caches
 self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches.keys().then((keys) =>
@@ -31,19 +27,32 @@ self.addEventListener("activate", (event) => {
   self.clients.claim();
 });
 
-// Fetch: cache-first for same-origin, network for others (external like TradingView)
 self.addEventListener("fetch", (event) => {
   const url = new URL(event.request.url);
-  // Only cache same-origin requests (local files)
-  if (url.origin !== location.origin) {
-    return; // Let browser handle external requests normally
-  }
-  // Skip non-GET
+  if (url.origin !== location.origin) return;
   if (event.request.method !== "GET") return;
+
+  // index.html / snapshot.json / data/* は常に最新を network から取得
+  const path = url.pathname;
+  const isFresh = path === "/" || path.endsWith(".html") || path.endsWith(".json") || path.includes("/data/");
+
+  if (isFresh) {
+    event.respondWith(
+      fetch(event.request).then(fresh => {
+        if (fresh && fresh.ok) {
+          const copy = fresh.clone();
+          caches.open(CACHE_NAME).then(c => c.put(event.request, copy));
+        }
+        return fresh;
+      }).catch(() => caches.match(event.request))
+    );
+    return;
+  }
+
+  // それ以外 (icon, manifest等) は cache-first
   event.respondWith(
     caches.match(event.request).then((cached) => {
       if (cached) {
-        // Update in background
         fetch(event.request).then(fresh => {
           if (fresh && fresh.ok) {
             caches.open(CACHE_NAME).then(c => c.put(event.request, fresh.clone()));
