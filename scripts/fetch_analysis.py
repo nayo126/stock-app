@@ -230,6 +230,85 @@ def fetch_history_and_scenarios(code):
         return None
 
 
+def build_gamble_list(snapshot_path):
+    """全3594銘柄から「短期で爆騰可能性あるギャンブル株」を自動選定
+    基準:
+      - 株価 100円 〜 1500円 (低位)
+      - 直近変動率の絶対値が大きい（高ボラ）
+      - 出来高 50,000以上（流動性あり）
+      - top 30 を |change_pct| 降順で
+    """
+    try:
+        with open(snapshot_path, encoding="utf-8") as f:
+            snap = json.load(f)
+    except Exception as e:
+        print(f"[gamble] snapshot load err: {e}", file=sys.stderr)
+        return []
+
+    candidates = []
+    for code, v in snap.get("stocks", {}).items():
+        price = v.get("p")
+        cp = v.get("cp", 0)  # change_pct
+        vol = v.get("v", 0)
+        if not price or price <= 0:
+            continue
+        if not (100 <= price <= 1500):
+            continue
+        if vol < 50000:  # 流動性フィルタ
+            continue
+        # スコア: 変動率の絶対値で降順 (爆騰候補)
+        score = abs(cp or 0) + (cp or 0) * 0.3  # 上昇方向にやや重み
+        candidates.append({
+            "code": code,
+            "price": price,
+            "change_pct": cp,
+            "volume": vol,
+            "score": score,
+        })
+    # スコア降順
+    candidates.sort(key=lambda x: -x["score"])
+    top = candidates[:30]
+
+    # tier付け: スコアで4段階
+    if not top:
+        return []
+    max_score = top[0]["score"]
+    items = []
+    for i, c in enumerate(top):
+        ratio = c["score"] / max_score if max_score else 0
+        if ratio >= 0.7:
+            tier = "S"
+        elif ratio >= 0.5:
+            tier = "A"
+        elif ratio >= 0.3:
+            tier = "B"
+        else:
+            tier = "C"
+        # yfinance で銘柄名取得
+        name = c["code"]
+        try:
+            ticker = yf.Ticker(f"{c['code']}.T")
+            info = ticker.info
+            name = info.get("longName") or info.get("shortName") or c["code"]
+        except Exception:
+            pass
+        # tags はchange方向で
+        tags = ["低位株", "高ボラ", "短期"]
+        if (c["change_pct"] or 0) > 0:
+            tags.append("急騰中")
+        elif (c["change_pct"] or 0) < 0:
+            tags.append("急落中(リバ狙い)")
+        items.append({
+            "rank": i + 1,
+            "tier": tier,
+            "code": c["code"],
+            "name": name,
+            "desc": f"低位高ボラ。直近変動{c['change_pct']:+.2f}%、出来高{c['volume']:,}株、価格{c['price']:.0f}円。短期爆騰/暴落どちらも有り得るギャンブル枠。",
+            "tags": tags,
+        })
+    return items
+
+
 def main():
     meta = load_meta()
     out = {
@@ -237,8 +316,17 @@ def main():
         "stocks": {},
     }
 
+    # ギャンブル株を自動選定して meta に追加
+    gamble_list = build_gamble_list(DATA_DIR / "snapshot.json")
+    if gamble_list:
+        meta["STOCKS_GAMBLE"] = gamble_list
+        # gamble metaを別ファイルにも保存
+        with open(DATA_DIR / "stocks-gamble.json", "w", encoding="utf-8") as f:
+            json.dump(gamble_list, f, ensure_ascii=False, indent=2)
+        print(f"[gamble] selected {len(gamble_list)} candidates")
+
     all_items = []
-    for category in ["STOCKS_MAIN", "STOCKS_UNDER3000", "STOCKS_TENBAGGER"]:
+    for category in ["STOCKS_MAIN", "STOCKS_UNDER3000", "STOCKS_TENBAGGER", "STOCKS_GAMBLE"]:
         for item in meta.get(category, []):
             all_items.append((category, item))
 
