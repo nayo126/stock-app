@@ -2,8 +2,8 @@ name: Update Stock Snapshot
 
 on:
   schedule:
-    # 1時間毎 (UTC). 日中(JST 9-23時)のマーケット時間中心
-    - cron: '0 * * * *'
+    # 15分毎 (UTC). public repoはActions無料無制限なのでコスト0
+    - cron: '*/15 * * * *'
   workflow_dispatch:  # 手動実行も可能
 
 permissions:

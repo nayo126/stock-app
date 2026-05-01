@@ -6690,8 +6690,8 @@ refreshAll();
     }
   }
   load();
-  // 開いてる間も10分毎に再fetch（裏でcommitされたら拾う）
-  setInterval(load, 10 * 60 * 1000);
+  // 開いてる間も3分毎に再fetch（裏でcommitされたら即拾う）
+  setInterval(load, 3 * 60 * 1000);
 })();
 </script>
 
