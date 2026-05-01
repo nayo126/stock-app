@@ -1345,7 +1345,8 @@ body > button[onclick*="auto-analysis"]:hover {
 
   <div class="main-layout">
   <div class="tabs">
-    <div class="tab active" data-tab="chat">💬 AIチャット</div>
+    <div class="tab active" data-tab="home">🏠 ダッシュボード</div>
+    <div class="tab" data-tab="chat">💬 AIチャット</div>
     <div class="tab" data-tab="analysis">📊 詳細分析</div>
     <div class="tab" data-tab="autodata">📡 自動データ</div>
     <div class="tab" data-tab="watchlist">📋 保有銘柄</div>
@@ -1360,13 +1361,16 @@ body > button[onclick*="auto-analysis"]:hover {
   </div>
   <div class="content-area">
 
+  <!-- 🏠ホームタブ - ヘッダ + risk-box + stats-row をここにJSで移動 -->
+  <div class="tab-content active" id="tab-home"></div>
+
   <!-- 📊詳細分析タブ - 既存の #auto-analysis セクションをここにJSで移動 -->
   <div class="tab-content" id="tab-analysis"></div>
 
   <!-- 📡自動データタブ - 既存の #auto-snapshot セクションをここにJSで移動 -->
   <div class="tab-content" id="tab-autodata"></div>
 
-  <div class="tab-content active" id="tab-chat">
+  <div class="tab-content" id="tab-chat">
     <div class="chat-window">
       <div class="chat-messages" id="chatMessages"></div>
       <div class="chat-quick-replies" id="chatQuickReplies">
@@ -6994,6 +6998,17 @@ try {
   const snap = document.getElementById('auto-snapshot');
   const snapTab = document.getElementById('tab-autodata');
   if (snap && snapTab) snapTab.appendChild(snap);
+
+  // 🏠ホームタブ: header + risk-box + stats-row を移動
+  const homeTab = document.getElementById('tab-home');
+  if (homeTab) {
+    const header = document.querySelector('.container > header');
+    const riskBox = document.querySelector('.container > .risk-box');
+    const statsRow = document.querySelector('.container > .stats-row');
+    if (header) homeTab.appendChild(header);
+    if (riskBox) homeTab.appendChild(riskBox);
+    if (statsRow) homeTab.appendChild(statsRow);
+  }
 } catch (e) { console.warn('[move sections] err', e); }
 
 // const STOCKS_xxx をINJECT scriptから参照できるように window に expose
