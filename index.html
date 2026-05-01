@@ -1347,6 +1347,8 @@ body > button[onclick*="auto-analysis"]:hover {
   <div class="main-layout">
   <div class="tabs">
     <div class="tab active" data-tab="chat">💬 AIチャット</div>
+    <div class="tab" data-tab="analysis">📊 詳細分析</div>
+    <div class="tab" data-tab="autodata">📡 自動データ</div>
     <div class="tab" data-tab="watchlist">📋 保有銘柄</div>
     <div class="tab" data-tab="advisor">🤖 AIアドバイザー</div>
     <div class="tab" data-tab="daytrade">🎓 デイトレ訓練</div>
@@ -1358,6 +1360,12 @@ body > button[onclick*="auto-analysis"]:hover {
     <div class="tab" data-tab="info">ℹ️ マクロ環境</div>
   </div>
   <div class="content-area">
+
+  <!-- 📊詳細分析タブ - 既存の #auto-analysis セクションをここにJSで移動 -->
+  <div class="tab-content" id="tab-analysis"></div>
+
+  <!-- 📡自動データタブ - 既存の #auto-snapshot セクションをここにJSで移動 -->
+  <div class="tab-content" id="tab-autodata"></div>
 
   <div class="tab-content active" id="tab-chat">
     <div class="chat-window">
@@ -6978,6 +6986,16 @@ document.querySelectorAll(".chart-tab").forEach(tab => {
 document.addEventListener("keydown", e => {
   if (e.key === "Escape") closeChart();
 });
+
+// 📊詳細分析 / 📡自動データ セクションをタブ内に移動
+try {
+  const ana = document.getElementById('auto-analysis');
+  const anaTab = document.getElementById('tab-analysis');
+  if (ana && anaTab) anaTab.appendChild(ana);
+  const snap = document.getElementById('auto-snapshot');
+  const snapTab = document.getElementById('tab-autodata');
+  if (snap && snapTab) snapTab.appendChild(snap);
+} catch (e) { console.warn('[move sections] err', e); }
 
 // const STOCKS_xxx をINJECT scriptから参照できるように window に expose
 try {
