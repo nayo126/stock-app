@@ -99,7 +99,7 @@ def build_rationale(item):
 
 
 def fetch_history_and_scenarios(code):
-    """60日 history + 3シナリオ"""
+    """60日 history + 3シナリオ + 時系列予想"""
     try:
         t = yf.Ticker(f"{code}.T")
         h = t.history(period="60d")
@@ -122,9 +122,48 @@ def fetch_history_and_scenarios(code):
 
         # ボラティリティ計算（標準偏差）
         import statistics
+        import math
         prices = [float(p) for p in h["Close"].tolist() if p == p]
         std = statistics.stdev(prices) if len(prices) > 1 else 0
         vol_pct = (std / avg_60 * 100) if avg_60 else 0  # ボラティリティ%
+
+        # 日次log return計算 → GBM予想モデル
+        log_returns = []
+        for i in range(1, len(prices)):
+            if prices[i-1] > 0 and prices[i] > 0:
+                log_returns.append(math.log(prices[i] / prices[i-1]))
+        mu = (sum(log_returns) / len(log_returns)) if log_returns else 0  # 日次期待リターン
+        if len(log_returns) > 1:
+            sigma_daily = statistics.stdev(log_returns)
+        else:
+            sigma_daily = 0.02  # default 2%
+
+        # 時系列予想: 5d/10d/20d/40d/60d 後の上限/中央/下限
+        # GBM: E[S_t] = S_0 * exp(μt), 1σ範囲 = exp(μt ± σ*sqrt(t))
+        forecast = []
+        for days_later, label in [(5, "1週間後"), (10, "2週間後"), (20, "1ヶ月後"), (40, "2ヶ月後"), (60, "3ヶ月後")]:
+            mid = current * math.exp(mu * days_later)
+            sigma_t = sigma_daily * math.sqrt(days_later)
+            high = current * math.exp(mu * days_later + sigma_t)
+            low = current * math.exp(mu * days_later - sigma_t)
+            # 信頼度（ボラティリティに反比例）
+            if sigma_daily < 0.015:
+                conf = "高"
+            elif sigma_daily < 0.025:
+                conf = "中"
+            else:
+                conf = "低"
+            forecast.append({
+                "days": days_later,
+                "label": label,
+                "mid": round(mid, 0),
+                "high": round(high, 0),
+                "low": round(low, 0),
+                "mid_pct": round((mid - current) / current * 100, 1),
+                "high_pct": round((high - current) / current * 100, 1),
+                "low_pct": round((low - current) / current * 100, 1),
+                "confidence": conf,
+            })
 
         # 3シナリオ目標価格
         # 強気: 60日高値 × 1.1 (10%上抜けまで)
@@ -149,6 +188,13 @@ def fetch_history_and_scenarios(code):
         return {
             "current": round(current, 2),
             "history": history,
+            "forecast": forecast,
+            "trend": {
+                "daily_return_pct": round(mu * 100, 3),
+                "daily_vol_pct": round(sigma_daily * 100, 2),
+                "annualized_return_pct": round(mu * 252 * 100, 1),
+                "annualized_vol_pct": round(sigma_daily * math.sqrt(252) * 100, 1),
+            },
             "stats": {
                 "max60": round(max_60, 2),
                 "min60": round(min_60, 2),

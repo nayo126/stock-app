@@ -6720,6 +6720,32 @@ refreshAll();
 .ana-chart-wrap { margin: 12px 0; }
 .ana-chart-wrap canvas { width: 100%; height: 160px; display: block; background: rgba(0,0,0,0.3); border-radius: 6px; }
 .ana-stats { display: flex; gap: 12px; flex-wrap: wrap; font-size: 11px; color: #95a3b8; margin-top: 6px; }
+.ana-forecast {
+  margin-top: 10px;
+  background: rgba(0,0,0,0.3);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.ana-forecast table { width: 100%; border-collapse: collapse; font-size: 11px; }
+.ana-forecast th, .ana-forecast td {
+  padding: 6px 8px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.ana-forecast th { background: rgba(255,209,102,0.1); color: #ffd166; font-weight: 600; }
+.ana-forecast .high { color: #64ffda; font-weight: 600; }
+.ana-forecast .low { color: #ff7392; font-weight: 600; }
+.ana-forecast .mid { color: #ffd166; font-weight: 600; }
+.ana-forecast .label { color: #e6e9f0; text-align: left; }
+.ana-forecast .conf { font-size: 10px; color: #95a3b8; }
+.ana-trend {
+  background: rgba(255,209,102,0.1);
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  margin-bottom: 8px;
+  color: #ffd166;
+}
 @media (max-width: 600px) {
   .ana-scenarios { grid-template-columns: 1fr; }
 }
@@ -6866,6 +6892,42 @@ refreshAll();
                 </div>
               </div>
             </div>
+
+            ${s.forecast ? `
+            <div class="ana-section">
+              <h4>📅 時系列予想 (Geometric Brownian Motion / 1σ範囲)</h4>
+              ${s.trend ? `<div class="ana-trend">日次期待リターン: ${s.trend.daily_return_pct >= 0 ? '+' : ''}${s.trend.daily_return_pct}% / 年率換算: ${s.trend.annualized_return_pct >= 0 ? '+' : ''}${s.trend.annualized_return_pct}% / 年率ボラ: ${s.trend.annualized_vol_pct}%</div>` : ''}
+              <div class="ana-forecast">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>期間</th>
+                      <th>上限 (+1σ)</th>
+                      <th>中央予想</th>
+                      <th>下限 (-1σ)</th>
+                      <th>信頼度</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    ${s.forecast.map(f => `
+                      <tr>
+                        <td class="label">${f.label}<br><span class="conf">(${f.days}営業日)</span></td>
+                        <td class="high">${fmtNum(f.high)}円<br><span class="conf">${fmtPct(f.high_pct)}</span></td>
+                        <td class="mid">${fmtNum(f.mid)}円<br><span class="conf">${fmtPct(f.mid_pct)}</span></td>
+                        <td class="low">${fmtNum(f.low)}円<br><span class="conf">${fmtPct(f.low_pct)}</span></td>
+                        <td class="conf">${f.confidence}</td>
+                      </tr>
+                    `).join('')}
+                  </tbody>
+                </table>
+              </div>
+              <div style="font-size:10px; color:#95a3b8; margin-top:6px; line-height:1.4;">
+                ※ 過去60日の日次リターン分布から幾何ブラウン運動モデルで算出。<br>
+                ※ 上限/下限は約68%の確信区間（±1σ）。<br>
+                ※ 確信度: 高=ボラ低・予想信頼性高 / 低=ボラ高・予想ぶれやすい。
+              </div>
+            </div>
+            ` : ''}
             ` : '<div class="ana-section">⚠️ 価格データ取得不可</div>'}
 
             <div class="ana-section">
