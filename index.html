@@ -397,15 +397,18 @@
     flex-direction: column;
     height: 70vh;
     min-height: 500px;
-    overflow: hidden;
+    max-height: calc(100vh - 200px);
+    position: relative;
   }
   .chat-messages {
-    flex: 1;
+    flex: 1 1 0;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 14px;
+    min-height: 0;
   }
   .chat-msg {
     max-width: 80%;
@@ -475,15 +478,25 @@
     padding: 14px;
     border-top: 1px solid var(--border);
     background: var(--bg-card);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
   }
   .chat-input {
     flex: 1;
-    padding: 10px 14px;
+    min-width: 0;
+    padding: 12px 14px;
     background: var(--bg-panel);
     border: 1px solid var(--border);
     border-radius: 8px;
     color: var(--text);
-    font-size: 14px;
+    font-size: 16px;
+    line-height: 1.4;
+    -webkit-appearance: none;
+    appearance: none;
+    -webkit-user-select: text;
+    user-select: text;
+    touch-action: manipulation;
   }
   .chat-input:focus {
     outline: none;
@@ -496,8 +509,11 @@
     padding: 0 20px;
     border-radius: 8px;
     cursor: pointer;
-    font-weight: 600;
-    font-size: 14px;
+    font-weight: 700;
+    font-size: 15px;
+    flex-shrink: 0;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: rgba(0,0,0,0.1);
   }
   .chat-send:hover { background: var(--accent-dim); }
   .chat-thinking {
@@ -1945,8 +1961,19 @@ window.switchTab = function(target) {
         <div class="chat-quick" onclick="sendChat('今日何すべき？')">📅 今日何すべき？</div>
       </div>
       <div class="chat-input-row">
-        <input type="text" class="chat-input" id="chatInput" placeholder="例: JHD売った方がいい？" onkeypress="if(event.key==='Enter')sendChat()">
-        <button class="chat-send" onclick="sendChat()">送信</button>
+        <input
+          type="text"
+          class="chat-input"
+          id="chatInput"
+          placeholder="例: JHD売った方がいい？"
+          autocomplete="off"
+          autocorrect="off"
+          autocapitalize="off"
+          spellcheck="false"
+          inputmode="text"
+          enterkeyhint="send"
+        >
+        <button type="button" class="chat-send" id="chatSendBtn">送信</button>
       </div>
     </div>
     <div style="margin-top: 10px; text-align: right;">
@@ -6056,18 +6083,30 @@ function hideThinking() {
 
 function sendChat(customMsg) {
   const input = document.getElementById("chatInput");
-  const msg = customMsg || input.value.trim();
-  if (!msg) return;
+  const msg = (customMsg || (input && input.value) || "").trim();
+  if (!msg) {
+    if (input) input.focus();
+    return;
+  }
 
   addMessage("user", msg);
-  if (!customMsg) input.value = "";
+  if (!customMsg && input) input.value = "";
 
   showThinking();
   setTimeout(() => {
     hideThinking();
-    const response = generateResponse(msg);
+    let response;
+    try {
+      response = generateResponse(msg);
+    } catch (err) {
+      console.error("AI chat error:", err);
+      response = `<span class="sender">🤖 AIアドバイザー</span>すみません、内部エラーが発生しました(${(err && err.message) || "unknown"})。<br>保有データを「📥 マイデータ読込」で再読み込みするか、もう一度試してください。`;
+    }
+    if (!response) {
+      response = `<span class="sender">🤖 AIアドバイザー</span>応答を生成できませんでした。もう一度試してください。`;
+    }
     addMessage("ai", response);
-  }, 600);
+  }, 500);
 }
 
 function clearChat() {
@@ -6123,16 +6162,30 @@ function generateResponse(text) {
 
   // === Intent detection ===
   const isAskingAboutSpecificStock = !!targetStock;
-  const isSellQ = /売|撤退|損切|利確|手放/.test(text);
-  const isBuyQ = /買|新規|追加|オススメ|おすすめ|推奨/.test(text);
-  const isStatusQ = /状況|現状|評価|損益|今|いくら|合計|ポートフォリオ/.test(text);
-  const isTodayQ = /今日|何すべき|何する|やる/.test(text);
-  const isLossQ = /損切り|負け|含み損|マイナス/.test(text);
-  const isGainQ = /利確|勝ち|含み益|プラス/.test(text);
-  const isGoalQ = /目標|100万|稼ぐ|増やす/.test(text);
-  const isNisaQ = /nisa|ニーサ|18|成人|一般/.test(t);
-  const isHelloQ = /こん|はじ|hello|hi|おはよ|よろ/.test(t);
-  const isThanksQ = /ありが|thank|助か|嬉し/.test(text);
+  const isSellQ = /売|撤退|損切|利確|手放|逃げ|降り|処分/.test(text);
+  const isBuyQ = /買|新規|追加|ナンピン|オススメ|おすすめ|推奨|何を|どれを|どの銘柄/.test(text);
+  const isStatusQ = /状況|現状|評価|損益|今いく|合計|ポートフォリオ|残高|資産|資金|余力/.test(text);
+  const isTodayQ = /今日|何すべき|何する|やる|アクション|タスク/.test(text);
+  const isLossQ = /損切り|負け|含み損|マイナス|塩漬け|含損/.test(text);
+  const isGainQ = /利確|勝ち|含み益|プラス|含益/.test(text);
+  const isGoalQ = /目標|100万|稼ぐ|増やす|何円|いくら稼/.test(text);
+  const isNisaQ = /nisa|ニーサ|成人|一般口座|非課税/.test(t);
+  const isHelloQ = /^(こん|はじ|hello|hi|おはよ|よろ|やあ|hey)/i.test(text);
+  const isThanksQ = /ありが|thank|助か|嬉し|サンキュ/.test(text);
+  const isRecoverQ = /取り返|挽回|リカバ|回復|戻し|戻る|戻せ/.test(text);
+  const isMarketQ = /相場|マーケット|市場|日経|tspxn|s&p|sp500|ナスダック|ダウ|為替|ドル円|金利|fomc|日銀/i.test(text);
+  const isRulesQ = /ルール|規律|決まり|何%|何パー|損切ライン|利確ライン/.test(text);
+  const isFearQ = /怖い|不安|怖|やばい|やめたい|疲れた|つらい|辛い|諦め|やめよ/.test(text);
+  const isLearnQ = /勉強|学び|本|読書|どうやって|方法|やり方|始め方|初心者/.test(text);
+  const isWhyDownQ = /なぜ下|なんで下|下がってる|下落|急落|暴落/.test(text);
+  const isWhyUpQ = /なぜ上|なんで上|上がってる|上昇|急騰|上が/.test(text);
+  const isCashQ = /現金|キャッシュ|余力|買付|残金/.test(text);
+  const isSizingQ = /どれくらい買|何株|何円分|玉|ポジションサイズ|ロット/.test(text);
+  const isTaxQ = /税金|税|確定申告|扶養|親/.test(text);
+  const isShoutQ = /教え|アドバイス|相談|どうしたら|どうすれば|どうすべき/.test(text);
+  const isWhenQ = /いつ買|いつ売|タイミング|エントリー|出口/.test(text);
+  const isDayTradeQ = /デイトレ|day|スキャ|短期|スイング/.test(text);
+  const isJokeQ = /へへ|笑|草|wwww|w$/i.test(text);
 
   // === Build response ===
 
@@ -6159,6 +6212,54 @@ function generateResponse(text) {
     本当に必要な金額と期限を教えてもらえれば、現実的なプランを一緒に作ります。`;
   }
 
+  if (isFearQ) {
+    return generateFearResponse();
+  }
+
+  if (isRecoverQ) {
+    return generateRecoveryPlan();
+  }
+
+  if (isMarketQ) {
+    return generateMarketSnapshot();
+  }
+
+  if (isWhyDownQ) {
+    return generateWhyDown();
+  }
+
+  if (isWhyUpQ) {
+    return generateWhyUp();
+  }
+
+  if (isRulesQ) {
+    return generateRulesAdvice();
+  }
+
+  if (isSizingQ) {
+    return generateSizingAdvice();
+  }
+
+  if (isCashQ) {
+    return generateCashAdvice();
+  }
+
+  if (isTaxQ) {
+    return generateTaxAdvice();
+  }
+
+  if (isWhenQ) {
+    return generateTimingAdvice();
+  }
+
+  if (isDayTradeQ) {
+    return generateDayTradeAdvice();
+  }
+
+  if (isLearnQ) {
+    return generateLearnAdvice();
+  }
+
   if (isStatusQ) {
     return generateStatusReport();
   }
@@ -6183,13 +6284,27 @@ function generateResponse(text) {
     return generateNisaInfo();
   }
 
-  // Default / fallback
-  return `<span class="sender">🤖 AIアドバイザー</span>すみません、質問の意図がよく分かりませんでした。もう少し具体的に教えてください。<br><br>
-  試してみてください:<br>
-  ・「JHDを売るべき？」（銘柄名/コード + 売買）<br>
-  ・「今の評価額は？」（ポートフォリオ状況）<br>
-  ・「何を買えばいい？」（推奨銘柄）<br>
-  ・「今日何すべき？」（今日のアクション）`;
+  if (isShoutQ) {
+    // "アドバイスください" 系 → 状況+今日のアクションをまとめて返す
+    return generateStatusReport() + "<br>" + generateTodayAdvice();
+  }
+
+  // Default fallback — 必ず役に立つ情報を返す（status report + ヒント）
+  return generateSmartFallback(text);
+}
+
+function generateSmartFallback(text) {
+  const status = generateStatusReport();
+  return status + `<br>
+  <div style="background:var(--bg-card);padding:10px 12px;border-radius:6px;margin-top:8px;border-left:3px solid var(--accent);font-size:12px;">
+  💡 質問の意図を絞れなかったので、現在の状況をまず出しました。<br>こんな聞き方も試してみて:<br>
+  ・「<strong>JHDどうする？</strong>」（銘柄名 or 4桁コード）<br>
+  ・「<strong>取り返したい</strong>」（-22万回復プラン）<br>
+  ・「<strong>怖い</strong>」「<strong>不安</strong>」（メンタル相談）<br>
+  ・「<strong>なぜ下がってる？</strong>」（マクロ要因解説）<br>
+  ・「<strong>ルール教えて</strong>」（規律・%設定）<br>
+  ・「<strong>余力どうする？</strong>」（現金管理）
+  </div>`;
 }
 
 function analyzeSpecificStock(s) {
@@ -6503,6 +6618,294 @@ function generateNisaInfo() {
   詳しい計画は「🎓 ジュニアNISA & 18歳計画」タブで！`;
 }
 
+// ========================================
+// 拡張アドバイザー機能
+// ========================================
+function calcPortfolioStats() {
+  const owned = getOwned();
+  const details = getDetails();
+  const nisa = getNisa();
+  let totalCost = 0, totalValue = 0;
+  const positions = [];
+  Object.keys(owned).forEach(code => {
+    const s = owned[code];
+    const d = details[code] || {};
+    const shares = parseFloat(d.shares) || 0;
+    const avg = parseFloat(d.avgPrice) || 0;
+    const cur = parseFloat(d.currentPrice) || s.price || 0;
+    if (shares > 0) {
+      totalCost += shares * avg;
+      totalValue += shares * cur;
+      positions.push({ s, code, shares, avg, cur, value: shares*cur, pnl: shares*(cur-avg), pnlPct: avg>0?((cur-avg)/avg*100):0 });
+    }
+  });
+  return {
+    positions,
+    totalCost,
+    totalValue,
+    totalPnL: totalValue - totalCost,
+    totalPct: totalCost > 0 ? ((totalValue - totalCost) / totalCost * 100) : 0,
+    cash: parseFloat(nisa.cash) || 0,
+    winners: positions.filter(p => p.pnl > 0),
+    losers: positions.filter(p => p.pnl < 0)
+  };
+}
+
+function generateFearResponse() {
+  const st = calcPortfolioStats();
+  const losing = st.totalPnL < 0;
+  return `<span class="sender">🤖 AIアドバイザー</span>
+  その気持ち、めちゃくちゃ分かる。<br><br>
+  ${losing
+    ? `今の含み損は¥${Math.abs(Math.round(st.totalPnL)).toLocaleString()} (${st.totalPct.toFixed(1)}%)。確かに痛い。でも<strong>17歳でこの経験を積んでること自体が、同世代の99%より遥か先</strong>を行ってる。`
+    : `今のところプラス圏。冷静さを保ってる証拠だよ。`}<br><br>
+  <strong>怖い時に効く3つのこと:</strong><br>
+  ① <strong>画面から1時間離れる</strong> — 含み損の心理的痛みは利益の2.5倍重い（プロスペクト理論）<br>
+  ② <strong>ルールに戻る</strong> — 損切り${getRules().stopLoss||10}%・利確${getRules().takeProfit||20}%。感情ではなくルールで判断する<br>
+  ③ <strong>「これは授業料」と認識する</strong> — -22万円は痛いが、年商100億の社長になるための授業料としては破格に安い。MBA 1年=300万、ハーバード=2000万<br><br>
+  <strong>本当にやめたいなら:</strong> 一旦全部現金化して1ヶ月離れるのもアリ。再開する時のあなたは、今より確実に強くなってる。<br><br>
+  どの銘柄が一番ストレス？「JHDが怖い」みたいに教えてくれれば、個別に診断するよ。`;
+}
+
+function generateRecoveryPlan() {
+  const st = calcPortfolioStats();
+  const target = Math.abs(st.totalPnL);
+  if (target < 1000) {
+    return `<span class="sender">🤖 AIアドバイザー</span>もう挽回してる！含み損ほぼゼロかプラス圏だよ。次は「攻め」のフェーズ。「オススメ銘柄」って聞いてみて。`;
+  }
+  const monthlyTarget = target / 6;
+  const yearReturn3pct = st.totalValue * 0.03;
+  const yearReturn10pct = st.totalValue * 0.10;
+  const yearReturn20pct = st.totalValue * 0.20;
+  return `<span class="sender">🤖 AIアドバイザー</span>
+  <strong>取り返しプラン（含み損 ¥${Math.round(target).toLocaleString()} を回復）</strong><br><br>
+  まず数字で見せます。現在の評価額¥${Math.round(st.totalValue).toLocaleString()}を基準に:<br>
+  <table class="chat-table">
+    <tr><td style="color:var(--text-dim);">年率3%（インデックス並）</td><td>+¥${Math.round(yearReturn3pct).toLocaleString()}/年</td></tr>
+    <tr><td style="color:var(--text-dim);">年率10%（プロ並み）</td><td>+¥${Math.round(yearReturn10pct).toLocaleString()}/年</td></tr>
+    <tr><td style="color:var(--text-dim);">年率20%（天才トレーダー）</td><td>+¥${Math.round(yearReturn20pct).toLocaleString()}/年</td></tr>
+  </table>
+  <br>
+  <strong>現実的な6ヶ月プラン:</strong><br>
+  月¥${Math.round(monthlyTarget).toLocaleString()}（${(monthlyTarget/st.totalValue*100).toFixed(1)}%）の利益で完全回復。<br><br>
+  <strong>具体的な手順（順番が大事）:</strong><br>
+  ① <strong>負け筋を切る</strong> — ${st.losers.length}件の含み損銘柄を「損切りすべき？」で診断<br>
+  ② <strong>勝ち筋を伸ばす</strong> — Tier S銘柄に資金を集中。「オススメ」で確認<br>
+  ③ <strong>ナンピン禁止</strong> — 下げ続ける銘柄に追加投資は罠。資金は別銘柄へ<br>
+  ④ <strong>R/R比2以上だけエントリー</strong> — 「🧮 買い判断計算機」で必ず計算<br>
+  ⑤ <strong>1取引で2%以上のリスクを取らない</strong> — ¥${Math.round(st.totalValue*0.02).toLocaleString()}/トレードが上限<br><br>
+  焦りは禁物。<strong>3ヶ月で半分、6ヶ月で完全回復</strong>が現実ライン。`;
+}
+
+function generateMarketSnapshot() {
+  return `<span class="sender">🤖 AIアドバイザー</span>
+  <strong>📊 現在のマクロ環境（2026年Q2時点）</strong><br><br>
+  <strong>日本株:</strong><br>
+  ・日経平均は60,000円目前の歴史的高値圏<br>
+  ・高市政権の財政拡張+防衛増額が継続テーマ<br>
+  ・日銀は段階的利上げ姿勢、円安リスクは残存<br><br>
+  <strong>米国:</strong><br>
+  ・FRBは利下げサイクル、長期金利の動向に注意<br>
+  ・AI関連はNVIDIA中心に依然強気、過熱感も<br><br>
+  <strong>今のあなたの戦略:</strong><br>
+  ・<strong>高値圏での新規大型買いは慎重に</strong>。打診買い→押し目で追加が正解<br>
+  ・防衛・AI半導体（Tier S）はトレンド継続、ただし全力買いは禁<br>
+  ・低位株は個別材料が必須。指数連動の上昇期待では負ける<br><br>
+  もっと詳しいニュースは「🌍 大型ニュース」タブで！`;
+}
+
+function generateWhyDown() {
+  const st = calcPortfolioStats();
+  if (st.losers.length === 0) {
+    return `<span class="sender">🤖 AIアドバイザー</span>今のところ含み損銘柄はないみたい。市況全体が気になるなら「相場どう？」と聞いてみて。`;
+  }
+  const worst = [...st.losers].sort((a,b) => a.pnlPct - b.pnlPct)[0];
+  return `<span class="sender">🤖 AIアドバイザー</span>
+  <strong>下落の主因はだいたいこの5つ:</strong><br><br>
+  ① <strong>地合い悪化</strong> — 日経・ダウ・ナスダックが下げてるなら全体要因。個別の問題じゃない<br>
+  ② <strong>業績の下方修正</strong> — 決算後の急落は要警戒。IRリリース確認<br>
+  ③ <strong>セクターローテーション</strong> — 半導体→金融など資金移動。トレンド変化のサイン<br>
+  ④ <strong>外国人売り</strong> — 円高・地政学リスクで日本株売り<br>
+  ⑤ <strong>個別の悪材料</strong> — 訴訟、不正、業界規制など<br><br>
+  特に<strong>${worst.s.name} (${worst.s.code})</strong>は${worst.pnlPct.toFixed(1)}%。<br>
+  株探（kabutan.jp/stock/?code=${worst.code}）で個別ニュース確認推奨。<br><br>
+  <strong>原因より大事なのは対応:</strong><br>
+  ・損切りライン(-${getRules().stopLoss||10}%)到達なら<strong>機械的に処分</strong><br>
+  ・まだ届いてないなら<strong>ホールド or 半分処分</strong>で精神安定<br>
+  ・<strong>ナンピンは絶対NG</strong>（傷を深くするだけ）`;
+}
+
+function generateWhyUp() {
+  return `<span class="sender">🤖 AIアドバイザー</span>
+  <strong>上昇の典型パターン:</strong><br><br>
+  ① <strong>業績上方修正</strong> — 決算サプライズ。+10〜30%急騰しやすい<br>
+  ② <strong>テーマ買い</strong> — AI、防衛、半導体、量子。マクロトレンドで一気に<br>
+  ③ <strong>外国人買い</strong> — 円安・日本株見直しで割安銘柄に資金<br>
+  ④ <strong>機関の組入れ</strong> — 大型機関が新規買い→出来高急増<br>
+  ⑤ <strong>マクロ要因</strong> — 利下げ・財政拡張・地政学緩和<br><br>
+  <strong>勝ちポジションの扱い方:</strong><br>
+  ・+${getRules().takeProfit||20}%で<strong>半分利確</strong>（利益確保＋上値追従）<br>
+  ・+${(getRules().takeProfit||20)*2}%で<strong>60%利確</strong>（大幅利益確定）<br>
+  ・残りはトレーリングストップ（高値から-10%で自動売り）<br><br>
+  <strong>注意:</strong> 急騰銘柄に飛び乗るな。チャートで「天井圏買い」になる可能性大。`;
+}
+
+function generateRulesAdvice() {
+  const r = getRules();
+  return `<span class="sender">🤖 AIアドバイザー</span>
+  <strong>📏 あなたの現在のルール設定:</strong><br><br>
+  <table class="chat-table">
+    <tr><td style="color:var(--text-dim);">損切ライン</td><td><strong>-${r.stopLoss||10}%</strong></td></tr>
+    <tr><td style="color:var(--text-dim);">利確ライン</td><td><strong>+${r.takeProfit||20}%</strong></td></tr>
+    <tr><td style="color:var(--text-dim);">1銘柄最大</td><td><strong>${r.maxPosition||10}%</strong></td></tr>
+    <tr><td style="color:var(--text-dim);">低位株上限</td><td><strong>${r.pennyMax||20}%</strong></td></tr>
+    <tr><td style="color:var(--text-dim);">最低R/R比</td><td><strong>1:${r.minRR||2}</strong></td></tr>
+    <tr><td style="color:var(--text-dim);">現金比率</td><td><strong>${r.minCash||20}%以上</strong></td></tr>
+  </table>
+  <br>
+  <strong>💡 推奨ルール（17歳・アクティブトレーダー向け）:</strong><br>
+  ・損切り <strong>-8〜10%</strong>（厳格に。-15%まで放置は致命傷）<br>
+  ・利確 <strong>+20〜25%</strong>（半分利確で利益確保＋上値追従）<br>
+  ・1銘柄 <strong>10%以下</strong>（集中投資は破滅の元）<br>
+  ・R/R比 <strong>1:2以上</strong>（リスク1に対しリターン2倍以上の機会だけ取る）<br>
+  ・現金 <strong>20%以上キープ</strong>（暴落時の買い場で動けない＝最大の機会損失）<br><br>
+  ルール変更は「🤖 AIアドバイザー」タブの「⚙️ 取引ルール」から。`;
+}
+
+function generateSizingAdvice() {
+  const st = calcPortfolioStats();
+  const maxRisk = (st.totalValue + st.cash) * 0.02;
+  const stopPct = getRules().stopLoss || 10;
+  const maxPosition = (st.totalValue + st.cash) * ((getRules().maxPosition || 10) / 100);
+  return `<span class="sender">🤖 AIアドバイザー</span>
+  <strong>📏 ポジションサイジング（あなた専用）</strong><br><br>
+  総資産: <strong>¥${Math.round(st.totalValue + st.cash).toLocaleString()}</strong>（評価額+現金）<br><br>
+  <strong>1トレードの上限:</strong><br>
+  ・最大リスク額（2%ルール）= <strong>¥${Math.round(maxRisk).toLocaleString()}</strong><br>
+  ・1銘柄の最大投資額（${getRules().maxPosition||10}%ルール）= <strong>¥${Math.round(maxPosition).toLocaleString()}</strong><br><br>
+  <strong>株数の計算式:</strong><br>
+  株数 = リスク額 ÷ (現在値 - 損切値)<br><br>
+  <strong>例:</strong> 1株¥1,000の銘柄を-${stopPct}%損切（¥900）で買う場合<br>
+  最大株数 = ¥${Math.round(maxRisk).toLocaleString()} ÷ ¥100 = <strong>${Math.floor(maxRisk/100/100)*100}株</strong><br><br>
+  <strong>絶対ルール:</strong><br>
+  ・1銘柄に総資産の<strong>10%超を入れない</strong><br>
+  ・低位株（500円以下）は<strong>20%以下</strong><br>
+  ・100株単位で買えない高額株は<strong>単元未満株（S株）</strong>で<br><br>
+  詳細計算は「🧮 買い判断計算機」で。`;
+}
+
+function generateCashAdvice() {
+  const st = calcPortfolioStats();
+  const total = st.totalValue + st.cash;
+  const cashPct = total > 0 ? (st.cash / total * 100) : 0;
+  let advice;
+  if (cashPct < 10) {
+    advice = `🚨 <strong>現金不足</strong>。${cashPct.toFixed(0)}%は危険水準。<br>暴落時に動けず、損切りで現金化→悪条件で売る悪循環。一部利確して現金20%まで回復推奨。`;
+  } else if (cashPct < 20) {
+    advice = `⚠️ 現金${cashPct.toFixed(0)}%。やや少なめ。20-30%が理想。`;
+  } else if (cashPct < 40) {
+    advice = `✅ 現金${cashPct.toFixed(0)}%は適正範囲。攻めと守りのバランス◎`;
+  } else {
+    advice = `💰 現金${cashPct.toFixed(0)}%はやや多い。Tier S銘柄に分散投資の機会を検討。`;
+  }
+  return `<span class="sender">🤖 AIアドバイザー</span>
+  <strong>💰 現金管理アドバイス</strong><br><br>
+  <table class="chat-table">
+    <tr><td style="color:var(--text-dim);">評価額</td><td>¥${Math.round(st.totalValue).toLocaleString()}</td></tr>
+    <tr><td style="color:var(--text-dim);">買付余力</td><td><strong>¥${Math.round(st.cash).toLocaleString()}</strong></td></tr>
+    <tr><td style="color:var(--text-dim);">総資産</td><td>¥${Math.round(total).toLocaleString()}</td></tr>
+    <tr><td style="color:var(--text-dim);">現金比率</td><td><strong>${cashPct.toFixed(1)}%</strong></td></tr>
+  </table>
+  <br>
+  ${advice}<br><br>
+  <strong>📐 現金比率の目安:</strong><br>
+  ・<strong>強気相場</strong>: 10-20%（フル投資寄り）<br>
+  ・<strong>普通の相場</strong>: 20-30%（バランス）<br>
+  ・<strong>弱気・天井圏</strong>: 30-50%（守り重視）<br>
+  ・<strong>暴落直後</strong>: 0-10%（買い場で全力）<br><br>
+  今は日経60,000円目前の高値圏。<strong>20-30%キープ</strong>が無難。`;
+}
+
+function generateTaxAdvice() {
+  return `<span class="sender">🤖 AIアドバイザー</span>
+  <strong>💰 17歳の税金まとめ</strong><br><br>
+  <strong>今（ジュニアNISA）:</strong><br>
+  ・売却益・配当金 <strong>完全非課税</strong><br>
+  ・引き出しも自由<br>
+  ・確定申告不要<br><br>
+  <strong>18歳以降（新NISA）:</strong><br>
+  ・成長投資枠 240万円/年 + つみたて枠 120万円/年<br>
+  ・生涯1,800万円まで非課税<br>
+  ・特定口座は20.315%課税<br><br>
+  <strong>扶養控除の注意（2026改正）:</strong><br>
+  ・高校生（16-18歳）の扶養控除 → 合計所得<strong>58万円超</strong>（収入123万円）で親の扶養外れる<br>
+  ・NISA内の利益は所得計算に含まれない<br>
+  ・特定口座/一般口座の利益は所得計算に含まれる<br><br>
+  <strong>結論:</strong> 18歳までは全てNISA内で売買すれば税金・扶養どちらも気にしなくてOK。`;
+}
+
+function generateTimingAdvice() {
+  return `<span class="sender">🤖 AIアドバイザー</span>
+  <strong>⏰ エントリー/エグジットのタイミング</strong><br><br>
+  <strong>🟢 買いタイミング（上から強い順）:</strong><br>
+  ① <strong>押し目買い</strong> — 上昇トレンド中の-5〜10%調整<br>
+  ② <strong>ブレイクアウト</strong> — レンジ上抜け+出来高急増<br>
+  ③ <strong>決算後の素直な反応</strong> — 上方修正でGUしてさらに上昇<br>
+  ④ <strong>パニック安からの反発</strong> — 暴落2-3日後の底打ち（経験者向け）<br><br>
+  <strong>🚫 買ってはいけないタイミング:</strong><br>
+  ・連騰の末尾（上ヒゲ陰線が出た翌日）<br>
+  ・寄り付き直後の急騰（高値づかみリスク大）<br>
+  ・地合い悪化中の個別銘柄（全体下落に巻き込まれる）<br><br>
+  <strong>🔴 売りタイミング:</strong><br>
+  ・損切ライン(-${getRules().stopLoss||10}%)到達 → <strong>機械的に処分</strong><br>
+  ・利確ライン(+${getRules().takeProfit||20}%)到達 → <strong>半分利確</strong><br>
+  ・トレンド転換サイン（移動平均線下抜け+出来高増）→ 全売り<br><br>
+  <strong>時間帯の鉄則:</strong><br>
+  ・9:00-9:30: <strong>取引しない</strong>（寄り付きの急変動）<br>
+  ・10:00-11:30: <strong>判断OK</strong>（落ち着いた時間）<br>
+  ・12:30-14:30: <strong>後場の動き観察</strong><br>
+  ・14:30-15:00: <strong>大引け前の決断</strong>`;
+}
+
+function generateDayTradeAdvice() {
+  return `<span class="sender">🤖 AIアドバイザー</span>
+  <strong>📈 デイトレ・短期売買アドバイス</strong><br><br>
+  ⚠️ <strong>まず正直に:</strong> デイトレで安定して勝ってるのは全参加者の<strong>1-2%</strong>。残り98%は損してる。<br><br>
+  <strong>17歳で始めるなら3原則:</strong><br>
+  ① <strong>1日の損失上限を決める</strong> — 例: 総資産の1%以下。超えたら即終了<br>
+  ② <strong>1トレードに3分以上悩むなら見送る</strong> — 迷い=エッジなし<br>
+  ③ <strong>日記をつける</strong> — 全エントリー/エグジットの理由を記録<br><br>
+  <strong>勝てる銘柄の特徴:</strong><br>
+  ・出来高 <strong>100万株/日以上</strong>（流動性必須）<br>
+  ・ボラティリティ <strong>3-5%</strong>（動かないと利益出ない）<br>
+  ・ストップ高/安近辺は避ける（板が薄い）<br><br>
+  <strong>勝てない銘柄:</strong><br>
+  ・低位株（仕手筋に狩られる）<br>
+  ・ニュースで急騰した銘柄（個人が群がる→翌日急落）<br>
+  ・自分が「上がると思う」だけの銘柄（願望トレード）<br><br>
+  詳しくは「🎓 デイトレ訓練」タブで紙トレード練習！`;
+}
+
+function generateLearnAdvice() {
+  return `<span class="sender">🤖 AIアドバイザー</span>
+  <strong>📚 投資の学び方（17歳・初心者向け）</strong><br><br>
+  <strong>📖 最初に読むべき本3冊（順番厳守）:</strong><br>
+  ① <strong>『漫画 バビロン大富豪の教え』</strong> — 金融リテラシーの土台<br>
+  ② <strong>『投資の大原則』チャールズ・エリス</strong> — 長期投資の鉄則<br>
+  ③ <strong>『マーケットの魔術師』</strong> — 一流トレーダーの思考<br><br>
+  <strong>🎓 やるべき順序:</strong><br>
+  ① <strong>紙トレード3ヶ月</strong> — 「🎓 デイトレ訓練」タブで実弾なし練習<br>
+  ② <strong>少額リアル投資（5万円）</strong> — 痛み付きで学ぶ<br>
+  ③ <strong>ルール化</strong> — 損切り/利確/サイズを毎回守る<br>
+  ④ <strong>トレード日記</strong> — 100トレード分析で自分のエッジ発見<br><br>
+  <strong>🚫 やってはいけないこと:</strong><br>
+  ・YouTubeの「億り人」を真似る（生存者バイアス）<br>
+  ・SNSの煽り銘柄に乗る<br>
+  ・「お金が欲しい」だけで取引する<br>
+  ・損切りを後回しにする<br><br>
+  <strong>💡 一番大事なこと:</strong> 17歳でこれだけ真剣に投資に向き合ってる時点で、同世代の99%より遥か先。焦らず10年スパンで考えれば、確実に資産1億は超えられる。`;
+}
+
 // Init chat on load and on tab click
 document.querySelectorAll(".tab").forEach(tab => {
   if (tab.dataset.tab === "chat") {
@@ -6512,6 +6915,39 @@ document.querySelectorAll(".tab").forEach(tab => {
   }
 });
 setTimeout(renderChat, 300);
+
+// Wire chat input/send via JS (more reliable on iOS PWA than inline handlers)
+(function setupChatBindings(){
+  function bind() {
+    const input = document.getElementById("chatInput");
+    const btn = document.getElementById("chatSendBtn");
+    if (!input || !btn) { setTimeout(bind, 50); return; }
+    if (input.__bound) return;
+    input.__bound = true;
+
+    input.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        try { sendChat(); } catch(err) { console.error("sendChat error:", err); }
+      }
+    });
+    // iOS PWA: pointerdown gets a focusable input to focus more reliably than tap-on-click
+    input.addEventListener("pointerdown", () => { try { input.focus(); } catch(_){} }, { passive: true });
+    btn.addEventListener("click", () => {
+      try { sendChat(); } catch(err) { console.error("sendChat error:", err); }
+    });
+    // Also bind to touchend on the send button for ultra-old iOS PWA
+    btn.addEventListener("touchend", (e) => {
+      e.preventDefault();
+      try { sendChat(); } catch(err) { console.error("sendChat error:", err); }
+    });
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", bind);
+  } else {
+    bind();
+  }
+})();
 
 // ========================================
 // 📏 取引ルール & ツール（確率改善）
