@@ -1,0 +1,13 @@
+name: Ping
+
+on:
+  push:
+    paths:
+      - '.github/workflows/ping.yml'
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "pong"
