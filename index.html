@@ -1952,7 +1952,7 @@ window.switchTab = function(target) {
       <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap;">
         <div style="font-size:12px;">
           <strong>🧠 AI接続</strong>
-          <span id="geminiStatusBadge" style="margin-left:8px; font-size:11px;">💬 ルールベース動作中 (APIキーで自由会話化)</span>
+          <span id="geminiStatusBadge" style="margin-left:8px; font-size:11px;">✓ 自動LLM接続中 (キー不要)</span>
         </div>
         <button type="button" class="action-btn" onclick="toggleGeminiSettings()" style="font-size:11px;">⚙️ 設定</button>
       </div>
@@ -6113,8 +6113,8 @@ function updateGeminiStatusBadge() {
     el.textContent = "✓ Gemini接続中 (" + getGeminiModel() + ")";
     el.style.color = "var(--up)";
   } else {
-    el.textContent = "💬 ルールベース動作中 (APIキーで自由会話化)";
-    el.style.color = "var(--text-dim)";
+    el.textContent = "✓ 自動LLM接続中 (キー不要)";
+    el.style.color = "var(--up)";
   }
 }
 
@@ -6210,6 +6210,59 @@ function buildGeminiSystemPrompt(ctx) {
   ].join("\n");
 }
 
+// === キー不要の自動LLMバックエンド (Pollinations.AI OpenAI互換) ===
+// 全端末・初回起動でそのままLLM会話が成立するためのデフォルト経路。
+// CORS開放済み・APIキー不要。失敗時は呼び出し元でルールベースにフォールバック。
+async function callPollinations(userText) {
+  const ctx = buildLiveContext();
+  const systemPrompt = buildGeminiSystemPrompt(ctx);
+
+  const history = getChatHistory().slice(-20);
+  const messages = [{ role: "system", content: systemPrompt }];
+  history.forEach(m => {
+    if (m.role === "user") {
+      messages.push({ role: "user", content: m.content });
+    } else if (m.role === "ai") {
+      const plain = String(m.content).replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+      if (plain) messages.push({ role: "assistant", content: plain });
+    }
+  });
+  messages.push({ role: "user", content: userText });
+
+  // 30秒タイムアウト (Pollinationsは時々詰まるので)
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 30000);
+
+  let res;
+  try {
+    res = await fetch("https://text.pollinations.ai/openai", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        model: "openai",
+        messages,
+        temperature: 0.6,
+        max_tokens: 1500
+      }),
+      signal: controller.signal
+    });
+  } finally {
+    clearTimeout(timer);
+  }
+  if (!res.ok) {
+    const errText = await res.text().catch(() => "");
+    throw new Error(`Pollinations HTTP ${res.status}: ${errText.slice(0, 200)}`);
+  }
+  const data = await res.json();
+  const text = data && data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content;
+  if (!text || !text.trim()) throw new Error("Pollinations応答が空");
+  const cleaned = text.trim();
+  if (!/sender/.test(cleaned)) {
+    return `<span class="sender">🤖 AIアドバイザー</span>${cleaned.replace(/\n/g, "<br>")}`;
+  }
+  return cleaned.replace(/\n/g, "<br>");
+}
+
 async function callGemini(userText) {
   const key = getGeminiKey();
   if (!key) return null;
@@ -6273,8 +6326,8 @@ function renderChat() {
   if (history.length === 0) {
     const hasGemini = !!getGeminiKey();
     const banner = hasGemini
-      ? `🟢 <strong>Gemini接続中</strong> — 自由に会話できます。保有銘柄・市場snapshotを参照して具体的に答えます。`
-      : `💬 <strong>ルールベース動作中</strong> — 保有データ・損切り/利確ルールから具体的に答えます。<br>「⚙️ 設定」からGemini APIキー(無料枠あり)を入れると、自由会話する本物のLLMチャットになります。`;
+      ? `🟢 <strong>Gemini接続中</strong> — 保有銘柄・市場snapshotを参照して自由に会話できます。`
+      : `🟢 <strong>LLMチャット稼働中 (キー不要・自動接続)</strong> — そのまま自由に会話できます。保有銘柄・損切り/利確ルール・市場snapshotを参照して具体的に答えます。<br><span style="color:var(--text-dim);font-size:11px;">※さらに高精度にしたい場合は「⚙️ 設定」からGemini APIキー(無料枠あり)を追加できます。</span>`;
     const hello = {
       role: "ai",
       content: `<span class="sender">🤖 AIアドバイザー</span>${banner}<br><br>例えば:<br>・「JHD売った方がいい？」<br>・「今の評価額は？」<br>・「-22万取り返すプラン作って」<br>・「今日のマーケットどう？」<br><br>下のクイック質問でも、自然な日本語でもOK。`,
@@ -6339,28 +6392,42 @@ async function sendChat(customMsg) {
     }
     showThinking();
 
-    // 2. AI応答を生成
+    // 2. AI応答を生成: 優先順位 = Gemini(キーありなら) → Pollinations(キー不要) → ルールベース
     const hasKey = !!getGeminiKey();
     let response = null;
+    let lastErr = null;
 
+    // 2-a. Gemini (ユーザーがキーを入れている場合のみ)
     if (hasKey) {
       try {
         response = await callGemini(msg);
       } catch (err) {
-        console.error("Gemini error:", err);
-        try {
-          const ruleBased = generateResponse(msg);
-          response = `<span class="sender">🤖 AIアドバイザー</span><div style="background:rgba(255,180,0,0.12);padding:8px 10px;border-radius:6px;border-left:3px solid var(--warning);font-size:12px;margin-bottom:8px;">⚠️ Gemini呼び出しに失敗(${escapeHTML((err && err.message) || "unknown")})。ルールベース応答を表示しています。</div>${(ruleBased || "").replace(/^<span class="sender">.*?<\/span>/, "")}`;
-        } catch (err2) {
-          response = `<span class="sender">🤖 AIアドバイザー</span>すみません、Gemini呼び出し失敗 + ルールベース応答にもエラー(${escapeHTML(err2.message || "")})。設定画面を確認してください。`;
-        }
+        console.warn("Gemini failed, falling back:", err);
+        lastErr = err;
       }
-    } else {
+    }
+
+    // 2-b. Pollinations (キー不要・常時動く想定のデフォルトLLM)
+    if (!response) {
       try {
-        response = generateResponse(msg);
+        response = await callPollinations(msg);
+      } catch (err) {
+        console.warn("Pollinations failed, falling back to rule-based:", err);
+        lastErr = err;
+      }
+    }
+
+    // 2-c. ルールベース (最終フォールバック)
+    if (!response) {
+      try {
+        const ruleBased = generateResponse(msg);
+        const warn = lastErr
+          ? `<div style="background:rgba(255,180,0,0.12);padding:8px 10px;border-radius:6px;border-left:3px solid var(--warning);font-size:12px;margin-bottom:8px;">⚠️ LLM接続失敗(${escapeHTML((lastErr && lastErr.message) || "unknown")})。ルールベース応答を表示中。</div>`
+          : "";
+        response = `<span class="sender">🤖 AIアドバイザー</span>${warn}${(ruleBased || "").replace(/^<span class="sender">.*?<\/span>/, "")}`;
       } catch (err) {
         console.error("Rule-based chat error:", err);
-        response = `<span class="sender">🤖 AIアドバイザー</span>内部エラー(${escapeHTML((err && err.message) || "unknown")})。保有データを「📥 マイデータ読込」で再読み込みしてください。`;
+        response = `<span class="sender">🤖 AIアドバイザー</span>内部エラー(${escapeHTML((err && err.message) || "unknown")})。`;
       }
     }
 
