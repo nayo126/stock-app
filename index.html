@@ -6055,6 +6055,23 @@ const STORAGE_KEY_GEMINI_KEY = "stock-app-gemini-key-v1";
 const STORAGE_KEY_GEMINI_MODEL = "stock-app-gemini-model-v1";
 const GEMINI_DEFAULT_MODEL = "gemini-2.5-flash";
 
+// === 全端末自動セットアップ用の埋め込みキー ===
+// 公開リポジトリに直書き。悪用された場合は AI Studio でローテして再デプロイすればOK。
+// 課金は有効化していない前提なので最悪でも free-tier の使い切り(1日休止)で済む。
+const GEMINI_EMBEDDED_KEY = "AIzaSyC-pCerJHVZ2d8NCnRnFWtv1iSZXRKNilY";
+
+(function autoSeedGeminiKey() {
+  try {
+    const stored = (localStorage.getItem(STORAGE_KEY_GEMINI_KEY) || "").trim();
+    if (!stored && GEMINI_EMBEDDED_KEY) {
+      localStorage.setItem(STORAGE_KEY_GEMINI_KEY, GEMINI_EMBEDDED_KEY);
+    }
+    if (!localStorage.getItem(STORAGE_KEY_GEMINI_MODEL)) {
+      localStorage.setItem(STORAGE_KEY_GEMINI_MODEL, GEMINI_DEFAULT_MODEL);
+    }
+  } catch (_) {}
+})();
+
 function getChatHistory() {
   try { return JSON.parse(localStorage.getItem(STORAGE_KEY_CHAT) || "[]"); }
   catch { return []; }
