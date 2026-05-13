@@ -1952,7 +1952,7 @@ window.switchTab = function(target) {
       <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap;">
         <div style="font-size:12px;">
           <strong>🧠 AI接続</strong>
-          <span id="geminiStatusBadge" style="margin-left:8px; font-size:11px;">⚠️ APIキー未設定 → ルールベース動作</span>
+          <span id="geminiStatusBadge" style="margin-left:8px; font-size:11px;">💬 ルールベース動作中 (APIキーで自由会話化)</span>
         </div>
         <button type="button" class="action-btn" onclick="toggleGeminiSettings()" style="font-size:11px;">⚙️ 設定</button>
       </div>
@@ -6056,13 +6056,25 @@ const STORAGE_KEY_GEMINI_MODEL = "stock-app-gemini-model-v1";
 const GEMINI_DEFAULT_MODEL = "gemini-2.5-flash";
 
 // === 全端末自動セットアップ用の埋め込みキー ===
-// 公開リポジトリに直書き。悪用された場合は AI Studio でローテして再デプロイすればOK。
-// 課金は有効化していない前提なので最悪でも free-tier の使い切り(1日休止)で済む。
-const GEMINI_EMBEDDED_KEY = "AIzaSyC-pCerJHVZ2d8NCnRnFWtv1iSZXRKNilY";
+// 公開リポジトリに直書き。期限切れ・無効になったら ここを新しいキーで差し替えて再デプロイ。
+// 空文字 ("") にするとルールベース応答にフォールバックする。
+const GEMINI_EMBEDDED_KEY = "";
+
+// 期限切れ等で過去にlocalStorageへ焼かれた古いキーを退治するためのblocklist。
+// 新しいキーが期限切れになったら、ここに追記してから新キーへ差し替えると、
+// 既に古いキーを引いてしまった端末も自動で新キーに更新される。
+const GEMINI_KEY_BLOCKLIST = [
+  "AIzaSyC-pCerJHVZ2d8NCnRnFWtv1iSZXRKNilY" // 2026-05 期限切れ
+];
 
 (function autoSeedGeminiKey() {
   try {
-    const stored = (localStorage.getItem(STORAGE_KEY_GEMINI_KEY) || "").trim();
+    let stored = (localStorage.getItem(STORAGE_KEY_GEMINI_KEY) || "").trim();
+    // 期限切れキーが残っていれば消す
+    if (stored && GEMINI_KEY_BLOCKLIST.includes(stored)) {
+      localStorage.removeItem(STORAGE_KEY_GEMINI_KEY);
+      stored = "";
+    }
     if (!stored && GEMINI_EMBEDDED_KEY) {
       localStorage.setItem(STORAGE_KEY_GEMINI_KEY, GEMINI_EMBEDDED_KEY);
     }
@@ -6101,7 +6113,7 @@ function updateGeminiStatusBadge() {
     el.textContent = "✓ Gemini接続中 (" + getGeminiModel() + ")";
     el.style.color = "var(--up)";
   } else {
-    el.textContent = "⚠️ APIキー未設定 → ルールベース動作";
+    el.textContent = "💬 ルールベース動作中 (APIキーで自由会話化)";
     el.style.color = "var(--text-dim)";
   }
 }
@@ -6262,7 +6274,7 @@ function renderChat() {
     const hasGemini = !!getGeminiKey();
     const banner = hasGemini
       ? `🟢 <strong>Gemini接続中</strong> — 自由に会話できます。保有銘柄・市場snapshotを参照して具体的に答えます。`
-      : `⚠️ <strong>APIキー未設定</strong> — 「⚙️ 設定」からGeminiキーを入れると本物の会話AIになります。今はルールベース応答。`;
+      : `💬 <strong>ルールベース動作中</strong> — 保有データ・損切り/利確ルールから具体的に答えます。<br>「⚙️ 設定」からGemini APIキー(無料枠あり)を入れると、自由会話する本物のLLMチャットになります。`;
     const hello = {
       role: "ai",
       content: `<span class="sender">🤖 AIアドバイザー</span>${banner}<br><br>例えば:<br>・「JHD売った方がいい？」<br>・「今の評価額は？」<br>・「-22万取り返すプラン作って」<br>・「今日のマーケットどう？」<br><br>下のクイック質問でも、自然な日本語でもOK。`,
@@ -6308,49 +6320,64 @@ function hideThinking() {
 }
 
 async function sendChat(customMsg) {
-  const input = document.getElementById("chatInput");
-  const msg = (customMsg || (input && input.value) || "").trim();
-  if (!msg) {
-    if (input) input.focus();
-    return;
-  }
+  try {
+    const input = document.getElementById("chatInput");
+    // customMsg がイベントオブジェクト等の場合は無視
+    const isStringArg = typeof customMsg === "string" && customMsg.length > 0;
+    const msg = (isStringArg ? customMsg : (input && input.value) || "").trim();
+    if (!msg) {
+      if (input) input.focus();
+      return;
+    }
 
-  addMessage("user", msg);
-  if (!customMsg && input) input.value = "";
+    // 1. まずユーザー発言を即座に画面へ反映 (送信ボタンが反応している実感を出す)
+    addMessage("user", msg);
+    if (!isStringArg && input) {
+      input.value = "";
+      // モバイルでキーボードを閉じない (連投しやすく)
+      try { input.focus(); } catch (_) {}
+    }
+    showThinking();
 
-  showThinking();
+    // 2. AI応答を生成
+    const hasKey = !!getGeminiKey();
+    let response = null;
 
-  const hasKey = !!getGeminiKey();
-  let response = null;
-
-  if (hasKey) {
-    try {
-      response = await callGemini(msg);
-    } catch (err) {
-      console.error("Gemini error:", err);
-      // 失敗時はルールベースfallback + 注意書き
+    if (hasKey) {
       try {
-        const ruleBased = generateResponse(msg);
-        response = `<span class="sender">🤖 AIアドバイザー</span><div style="background:rgba(255,180,0,0.12);padding:8px 10px;border-radius:6px;border-left:3px solid var(--warning);font-size:12px;margin-bottom:8px;">⚠️ Gemini呼び出しに失敗(${(err && err.message) || "unknown"})。ルールベース応答を表示しています。設定からAPIキー/モデル名を確認してください。</div>${(ruleBased || "").replace(/^<span class="sender">.*?<\/span>/, "")}`;
-      } catch (err2) {
-        response = `<span class="sender">🤖 AIアドバイザー</span>すみません、Gemini呼び出し失敗 + ルールベース応答にもエラー(${err2.message})。設定画面を確認してください。`;
+        response = await callGemini(msg);
+      } catch (err) {
+        console.error("Gemini error:", err);
+        try {
+          const ruleBased = generateResponse(msg);
+          response = `<span class="sender">🤖 AIアドバイザー</span><div style="background:rgba(255,180,0,0.12);padding:8px 10px;border-radius:6px;border-left:3px solid var(--warning);font-size:12px;margin-bottom:8px;">⚠️ Gemini呼び出しに失敗(${escapeHTML((err && err.message) || "unknown")})。ルールベース応答を表示しています。</div>${(ruleBased || "").replace(/^<span class="sender">.*?<\/span>/, "")}`;
+        } catch (err2) {
+          response = `<span class="sender">🤖 AIアドバイザー</span>すみません、Gemini呼び出し失敗 + ルールベース応答にもエラー(${escapeHTML(err2.message || "")})。設定画面を確認してください。`;
+        }
+      }
+    } else {
+      try {
+        response = generateResponse(msg);
+      } catch (err) {
+        console.error("Rule-based chat error:", err);
+        response = `<span class="sender">🤖 AIアドバイザー</span>内部エラー(${escapeHTML((err && err.message) || "unknown")})。保有データを「📥 マイデータ読込」で再読み込みしてください。`;
       }
     }
-  } else {
-    // APIキー未設定 → ルールベース
+
+    hideThinking();
+    if (!response) {
+      response = `<span class="sender">🤖 AIアドバイザー</span>応答を生成できませんでした。もう一度試してください。`;
+    }
+    addMessage("ai", response);
+  } catch (fatal) {
+    console.error("sendChat fatal:", fatal);
+    try { hideThinking(); } catch (_) {}
     try {
-      response = generateResponse(msg);
-    } catch (err) {
-      console.error("Rule-based chat error:", err);
-      response = `<span class="sender">🤖 AIアドバイザー</span>内部エラー(${(err && err.message) || "unknown"})。保有データを「📥 マイデータ読込」で再読み込みしてください。`;
+      addMessage("ai", `<span class="sender">🤖 AIアドバイザー</span>送信処理で予期しないエラー: ${escapeHTML(fatal && fatal.message || String(fatal))}`);
+    } catch (_) {
+      alert("送信エラー: " + (fatal && fatal.message ? fatal.message : fatal));
     }
   }
-
-  hideThinking();
-  if (!response) {
-    response = `<span class="sender">🤖 AIアドバイザー</span>応答を生成できませんでした。もう一度試してください。`;
-  }
-  addMessage("ai", response);
 }
 
 function clearChat() {
@@ -7185,22 +7212,31 @@ function initGeminiSettingsUI() {
     if (input.__bound) return;
     input.__bound = true;
 
+    let composing = false;
+    input.addEventListener("compositionstart", () => { composing = true; });
+    input.addEventListener("compositionend", () => { composing = false; });
+
     input.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") {
-        e.preventDefault();
-        try { sendChat(); } catch(err) { console.error("sendChat error:", err); }
-      }
+      if (e.key !== "Enter") return;
+      // 日本語IME変換確定中のEnterは送信しない
+      if (composing || e.isComposing || e.keyCode === 229) return;
+      e.preventDefault();
+      sendChat();
     });
     // iOS PWA: pointerdown gets a focusable input to focus more reliably than tap-on-click
     input.addEventListener("pointerdown", () => { try { input.focus(); } catch(_){} }, { passive: true });
-    btn.addEventListener("click", () => {
-      try { sendChat(); } catch(err) { console.error("sendChat error:", err); }
-    });
-    // Also bind to touchend on the send button for ultra-old iOS PWA
-    btn.addEventListener("touchend", (e) => {
-      e.preventDefault();
-      try { sendChat(); } catch(err) { console.error("sendChat error:", err); }
-    });
+
+    // 送信ボタン: clickとtouchendを二重に拾うとダブル送信になるのでフラグで一発限定
+    let lastSentAt = 0;
+    const doSend = (e) => {
+      if (e) { try { e.preventDefault(); } catch(_){} try { e.stopPropagation(); } catch(_){} }
+      const now = Date.now();
+      if (now - lastSentAt < 250) return; // 重複防止
+      lastSentAt = now;
+      sendChat();
+    };
+    btn.addEventListener("click", doSend);
+    btn.addEventListener("touchend", doSend, { passive: false });
   }
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", bind);
