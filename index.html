@@ -1948,6 +1948,35 @@ window.switchTab = function(target) {
 </script>
 
   <div class="tab-content" id="tab-chat">
+    <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; margin-bottom: 10px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap;">
+        <div style="font-size:12px;">
+          <strong>🧠 AI接続</strong>
+          <span id="geminiStatusBadge" style="margin-left:8px; font-size:11px;">⚠️ APIキー未設定 → ルールベース動作</span>
+        </div>
+        <button type="button" class="action-btn" onclick="toggleGeminiSettings()" style="font-size:11px;">⚙️ 設定</button>
+      </div>
+      <div id="geminiSettingsPanel" style="display:none; margin-top:10px; padding-top:10px; border-top:1px solid var(--border);">
+        <label style="display:block; font-size:11px; color:var(--text-dim); margin-bottom:4px;">Gemini API キー</label>
+        <input type="password" id="geminiKeyInput" placeholder="AIza..." autocomplete="off"
+          style="width:100%; padding:8px 10px; background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; color:var(--text); font-size:13px; margin-bottom:8px;">
+        <label style="display:block; font-size:11px; color:var(--text-dim); margin-bottom:4px;">モデル</label>
+        <select id="geminiModelSelect" style="width:100%; padding:8px 10px; background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; color:var(--text); font-size:13px; margin-bottom:10px;">
+          <option value="gemini-2.5-flash">gemini-2.5-flash (高速・無料枠)</option>
+          <option value="gemini-2.5-pro">gemini-2.5-pro (高精度・低速)</option>
+          <option value="gemini-2.0-flash">gemini-2.0-flash (旧版・互換)</option>
+        </select>
+        <div style="display:flex; gap:8px;">
+          <button type="button" class="chat-send" onclick="saveGeminiSettings()" style="flex:1;">💾 保存</button>
+          <button type="button" class="action-btn" onclick="clearGeminiKey()" style="font-size:12px;">🗑️ 削除</button>
+        </div>
+        <div style="font-size:10px; color:var(--text-dim); margin-top:8px; line-height:1.5;">
+          ※ キーはこの端末のlocalStorageにのみ保存されます。<br>
+          ※ <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener" style="color:var(--accent);">Google AI Studio</a> で無料発行できます。<br>
+          ※ 保有銘柄・損益・ルール・起動時の市場snapshotが毎回コンテキストとして送られます。
+        </div>
+      </div>
+    </div>
     <div class="chat-window">
       <div class="chat-messages" id="chatMessages"></div>
       <div class="chat-quick-replies" id="chatQuickReplies">
@@ -6019,9 +6048,12 @@ function getSector(code) {
 }
 
 // ========================================
-// 💬 AI Chat — ルールベース会話型アドバイザー
+// 💬 AI Chat — Gemini連携 + ルールベース fallback
 // ========================================
 const STORAGE_KEY_CHAT = "stock-app-chat-v1";
+const STORAGE_KEY_GEMINI_KEY = "stock-app-gemini-key-v1";
+const STORAGE_KEY_GEMINI_MODEL = "stock-app-gemini-model-v1";
+const GEMINI_DEFAULT_MODEL = "gemini-2.5-flash";
 
 function getChatHistory() {
   try { return JSON.parse(localStorage.getItem(STORAGE_KEY_CHAT) || "[]"); }
@@ -6031,15 +6063,192 @@ function setChatHistory(data) {
   localStorage.setItem(STORAGE_KEY_CHAT, JSON.stringify(data.slice(-100)));
 }
 
+function getGeminiKey() {
+  return (localStorage.getItem(STORAGE_KEY_GEMINI_KEY) || "").trim();
+}
+function setGeminiKey(k) {
+  localStorage.setItem(STORAGE_KEY_GEMINI_KEY, (k || "").trim());
+}
+function getGeminiModel() {
+  return localStorage.getItem(STORAGE_KEY_GEMINI_MODEL) || GEMINI_DEFAULT_MODEL;
+}
+function setGeminiModelStore(m) {
+  localStorage.setItem(STORAGE_KEY_GEMINI_MODEL, m || GEMINI_DEFAULT_MODEL);
+}
+
+function updateGeminiStatusBadge() {
+  const el = document.getElementById("geminiStatusBadge");
+  if (!el) return;
+  const key = getGeminiKey();
+  if (key) {
+    el.textContent = "✓ Gemini接続中 (" + getGeminiModel() + ")";
+    el.style.color = "var(--up)";
+  } else {
+    el.textContent = "⚠️ APIキー未設定 → ルールベース動作";
+    el.style.color = "var(--text-dim)";
+  }
+}
+
+function saveGeminiSettings() {
+  const keyEl = document.getElementById("geminiKeyInput");
+  const modelEl = document.getElementById("geminiModelSelect");
+  if (keyEl) setGeminiKey(keyEl.value);
+  if (modelEl) setGeminiModelStore(modelEl.value);
+  updateGeminiStatusBadge();
+  alert("保存しました。次のチャットからGemini接続が有効です。");
+}
+
+function clearGeminiKey() {
+  if (!confirm("Gemini APIキーを削除しますか？(ルールベース応答に戻ります)")) return;
+  setGeminiKey("");
+  const keyEl = document.getElementById("geminiKeyInput");
+  if (keyEl) keyEl.value = "";
+  updateGeminiStatusBadge();
+}
+
+function toggleGeminiSettings() {
+  const panel = document.getElementById("geminiSettingsPanel");
+  if (!panel) return;
+  panel.style.display = (panel.style.display === "none" || !panel.style.display) ? "block" : "none";
+}
+
+// === コンテキスト構築 (起動時最新のsnapshot + 保有 + ルール) ===
+function buildLiveContext() {
+  const owned = getOwned();
+  const details = getDetails();
+  const nisa = getNisa();
+  const rules = getRules();
+  const positions = [];
+  let totalCost = 0, totalValue = 0;
+  Object.keys(owned).forEach(code => {
+    const s = owned[code];
+    const d = details[code] || {};
+    const shares = parseFloat(d.shares) || 0;
+    const avg = parseFloat(d.avgPrice) || 0;
+    const cur = parseFloat(d.currentPrice) || s.price || 0;
+    if (shares > 0) {
+      totalCost += shares * avg;
+      totalValue += shares * cur;
+      positions.push({
+        code, name: s.name, shares, avg, cur,
+        value: Math.round(shares*cur),
+        pnl: Math.round(shares*(cur-avg)),
+        pnl_pct: avg>0 ? Number(((cur-avg)/avg*100).toFixed(2)) : 0
+      });
+    }
+  });
+  positions.sort((a,b) => b.value - a.value);
+
+  const snap = window.__SNAPSHOT__ || null;
+  const indices = snap && snap.indices ? snap.indices : null;
+  const snapTs = snap && snap.generated_at ? snap.generated_at : null;
+
+  return {
+    today: new Date().toISOString().slice(0,10),
+    portfolio: {
+      total_cost: Math.round(totalCost),
+      total_value: Math.round(totalValue),
+      total_pnl: Math.round(totalValue - totalCost),
+      total_pnl_pct: totalCost > 0 ? Number(((totalValue-totalCost)/totalCost*100).toFixed(2)) : 0,
+      cash: parseFloat(nisa.cash) || 0,
+      positions
+    },
+    rules: {
+      stop_loss_pct: rules.stopLoss || 10,
+      take_profit_pct: rules.takeProfit || 20
+    },
+    market_snapshot: indices ? { generated_at: snapTs, indices } : null
+  };
+}
+
+function buildGeminiSystemPrompt(ctx) {
+  return [
+    "あなたは17歳の日本人投資家のAIアドバイザーです。",
+    "ユーザー属性: 高校3年生(2026年5月時点)、ジュニアNISA経由でアクティブトレード、過去-22万円の損失あり、18歳の誕生日後に新NISAへ移行予定。",
+    "口調: 嘘をつかず、冷たくならず、数字と根拠で説明する。誇張・過剰な煽り(『絶対稼げる』等)はしない。",
+    "形式: 回答はHTMLで返してOK(<br>, <strong>, <table class='chat-table'>等が使える)。Markdownは使わない。",
+    "返答の冒頭に必ず: <span class=\"sender\">🤖 AIアドバイザー</span>",
+    "リスク警告は必要に応じて。投資判断の最終責任はユーザー本人にあると添える。",
+    "",
+    "=== 現在のユーザーデータ (アプリ起動時に取得した最新スナップショット) ===",
+    "```json",
+    JSON.stringify(ctx, null, 2),
+    "```",
+    "",
+    "上記JSONを最新の事実として扱い、これに基づいて具体的に答えてください。",
+    "ポートフォリオに無い銘柄を聞かれたら『保有なし』を明示。",
+    "市場スナップショット(market_snapshot)が古い場合は古さを断った上で答える。"
+  ].join("\n");
+}
+
+async function callGemini(userText) {
+  const key = getGeminiKey();
+  if (!key) return null;
+  const model = getGeminiModel();
+  const ctx = buildLiveContext();
+  const systemPrompt = buildGeminiSystemPrompt(ctx);
+
+  // 過去履歴(最大10往復)をcontentsに積む
+  const history = getChatHistory().slice(-20);
+  const contents = [];
+  history.forEach(m => {
+    if (m.role === "user") {
+      contents.push({ role: "user", parts: [{ text: m.content }] });
+    } else if (m.role === "ai") {
+      // ai content はHTML込み。tag剥がして渡す
+      const plain = String(m.content).replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+      if (plain) contents.push({ role: "model", parts: [{ text: plain }] });
+    }
+  });
+  contents.push({ role: "user", parts: [{ text: userText }] });
+
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent?key=${encodeURIComponent(key)}`;
+  const body = {
+    systemInstruction: { parts: [{ text: systemPrompt }] },
+    contents,
+    generationConfig: {
+      temperature: 0.6,
+      topP: 0.9,
+      maxOutputTokens: 2048
+    }
+  };
+
+  const res = await fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body)
+  });
+  if (!res.ok) {
+    const errText = await res.text().catch(() => "");
+    throw new Error(`Gemini HTTP ${res.status}: ${errText.slice(0, 300)}`);
+  }
+  const data = await res.json();
+  const cand = data && data.candidates && data.candidates[0];
+  if (!cand) throw new Error("Geminiから応答なし(候補ゼロ)");
+  const parts = cand.content && cand.content.parts;
+  if (!parts || !parts.length) throw new Error("Gemini応答パーツなし");
+  const text = parts.map(p => p.text || "").join("").trim();
+  if (!text) throw new Error("Gemini応答が空");
+  // 冒頭senderが無ければ補う
+  if (!/sender/.test(text)) {
+    return `<span class="sender">🤖 AIアドバイザー</span>${text.replace(/\n/g, "<br>")}`;
+  }
+  return text.replace(/\n/g, "<br>");
+}
+
 function renderChat() {
   const container = document.getElementById("chatMessages");
   if (!container) return;
   const history = getChatHistory();
 
   if (history.length === 0) {
+    const hasGemini = !!getGeminiKey();
+    const banner = hasGemini
+      ? `🟢 <strong>Gemini接続中</strong> — 自由に会話できます。保有銘柄・市場snapshotを参照して具体的に答えます。`
+      : `⚠️ <strong>APIキー未設定</strong> — 「⚙️ 設定」からGeminiキーを入れると本物の会話AIになります。今はルールベース応答。`;
     const hello = {
       role: "ai",
-      content: `<span class="sender">🤖 AIアドバイザー</span>こんにちは！投資のことなら何でも聞いてください。<br><br>例えば:<br>・「JHD売った方がいい？」<br>・「今の評価額は？」<br>・「何買えばいい？」<br>・「今日のマーケットどう？」<br><br>下のボタンからクイック質問もできます。`,
+      content: `<span class="sender">🤖 AIアドバイザー</span>${banner}<br><br>例えば:<br>・「JHD売った方がいい？」<br>・「今の評価額は？」<br>・「-22万取り返すプラン作って」<br>・「今日のマーケットどう？」<br><br>下のクイック質問でも、自然な日本語でもOK。`,
       timestamp: Date.now()
     };
     container.innerHTML = msgHTML(hello);
@@ -6081,7 +6290,7 @@ function hideThinking() {
   if (t) t.remove();
 }
 
-function sendChat(customMsg) {
+async function sendChat(customMsg) {
   const input = document.getElementById("chatInput");
   const msg = (customMsg || (input && input.value) || "").trim();
   if (!msg) {
@@ -6093,20 +6302,38 @@ function sendChat(customMsg) {
   if (!customMsg && input) input.value = "";
 
   showThinking();
-  setTimeout(() => {
-    hideThinking();
-    let response;
+
+  const hasKey = !!getGeminiKey();
+  let response = null;
+
+  if (hasKey) {
+    try {
+      response = await callGemini(msg);
+    } catch (err) {
+      console.error("Gemini error:", err);
+      // 失敗時はルールベースfallback + 注意書き
+      try {
+        const ruleBased = generateResponse(msg);
+        response = `<span class="sender">🤖 AIアドバイザー</span><div style="background:rgba(255,180,0,0.12);padding:8px 10px;border-radius:6px;border-left:3px solid var(--warning);font-size:12px;margin-bottom:8px;">⚠️ Gemini呼び出しに失敗(${(err && err.message) || "unknown"})。ルールベース応答を表示しています。設定からAPIキー/モデル名を確認してください。</div>${(ruleBased || "").replace(/^<span class="sender">.*?<\/span>/, "")}`;
+      } catch (err2) {
+        response = `<span class="sender">🤖 AIアドバイザー</span>すみません、Gemini呼び出し失敗 + ルールベース応答にもエラー(${err2.message})。設定画面を確認してください。`;
+      }
+    }
+  } else {
+    // APIキー未設定 → ルールベース
     try {
       response = generateResponse(msg);
     } catch (err) {
-      console.error("AI chat error:", err);
-      response = `<span class="sender">🤖 AIアドバイザー</span>すみません、内部エラーが発生しました(${(err && err.message) || "unknown"})。<br>保有データを「📥 マイデータ読込」で再読み込みするか、もう一度試してください。`;
+      console.error("Rule-based chat error:", err);
+      response = `<span class="sender">🤖 AIアドバイザー</span>内部エラー(${(err && err.message) || "unknown"})。保有データを「📥 マイデータ読込」で再読み込みしてください。`;
     }
-    if (!response) {
-      response = `<span class="sender">🤖 AIアドバイザー</span>応答を生成できませんでした。もう一度試してください。`;
-    }
-    addMessage("ai", response);
-  }, 500);
+  }
+
+  hideThinking();
+  if (!response) {
+    response = `<span class="sender">🤖 AIアドバイザー</span>応答を生成できませんでした。もう一度試してください。`;
+  }
+  addMessage("ai", response);
 }
 
 function clearChat() {
@@ -6911,10 +7138,26 @@ document.querySelectorAll(".tab").forEach(tab => {
   if (tab.dataset.tab === "chat") {
     tab.addEventListener("click", () => {
       setTimeout(renderChat, 100);
+      setTimeout(initGeminiSettingsUI, 120);
     });
   }
 });
 setTimeout(renderChat, 300);
+setTimeout(initGeminiSettingsUI, 350);
+
+function initGeminiSettingsUI() {
+  const keyEl = document.getElementById("geminiKeyInput");
+  const modelEl = document.getElementById("geminiModelSelect");
+  if (keyEl && !keyEl.__bound) {
+    keyEl.__bound = true;
+    keyEl.value = getGeminiKey();
+  }
+  if (modelEl && !modelEl.__bound) {
+    modelEl.__bound = true;
+    modelEl.value = getGeminiModel();
+  }
+  updateGeminiStatusBadge();
+}
 
 // Wire chat input/send via JS (more reliable on iOS PWA than inline handlers)
 (function setupChatBindings(){
@@ -8626,6 +8869,7 @@ refreshAll();
       if (!res.ok) throw new Error('HTTP ' + res.status);
       const d = await res.json();
       snapshotData = d;
+      window.__SNAPSHOT__ = d;
       $ts.textContent = '更新: ' + new Date(d.generated_at).toLocaleString('ja-JP');
       const updated = applySnapshotToExistingStocks(d);
       $status.textContent = `✓ ${Object.keys(d.stocks||{}).length}銘柄 / ${(d.news||[]).length}ニュース / 既存${updated}件更新`;
