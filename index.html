@@ -1432,7 +1432,7 @@ body > button[onclick*="auto-analysis"]:hover {
     }
     // localStorage の app version 比較で1回だけ強制リロード
     // 重要バグ修正があった場合は必ずバンプ。これで全モバイル端末が次回起動時に新HTMLを取りに行く
-    var V = '20260515-chat-fix-v6';
+    var V = '20260515-chat-proxy-v7';
     if (localStorage.getItem('_app_v') !== V) {
       localStorage.setItem('_app_v', V);
       // セッション内で reload を1回だけに制限 (無限ループ防止)
@@ -6262,9 +6262,61 @@ function buildGeminiSystemPrompt(ctx) {
   ].join("\n");
 }
 
+// === 最優先LLMバックエンド: 自前proxy (Render: threads-api-app /api/chat) ===
+// Groq → Cerebras → OpenRouter → Pollinations の4段サーバ側フォールバック付き。
+// ユーザー設定不要。Render側に GROQ_API_KEY を入れるとLlama3.3 70Bで超高速応答に。
+const CHAT_PROXY_URL = "https://threads-api-app.onrender.com/api/chat";
+
+async function callChatProxy(userText) {
+  const ctx = buildLiveContext();
+  const systemPrompt = buildGeminiSystemPrompt(ctx);
+
+  const history = getChatHistory().slice(-20);
+  const messages = [];
+  history.forEach(m => {
+    if (m.role === "user") {
+      messages.push({ role: "user", content: m.content });
+    } else if (m.role === "ai") {
+      const plain = String(m.content).replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+      if (plain) messages.push({ role: "assistant", content: plain });
+    }
+  });
+  messages.push({ role: "user", content: userText });
+
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 35000);
+  let res;
+  try {
+    res = await fetch(CHAT_PROXY_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ system: systemPrompt, messages, temperature: 0.6, max_tokens: 1500 }),
+      signal: controller.signal
+    });
+  } finally {
+    clearTimeout(timer);
+  }
+  if (!res.ok) {
+    const errText = await res.text().catch(() => "");
+    throw new Error(`ChatProxy HTTP ${res.status}: ${errText.slice(0, 200)}`);
+  }
+  const data = await res.json();
+  if (!data.ok || !data.text) {
+    throw new Error("ChatProxy 応答異常: " + (data.error || "unknown"));
+  }
+  const text = data.text.trim();
+  const providerNote = data.provider && data.provider !== "groq"
+    ? `<span style="font-size:10px;color:var(--text-dim);">[via ${data.provider}]</span><br>`
+    : "";
+  if (!/sender/.test(text)) {
+    return `<span class="sender">🤖 AIアドバイザー</span>${providerNote}${text.replace(/\n/g, "<br>")}`;
+  }
+  return text.replace(/\n/g, "<br>");
+}
+
 // === キー不要の自動LLMバックエンド (Pollinations.AI OpenAI互換) ===
-// 全端末・初回起動でそのままLLM会話が成立するためのデフォルト経路。
-// CORS開放済み・APIキー不要。失敗時は呼び出し元でルールベースにフォールバック。
+// proxyが落ちている時のクライアント側フォールバック。
+// CORS開放済み・APIキー不要。
 async function callPollinations(userText) {
   const ctx = buildLiveContext();
   const systemPrompt = buildGeminiSystemPrompt(ctx);
@@ -6444,7 +6496,8 @@ async function sendChat(customMsg) {
     }
     showThinking();
 
-    // 2. AI応答を生成: 優先順位 = Gemini(キーありなら) → Pollinations(キー不要) → ルールベース
+    // 2. AI応答を生成
+    // 優先順位 = Gemini(キーありなら) → 自前ChatProxy(Render/Groq) → Pollinations(直叩き) → ルールベース
     const hasKey = !!getGeminiKey();
     let response = null;
     let lastErr = null;
@@ -6459,7 +6512,17 @@ async function sendChat(customMsg) {
       }
     }
 
-    // 2-b. Pollinations (キー不要・常時動く想定のデフォルトLLM)
+    // 2-b. 自前ChatProxy (Groq/Cerebras/OpenRouter/Pollinations の4段サーバ側フォールバック)
+    if (!response) {
+      try {
+        response = await callChatProxy(msg);
+      } catch (err) {
+        console.warn("ChatProxy failed, falling back to direct Pollinations:", err);
+        lastErr = err;
+      }
+    }
+
+    // 2-c. Pollinations 直叩き (proxy自体が死んでる時の保険)
     if (!response) {
       try {
         response = await callPollinations(msg);
@@ -6469,7 +6532,7 @@ async function sendChat(customMsg) {
       }
     }
 
-    // 2-c. ルールベース (最終フォールバック)
+    // 2-d. ルールベース (最終フォールバック)
     if (!response) {
       try {
         const ruleBased = generateResponse(msg);
