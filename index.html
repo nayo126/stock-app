@@ -4027,17 +4027,23 @@ function removeDeposit(idx) {
   renderNisa();
 }
 
-// Wire up NISA inputs
-document.getElementById("nisaGrowthPrincipal").addEventListener("input", e => saveNisaField("growth", e.target.value));
-document.getElementById("nisaAccumPrincipal").addEventListener("input", e => saveNisaField("accum", e.target.value));
-document.getElementById("nisaCurrentValue").addEventListener("input", e => saveNisaField("current", e.target.value));
-document.getElementById("nisaLifetime").addEventListener("input", e => saveNisaField("lifetime", e.target.value));
-document.getElementById("nisaPnLAmount").addEventListener("input", e => saveNisaField("pnlAmount", e.target.value));
-document.getElementById("nisaCash").addEventListener("input", e => saveNisaField("cash", e.target.value));
-document.getElementById("nisaHoldings").addEventListener("input", e => saveNisaField("holdings", e.target.value));
+// Wire up NISA inputs (要素が存在する場合のみ・1つでも欠けたら以降のscriptが落ちないように)
+[
+  ["nisaGrowthPrincipal", "growth"],
+  ["nisaAccumPrincipal", "accum"],
+  ["nisaCurrentValue", "current"],
+  ["nisaLifetime", "lifetime"],
+  ["nisaPnLAmount", "pnlAmount"],
+  ["nisaCash", "cash"],
+  ["nisaHoldings", "holdings"],
+].forEach(([id, key]) => {
+  const el = document.getElementById(id);
+  if (el) el.addEventListener("input", e => saveNisaField(key, e.target.value));
+});
 
 // Set default deposit date to today
-document.getElementById("depositDate").value = new Date().toISOString().split("T")[0];
+const _depositDate = document.getElementById("depositDate");
+if (_depositDate) _depositDate.value = new Date().toISOString().split("T")[0];
 
 // ========================================
 // Universal Stock Search (all TSE stocks)
@@ -4073,6 +4079,7 @@ const QUICK_ACCESS = [
 
 function renderQuickAccess() {
   const container = document.getElementById("quickAccessGrid");
+  if (!container) return;
   container.innerHTML = QUICK_ACCESS.map(s => `
     <button class="action-btn" style="padding: 10px; text-align: left; display: flex; flex-direction: column; gap: 2px;" onclick="openChart('${s.code}', '${s.name}', 0)">
       <span style="font-size: 13px; font-weight: 600; color: var(--text);">${s.name}</span>
@@ -4125,10 +4132,13 @@ function searchUniversal() {
   }
 }
 
-// Enter key in universal search
-document.getElementById("universalSearch").addEventListener("keypress", e => {
-  if (e.key === "Enter") searchUniversal();
-});
+// Enter key in universal search (要素が存在する場合のみ)
+const _univSearch = document.getElementById("universalSearch");
+if (_univSearch) {
+  _univSearch.addEventListener("keypress", e => {
+    if (e.key === "Enter") searchUniversal();
+  });
+}
 
 renderQuickAccess();
 
@@ -5285,15 +5295,18 @@ document.querySelectorAll("#tab-yutai .filter-btn").forEach(btn => {
     renderYutai();
   });
 });
-document.getElementById("yutaiSortBy").addEventListener("change", e => {
+const _yutaiSortBy = document.getElementById("yutaiSortBy");
+if (_yutaiSortBy) _yutaiSortBy.addEventListener("change", e => {
   yutaiSortBy = e.target.value;
   renderYutai();
 });
-document.getElementById("yutaiMaxBudget").addEventListener("change", e => {
+const _yutaiMaxBudget = document.getElementById("yutaiMaxBudget");
+if (_yutaiMaxBudget) _yutaiMaxBudget.addEventListener("change", e => {
   yutaiMaxBudget = parseFloat(e.target.value) || 0;
   renderYutai();
 });
-document.getElementById("searchYutai").addEventListener("input", e => {
+const _searchYutai = document.getElementById("searchYutai");
+if (_searchYutai) _searchYutai.addEventListener("input", e => {
   yutaiSearch = e.target.value;
   renderYutai();
 });
