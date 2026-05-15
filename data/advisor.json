@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-15T07:45:36.070306+09:00",
+  "generated_at": "2026-05-15T09:07:04.999575+09:00",
   "summary": {
     "total_cost": 850900.0,
     "total_value": 534970.0,
@@ -7,8 +7,8 @@
     "total_pl_pct": -37.13,
     "health_score": 20,
     "total_recovery_if_sell": 402800.0,
-    "expected_gain_3m": 167827.0,
-    "expected_gain_3m_high": 399125.0
+    "expected_gain_3m": 180985.0,
+    "expected_gain_3m_high": 435245.0
   },
   "judgments": [
     {
@@ -169,10 +169,10 @@
       "tier": "S",
       "category": "STOCKS_MAIN",
       "current": 16960.0,
-      "forecast_3m_mid": 34286.0,
-      "forecast_3m_pct": 102.2,
-      "forecast_3m_high": 52988.0,
-      "forecast_3m_high_pct": 212.4,
+      "forecast_3m_mid": 34139.0,
+      "forecast_3m_pct": 101.3,
+      "forecast_3m_high": 52961.0,
+      "forecast_3m_high_pct": 212.3,
       "tags": [
         "NVIDIA",
         "ABF基板",
@@ -181,32 +181,10 @@
       "summary": "NVIDIA向けABF基板独占、FY2027 +42.5%増益予想",
       "buy_shares": 5,
       "invest_amt": 84800.0,
-      "estimated_3m_value": 171430.0,
-      "estimated_3m_value_high": 264940.0,
-      "expected_gain_3m": 86630.0,
-      "expected_gain_3m_high": 180140.0
-    },
-    {
-      "code": "5016",
-      "name": "JX金属",
-      "tier": "A",
-      "category": "STOCKS_MAIN",
-      "current": 4447.0,
-      "forecast_3m_mid": 6103.0,
-      "forecast_3m_pct": 37.2,
-      "forecast_3m_high": 9527.0,
-      "forecast_3m_high_pct": 114.2,
-      "tags": [
-        "AI素材",
-        "銅箔"
-      ],
-      "summary": "AI素材独占、営業利益+44.8%、純利益+72.9%",
-      "buy_shares": 22,
-      "invest_amt": 97834.0,
-      "estimated_3m_value": 134266.0,
-      "estimated_3m_value_high": 209594.0,
-      "expected_gain_3m": 36432.0,
-      "expected_gain_3m_high": 111760.0
+      "estimated_3m_value": 170695.0,
+      "estimated_3m_value_high": 264805.0,
+      "expected_gain_3m": 85895.0,
+      "expected_gain_3m_high": 180005.0
     },
     {
       "code": "6506",
@@ -214,10 +192,10 @@
       "tier": "A",
       "category": "STOCKS_MAIN",
       "current": 7006.0,
-      "forecast_3m_mid": 9267.0,
-      "forecast_3m_pct": 32.3,
-      "forecast_3m_high": 12406.0,
-      "forecast_3m_high_pct": 77.1,
+      "forecast_3m_mid": 9554.0,
+      "forecast_3m_pct": 36.4,
+      "forecast_3m_high": 12802.0,
+      "forecast_3m_high_pct": 82.7,
       "tags": [
         "ロボット",
         "NVIDIA"
@@ -225,33 +203,55 @@
       "summary": "NVIDIA+SBフィジカルAI提携、FY2027 +26.8%予想",
       "buy_shares": 14,
       "invest_amt": 98084.0,
-      "estimated_3m_value": 129738.0,
-      "estimated_3m_value_high": 173684.0,
-      "expected_gain_3m": 31654.0,
-      "expected_gain_3m_high": 75600.0
+      "estimated_3m_value": 133756.0,
+      "estimated_3m_value_high": 179228.0,
+      "expected_gain_3m": 35672.0,
+      "expected_gain_3m_high": 81144.0
     },
     {
-      "code": "8035",
-      "name": "東京エレクトロン",
-      "tier": "S",
+      "code": "5016",
+      "name": "JX金属",
+      "tier": "A",
       "category": "STOCKS_MAIN",
-      "current": 51200.0,
-      "forecast_3m_mid": 64311.0,
-      "forecast_3m_pct": 25.6,
-      "forecast_3m_high": 82825.0,
-      "forecast_3m_high_pct": 61.8,
+      "current": 4447.0,
+      "forecast_3m_mid": 5968.0,
+      "forecast_3m_pct": 34.2,
+      "forecast_3m_high": 9349.0,
+      "forecast_3m_high_pct": 110.2,
       "tags": [
-        "半導体装置",
-        "HBM4"
+        "AI素材",
+        "銅箔"
       ],
-      "summary": "前工程2位、HBM4スーパーサイクル、目標52,000円",
-      "buy_shares": 1,
-      "invest_amt": 51200.0,
-      "estimated_3m_value": 64311.0,
-      "estimated_3m_value_high": 82825.0,
-      "expected_gain_3m": 13111.0,
-      "expected_gain_3m_high": 31625.0
+      "summary": "AI素材独占、営業利益+44.8%、純利益+72.9%",
+      "buy_shares": 22,
+      "invest_amt": 97834.0,
+      "estimated_3m_value": 131296.0,
+      "estimated_3m_value_high": 205678.0,
+      "expected_gain_3m": 33462.0,
+      "expected_gain_3m_high": 107844.0
+    },
+    {
+      "code": "6954",
+      "name": "ファナック",
+      "tier": "A",
+      "category": "STOCKS_MAIN",
+      "current": 8036.0,
+      "forecast_3m_mid": 10199.0,
+      "forecast_3m_pct": 26.9,
+      "forecast_3m_high": 13557.0,
+      "forecast_3m_high_pct": 68.7,
+      "tags": [
+        "ロボット",
+        "NVIDIA"
+      ],
+      "summary": "NVIDIAフィジカルAI提携、1000台超受注、米143億円投資",
+      "buy_shares": 12,
+      "invest_amt": 96432.0,
+      "estimated_3m_value": 122388.0,
+      "estimated_3m_value_high": 162684.0,
+      "expected_gain_3m": 25956.0,
+      "expected_gain_3m_high": 66252.0
     }
   ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約402,800円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+167,827円の利益期待. 高値ケースなら最大+399,125円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約402,800円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+180,985円の利益期待. 高値ケースなら最大+435,245円."
 }
