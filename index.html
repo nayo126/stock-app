@@ -6906,30 +6906,23 @@ async function sendChat(customMsg) {
     }
     showThinking();
 
+    // 送信直前にデータが古ければ最新化（10分以上経過時のみ）
+    try {
+      const snap = window.__SNAPSHOT__;
+      const age = snap && snap.generated_at ? (Date.now() - new Date(snap.generated_at).getTime()) / 60000 : 999;
+      if (age > 10 && typeof window.refreshAllAppData === "function") {
+        await window.refreshAllAppData("pre-chat");
+      }
+    } catch (_) {}
+
     // 2. AI応答を生成
-    // 優先順位 = Gemini(キーありなら) → 自前ChatProxy(Render/Groq) → Pollinations(直叩き) → ルールベース
+    // 優先順位 = Gemini(キーありなら) → 自前ChatProxy(Render/Claude/Groq/...) → Pollinations(直叩き) → ルールベース
     const hasKey = !!getGeminiKey();
     let response = null;
     let lastErr = null;
 
-  // 送信直前にデータが古ければ最新化（10分以上経過時のみ）
-  try {
-    const snap = window.__SNAPSHOT__;
-    const age = snap && snap.generated_at ? (Date.now() - new Date(snap.generated_at).getTime()) / 60000 : 999;
-    if (age > 10 && typeof window.refreshAllAppData === "function") {
-      await window.refreshAllAppData("pre-chat");
-    }
-  } catch (_) {}
-
-  const hasKey = !!getGeminiKey();
-  let response = null;
-
-  if (hasKey) {
-    try {
-      response = await callGemini(msg);
-    } catch (err) {
-      console.error("Gemini error:", err);
-      // 失敗時はルールベースfallback + 注意書き
+    // 2-a. Gemini (ユーザーがキーを入れている場合のみ)
+    if (hasKey) {
       try {
         response = await callGemini(msg);
       } catch (err) {
@@ -6938,7 +6931,7 @@ async function sendChat(customMsg) {
       }
     }
 
-    // 2-b. 自前ChatProxy (Groq/Cerebras/OpenRouter/Pollinations の4段サーバ側フォールバック)
+    // 2-b. 自前ChatProxy (Claude/Gemini/Groq/Cerebras/OpenRouter/Pollinations の多段サーバ側フォールバック)
     if (!response) {
       try {
         response = await callChatProxy(msg);
