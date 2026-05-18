@@ -696,6 +696,96 @@
   .snapshot-chip.fresh { color: #d4f9ee; border-color: rgba(94,234,212,0.5); background: rgba(94,234,212,0.14); }
   .snapshot-chip.stale { color: #fce2a8; border-color: rgba(251,191,36,0.45); background: rgba(251,191,36,0.10); }
   .snapshot-chip.old   { color: #ffd1d5; border-color: rgba(248,113,113,0.55); background: rgba(248,113,113,0.12); }
+
+  /* === Pull to refresh === */
+  #ptrIndicator {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -56px);
+    z-index: 9999;
+    padding: 8px 16px;
+    background: rgba(20, 26, 42, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--border-strong);
+    border-radius: 999px;
+    color: var(--text);
+    font-size: 12px;
+    font-weight: 600;
+    transition: transform 0.18s ease, opacity 0.18s ease;
+    opacity: 0;
+    pointer-events: none;
+    box-shadow: var(--shadow-pop);
+  }
+  #ptrIndicator.visible {
+    opacity: 1;
+  }
+  #ptrIndicator.ready {
+    background: var(--grad-mint);
+    color: #06090f;
+    border-color: transparent;
+  }
+  #ptrIndicator.refreshing .icon {
+    animation: ptrSpin 0.9s linear infinite;
+    display: inline-block;
+  }
+  @keyframes ptrSpin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+
+  /* === Skeletons === */
+  @keyframes shimmer {
+    0%   { background-position: -400px 0; }
+    100% { background-position: 400px 0; }
+  }
+  .skeleton {
+    background: linear-gradient(90deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.12) 50%, rgba(255,255,255,0.04) 100%);
+    background-size: 800px 100%;
+    animation: shimmer 1.6s infinite linear;
+    border-radius: 8px;
+    color: transparent !important;
+    user-select: none;
+  }
+  .skeleton.s-line { height: 14px; margin: 6px 0; }
+  .skeleton.s-num  { height: 24px; width: 60%; }
+
+  /* AI provider badge */
+  .ai-provider-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    border: 1px solid var(--border-strong);
+    background: rgba(255,255,255,0.04);
+    color: var(--text-mid);
+    white-space: nowrap;
+  }
+  .ai-provider-badge.tier-top {
+    background: linear-gradient(135deg, rgba(167,139,250,0.18), rgba(96,165,250,0.18));
+    color: #f0e6ff;
+    border-color: rgba(167,139,250,0.5);
+    box-shadow: 0 0 14px rgba(167,139,250,0.18);
+  }
+  .ai-provider-badge.tier-fast {
+    background: rgba(94,234,212,0.14);
+    color: #d4f9ee;
+    border-color: rgba(94,234,212,0.5);
+  }
+  .ai-provider-badge.tier-free {
+    background: rgba(96,165,250,0.12);
+    color: #d4e7ff;
+    border-color: rgba(96,165,250,0.4);
+  }
+  .ai-provider-badge.tier-basic {
+    background: rgba(255,255,255,0.05);
+    color: var(--text-dim);
+  }
   .chat-mic.listening {
     background: #ff3b30;
     color: #fff;
@@ -1646,7 +1736,7 @@ body > button[onclick*="auto-analysis"]:hover {
     }
     // localStorage の app version 比較で1回だけ強制リロード
     // 重要バグ修正があった場合は必ずバンプ。これで全モバイル端末が次回起動時に新HTMLを取りに行く
-    var V = '20260518-design-overhaul-v9';
+    var V = '20260519-warmup-ptr-v10';
     if (localStorage.getItem('_app_v') !== V) {
       localStorage.setItem('_app_v', V);
       // セッション内で reload を1回だけに制限 (無限ループ防止)
@@ -1830,17 +1920,17 @@ setInterval(() => { try { window.refreshAllAppData('periodic'); } catch(_) {} },
   <div class="stats-row">
     <div class="stat-card">
       <div class="stat-label">NISA投入額（元本）</div>
-      <div class="stat-value" id="nisaPrincipal">¥0</div>
-      <div class="stat-sub" id="nisaPrincipalSub">入力してください →</div>
+      <div class="stat-value skeleton s-num" id="nisaPrincipal">¥0</div>
+      <div class="stat-sub" id="nisaPrincipalSub">読み込み中…</div>
     </div>
     <div class="stat-card">
       <div class="stat-label">NISA現在評価額</div>
-      <div class="stat-value accent" id="nisaCurrent">¥0</div>
+      <div class="stat-value accent skeleton s-num" id="nisaCurrent">¥0</div>
       <div class="stat-sub" id="nisaPnL">損益: -</div>
     </div>
     <div class="stat-card">
       <div class="stat-label">保有中銘柄</div>
-      <div class="stat-value" id="ownedCount">0</div>
+      <div class="stat-value skeleton s-num" id="ownedCount">0</div>
       <div class="stat-sub">想定価値: <span id="totalValue">¥0</span></div>
     </div>
     <div class="stat-card">
@@ -2223,11 +2313,12 @@ setInterval(() => { try { window.refreshAllAppData('periodic'); } catch(_) {} },
   <div class="tab-content" id="tab-chat">
     <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; margin-bottom: 10px;">
       <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap;">
-        <div style="font-size:12px;">
+        <div style="font-size:12px; display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
           <strong>🧠 AI接続</strong>
-          <span id="geminiStatusBadge" style="margin-left:8px; font-size:11px;">⚠️ APIキー未設定 → ルールベース動作</span>
-          <span style="margin-left:12px; font-size:11px; color:var(--text-dim);">データ:</span>
-          <span id="dataFreshnessBadge" style="margin-left:4px; font-size:11px; font-weight:600;">--</span>
+          <span id="aiProviderBadge" class="ai-provider-badge">🔌 接続中…</span>
+          <span id="geminiStatusBadge" style="font-size:11px;">⚠️ APIキー未設定 → ルールベース動作</span>
+          <span style="font-size:11px; color:var(--text-dim);">データ:</span>
+          <span id="dataFreshnessBadge" style="font-size:11px; font-weight:600;">--</span>
         </div>
         <div style="display:flex; gap:6px;">
           <button type="button" class="action-btn" onclick="window.refreshAllAppData('manual')" style="font-size:11px;" title="最新データを取得">🔄 更新</button>
@@ -4185,8 +4276,14 @@ function renderNisa() {
   }
 
   // Top stats row
-  document.getElementById("nisaPrincipal").textContent = fmtYen(totalPrincipal);
-  document.getElementById("nisaCurrent").textContent = fmtYen(current);
+  const _np = document.getElementById("nisaPrincipal");
+  const _nc = document.getElementById("nisaCurrent");
+  _np.textContent = fmtYen(totalPrincipal);
+  _nc.textContent = fmtYen(current);
+  _np.classList.remove("skeleton","s-num");
+  _nc.classList.remove("skeleton","s-num");
+  const _oc = document.getElementById("ownedCount");
+  if (_oc) _oc.classList.remove("skeleton","s-num");
   document.getElementById("nisaPrincipalSub").textContent =
     "成長:" + fmtYen(growth) + " / 積立:" + fmtYen(accum);
 
@@ -6660,6 +6757,61 @@ function buildGeminiSystemPrompt(ctx) {
 // Groq → Cerebras → OpenRouter → Pollinations の4段サーバ側フォールバック付き。
 // ユーザー設定不要。Render側に GROQ_API_KEY を入れるとLlama3.3 70Bで超高速応答に。
 const CHAT_PROXY_URL = "https://threads-api-app.onrender.com/api/chat";
+const CHAT_PROXY_STATUS_URL = "https://threads-api-app.onrender.com/api/chat/status";
+
+// === Render proxyのウォームアップ ===
+// Render free tier は15分アイドルで spin down する。初回チャット送信時に
+// 30〜60秒待たされる体験を避けるため、アプリ起動直後にバックグラウンドで叩いて起こす。
+// さらに13分毎に再ping し、タブを開いている限りスリープしない。
+let __CURRENT_LLM_PROVIDER__ = null;
+async function warmupChatProxy(reason) {
+  try {
+    const r = await fetch(CHAT_PROXY_STATUS_URL + "?_=" + Date.now(), {
+      method: "GET", cache: "no-store", keepalive: true
+    });
+    if (r.ok) {
+      const data = await r.json().catch(() => null);
+      if (data && Array.isArray(data.providers)) {
+        const top = data.providers.find(p => p.enabled);
+        if (top) {
+          __CURRENT_LLM_PROVIDER__ = top.name;
+          const badge = document.getElementById("aiProviderBadge");
+          if (badge) {
+            badge.textContent = providerLabel(top.name);
+            badge.className = "ai-provider-badge " + providerClass(top.name);
+          }
+        }
+      }
+    }
+    console.log("[warmup]", reason, "ok");
+  } catch (e) {
+    console.warn("[warmup]", reason, "failed", e.message);
+  }
+}
+function providerLabel(name) {
+  if (!name) return "🔌 接続中…";
+  if (name.startsWith("claude")) return "🧠 Claude 4.5";
+  if (name.startsWith("gemini")) return "✨ Gemini 2.5";
+  if (name === "groq") return "⚡ Groq Llama 3.3";
+  if (name === "cerebras") return "⚡ Cerebras";
+  if (name.startsWith("openrouter")) return "🌐 OpenRouter";
+  if (name.startsWith("pollinations")) return "🟢 Pollinations (基本)";
+  return "🟢 " + name;
+}
+function providerClass(name) {
+  if (!name) return "";
+  if (name.startsWith("claude")) return "tier-top";
+  if (name.startsWith("gemini")) return "tier-top";
+  if (name === "groq" || name === "cerebras") return "tier-fast";
+  if (name.startsWith("openrouter")) return "tier-free";
+  return "tier-basic";
+}
+window.addEventListener("load", () => {
+  // 起動直後即ping (ユーザーが画面操作する前にRender wake-upを開始)
+  setTimeout(() => warmupChatProxy("startup"), 200);
+});
+// 13分毎にkeep-alive (Render free tierの15分閾値より短く)
+setInterval(() => warmupChatProxy("keepalive"), 13 * 60 * 1000);
 
 async function callChatProxy(userText) {
   const ctx = buildLiveContext();
@@ -6699,6 +6851,17 @@ async function callChatProxy(userText) {
     throw new Error("ChatProxy 応答異常: " + (data.error || "unknown"));
   }
   const text = data.text.trim();
+  // 実際に応答したprovider を記録して badge を更新
+  if (data.provider) {
+    __CURRENT_LLM_PROVIDER__ = data.provider;
+    try {
+      const badge = document.getElementById("aiProviderBadge");
+      if (badge) {
+        badge.textContent = providerLabel(data.provider);
+        badge.className = "ai-provider-badge " + providerClass(data.provider);
+      }
+    } catch(_){}
+  }
   const providerNote = data.provider && data.provider !== "groq"
     ? `<span style="font-size:10px;color:var(--text-dim);">[via ${data.provider}]</span><br>`
     : "";
@@ -6874,6 +7037,145 @@ function addMessage(role, content) {
   setChatHistory(history);
   renderChat();
 }
+
+// === 📅 1日1回の AI ブリーフィング ===
+// 朝最初に開いた時、ポートフォリオ+市場snapshot を踏まえた "今日の所感" を自動生成。
+// 1日1回までキャッシュ (localStorage)。失敗時はスキップしてエラーを出さない。
+const STORAGE_KEY_BRIEFING = "stock-app-ai-briefing-v1";
+function todayKey() {
+  const d = new Date();
+  return d.getFullYear() + "-" + String(d.getMonth()+1).padStart(2,"0") + "-" + String(d.getDate()).padStart(2,"0");
+}
+function getBriefingCache() {
+  try { return JSON.parse(localStorage.getItem(STORAGE_KEY_BRIEFING) || "null"); } catch { return null; }
+}
+function setBriefingCache(data) {
+  localStorage.setItem(STORAGE_KEY_BRIEFING, JSON.stringify(data));
+}
+async function maybeRunDailyBriefing() {
+  try {
+    const cache = getBriefingCache();
+    if (cache && cache.date === todayKey()) return; // 今日はもう生成済
+
+    // 履歴に既存メッセージが10件以上あればスキップ (邪魔しない)
+    const hist = getChatHistory();
+    if (hist.length > 12) return;
+
+    // データが揃ってない時はスキップ
+    const ctx = buildLiveContext();
+    if (!ctx || !ctx.portfolio || !ctx.portfolio.positions || ctx.portfolio.positions.length === 0) return;
+
+    // チャットタブにいる時だけ自然に挿入する: 起動から少し遅延
+    const prompt = "おはよう。今日のブリーフィング頼む。①一言で全体の温度感(50字以内)②今日特に見るべき保有銘柄1-2銘柄と理由 ③今日のアクション提案1つ。最後に1つ問いかけて締めて。短めに、400字以内で。";
+
+    let response = null;
+    try {
+      response = await callChatProxy(prompt);
+    } catch (e) {
+      console.warn("[briefing] chat proxy failed:", e.message);
+    }
+    if (!response) {
+      try { response = await callPollinations(prompt); } catch(_){}
+    }
+    if (!response) return; // 静かに諦める
+
+    // 履歴の先頭(自動Welcomeメッセージの次)に追加
+    const history = getChatHistory();
+    const briefingMsg = {
+      role: "ai",
+      content: `<span class="sender">📅 今日のブリーフィング</span>${response.replace(/^<span class="sender">.*?<\/span>/, "")}`,
+      timestamp: Date.now(),
+      briefing: true
+    };
+    history.push(briefingMsg);
+    setChatHistory(history);
+    setBriefingCache({ date: todayKey(), at: Date.now() });
+    renderChat();
+  } catch (e) {
+    console.warn("[briefing] error:", e.message);
+  }
+}
+// 起動から12秒後に静かに走らせる (snapshot/データ取得完了を待つ)
+window.addEventListener("load", () => setTimeout(maybeRunDailyBriefing, 12000));
+
+// === 📲 Pull-to-Refresh (モバイルのみ) ===
+// scrollTop=0 で下にドラッグ → 閾値超えたら離す→ refreshAllAppData
+(function setupPullToRefresh() {
+  if (!("ontouchstart" in window)) return; // タッチデバイス限定
+
+  const indicator = document.createElement("div");
+  indicator.id = "ptrIndicator";
+  indicator.innerHTML = '<span class="icon">⤓</span> <span class="label">下に引いて更新</span>';
+  document.body.appendChild(indicator);
+
+  let startY = null;
+  let lastDelta = 0;
+  const THRESHOLD = 70;
+  let isRefreshing = false;
+
+  function atTop() {
+    return (window.scrollY || document.documentElement.scrollTop) <= 0;
+  }
+
+  document.addEventListener("touchstart", (e) => {
+    if (isRefreshing) return;
+    if (!atTop()) { startY = null; return; }
+    startY = e.touches[0].clientY;
+    lastDelta = 0;
+  }, { passive: true });
+
+  document.addEventListener("touchmove", (e) => {
+    if (isRefreshing || startY === null) return;
+    const dy = e.touches[0].clientY - startY;
+    if (dy <= 0) {
+      if (indicator.classList.contains("visible")) {
+        indicator.classList.remove("visible", "ready");
+        indicator.style.transform = "translate(-50%, -56px)";
+      }
+      return;
+    }
+    // 弾性 (引っ張るほど鈍くなる)
+    const damped = Math.min(dy * 0.5, 110);
+    lastDelta = damped;
+    indicator.classList.add("visible");
+    if (damped >= THRESHOLD) {
+      indicator.classList.add("ready");
+      indicator.querySelector(".label").textContent = "離して更新";
+    } else {
+      indicator.classList.remove("ready");
+      indicator.querySelector(".label").textContent = "下に引いて更新";
+    }
+    indicator.style.transform = `translate(-50%, ${damped - 56}px)`;
+  }, { passive: true });
+
+  document.addEventListener("touchend", async () => {
+    if (isRefreshing || startY === null) return;
+    startY = null;
+    if (lastDelta >= THRESHOLD) {
+      isRefreshing = true;
+      indicator.classList.add("refreshing");
+      indicator.querySelector(".label").textContent = "更新中…";
+      indicator.style.transform = "translate(-50%, 14px)";
+      try {
+        if (typeof window.refreshAllAppData === "function") {
+          await window.refreshAllAppData("pull-to-refresh");
+        }
+        indicator.querySelector(".label").textContent = "✓ 完了";
+        await new Promise(r => setTimeout(r, 600));
+      } catch (e) {
+        indicator.querySelector(".label").textContent = "失敗、もう一度";
+        await new Promise(r => setTimeout(r, 800));
+      }
+      indicator.classList.remove("visible", "ready", "refreshing");
+      indicator.style.transform = "translate(-50%, -56px)";
+      isRefreshing = false;
+    } else {
+      indicator.classList.remove("visible", "ready");
+      indicator.style.transform = "translate(-50%, -56px)";
+    }
+    lastDelta = 0;
+  });
+})();
 
 function showThinking() {
   const container = document.getElementById("chatMessages");
