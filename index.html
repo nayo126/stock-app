@@ -396,9 +396,39 @@
     display: flex;
     flex-direction: column;
     height: 70vh;
+    height: 70dvh;
     min-height: 500px;
     max-height: calc(100vh - 200px);
+    max-height: calc(100dvh - 200px);
     position: relative;
+  }
+  /* スマホ専用: bottom-nav とソフトキーボード分を考慮 */
+  @media (max-width: 768px) {
+    .chat-window {
+      height: calc(100dvh - 280px) !important;
+      min-height: 360px !important;
+      max-height: none !important;
+    }
+    /* 入力欄を常に画面下に固定 (キーボード/ナビ被り対策) */
+    .chat-input-row {
+      position: sticky;
+      bottom: 0;
+      background: var(--bg-card);
+      padding-bottom: calc(14px + env(safe-area-inset-bottom, 0));
+      z-index: 3;
+    }
+    .chat-send {
+      min-width: 64px;
+      font-size: 14px;
+    }
+    /* ユーザーが入力中はクイック返信を畳んでスペース確保 */
+    .chat-quick-replies.compact {
+      max-height: 44px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      flex-wrap: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
   }
   .chat-messages {
     flex: 1 1 0;
@@ -1492,7 +1522,58 @@ window.switchTab = function(target) {
   if (bn) bn.classList.add('active');
   // サイドバー閉じる
   document.querySelector('.macos-sidebar')?.classList.remove('open');
+  // チャットタブを開いたら最新データを強制リフレッシュ
+  if (target === 'chat' && typeof window.refreshAllAppData === 'function') {
+    window.refreshAllAppData('tab-open').catch(e => console.warn('[refresh] err:', e));
+  }
 };
+
+// === 全データ一括リフレッシュ（チャット送信前・タブ切替時用） ===
+window.refreshAllAppData = async function(reason) {
+  const t = Date.now();
+  const fetchJson = async (path) => {
+    const res = await fetch(path + '?t=' + t, { cache: 'no-store' });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    return await res.json();
+  };
+  const tasks = [
+    fetchJson('./data/snapshot.json').then(d => { window.__SNAPSHOT__ = d; }).catch(e => console.warn('[refresh:snap]', e)),
+    fetchJson('./data/advisor.json').then(d => { window.__ADVISOR__ = d; }).catch(e => console.warn('[refresh:adv]', e)),
+    fetchJson('./data/analysis.json').then(d => { window.__ANALYSIS__ = d; }).catch(e => console.warn('[refresh:ana]', e))
+  ];
+  await Promise.allSettled(tasks);
+  // ヘッダの最終更新表示を更新
+  try { updateDataFreshnessBadge(); } catch(_) {}
+  console.log('[refreshAll]', reason || 'manual', 'done');
+};
+
+window.updateDataFreshnessBadge = function() {
+  const el = document.getElementById('dataFreshnessBadge');
+  if (!el) return;
+  const snap = window.__SNAPSHOT__;
+  if (!snap || !snap.generated_at) {
+    el.textContent = '⚠️ データ未取得';
+    el.style.color = '#ff7392';
+    return;
+  }
+  const age = (Date.now() - new Date(snap.generated_at).getTime()) / 60000;
+  const ageMin = Math.round(age);
+  if (age < 30) {
+    el.textContent = `🟢 ${ageMin}分前`;
+    el.style.color = '#64ffda';
+  } else if (age < 180) {
+    el.textContent = `🟡 ${ageMin}分前`;
+    el.style.color = '#ffd166';
+  } else {
+    el.textContent = `🔴 ${Math.round(age/60)}時間前`;
+    el.style.color = '#ff7392';
+  }
+};
+
+// 30秒ごとに鮮度表示を更新
+setInterval(() => { try { window.updateDataFreshnessBadge(); } catch(_) {} }, 30 * 1000);
+// 5分ごとに全データを強制更新
+setInterval(() => { try { window.refreshAllAppData('periodic'); } catch(_) {} }, 5 * 60 * 1000);
 </script>
 
 <!-- ===== サイドバーメニュー ===== -->
@@ -1748,6 +1829,7 @@ window.switchTab = function(target) {
       const res = await fetch('./data/advisor.json?t=' + Date.now(), {cache: 'no-store'});
       if (!res.ok) throw new Error('HTTP ' + res.status);
       const d = await res.json();
+      window.__ADVISOR__ = d;
       render(d);
     } catch (e) {
       console.warn('[advisor] err', e);
@@ -1953,8 +2035,13 @@ window.switchTab = function(target) {
         <div style="font-size:12px;">
           <strong>🧠 AI接続</strong>
           <span id="geminiStatusBadge" style="margin-left:8px; font-size:11px;">⚠️ APIキー未設定 → ルールベース動作</span>
+          <span style="margin-left:12px; font-size:11px; color:var(--text-dim);">データ:</span>
+          <span id="dataFreshnessBadge" style="margin-left:4px; font-size:11px; font-weight:600;">--</span>
         </div>
-        <button type="button" class="action-btn" onclick="toggleGeminiSettings()" style="font-size:11px;">⚙️ 設定</button>
+        <div style="display:flex; gap:6px;">
+          <button type="button" class="action-btn" onclick="window.refreshAllAppData('manual')" style="font-size:11px;" title="最新データを取得">🔄 更新</button>
+          <button type="button" class="action-btn" onclick="toggleGeminiSettings()" style="font-size:11px;">⚙️ 設定</button>
+        </div>
       </div>
       <div id="geminiSettingsPanel" style="display:none; margin-top:10px; padding-top:10px; border-top:1px solid var(--border);">
         <label style="display:block; font-size:11px; color:var(--text-dim); margin-bottom:4px;">Gemini API キー</label>
@@ -6053,7 +6140,7 @@ function getSector(code) {
 const STORAGE_KEY_CHAT = "stock-app-chat-v1";
 const STORAGE_KEY_GEMINI_KEY = "stock-app-gemini-key-v1";
 const STORAGE_KEY_GEMINI_MODEL = "stock-app-gemini-model-v1";
-const GEMINI_DEFAULT_MODEL = "gemini-2.5-flash";
+const GEMINI_DEFAULT_MODEL = "gemini-2.5-pro";
 
 // === 全端末自動セットアップ用の埋め込みキー ===
 // 公開リポジトリに直書き。悪用された場合は AI Studio でローテして再デプロイすればOK。
@@ -6129,7 +6216,7 @@ function toggleGeminiSettings() {
   panel.style.display = (panel.style.display === "none" || !panel.style.display) ? "block" : "none";
 }
 
-// === コンテキスト構築 (起動時最新のsnapshot + 保有 + ルール) ===
+// === コンテキスト構築 (snapshot + advisor + analysis + 保有 + ルール + tradelog) ===
 function buildLiveContext() {
   const owned = getOwned();
   const details = getDetails();
@@ -6157,44 +6244,156 @@ function buildLiveContext() {
   positions.sort((a,b) => b.value - a.value);
 
   const snap = window.__SNAPSHOT__ || null;
-  const indices = snap && snap.indices ? snap.indices : null;
-  const snapTs = snap && snap.generated_at ? snap.generated_at : null;
+  const advisor = window.__ADVISOR__ || null;
+  const analysis = window.__ANALYSIS__ || null;
+
+  // 保有銘柄の最新liveデータをsnapshotから抽出（priceだけでなくchg%も）
+  const ownedLive = {};
+  if (snap && snap.stocks) {
+    positions.forEach(p => {
+      const live = snap.stocks[p.code];
+      if (live) {
+        ownedLive[p.code] = {
+          live_price: live.p,
+          chg_pct: live.chg_pct ?? live.chg ?? null,
+          volume: live.v ?? null,
+          ts: live.ts ?? null
+        };
+      }
+    });
+  }
+
+  // snapshot から市場全体の上位/下位TOP10
+  let movers = null;
+  if (snap && snap.stocks) {
+    const arr = Object.entries(snap.stocks).map(([code, s]) => ({
+      code, name: s.name, p: s.p, chg_pct: s.chg_pct ?? s.chg
+    })).filter(x => typeof x.chg_pct === "number");
+    arr.sort((a,b) => (b.chg_pct||0) - (a.chg_pct||0));
+    movers = {
+      top_gainers: arr.slice(0, 10),
+      top_losers: arr.slice(-10).reverse()
+    };
+  }
+
+  // analysis.json から保有銘柄のシナリオ
+  const ownedScenarios = {};
+  if (analysis && analysis.stocks) {
+    positions.forEach(p => {
+      const a = analysis.stocks[p.code];
+      if (a) {
+        ownedScenarios[p.code] = {
+          scenarios: a.scenarios || null,
+          trend: a.trend || null,
+          forecast: a.forecast || null
+        };
+      }
+    });
+  }
+
+  // 取引履歴の直近10件
+  let recentTrades = [];
+  try {
+    const log = JSON.parse(localStorage.getItem("stock-app-tradelog-v1") || "[]");
+    recentTrades = log.slice(-10);
+  } catch(_) {}
+
+  // ニュース直近5本
+  let recentNews = null;
+  if (snap && snap.news) {
+    recentNews = snap.news.slice(0, 5).map(n => ({
+      title: n.title || n.headline,
+      source: n.source,
+      ts: n.ts || n.published_at
+    }));
+  }
 
   return {
     today: new Date().toISOString().slice(0,10),
+    now_jst: new Date().toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" }),
     portfolio: {
       total_cost: Math.round(totalCost),
       total_value: Math.round(totalValue),
       total_pnl: Math.round(totalValue - totalCost),
       total_pnl_pct: totalCost > 0 ? Number(((totalValue-totalCost)/totalCost*100).toFixed(2)) : 0,
       cash: parseFloat(nisa.cash) || 0,
-      positions
+      positions,
+      owned_live: ownedLive,
+      owned_scenarios: ownedScenarios
     },
     rules: {
       stop_loss_pct: rules.stopLoss || 10,
       take_profit_pct: rules.takeProfit || 20
     },
-    market_snapshot: indices ? { generated_at: snapTs, indices } : null
+    advisor_summary: advisor && advisor.summary ? advisor.summary : null,
+    advisor_strategy: advisor && advisor.strategy ? advisor.strategy : null,
+    advisor_judgments: advisor && advisor.judgments ? advisor.judgments : null,
+    advisor_recommended: advisor && advisor.recommended_buys ? advisor.recommended_buys.slice(0, 5) : null,
+    market_snapshot: snap ? {
+      generated_at: snap.generated_at,
+      indices: snap.indices || null,
+      stocks_count: snap.stocks ? Object.keys(snap.stocks).length : 0,
+      movers
+    } : null,
+    recent_news: recentNews,
+    recent_trades: recentTrades
   };
 }
 
 function buildGeminiSystemPrompt(ctx) {
+  // データの鮮度を計算
+  let freshness = "不明";
+  if (ctx.market_snapshot && ctx.market_snapshot.generated_at) {
+    const age = (Date.now() - new Date(ctx.market_snapshot.generated_at).getTime()) / 60000;
+    freshness = age < 30 ? `新しい(${Math.round(age)}分前)` : age < 180 ? `やや古い(${Math.round(age)}分前)` : `古い(${Math.round(age/60)}時間前)`;
+  }
+
   return [
-    "あなたは17歳の日本人投資家のAIアドバイザーです。",
-    "ユーザー属性: 高校3年生(2026年5月時点)、ジュニアNISA経由でアクティブトレード、過去-22万円の損失あり、18歳の誕生日後に新NISAへ移行予定。",
-    "口調: 嘘をつかず、冷たくならず、数字と根拠で説明する。誇張・過剰な煽り(『絶対稼げる』等)はしない。",
-    "形式: 回答はHTMLで返してOK(<br>, <strong>, <table class='chat-table'>等が使える)。Markdownは使わない。",
-    "返答の冒頭に必ず: <span class=\"sender\">🤖 AIアドバイザー</span>",
-    "リスク警告は必要に応じて。投資判断の最終責任はユーザー本人にあると添える。",
+    "あなたは個人投資家の専属AIアドバイザーです。プロのアナリスト並みに鋭く、しかし優しく、数字と論理で答えます。",
     "",
-    "=== 現在のユーザーデータ (アプリ起動時に取得した最新スナップショット) ===",
+    "【ユーザー属性】",
+    "・17歳の高校3年生(2026年5月時点・あと数ヶ月で18歳)",
+    "・SBI証券ジュニアNISA口座でアクティブトレード中",
+    "・過去-22万円の含み損経験あり、現在も低位株中心ポートフォリオ",
+    "・18歳の誕生日に新NISA(成長240万+つみたて120万)へ移行予定",
+    "・「-22万を取り返す」「月100万稼ぐ」のような野心的目標を持つ。投資以外の現実的代替案も歓迎",
+    "",
+    "【口調・スタイル】",
+    "・嘘をつかない: 「絶対上がる」「必ず稼げる」は絶対NG",
+    "・冷たくしない: 損失や失敗を責めず、学びに変換する視点",
+    "・数字と根拠: %, 円, 期待値, 確率, シナリオで具体的に",
+    "・誇張なし: 過剰な煽りや断定を避け、不確実性を素直に開示",
+    "・一人称「僕」ではなく、ユーザーを「君」と呼ぶ自然な会話調OK",
+    "",
+    "【出力形式】",
+    "・必ずHTMLで返す(<br>, <strong>, <em>, <ul>, <li>, <table class='chat-table'>, <th>, <td>)。Markdown禁止",
+    "・冒頭に必ず: <span class=\"sender\">🤖 AIアドバイザー</span>",
+    "・長すぎず簡潔に。要点 → 数字 → 行動 の3段構造を意識",
+    "・必要に応じて<strong>結論</strong>を太字で先頭付近に",
+    "・銘柄推奨時は <table class='chat-table'> で コード/銘柄/根拠/シナリオ を整理",
+    "",
+    "【思考の進め方(内部でやること、出力には書かない)】",
+    "1. まずユーザーの質問の意図を3秒で把握",
+    "2. JSONコンテキストから関係する数字を抽出",
+    "3. 損切りルール(-" + (ctx.rules?.stop_loss_pct || 10) + "%) と利確ルール(+" + (ctx.rules?.take_profit_pct || 20) + "%)に照らし合わせる",
+    "4. advisor_judgments と owned_scenarios で現在の判定を確認",
+    "5. 結論 + 根拠2-3個 + 次のアクション を組み立てる",
+    "",
+    "【データの鮮度】 市場スナップショット = " + freshness,
+    "・データが古い場合は冒頭で「データが◯分前のものなので参考程度に」と明示",
+    "・取引時間外(平日9-15時以外、土日祝)の場合はその旨も触れる",
+    "",
+    "【ライン】",
+    "・保有していない銘柄を聞かれたら必ず「保有なし」を明示してから一般論で答える",
+    "・売買の最終判断はユーザー責任。重大なリスクには注意喚起を入れる",
+    "・短期売買の高い失敗率(GS等プロでも50%程度)を必要なら引用",
+    "",
+    "=== 現在のリアルデータ (JSON) ===",
     "```json",
     JSON.stringify(ctx, null, 2),
     "```",
     "",
-    "上記JSONを最新の事実として扱い、これに基づいて具体的に答えてください。",
-    "ポートフォリオに無い銘柄を聞かれたら『保有なし』を明示。",
-    "市場スナップショット(market_snapshot)が古い場合は古さを断った上で答える。"
+    "↑ これを唯一の事実源として扱い、推測ではなくデータベースで答える。"
   ].join("\n");
 }
 
@@ -6220,14 +6419,30 @@ async function callGemini(userText) {
   contents.push({ role: "user", parts: [{ text: userText }] });
 
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent?key=${encodeURIComponent(key)}`;
+  const isPro = /pro/i.test(model);
+  const is25 = /2\.5/.test(model);
   const body = {
     systemInstruction: { parts: [{ text: systemPrompt }] },
     contents,
     generationConfig: {
-      temperature: 0.6,
-      topP: 0.9,
-      maxOutputTokens: 2048
-    }
+      temperature: 0.55,
+      topP: 0.92,
+      topK: 40,
+      maxOutputTokens: isPro ? 4096 : 3072,
+      // 2.5系は内部thinkingを有効化。Proは深く、Flashは中程度
+      ...(is25 ? {
+        thinkingConfig: {
+          thinkingBudget: isPro ? 8192 : 2048,
+          includeThoughts: false
+        }
+      } : {})
+    },
+    safetySettings: [
+      { category: "HARM_CATEGORY_HARASSMENT", threshold: "BLOCK_ONLY_HIGH" },
+      { category: "HARM_CATEGORY_HATE_SPEECH", threshold: "BLOCK_ONLY_HIGH" },
+      { category: "HARM_CATEGORY_SEXUALLY_EXPLICIT", threshold: "BLOCK_ONLY_HIGH" },
+      { category: "HARM_CATEGORY_DANGEROUS_CONTENT", threshold: "BLOCK_ONLY_HIGH" }
+    ]
   };
 
   const res = await fetch(url, {
@@ -6319,6 +6534,15 @@ async function sendChat(customMsg) {
   if (!customMsg && input) input.value = "";
 
   showThinking();
+
+  // 送信直前にデータが古ければ最新化（10分以上経過時のみ）
+  try {
+    const snap = window.__SNAPSHOT__;
+    const age = snap && snap.generated_at ? (Date.now() - new Date(snap.generated_at).getTime()) / 60000 : 999;
+    if (age > 10 && typeof window.refreshAllAppData === "function") {
+      await window.refreshAllAppData("pre-chat");
+    }
+  } catch (_) {}
 
   const hasKey = !!getGeminiKey();
   let response = null;
@@ -7181,6 +7405,8 @@ function initGeminiSettingsUI() {
   function bind() {
     const input = document.getElementById("chatInput");
     const btn = document.getElementById("chatSendBtn");
+    const quickEl = document.getElementById("chatQuickReplies");
+    const msgsEl = document.getElementById("chatMessages");
     if (!input || !btn) { setTimeout(bind, 50); return; }
     if (input.__bound) return;
     input.__bound = true;
@@ -7193,7 +7419,23 @@ function initGeminiSettingsUI() {
     });
     // iOS PWA: pointerdown gets a focusable input to focus more reliably than tap-on-click
     input.addEventListener("pointerdown", () => { try { input.focus(); } catch(_){} }, { passive: true });
-    btn.addEventListener("click", () => {
+
+    // フォーカス時: クイック返信を畳んで、入力欄を画面内にスクロール
+    input.addEventListener("focus", () => {
+      if (quickEl) quickEl.classList.add("compact");
+      setTimeout(() => {
+        try {
+          input.scrollIntoView({ block: "center", behavior: "smooth" });
+          if (msgsEl) msgsEl.scrollTop = msgsEl.scrollHeight;
+        } catch(_){}
+      }, 300);
+    });
+    input.addEventListener("blur", () => {
+      if (quickEl) quickEl.classList.remove("compact");
+    });
+
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
       try { sendChat(); } catch(err) { console.error("sendChat error:", err); }
     });
     // Also bind to touchend on the send button for ultra-old iOS PWA
@@ -7201,6 +7443,25 @@ function initGeminiSettingsUI() {
       e.preventDefault();
       try { sendChat(); } catch(err) { console.error("sendChat error:", err); }
     });
+
+    // visualViewport: iOSキーボードが出たらレイアウト追従
+    if (window.visualViewport) {
+      const root = document.documentElement;
+      const onVV = () => {
+        const vv = window.visualViewport;
+        root.style.setProperty("--vv-h", vv.height + "px");
+        root.style.setProperty("--vv-offset", vv.offsetTop + "px");
+        // 入力欄が下に隠れていればスクロール
+        if (document.activeElement === input) {
+          setTimeout(() => {
+            try { input.scrollIntoView({ block: "center" }); } catch(_){}
+          }, 50);
+        }
+      };
+      window.visualViewport.addEventListener("resize", onVV);
+      window.visualViewport.addEventListener("scroll", onVV);
+      onVV();
+    }
   }
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", bind);
@@ -8743,6 +9004,7 @@ refreshAll();
       if (!res.ok) throw new Error('HTTP ' + res.status);
       const d = await res.json();
       analysisData = d;
+      window.__ANALYSIS__ = d;
       $ts.textContent = '更新: ' + new Date(d.generated_at).toLocaleString('ja-JP');
       $status.textContent = `✓ ${Object.keys(d.stocks||{}).length}銘柄分析済`;
       renderList();
