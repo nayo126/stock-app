@@ -697,6 +697,117 @@
   .snapshot-chip.stale { color: #fce2a8; border-color: rgba(251,191,36,0.45); background: rgba(251,191,36,0.10); }
   .snapshot-chip.old   { color: #ffd1d5; border-color: rgba(248,113,113,0.55); background: rgba(248,113,113,0.12); }
 
+  /* === Loss recovery meter === */
+  .recovery-meter {
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 14px 18px;
+    margin-bottom: 18px;
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    box-shadow: var(--shadow-soft);
+  }
+  .rm-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 8px;
+  }
+  .rm-title { font-size: 13px; font-weight: 700; color: var(--text); letter-spacing: 0.01em; }
+  .rm-value {
+    font-size: 16px;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+    background: var(--grad-mint);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .rm-bar {
+    height: 12px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 999px;
+    overflow: hidden;
+    position: relative;
+  }
+  .rm-fill {
+    height: 100%;
+    width: 0%;
+    background: var(--grad-mint);
+    border-radius: 999px;
+    transition: width 0.8s cubic-bezier(.2,.9,.3,1.1);
+    box-shadow: 0 0 14px rgba(94,234,212,0.5);
+    position: relative;
+  }
+  .rm-fill::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.18) 50%, transparent 100%);
+    animation: shimmer 2.4s infinite linear;
+    background-size: 200% 100%;
+  }
+  .rm-caption { font-size: 11px; color: var(--text-dim); margin-top: 6px; }
+  .recovery-meter.complete .rm-fill {
+    background: linear-gradient(90deg, #f0abfc 0%, #fde047 50%, #5eead4 100%);
+  }
+  .recovery-meter.complete .rm-title::after { content: " 🏆 脱出完了！"; }
+
+  /* === Install banner === */
+  #installBanner {
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    bottom: calc(env(safe-area-inset-bottom, 0) + 12px);
+    z-index: 9998;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    background: rgba(13,19,32,0.95);
+    backdrop-filter: blur(20px) saturate(150%);
+    -webkit-backdrop-filter: blur(20px) saturate(150%);
+    border: 1px solid var(--border-strong);
+    border-radius: 16px;
+    box-shadow: var(--shadow-card);
+    animation: bannerIn .35s cubic-bezier(.2,.9,.3,1.1);
+  }
+  @keyframes bannerIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @media (max-width: 768px) {
+    #installBanner { bottom: calc(env(safe-area-inset-bottom, 0) + 78px); } /* bottom-nav上 */
+  }
+  #installBanner .ib-icon { font-size: 26px; flex-shrink: 0; }
+  #installBanner .ib-body { flex: 1; min-width: 0; }
+  #installBanner .ib-title { font-size: 13px; font-weight: 700; color: var(--text); }
+  #installBanner .ib-sub { font-size: 11px; color: var(--text-dim); margin-top: 2px; line-height: 1.4; }
+  #installBanner .ib-install {
+    flex-shrink: 0;
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: none;
+    background: var(--grad-mint);
+    color: #06090f;
+    font-weight: 700;
+    font-size: 12px;
+    cursor: pointer;
+    box-shadow: var(--shadow-pop);
+  }
+  #installBanner .ib-close {
+    flex-shrink: 0;
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    border: 1px solid var(--border-strong);
+    background: transparent;
+    color: var(--text-dim);
+    cursor: pointer;
+    font-size: 13px;
+  }
+  #installBanner .ib-close:hover { background: rgba(255,255,255,0.06); color: var(--text); }
+
   /* === Pull to refresh === */
   #ptrIndicator {
     position: fixed;
@@ -1736,7 +1847,7 @@ body > button[onclick*="auto-analysis"]:hover {
     }
     // localStorage の app version 比較で1回だけ強制リロード
     // 重要バグ修正があった場合は必ずバンプ。これで全モバイル端末が次回起動時に新HTMLを取りに行く
-    var V = '20260519-warmup-ptr-v10';
+    var V = '20260519-voice-install-v11';
     if (localStorage.getItem('_app_v') !== V) {
       localStorage.setItem('_app_v', V);
       // セッション内で reload を1回だけに制限 (無限ループ防止)
@@ -1915,6 +2026,16 @@ setInterval(() => { try { window.refreshAllAppData('periodic'); } catch(_) {} },
 
   <div class="risk-box">
     ⚠️ このアプリは情報整理用で、株価上昇を保証するものではありません。株価は15分毎に自動更新（GitHub Actions経由）。投資判断は自己責任で。
+  </div>
+
+  <!-- 養豚場脱出メーター: 過去-22万→0円までの進捗 -->
+  <div class="recovery-meter" id="recoveryMeter" style="display:none;">
+    <div class="rm-header">
+      <span class="rm-title">🐖 養豚場脱出メーター</span>
+      <span class="rm-value" id="recoveryValue">--</span>
+    </div>
+    <div class="rm-bar"><div class="rm-fill" id="recoveryFill"></div></div>
+    <div class="rm-caption" id="recoveryCaption">過去最大ドローダウンからの回復度</div>
   </div>
 
   <div class="stats-row">
@@ -2371,6 +2492,7 @@ setInterval(() => { try { window.refreshAllAppData('periodic'); } catch(_) {} },
           inputmode="text"
           enterkeyhint="send"
         >
+        <button type="button" class="chat-mic" id="chatTtsBtn" title="AIの返答を読み上げ ON/OFF" aria-label="読み上げ">🔇</button>
         <button type="button" class="chat-mic" id="chatMicBtn" title="音声入力" aria-label="音声入力">🎤</button>
         <button type="button" class="chat-send" id="chatSendBtn">送信</button>
       </div>
@@ -4293,6 +4415,9 @@ function renderNisa() {
   } else {
     pnlSub.textContent = "損益: -";
   }
+
+  // === 養豚場脱出メーター更新 ===
+  try { updateRecoveryMeter(pnlAmount); } catch(e) { console.warn("[recovery]", e); }
 
   // Set input values (only if they're empty)
   const gInput = document.getElementById("nisaGrowthPrincipal");
@@ -6813,6 +6938,108 @@ window.addEventListener("load", () => {
 // 13分毎にkeep-alive (Render free tierの15分閾値より短く)
 setInterval(() => warmupChatProxy("keepalive"), 13 * 60 * 1000);
 
+// === 📲 PWA install prompt (Android / Chrome) + iOS Safari ヒント ===
+const STORAGE_KEY_INSTALL_DISMISS = "stock-app-install-dismissed-v1";
+let __DEFERRED_INSTALL__ = null;
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  __DEFERRED_INSTALL__ = e;
+  maybeShowInstallBanner();
+});
+function isStandalone() {
+  return window.matchMedia("(display-mode: standalone)").matches
+      || window.navigator.standalone === true;
+}
+function maybeShowInstallBanner() {
+  if (isStandalone()) return;
+  if (localStorage.getItem(STORAGE_KEY_INSTALL_DISMISS) === "1") return;
+  const existing = document.getElementById("installBanner");
+  if (existing) return;
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  const banner = document.createElement("div");
+  banner.id = "installBanner";
+  banner.innerHTML = isIOS
+    ? `<div class="ib-icon">📲</div>
+       <div class="ib-body">
+         <div class="ib-title">ホーム画面に追加</div>
+         <div class="ib-sub">Safari下の <strong>「共有」</strong> ▸ <strong>「ホーム画面に追加」</strong> でアプリ化できる</div>
+       </div>
+       <button class="ib-close" id="ibClose" aria-label="閉じる">✕</button>`
+    : `<div class="ib-icon">📲</div>
+       <div class="ib-body">
+         <div class="ib-title">アプリとしてインストール</div>
+         <div class="ib-sub">ホーム画面に追加すると爆速で開けるよ</div>
+       </div>
+       <button class="ib-install" id="ibInstall">追加</button>
+       <button class="ib-close" id="ibClose" aria-label="閉じる">✕</button>`;
+  document.body.appendChild(banner);
+  document.getElementById("ibClose").addEventListener("click", () => {
+    localStorage.setItem(STORAGE_KEY_INSTALL_DISMISS, "1");
+    banner.remove();
+  });
+  const installBtn = document.getElementById("ibInstall");
+  if (installBtn) {
+    installBtn.addEventListener("click", async () => {
+      if (!__DEFERRED_INSTALL__) return;
+      try {
+        __DEFERRED_INSTALL__.prompt();
+        const choice = await __DEFERRED_INSTALL__.userChoice;
+        if (choice.outcome === "accepted") {
+          localStorage.setItem(STORAGE_KEY_INSTALL_DISMISS, "1");
+        }
+      } catch (e) { console.warn("[install]", e); }
+      banner.remove();
+      __DEFERRED_INSTALL__ = null;
+    });
+  }
+}
+// iOSはbeforeinstallpromptが発火しないので、別途タイマーで判定
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    if (isIOS && !isStandalone()) maybeShowInstallBanner();
+  }, 4000);
+});
+
+// === 🔆 Wake Lock — チャット中は画面を暗くしない (会話中に消えるとイラつくので) ===
+let __WAKE_LOCK__ = null;
+async function acquireWakeLock() {
+  if (!("wakeLock" in navigator)) return;
+  if (__WAKE_LOCK__) return;
+  try {
+    __WAKE_LOCK__ = await navigator.wakeLock.request("screen");
+    __WAKE_LOCK__.addEventListener("release", () => { __WAKE_LOCK__ = null; });
+    console.log("[wakelock] acquired");
+  } catch (e) {
+    console.warn("[wakelock] failed:", e.message);
+  }
+}
+async function releaseWakeLock() {
+  try { if (__WAKE_LOCK__) await __WAKE_LOCK__.release(); } catch(_){}
+  __WAKE_LOCK__ = null;
+}
+// タブ切替・タブ非表示時の挙動: 戻ってきたら再取得
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "visible" && isChatTabActive()) {
+    acquireWakeLock();
+  }
+});
+function isChatTabActive() {
+  const el = document.getElementById("tab-chat");
+  if (!el) return false;
+  return el.classList.contains("active") || el.style.display === "block";
+}
+// チャットタブを開いた時に取得、閉じた時にrelease (switchTab経由)
+const __ORIG_SWITCH_TAB__ = window.switchTab;
+if (typeof __ORIG_SWITCH_TAB__ === "function") {
+  window.switchTab = function(target) {
+    const ret = __ORIG_SWITCH_TAB__.apply(this, arguments);
+    if (target === "chat") acquireWakeLock();
+    else releaseWakeLock();
+    return ret;
+  };
+}
+
 async function callChatProxy(userText) {
   const ctx = buildLiveContext();
   const systemPrompt = buildGeminiSystemPrompt(ctx);
@@ -7036,7 +7263,81 @@ function addMessage(role, content) {
   history.push({ role, content, timestamp: Date.now() });
   setChatHistory(history);
   renderChat();
+  // AI発言なら読み上げ (TTSがONなら)
+  if (role === "ai") speakAiResponse(content);
 }
+
+// === 🔊 SpeechSynthesis ===
+const STORAGE_KEY_TTS = "stock-app-tts-enabled-v1";
+function isTtsEnabled() { return localStorage.getItem(STORAGE_KEY_TTS) === "1"; }
+function setTtsEnabled(v) {
+  localStorage.setItem(STORAGE_KEY_TTS, v ? "1" : "0");
+  updateTtsBtnUI();
+}
+function updateTtsBtnUI() {
+  const b = document.getElementById("chatTtsBtn");
+  if (!b) return;
+  if (isTtsEnabled()) {
+    b.textContent = "🔊";
+    b.classList.add("listening");
+    b.title = "AI返答の読み上げ: ON";
+  } else {
+    b.textContent = "🔇";
+    b.classList.remove("listening");
+    b.title = "AI返答の読み上げ: OFF";
+  }
+}
+function speakAiResponse(html) {
+  if (!isTtsEnabled() || !("speechSynthesis" in window)) return;
+  // HTML → 平文 (タグ・「sender」ラベル除去・絵文字残し)
+  const plain = String(html)
+    .replace(/<span class="sender">[^<]*<\/span>/g, "")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+  if (!plain) return;
+  // 長すぎる場合は最初の400文字だけ (連続読み上げ防止)
+  const text = plain.length > 400 ? plain.slice(0, 400) + "…続きは画面で。" : plain;
+  try {
+    window.speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = "ja-JP";
+    u.rate = 1.05;
+    u.pitch = 1.0;
+    u.volume = 1.0;
+    // 日本語ボイス優先選択
+    const voices = window.speechSynthesis.getVoices();
+    const jp = voices.find(v => /ja[-_]JP/i.test(v.lang)) || voices.find(v => /Japanese/i.test(v.name));
+    if (jp) u.voice = jp;
+    window.speechSynthesis.speak(u);
+  } catch (e) {
+    console.warn("[tts] failed:", e.message);
+  }
+}
+// 初期化: ボタンクリック → トグル
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    const b = document.getElementById("chatTtsBtn");
+    if (!b) return;
+    updateTtsBtnUI();
+    const toggle = (e) => {
+      e && e.preventDefault();
+      setTtsEnabled(!isTtsEnabled());
+      // 初回ON時に「読み上げONにしました」とテスト発声
+      if (isTtsEnabled()) {
+        try {
+          const u = new SpeechSynthesisUtterance("読み上げONにしたよ");
+          u.lang = "ja-JP";
+          window.speechSynthesis.speak(u);
+        } catch(_){}
+      } else {
+        try { window.speechSynthesis.cancel(); } catch(_){}
+      }
+    };
+    b.addEventListener("click", toggle);
+    b.addEventListener("touchend", toggle, { passive: false });
+  }, 600);
+});
 
 // === 📅 1日1回の AI ブリーフィング ===
 // 朝最初に開いた時、ポートフォリオ+市場snapshot を踏まえた "今日の所感" を自動生成。
@@ -7332,6 +7633,55 @@ function updateSnapshotChip() {
 }
 setInterval(updateSnapshotChip, 30000);
 window.addEventListener("load", () => setTimeout(updateSnapshotChip, 1500));
+
+// === 🐖 養豚場脱出メーター ===
+// 過去最大ドローダウン (デフォルト -220,000) → 現在のNISA P/L までの回復度を表示
+const STORAGE_KEY_MAX_DD = "stock-app-max-drawdown-v1";
+function getMaxDrawdown() {
+  const v = parseFloat(localStorage.getItem(STORAGE_KEY_MAX_DD));
+  return isNaN(v) ? -220000 : v; // 既定 -22万円
+}
+function setMaxDrawdown(v) { localStorage.setItem(STORAGE_KEY_MAX_DD, String(v)); }
+window.setRecoveryFloor = setMaxDrawdown; // 後で手動上書き可能
+
+function updateRecoveryMeter(currentPnl) {
+  const meter = document.getElementById("recoveryMeter");
+  const fill = document.getElementById("recoveryFill");
+  const val = document.getElementById("recoveryValue");
+  const cap = document.getElementById("recoveryCaption");
+  if (!meter || !fill || !val) return;
+
+  let floor = getMaxDrawdown();
+  // P/L が floor を更に下回ったら更新 (新しい最深ドローダウン)
+  if (typeof currentPnl === "number" && currentPnl < floor) {
+    floor = currentPnl;
+    setMaxDrawdown(floor);
+  }
+
+  if (typeof currentPnl !== "number" || isNaN(currentPnl)) {
+    meter.style.display = "none";
+    return;
+  }
+  meter.style.display = "block";
+
+  // 進捗率: floor=0%, 0円=100%, プラスは100%+α として満タン表示
+  const total = Math.abs(floor); // 例 220000
+  const recovered = currentPnl - floor; // 例 currentPnl=-100000, floor=-220000 → recovered=120000
+  let pct = total > 0 ? (recovered / total) * 100 : 0;
+  let displayPct = Math.max(0, Math.min(100, pct));
+  fill.style.width = displayPct.toFixed(1) + "%";
+
+  if (currentPnl >= 0) {
+    meter.classList.add("complete");
+    val.textContent = "+" + fmtYen(currentPnl) + " 達成！";
+    cap.textContent = "養豚場から脱出完了 🏆 ここからは純粋な前進。";
+  } else {
+    meter.classList.remove("complete");
+    val.textContent = displayPct.toFixed(0) + "%";
+    const remaining = Math.abs(currentPnl);
+    cap.textContent = `あと ${fmtYen(remaining)} で養豚場脱出 (最深 ${fmtYen(floor)} → 現在 ${fmtYen(currentPnl)})`;
+  }
+}
 
 // ========================================
 // Intent recognition + response generation
