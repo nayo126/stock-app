@@ -544,8 +544,41 @@
     flex-shrink: 0;
     touch-action: manipulation;
     -webkit-tap-highlight-color: rgba(0,0,0,0.1);
+    min-height: 44px;
   }
   .chat-send:hover { background: var(--accent-dim); }
+  .chat-mic {
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    color: var(--text);
+    width: 44px;
+    min-height: 44px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    flex-shrink: 0;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .chat-mic.listening {
+    background: #ff3b30;
+    color: #fff;
+    border-color: #ff3b30;
+    animation: micPulse 1.2s infinite;
+  }
+  @keyframes micPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(255,59,48,0.6); }
+    50% { box-shadow: 0 0 0 8px rgba(255,59,48,0); }
+  }
+  @media (max-width: 640px) {
+    .chat-input { font-size: 16px; padding: 14px 14px; min-height: 44px; }
+    .chat-send { padding: 0 16px; }
+    .chat-input-row { padding: 10px 10px env(safe-area-inset-bottom, 10px); gap: 6px; }
+    .chat-quick { padding: 8px 12px; font-size: 13px; }
+  }
   .chat-thinking {
     align-self: flex-start;
     display: flex;
@@ -1462,7 +1495,7 @@ body > button[onclick*="auto-analysis"]:hover {
     }
     // localStorage の app version 比較で1回だけ強制リロード
     // 重要バグ修正があった場合は必ずバンプ。これで全モバイル端末が次回起動時に新HTMLを取りに行く
-    var V = '20260515-chat-proxy-v7';
+    var V = '20260518-claude-voice-v8';
     if (localStorage.getItem('_app_v') !== V) {
       localStorage.setItem('_app_v', V);
       // セッション内で reload を1回だけに制限 (無限ループ防止)
@@ -2088,7 +2121,7 @@ setInterval(() => { try { window.refreshAllAppData('periodic'); } catch(_) {} },
           type="text"
           class="chat-input"
           id="chatInput"
-          placeholder="例: JHD売った方がいい？"
+          placeholder="例: JHD売った方がいい？ / マイクで喋ってもOK"
           autocomplete="off"
           autocorrect="off"
           autocapitalize="off"
@@ -2096,6 +2129,7 @@ setInterval(() => { try { window.refreshAllAppData('periodic'); } catch(_) {} },
           inputmode="text"
           enterkeyhint="send"
         >
+        <button type="button" class="chat-mic" id="chatMicBtn" title="音声入力" aria-label="音声入力">🎤</button>
         <button type="button" class="chat-send" id="chatSendBtn">送信</button>
       </div>
     </div>
@@ -6413,7 +6447,13 @@ function buildGeminiSystemPrompt(ctx) {
   }
 
   return [
-    "あなたは個人投資家の専属AIアドバイザーです。プロのアナリスト並みに鋭く、しかし優しく、数字と論理で答えます。",
+    "あなたは17歳の個人投資家の専属AIアドバイザー兼相棒です。プロのアナリスト並みに鋭く、しかし兄貴分のような距離感で、数字と根拠で温度をもって答えます。",
+    "",
+    "【キャラ・口調】",
+    "・兄貴分の距離感: 固すぎず軽すぎず、突き放さない。たまに『なるほどね』『これは熱い』『正直キツいわ』など感情を挟む。絵文字は1メッセージ2個まで。",
+    "・一方的な解説で終わらせず、最後に1〜2個の問い返しや次の選択肢を必ず投げる(『◯◯と△△どっち気になる？』など)。",
+    "・誇張(『絶対稼げる』『100倍確実』)・嘘・煽り商売トーンは絶対NG。",
+    "・雑談・モチベ相談・愚痴も歓迎。投資の話に無理に戻さない。",
     "",
     "【ユーザー属性】",
     "・17歳の高校3年生(2026年5月時点・あと数ヶ月で18歳)",
@@ -6457,7 +6497,7 @@ function buildGeminiSystemPrompt(ctx) {
     JSON.stringify(ctx, null, 2),
     "```",
     "",
-    "↑ これを唯一の事実源として扱い、推測ではなくデータベースで答える。"
+    "↑ これを唯一の事実源として扱い、推測ではなくデータベースで具体的に・温度を持って答える。最後に必ず次の問い返しか次のアクションを置く。"
   ].join("\n");
 }
 
@@ -6489,7 +6529,7 @@ async function callChatProxy(userText) {
     res = await fetch(CHAT_PROXY_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ system: systemPrompt, messages, temperature: 0.6, max_tokens: 1500 }),
+      body: JSON.stringify({ system: systemPrompt, messages, temperature: 0.75, max_tokens: 3000 }),
       signal: controller.signal
     });
   } finally {
@@ -6544,8 +6584,8 @@ async function callPollinations(userText) {
       body: JSON.stringify({
         model: "openai",
         messages,
-        temperature: 0.6,
-        max_tokens: 1500
+        temperature: 0.75,
+        max_tokens: 3000
       }),
       signal: controller.signal
     });
@@ -6594,8 +6634,8 @@ async function callGemini(userText) {
     systemInstruction: { parts: [{ text: systemPrompt }] },
     contents,
     generationConfig: {
-      temperature: 0.55,
-      topP: 0.92,
+      temperature: 0.7,
+      topP: 0.95,
       topK: 40,
       maxOutputTokens: isPro ? 4096 : 3072,
       // 2.5系は内部thinkingを有効化。Proは深く、Flashは中程度
@@ -6645,11 +6685,11 @@ function renderChat() {
   if (history.length === 0) {
     const hasGemini = !!getGeminiKey();
     const banner = hasGemini
-      ? `🟢 <strong>Gemini接続中</strong> — 保有銘柄・市場snapshotを参照して自由に会話できます。`
-      : `🟢 <strong>LLMチャット稼働中 (キー不要・自動接続)</strong> — そのまま自由に会話できます。保有銘柄・損切り/利確ルール・市場snapshotを参照して具体的に答えます。<br><span style="color:var(--text-dim);font-size:11px;">※さらに高精度にしたい場合は「⚙️ 設定」からGemini APIキー(無料枠あり)を追加できます。</span>`;
+      ? `🟢 <strong>Gemini接続中 (上位LLM優先)</strong> — 保有銘柄・市場snapshotを見ながら相棒として喋るよ。`
+      : `🟢 <strong>AI相棒モード稼働中</strong> — Claude / Gemini / Llama を自動で組み合わせて最高に頭良いやつが答える。<br><span style="color:var(--text-dim);font-size:11px;">ボイス入力(🎤)もOK。雑談・愚痴・戦略相談、全部投げてくれ。</span>`;
     const hello = {
       role: "ai",
-      content: `<span class="sender">🤖 AIアドバイザー</span>${banner}<br><br>例えば:<br>・「JHD売った方がいい？」<br>・「今の評価額は？」<br>・「-22万取り返すプラン作って」<br>・「今日のマーケットどう？」<br><br>下のクイック質問でも、自然な日本語でもOK。`,
+      content: `<span class="sender">🤖 AIアドバイザー</span>${banner}<br><br>お、来たな。今の状況、ザッと見てるよ。<br>気になるテーマ、何から行く？<br>・JHD/いちごの判断聞きたい<br>・-22万取り返すプラン本気で組みたい<br>・今日のマーケット雑談したい<br>・新NISA移行どう動くか<br><br>下のチップでも、普通に日本語で打ち込んでもOK。マイクボタン押せば喋るだけで送れる。`,
       timestamp: Date.now()
     };
     container.innerHTML = msgHTML(hello);
@@ -7655,15 +7695,17 @@ function initGeminiSettingsUI() {
       if (quickEl) quickEl.classList.remove("compact");
     });
 
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
+    // 送信ボタン: click と touchend をどちらも拾うがダブル送信は防ぐ
+    let lastSentAt = 0;
+    const doSend = (e) => {
+      if (e) { try { e.preventDefault(); } catch(_){} try { e.stopPropagation(); } catch(_){} }
+      const now = Date.now();
+      if (now - lastSentAt < 250) return;
+      lastSentAt = now;
       try { sendChat(); } catch(err) { console.error("sendChat error:", err); }
-    });
-    // Also bind to touchend on the send button for ultra-old iOS PWA
-    btn.addEventListener("touchend", (e) => {
-      e.preventDefault();
-      try { sendChat(); } catch(err) { console.error("sendChat error:", err); }
-    });
+    };
+    btn.addEventListener("click", doSend);
+    btn.addEventListener("touchend", doSend, { passive: false });
 
     // visualViewport: iOSキーボードが出たらレイアウト追従
     if (window.visualViewport) {
@@ -7672,7 +7714,6 @@ function initGeminiSettingsUI() {
         const vv = window.visualViewport;
         root.style.setProperty("--vv-h", vv.height + "px");
         root.style.setProperty("--vv-offset", vv.offsetTop + "px");
-        // 入力欄が下に隠れていればスクロール
         if (document.activeElement === input) {
           setTimeout(() => {
             try { input.scrollIntoView({ block: "center" }); } catch(_){}
@@ -7682,6 +7723,67 @@ function initGeminiSettingsUI() {
       window.visualViewport.addEventListener("resize", onVV);
       window.visualViewport.addEventListener("scroll", onVV);
       onVV();
+    }
+
+    // 🎤 Web Speech API ボイス入力 (iOS Safari / Chrome / Android)
+    const micBtn = document.getElementById("chatMicBtn");
+    const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (micBtn) {
+      if (!SR) {
+        micBtn.style.opacity = "0.4";
+        micBtn.title = "このブラウザは音声入力非対応 (iOSはSafariで、Androidは標準Chromeで動きます)";
+        micBtn.addEventListener("click", () => {
+          alert("このブラウザは音声入力非対応です。iOSはSafariで開いてください。");
+        });
+      } else {
+        let rec = null;
+        let listening = false;
+        const startRec = () => {
+          if (listening) { try { rec && rec.stop(); } catch(_){} return; }
+          try {
+            rec = new SR();
+            rec.lang = "ja-JP";
+            rec.interimResults = true;
+            rec.continuous = false;
+            rec.maxAlternatives = 1;
+            let finalText = "";
+            rec.onresult = (ev) => {
+              let interim = "";
+              for (let i = ev.resultIndex; i < ev.results.length; i++) {
+                const r = ev.results[i];
+                if (r.isFinal) finalText += r[0].transcript;
+                else interim += r[0].transcript;
+              }
+              input.value = (finalText + interim).trim();
+            };
+            rec.onerror = (ev) => {
+              console.warn("speech error", ev.error);
+              listening = false;
+              micBtn.classList.remove("listening");
+              if (ev.error === "not-allowed" || ev.error === "service-not-allowed") {
+                alert("マイク使用が拒否されました。ブラウザ設定で許可してください。");
+              }
+            };
+            rec.onend = () => {
+              listening = false;
+              micBtn.classList.remove("listening");
+              if (input.value.trim()) {
+                // 喋り終わったら自動送信 (スマホで両手フリー)
+                setTimeout(() => sendChat(), 250);
+              }
+            };
+            rec.start();
+            listening = true;
+            micBtn.classList.add("listening");
+            try { input.focus(); } catch(_){}
+          } catch (err) {
+            console.error("speech start failed", err);
+            alert("音声入力起動失敗: " + err.message);
+          }
+        };
+        micBtn.addEventListener("click", (e) => { e.preventDefault(); startRec(); });
+        micBtn.addEventListener("touchend", (e) => { e.preventDefault(); startRec(); }, { passive: false });
+      }
     }
   }
   if (document.readyState === "loading") {

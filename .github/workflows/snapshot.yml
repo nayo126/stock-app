@@ -2,7 +2,9 @@ name: snapshot
 
 on:
   schedule:
-    - cron: "*/30 * * * *"
+    # 平日(月-金)の日本市場時間帯は15分毎、それ以外は1時間毎
+    - cron: "*/15 0-7 * * 1-5"   # 日本 9:00-16:45 JST (UTC 0:00-7:45)
+    - cron: "0 * * * *"          # それ以外も毎時1回
   workflow_dispatch:
   push:
     branches: [main]
