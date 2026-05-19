@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-19T15:16:47.064802+09:00",
+  "generated_at": "2026-05-19T15:25:03.795822+09:00",
   "summary": {
     "total_cost": 850900.0,
     "total_value": 480450.0,
@@ -7,8 +7,8 @@
     "total_pl_pct": -43.54,
     "health_score": 10,
     "total_recovery_if_sell": 359400.0,
-    "expected_gain_3m": 107214.0,
-    "expected_gain_3m_high": 312165.0
+    "expected_gain_3m": 107598.0,
+    "expected_gain_3m_high": 312933.0
   },
   "judgments": [
     {
@@ -101,34 +101,34 @@
       "name": "システムソフト",
       "avg_price": 78.0,
       "shares": 100,
-      "current": 52.0,
+      "current": 51.0,
       "cost_total": 7800.0,
-      "value_total": 5200.0,
+      "value_total": 5100.0,
       "action": "SELL_HALF",
       "label": "⚠️ 半分損切り",
       "priority": 2,
-      "reason": "-33.3%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 2600.0,
+      "reason": "-34.6%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 2550.0,
       "color": "orange",
-      "pl_total": -2600.0,
-      "pl_pct": -33.33333333333333
+      "pl_total": -2700.0,
+      "pl_pct": -34.61538461538461
     },
     {
       "code": "2337",
       "name": "いちご",
       "avg_price": 356.0,
       "shares": 100,
-      "current": 494.0,
+      "current": 495.0,
       "cost_total": 35600.0,
-      "value_total": 49400.0,
+      "value_total": 49500.0,
       "action": "TRIM_HALF",
       "label": "💰 半分利確",
       "priority": 3,
-      "reason": "+38.8%。NISA非課税利益を半分確定。残りで伸ばす",
-      "recover_amt": 24700.0,
+      "reason": "+39.0%。NISA非課税利益を半分確定。残りで伸ばす",
+      "recover_amt": 24750.0,
       "color": "green",
-      "pl_total": 13800.0,
-      "pl_pct": 38.764044943820224
+      "pl_total": 13900.0,
+      "pl_pct": 39.04494382022472
     },
     {
       "code": "7201",
@@ -169,11 +169,11 @@
       "name": "イビデン",
       "tier": "S",
       "category": "STOCKS_MAIN",
-      "current": 15250.0,
-      "forecast_3m_mid": 26284.0,
-      "forecast_3m_pct": 72.4,
-      "forecast_3m_high": 41071.0,
-      "forecast_3m_high_pct": 169.3,
+      "current": 15310.0,
+      "forecast_3m_mid": 26493.0,
+      "forecast_3m_pct": 73.0,
+      "forecast_3m_high": 41386.0,
+      "forecast_3m_high_pct": 170.3,
       "tags": [
         "NVIDIA",
         "ABF基板",
@@ -181,55 +181,33 @@
       ],
       "summary": "NVIDIA向けABF基板独占、FY2027 +42.5%増益予想",
       "buy_shares": 5,
-      "invest_amt": 76250.0,
-      "estimated_3m_value": 131420.0,
-      "estimated_3m_value_high": 205355.0,
-      "expected_gain_3m": 55170.0,
-      "expected_gain_3m_high": 129105.0
+      "invest_amt": 76550.0,
+      "estimated_3m_value": 132465.0,
+      "estimated_3m_value_high": 206930.0,
+      "expected_gain_3m": 55915.0,
+      "expected_gain_3m_high": 130380.0
     },
     {
       "code": "6506",
       "name": "安川電機",
       "tier": "A",
       "category": "STOCKS_MAIN",
-      "current": 6338.0,
-      "forecast_3m_mid": 7640.0,
+      "current": 6336.0,
+      "forecast_3m_mid": 7635.0,
       "forecast_3m_pct": 20.5,
-      "forecast_3m_high": 10284.0,
-      "forecast_3m_high_pct": 62.3,
+      "forecast_3m_high": 10278.0,
+      "forecast_3m_high_pct": 62.2,
       "tags": [
         "ロボット",
         "NVIDIA"
       ],
       "summary": "NVIDIA+SBフィジカルAI提携、FY2027 +26.8%予想",
       "buy_shares": 14,
-      "invest_amt": 88732.0,
-      "estimated_3m_value": 106960.0,
-      "estimated_3m_value_high": 143976.0,
-      "expected_gain_3m": 18228.0,
-      "expected_gain_3m_high": 55244.0
-    },
-    {
-      "code": "6954",
-      "name": "ファナック",
-      "tier": "A",
-      "category": "STOCKS_MAIN",
-      "current": 7686.0,
-      "forecast_3m_mid": 9192.0,
-      "forecast_3m_pct": 19.6,
-      "forecast_3m_high": 12230.0,
-      "forecast_3m_high_pct": 59.1,
-      "tags": [
-        "ロボット",
-        "NVIDIA"
-      ],
-      "summary": "NVIDIAフィジカルAI提携、1000台超受注、米143億円投資",
-      "buy_shares": 11,
-      "invest_amt": 84546.0,
-      "estimated_3m_value": 101112.0,
-      "estimated_3m_value_high": 134530.0,
-      "expected_gain_3m": 16566.0,
-      "expected_gain_3m_high": 49984.0
+      "invest_amt": 88704.0,
+      "estimated_3m_value": 106890.0,
+      "estimated_3m_value_high": 143892.0,
+      "expected_gain_3m": 18186.0,
+      "expected_gain_3m_high": 55188.0
     },
     {
       "code": "5016",
@@ -252,7 +230,29 @@
       "estimated_3m_value_high": 165968.0,
       "expected_gain_3m": 17250.0,
       "expected_gain_3m_high": 77832.0
+    },
+    {
+      "code": "6954",
+      "name": "ファナック",
+      "tier": "A",
+      "category": "STOCKS_MAIN",
+      "current": 7665.0,
+      "forecast_3m_mid": 9142.0,
+      "forecast_3m_pct": 19.3,
+      "forecast_3m_high": 12168.0,
+      "forecast_3m_high_pct": 58.7,
+      "tags": [
+        "ロボット",
+        "NVIDIA"
+      ],
+      "summary": "NVIDIAフィジカルAI提携、1000台超受注、米143億円投資",
+      "buy_shares": 11,
+      "invest_amt": 84315.0,
+      "estimated_3m_value": 100562.0,
+      "estimated_3m_value_high": 133848.0,
+      "expected_gain_3m": 16247.0,
+      "expected_gain_3m_high": 49533.0
     }
   ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約359,400円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+107,214円の利益期待. 高値ケースなら最大+312,165円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約359,400円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+107,598円の利益期待. 高値ケースなら最大+312,933円."
 }
