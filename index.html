@@ -74,7 +74,57 @@
     -webkit-tap-highlight-color: transparent;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    overflow-x: hidden;
   }
+  /* === Aurora 動く背景blob === */
+  body::before, body::after {
+    content: "";
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: -1;
+    will-change: transform;
+  }
+  body::before {
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(94,234,212,0.7), transparent 60%);
+    top: -200px; left: -200px;
+    animation: aurora1 22s ease-in-out infinite alternate;
+  }
+  body::after {
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(167,139,250,0.65), transparent 60%);
+    bottom: -200px; right: -200px;
+    animation: aurora2 28s ease-in-out infinite alternate;
+  }
+  @keyframes aurora1 {
+    0%   { transform: translate(0, 0) rotate(0deg) scale(1); }
+    50%  { transform: translate(120px, 80px) rotate(40deg) scale(1.15); }
+    100% { transform: translate(40px, 160px) rotate(80deg) scale(0.95); }
+  }
+  @keyframes aurora2 {
+    0%   { transform: translate(0, 0) rotate(0deg) scale(1); }
+    50%  { transform: translate(-100px, -60px) rotate(-30deg) scale(1.1); }
+    100% { transform: translate(-160px, -120px) rotate(-60deg) scale(0.9); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    body::before, body::after { animation: none; }
+  }
+  /* === ::selection (テキスト選択色) === */
+  ::selection { background: rgba(94,234,212,0.35); color: #fff; }
+  /* === Custom scrollbar === */
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.08);
+    border-radius: 999px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(94,234,212,0.3); background-clip: padding-box; }
   /* 数字は等幅でズレない */
   .num, .stat-value, .chat-table td, .chat-table th, td.num, .price {
     font-variant-numeric: tabular-nums;
@@ -1847,7 +1897,7 @@ body > button[onclick*="auto-analysis"]:hover {
     }
     // localStorage の app version 比較で1回だけ強制リロード
     // 重要バグ修正があった場合は必ずバンプ。これで全モバイル端末が次回起動時に新HTMLを取りに行く
-    var V = '20260519-voice-install-v11';
+    var V = '20260519-gemini-aurora-v12';
     if (localStorage.getItem('_app_v') !== V) {
       localStorage.setItem('_app_v', V);
       // セッション内で reload を1回だけに制限 (無限ループ防止)
@@ -4397,11 +4447,11 @@ function renderNisa() {
     }
   }
 
-  // Top stats row
+  // Top stats row (カウントアップアニメ付き)
   const _np = document.getElementById("nisaPrincipal");
   const _nc = document.getElementById("nisaCurrent");
-  _np.textContent = fmtYen(totalPrincipal);
-  _nc.textContent = fmtYen(current);
+  animateValueYen(_np, totalPrincipal);
+  animateValueYen(_nc, current);
   _np.classList.remove("skeleton","s-num");
   _nc.classList.remove("skeleton","s-num");
   const _oc = document.getElementById("ownedCount");
@@ -6832,6 +6882,19 @@ function buildGeminiSystemPrompt(ctx) {
     "・誇張(『絶対稼げる』『100倍確実』)・嘘・煽り商売トーンは絶対NG。",
     "・雑談・モチベ相談・愚痴も歓迎。投資の話に無理に戻さない。",
     "",
+    "【絶対NGの口調 (AI臭くなる)】",
+    "・『私は〜です』『お手伝いします』『〜のお役に立てれば幸いです』『どうぞお気軽に』 → こういう硬い敬語丁寧フォーマットは禁止",
+    "・『申し訳ございません』『恐れ入ります』『〜させていただきます』 → カジュアル兄貴分なので使わない",
+    "・自己紹介を毎回しない。『私はAIアドバイザーで〜』みたいな冒頭は禁止 (senderタグだけで十分)",
+    "・回答が箇条書きだけになるのは禁止。会話の流れを必ず作る",
+    "",
+    "【OKな口調例】",
+    "・『お、それ気になるよね。データ見るわ。』",
+    "・『正直 JHD は今キツい。理由は3つあって…』",
+    "・『なるほど、君の言ってる意味わかる。でも〜』",
+    "・『ちょっと待って、まず確認したい。今の含み損 -22万から動いてる？』",
+    "・『これ、思ってるより悪くないよ。』",
+    "",
     "【ユーザー属性】",
     "・17歳の高校3年生(2026年5月時点・あと数ヶ月で18歳)",
     "・SBI証券ジュニアNISA口座でアクティブトレード中",
@@ -7633,6 +7696,30 @@ function updateSnapshotChip() {
 }
 setInterval(updateSnapshotChip, 30000);
 window.addEventListener("load", () => setTimeout(updateSnapshotChip, 1500));
+
+// === 💸 数字カウントアップアニメ ===
+// 円表記の数字を 0.8秒で滑らかにカウントアップ表示。
+// 前回値と同じならスキップ、初回や大きな差の時だけ走る。
+function animateValueYen(el, target) {
+  if (!el || typeof target !== "number" || isNaN(target)) return;
+  const prev = parseFloat(el.dataset.prevValue);
+  if (!isNaN(prev) && Math.abs(prev - target) < 1) {
+    el.textContent = fmtYen(target);
+    return;
+  }
+  const from = isNaN(prev) ? 0 : prev;
+  const dur = 800; // ms
+  const t0 = performance.now();
+  const easeOut = (t) => 1 - Math.pow(1 - t, 3);
+  function tick(now) {
+    const t = Math.min(1, (now - t0) / dur);
+    const v = from + (target - from) * easeOut(t);
+    el.textContent = fmtYen(Math.round(v));
+    if (t < 1) requestAnimationFrame(tick);
+    else el.dataset.prevValue = String(target);
+  }
+  requestAnimationFrame(tick);
+}
 
 // === 🐖 養豚場脱出メーター ===
 // 過去最大ドローダウン (デフォルト -220,000) → 現在のNISA P/L までの回復度を表示
