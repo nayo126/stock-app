@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-05-21T03:19:06.875693+09:00",
+  "generated_at": "2026-05-21T03:38:14.866083+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 482360.0,
-    "total_pl": -368540.0,
-    "total_pl_pct": -43.31,
+    "total_value": 479460.0,
+    "total_pl": -371440.0,
+    "total_pl_pct": -43.65,
     "health_score": 0,
-    "total_recovery_if_sell": 363700.0,
-    "expected_gain_3m": 100733.0,
-    "expected_gain_3m_high": 305721.0
+    "total_recovery_if_sell": 361300.0,
+    "expected_gain_3m": 100075.0,
+    "expected_gain_3m_high": 302512.0
   },
   "judgments": [
     {
@@ -16,51 +16,51 @@
       "name": "JHD",
       "avg_price": 207.0,
       "shares": 2200,
-      "current": 110.0,
+      "current": 108.0,
       "cost_total": 455400.0,
-      "value_total": 242000.0,
+      "value_total": 237600.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-46.9%。元本回復に+88%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 242000.0,
+      "reason": "-47.8%。元本回復に+92%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 237600.0,
       "color": "red",
-      "pl_total": -213400.0,
-      "pl_pct": -46.85990338164252
+      "pl_total": -217800.0,
+      "pl_pct": -47.82608695652174
     },
     {
       "code": "3664",
       "name": "WIZE",
       "avg_price": 65.0,
       "shares": 500,
-      "current": 28.0,
+      "current": 25.0,
       "cost_total": 32500.0,
-      "value_total": 14000.0,
+      "value_total": 12500.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-56.9%。元本回復に+132%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 14000.0,
+      "reason": "-61.5%。元本回復に+160%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 12500.0,
       "color": "red",
-      "pl_total": -18500.0,
-      "pl_pct": -56.92307692307692
+      "pl_total": -20000.0,
+      "pl_pct": -61.53846153846154
     },
     {
       "code": "5856",
       "name": "エルアイイーエイチ",
       "avg_price": 39.0,
       "shares": 4000,
-      "current": 10.0,
+      "current": 11.0,
       "cost_total": 156000.0,
-      "value_total": 40000.0,
+      "value_total": 44000.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-74.4%。元本回復に+290%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 40000.0,
+      "reason": "-71.8%。元本回復に+255%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 44000.0,
       "color": "red",
-      "pl_total": -116000.0,
-      "pl_pct": -74.35897435897436
+      "pl_total": -112000.0,
+      "pl_pct": -71.7948717948718
     },
     {
       "code": "7527",
@@ -118,17 +118,17 @@
       "name": "いちご",
       "avg_price": 356.0,
       "shares": 100,
-      "current": 494.0,
+      "current": 484.0,
       "cost_total": 35600.0,
-      "value_total": 49400.0,
+      "value_total": 48400.0,
       "action": "TRIM_HALF",
       "label": "💰 半分利確",
       "priority": 3,
-      "reason": "+38.8%。NISA非課税利益を半分確定。残りで伸ばす",
-      "recover_amt": 24700.0,
+      "reason": "+36.0%。NISA非課税利益を半分確定。残りで伸ばす",
+      "recover_amt": 24200.0,
       "color": "green",
-      "pl_total": 13800.0,
-      "pl_pct": 38.764044943820224
+      "pl_total": 12800.0,
+      "pl_pct": 35.95505617977528
     },
     {
       "code": "7201",
@@ -224,12 +224,12 @@
         "銅箔"
       ],
       "summary": "AI素材独占、営業利益+44.8%、純利益+72.9%",
-      "buy_shares": 24,
-      "invest_amt": 90696.0,
-      "estimated_3m_value": 106488.0,
-      "estimated_3m_value_high": 167712.0,
-      "expected_gain_3m": 15792.0,
-      "expected_gain_3m_high": 77016.0
+      "buy_shares": 23,
+      "invest_amt": 86917.0,
+      "estimated_3m_value": 102051.0,
+      "estimated_3m_value_high": 160724.0,
+      "expected_gain_3m": 15134.0,
+      "expected_gain_3m_high": 73807.0
     },
     {
       "code": "6954",
@@ -254,5 +254,5 @@
       "expected_gain_3m_high": 48732.0
     }
   ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約363,700円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+100,733円の利益期待. 高値ケースなら最大+305,721円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約361,300円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+100,075円の利益期待. 高値ケースなら最大+302,512円."
 }
