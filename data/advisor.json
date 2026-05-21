@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-05-21T14:39:18.615954+09:00",
+  "generated_at": "2026-05-21T14:55:54.382213+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 496170.0,
-    "total_pl": -354730.0,
-    "total_pl_pct": -41.69,
-    "health_score": 15,
-    "total_recovery_if_sell": 373600.0,
-    "expected_gain_3m": 143299.0,
-    "expected_gain_3m_high": 388903.0
+    "total_value": 488900.0,
+    "total_pl": -362000.0,
+    "total_pl_pct": -42.54,
+    "health_score": 10,
+    "total_recovery_if_sell": 368050.0,
+    "expected_gain_3m": 138428.0,
+    "expected_gain_3m_high": 377927.0
   },
   "judgments": [
     {
@@ -50,34 +50,34 @@
       "name": "エルアイイーエイチ",
       "avg_price": 39.0,
       "shares": 4000,
-      "current": 13.0,
+      "current": 12.0,
       "cost_total": 156000.0,
-      "value_total": 52000.0,
+      "value_total": 48000.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-66.7%。元本回復に+200%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 52000.0,
+      "reason": "-69.2%。元本回復に+225%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 48000.0,
       "color": "red",
-      "pl_total": -104000.0,
-      "pl_pct": -66.66666666666666
+      "pl_total": -108000.0,
+      "pl_pct": -69.23076923076923
     },
     {
       "code": "4564",
       "name": "OTS",
       "avg_price": 27.0,
       "shares": 3000,
-      "current": 21.0,
+      "current": 20.0,
       "cost_total": 81000.0,
-      "value_total": 63000.0,
+      "value_total": 60000.0,
       "action": "SELL_HALF",
       "label": "⚠️ 半分損切り",
       "priority": 2,
-      "reason": "-22.2%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 31500.0,
+      "reason": "-25.9%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 30000.0,
       "color": "orange",
-      "pl_total": -18000.0,
-      "pl_pct": -22.22222222222222
+      "pl_total": -21000.0,
+      "pl_pct": -25.925925925925924
     },
     {
       "code": "5103",
@@ -118,17 +118,33 @@
       "name": "いちご",
       "avg_price": 356.0,
       "shares": 100,
-      "current": 491.0,
+      "current": 490.0,
       "cost_total": 35600.0,
-      "value_total": 49100.0,
+      "value_total": 49000.0,
       "action": "TRIM_HALF",
       "label": "💰 半分利確",
       "priority": 3,
-      "reason": "+37.9%。NISA非課税利益を半分確定。残りで伸ばす",
-      "recover_amt": 24550.0,
+      "reason": "+37.6%。NISA非課税利益を半分確定。残りで伸ばす",
+      "recover_amt": 24500.0,
       "color": "green",
-      "pl_total": 13500.0,
-      "pl_pct": 37.92134831460674
+      "pl_total": 13400.0,
+      "pl_pct": 37.640449438202246
+    },
+    {
+      "code": "7201",
+      "name": "日産自",
+      "avg_price": 426.0,
+      "shares": 100,
+      "current": 362.0,
+      "cost_total": 42600.0,
+      "value_total": 36200.0,
+      "action": "WATCH_DROP",
+      "label": "🔻 損切り検討",
+      "priority": 4,
+      "reason": "-15.0%。-20%到達したら半分損切り",
+      "color": "yellow",
+      "pl_total": -6400.0,
+      "pl_pct": -15.023474178403756
     },
     {
       "code": "2134",
@@ -145,22 +161,6 @@
       "color": "gray",
       "pl_total": 0.0,
       "pl_pct": 0.0
-    },
-    {
-      "code": "7201",
-      "name": "日産自",
-      "avg_price": 426.0,
-      "shares": 100,
-      "current": 363.7,
-      "cost_total": 42600.0,
-      "value_total": 36370.0,
-      "action": "HOLD",
-      "label": "✋ 保有継続",
-      "priority": 6,
-      "reason": "-14.6%。レンジ内、判断保留",
-      "color": "gray",
-      "pl_total": -6230.000000000001,
-      "pl_pct": -14.624413145539908
     }
   ],
   "recommended_buys": [
@@ -169,11 +169,11 @@
       "name": "イビデン",
       "tier": "S",
       "category": "STOCKS_MAIN",
-      "current": 18045.0,
-      "forecast_3m_mid": 34209.0,
-      "forecast_3m_pct": 89.6,
-      "forecast_3m_high": 54435.0,
-      "forecast_3m_high_pct": 201.7,
+      "current": 17915.0,
+      "forecast_3m_mid": 33714.0,
+      "forecast_3m_pct": 88.2,
+      "forecast_3m_high": 53536.0,
+      "forecast_3m_high_pct": 198.8,
       "tags": [
         "NVIDIA",
         "ABF基板",
@@ -181,55 +181,55 @@
       ],
       "summary": "NVIDIA向けABF基板独占、FY2027 +42.5%増益予想",
       "buy_shares": 5,
-      "invest_amt": 90225.0,
-      "estimated_3m_value": 171045.0,
-      "estimated_3m_value_high": 272175.0,
-      "expected_gain_3m": 80820.0,
-      "expected_gain_3m_high": 181950.0
+      "invest_amt": 89575.0,
+      "estimated_3m_value": 168570.0,
+      "estimated_3m_value_high": 267680.0,
+      "expected_gain_3m": 78995.0,
+      "expected_gain_3m_high": 178105.0
     },
     {
       "code": "6506",
       "name": "安川電機",
       "tier": "A",
       "category": "STOCKS_MAIN",
-      "current": 6670.0,
-      "forecast_3m_mid": 8592.0,
-      "forecast_3m_pct": 28.8,
-      "forecast_3m_high": 11739.0,
-      "forecast_3m_high_pct": 76.0,
+      "current": 6635.0,
+      "forecast_3m_mid": 8501.0,
+      "forecast_3m_pct": 28.1,
+      "forecast_3m_high": 11598.0,
+      "forecast_3m_high_pct": 74.8,
       "tags": [
         "ロボット",
         "NVIDIA"
       ],
       "summary": "NVIDIA+SBフィジカルAI提携、FY2027 +26.8%予想",
-      "buy_shares": 14,
-      "invest_amt": 93380.0,
-      "estimated_3m_value": 120288.0,
-      "estimated_3m_value_high": 164346.0,
-      "expected_gain_3m": 26908.0,
-      "expected_gain_3m_high": 70966.0
+      "buy_shares": 13,
+      "invest_amt": 86255.0,
+      "estimated_3m_value": 110513.0,
+      "estimated_3m_value_high": 150774.0,
+      "expected_gain_3m": 24258.0,
+      "expected_gain_3m_high": 64519.0
     },
     {
       "code": "6954",
       "name": "ファナック",
       "tier": "A",
       "category": "STOCKS_MAIN",
-      "current": 7686.0,
-      "forecast_3m_mid": 9207.0,
-      "forecast_3m_pct": 19.8,
-      "forecast_3m_high": 12331.0,
-      "forecast_3m_high_pct": 60.4,
+      "current": 7663.0,
+      "forecast_3m_mid": 9151.0,
+      "forecast_3m_pct": 19.4,
+      "forecast_3m_high": 12251.0,
+      "forecast_3m_high_pct": 59.9,
       "tags": [
         "ロボット",
         "NVIDIA"
       ],
       "summary": "NVIDIAフィジカルAI提携、1000台超受注、米143億円投資",
       "buy_shares": 12,
-      "invest_amt": 92232.0,
-      "estimated_3m_value": 110484.0,
-      "estimated_3m_value_high": 147972.0,
-      "expected_gain_3m": 18252.0,
-      "expected_gain_3m_high": 55740.0
+      "invest_amt": 91956.0,
+      "estimated_3m_value": 109812.0,
+      "estimated_3m_value_high": 147012.0,
+      "expected_gain_3m": 17856.0,
+      "expected_gain_3m_high": 55056.0
     },
     {
       "code": "5016",
@@ -254,5 +254,5 @@
       "expected_gain_3m_high": 80247.0
     }
   ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約373,600円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+143,299円の利益期待. 高値ケースなら最大+388,903円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約368,050円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+138,428円の利益期待. 高値ケースなら最大+377,927円."
 }
