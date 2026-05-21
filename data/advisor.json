@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-21T08:28:01.393938+09:00",
+  "generated_at": "2026-05-21T09:01:37.730549+09:00",
   "summary": {
     "total_cost": 850900.0,
     "total_value": 479460.0,
@@ -7,8 +7,8 @@
     "total_pl_pct": -43.65,
     "health_score": 0,
     "total_recovery_if_sell": 361300.0,
-    "expected_gain_3m": 100075.0,
-    "expected_gain_3m_high": 302512.0
+    "expected_gain_3m": 89546.0,
+    "expected_gain_3m_high": 288267.0
   },
   "judgments": [
     {
@@ -170,10 +170,10 @@
       "tier": "S",
       "category": "STOCKS_MAIN",
       "current": 15640.0,
-      "forecast_3m_mid": 26485.0,
-      "forecast_3m_pct": 69.3,
-      "forecast_3m_high": 41325.0,
-      "forecast_3m_high_pct": 164.2,
+      "forecast_3m_mid": 25855.0,
+      "forecast_3m_pct": 65.3,
+      "forecast_3m_high": 40472.0,
+      "forecast_3m_high_pct": 158.8,
       "tags": [
         "NVIDIA",
         "ABF基板",
@@ -182,10 +182,10 @@
       "summary": "NVIDIA向けABF基板独占、FY2027 +42.5%増益予想",
       "buy_shares": 5,
       "invest_amt": 78200.0,
-      "estimated_3m_value": 132425.0,
-      "estimated_3m_value_high": 206625.0,
-      "expected_gain_3m": 54225.0,
-      "expected_gain_3m_high": 128425.0
+      "estimated_3m_value": 129275.0,
+      "estimated_3m_value_high": 202360.0,
+      "expected_gain_3m": 51075.0,
+      "expected_gain_3m_high": 124160.0
     },
     {
       "code": "6506",
@@ -193,10 +193,10 @@
       "tier": "A",
       "category": "STOCKS_MAIN",
       "current": 6076.0,
-      "forecast_3m_mid": 7238.0,
-      "forecast_3m_pct": 19.1,
-      "forecast_3m_high": 9758.0,
-      "forecast_3m_high_pct": 60.6,
+      "forecast_3m_mid": 7138.0,
+      "forecast_3m_pct": 17.5,
+      "forecast_3m_high": 9645.0,
+      "forecast_3m_high_pct": 58.7,
       "tags": [
         "ロボット",
         "NVIDIA"
@@ -204,32 +204,10 @@
       "summary": "NVIDIA+SBフィジカルAI提携、FY2027 +26.8%予想",
       "buy_shares": 14,
       "invest_amt": 85064.0,
-      "estimated_3m_value": 101332.0,
-      "estimated_3m_value_high": 136612.0,
-      "expected_gain_3m": 16268.0,
-      "expected_gain_3m_high": 51548.0
-    },
-    {
-      "code": "5016",
-      "name": "JX金属",
-      "tier": "A",
-      "category": "STOCKS_MAIN",
-      "current": 3779.0,
-      "forecast_3m_mid": 4437.0,
-      "forecast_3m_pct": 17.4,
-      "forecast_3m_high": 6988.0,
-      "forecast_3m_high_pct": 84.9,
-      "tags": [
-        "AI素材",
-        "銅箔"
-      ],
-      "summary": "AI素材独占、営業利益+44.8%、純利益+72.9%",
-      "buy_shares": 23,
-      "invest_amt": 86917.0,
-      "estimated_3m_value": 102051.0,
-      "estimated_3m_value_high": 160724.0,
-      "expected_gain_3m": 15134.0,
-      "expected_gain_3m_high": 73807.0
+      "estimated_3m_value": 99932.0,
+      "estimated_3m_value_high": 135030.0,
+      "expected_gain_3m": 14868.0,
+      "expected_gain_3m_high": 49966.0
     },
     {
       "code": "6954",
@@ -237,10 +215,10 @@
       "tier": "A",
       "category": "STOCKS_MAIN",
       "current": 7322.0,
-      "forecast_3m_mid": 8526.0,
-      "forecast_3m_pct": 16.4,
-      "forecast_3m_high": 11383.0,
-      "forecast_3m_high_pct": 55.5,
+      "forecast_3m_mid": 8367.0,
+      "forecast_3m_pct": 14.3,
+      "forecast_3m_high": 11193.0,
+      "forecast_3m_high_pct": 52.9,
       "tags": [
         "ロボット",
         "NVIDIA"
@@ -248,11 +226,33 @@
       "summary": "NVIDIAフィジカルAI提携、1000台超受注、米143億円投資",
       "buy_shares": 12,
       "invest_amt": 87864.0,
-      "estimated_3m_value": 102312.0,
-      "estimated_3m_value_high": 136596.0,
-      "expected_gain_3m": 14448.0,
-      "expected_gain_3m_high": 48732.0
+      "estimated_3m_value": 100404.0,
+      "estimated_3m_value_high": 134316.0,
+      "expected_gain_3m": 12540.0,
+      "expected_gain_3m_high": 46452.0
+    },
+    {
+      "code": "5016",
+      "name": "JX金属",
+      "tier": "A",
+      "category": "STOCKS_MAIN",
+      "current": 3779.0,
+      "forecast_3m_mid": 4260.0,
+      "forecast_3m_pct": 12.7,
+      "forecast_3m_high": 6722.0,
+      "forecast_3m_high_pct": 77.9,
+      "tags": [
+        "AI素材",
+        "銅箔"
+      ],
+      "summary": "AI素材独占、営業利益+44.8%、純利益+72.9%",
+      "buy_shares": 23,
+      "invest_amt": 86917.0,
+      "estimated_3m_value": 97980.0,
+      "estimated_3m_value_high": 154606.0,
+      "expected_gain_3m": 11063.0,
+      "expected_gain_3m_high": 67689.0
     }
   ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約361,300円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+100,075円の利益期待. 高値ケースなら最大+302,512円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約361,300円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+89,546円の利益期待. 高値ケースなら最大+288,267円."
 }
