@@ -115,6 +115,65 @@
   }
   /* === ::selection (テキスト選択色) === */
   ::selection { background: rgba(94,234,212,0.35); color: #fff; }
+
+  /* === 🍞 Toast 通知 === */
+  #toastContainer {
+    position: fixed;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    pointer-events: none;
+    max-width: 90vw;
+  }
+  .app-toast {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 18px;
+    background: rgba(13, 19, 32, 0.96);
+    backdrop-filter: blur(22px) saturate(160%);
+    -webkit-backdrop-filter: blur(22px) saturate(160%);
+    border: 1px solid var(--border-strong);
+    border-radius: 999px;
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 600;
+    box-shadow: 0 12px 36px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.04) inset;
+    opacity: 0;
+    transform: translateY(-20px) scale(0.96);
+    transition: opacity .28s ease, transform .28s cubic-bezier(0.2,0.9,0.3,1.1);
+    pointer-events: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .app-toast.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  .app-toast .t-icon { font-size: 16px; }
+  .app-toast-ok { border-color: rgba(94,234,212,0.5); }
+  .app-toast-err { border-color: rgba(248,113,113,0.5); color: #ffd1d5; }
+  .app-toast-warn { border-color: rgba(251,191,36,0.5); color: #fde2a8; }
+
+  /* === ✨ Click ripple (Material風) === */
+  .click-ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(94,234,212,0.32);
+    transform: scale(0);
+    animation: rippleExpand 0.65s cubic-bezier(0.2, 0.7, 0.3, 1);
+    pointer-events: none;
+    z-index: 50;
+  }
+  @keyframes rippleExpand {
+    0%   { transform: scale(0); opacity: 0.7; }
+    100% { transform: scale(1); opacity: 0; }
+  }
   /* === Custom scrollbar === */
   ::-webkit-scrollbar { width: 10px; height: 10px; }
   ::-webkit-scrollbar-track { background: transparent; }
@@ -132,6 +191,192 @@
   }
   .mono { font-family: var(--font-mono); }
   .container { max-width: 1400px; margin: 0 auto; }
+
+  /* === ✨ Premium Status Bar === */
+  .status-bar {
+    position: sticky;
+    top: 0;
+    z-index: 9998;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+    background: rgba(6, 9, 15, 0.78);
+    backdrop-filter: blur(22px) saturate(160%);
+    -webkit-backdrop-filter: blur(22px) saturate(160%);
+    border-bottom: 1px solid var(--border-strong);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-mid);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+  }
+  .status-bar::after {
+    content: "";
+    position: absolute; left: 0; right: 0; bottom: -1px; height: 1px;
+    background: linear-gradient(90deg, transparent 5%, rgba(94,234,212,0.55) 50%, transparent 95%);
+    pointer-events: none;
+  }
+  .sb-left, .sb-right {
+    display: flex; align-items: center; gap: 8px; flex-shrink: 0;
+  }
+  .sb-center {
+    flex: 1; text-align: center; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .sb-hero-text {
+    background: var(--grad-mint);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800; letter-spacing: -0.01em;
+  }
+  .sb-pulse {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: #34d399;
+    box-shadow: 0 0 12px rgba(52,211,153,0.8);
+    animation: sbPulse 1.6s ease-in-out infinite;
+  }
+  @keyframes sbPulse {
+    0%,100% { opacity: 1; transform: scale(1); }
+    50%     { opacity: 0.55; transform: scale(0.86); }
+  }
+  .sb-label {
+    font-size: 10px; font-weight: 800; letter-spacing: 1.5px;
+    color: #34d399;
+  }
+  .sb-divider {
+    width: 1px; height: 14px; background: rgba(255,255,255,0.16);
+  }
+  .sb-mkt, .sb-data {
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .sb-mkt.open    { color: #5eead4; }
+  .sb-mkt.closed  { color: var(--text-dim); }
+  .sb-mkt.pre     { color: #fbbf24; }
+  @media (max-width: 768px) {
+    .status-bar { padding: 8px 12px; gap: 6px; font-size: 11px; }
+    .sb-center { display: none; } /* モバイルでは非表示 (LIVE+データ鮮度だけ) */
+  }
+
+  /* === 🦅 Hero Header === */
+  .hero-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 0 22px;
+    margin-bottom: 26px;
+    position: relative;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .hero-header::after {
+    content: "";
+    position: absolute; left: 0; right: 0; bottom: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(94,234,212,0.4) 50%, transparent);
+    opacity: 0.7;
+  }
+  .hero-left {
+    display: flex; align-items: center; gap: 16px;
+  }
+  .hero-logo {
+    position: relative;
+    width: 54px; height: 54px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 16px;
+    border: 1px solid var(--border-strong);
+    background: rgba(13,19,32,0.6);
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .hero-logo-orb {
+    position: absolute; inset: -20%;
+    background: radial-gradient(circle at 30% 30%, #5eead4, transparent 50%),
+                radial-gradient(circle at 70% 70%, #a78bfa, transparent 55%);
+    filter: blur(14px);
+    opacity: 0.85;
+    animation: orbSpin 12s linear infinite;
+  }
+  @keyframes orbSpin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+  .hero-logo-glyph {
+    position: relative; z-index: 1;
+    font-size: 26px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+  }
+  .hero-title {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    background: linear-gradient(135deg, #fff 0%, #5eead4 60%, #a78bfa 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.1;
+  }
+  .header-sub {
+    color: var(--text-dim);
+    font-size: 12.5px;
+    margin-top: 4px;
+    font-weight: 500;
+  }
+  .hero-actions {
+    display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
+  }
+  .hero-link {
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 9px 14px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border-strong);
+    color: var(--text);
+    font-size: 12.5px; font-weight: 600;
+    text-decoration: none;
+    transition: all .18s ease;
+  }
+  .hero-link:hover {
+    background: rgba(94,234,212,0.1);
+    border-color: rgba(94,234,212,0.4);
+    transform: translateY(-1px);
+  }
+  .hero-link-arrow { font-size: 11px; opacity: 0.7; }
+  .hero-menu-btn {
+    display: inline-flex; align-items: center; gap: 7px;
+    padding: 9px 16px;
+    border-radius: 12px;
+    background: var(--grad-mint);
+    color: #06090f;
+    border: none;
+    font-size: 12.5px; font-weight: 700;
+    cursor: pointer;
+    box-shadow: var(--shadow-pop);
+    position: relative;
+    transition: transform .15s ease, filter .15s ease;
+  }
+  .hero-menu-btn:hover { filter: brightness(1.08); }
+  .hero-menu-btn:active { transform: scale(0.96); }
+  .hm-icon { font-size: 14px; }
+  .hm-label {}
+  .hm-badge {
+    position: absolute; top: -5px; right: -5px;
+    min-width: 18px; height: 18px;
+    border-radius: 999px;
+    background: var(--down);
+    color: #fff;
+    font-size: 10px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    padding: 0 5px;
+    box-shadow: 0 0 0 2px var(--bg);
+  }
+  @media (max-width: 640px) {
+    .hero-header { padding: 18px 0 16px; margin-bottom: 18px; gap: 10px; }
+    .hero-title { font-size: 21px; }
+    .hero-logo { width: 44px; height: 44px; }
+    .hero-logo-glyph { font-size: 22px; }
+    .hero-link { padding: 8px 11px; font-size: 11.5px; }
+    .hero-menu-btn { padding: 8px 12px; font-size: 12px; }
+    .hm-label { display: none; }
+  }
+
   header {
     display: flex;
     justify-content: space-between;
@@ -181,6 +426,55 @@
     transform: translateY(-1px);
     border-color: var(--border-strong);
     box-shadow: var(--shadow-card);
+  }
+  /* === Premium stat cards (アイコン+グロー付き) === */
+  /* 旧 .stat-card::before/::after が既に使われているので、ここでは ::before/::after に頼らず .stat-icon と box-shadow で表現する */
+  .stat-card-premium {
+    position: relative;
+    padding: 20px 20px 18px !important;
+    background-image:
+      radial-gradient(circle at top right, rgba(94,234,212,0.12) 0%, transparent 50%) !important;
+    background-color: rgba(20, 25, 40, 0.55) !important;
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+                box-shadow 0.4s ease,
+                border-color 0.4s ease,
+                background-image 0.3s ease !important;
+  }
+  .stat-card-premium .stat-icon {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    font-size: 28px;
+    opacity: 0.4;
+    transition: opacity .3s ease, transform .3s ease;
+    filter: drop-shadow(0 2px 8px rgba(94,234,212,0.3));
+    z-index: 2;
+  }
+  .stat-card-premium:hover .stat-icon {
+    opacity: 0.9;
+    transform: scale(1.15) rotate(-5deg);
+  }
+  .stat-card-premium:hover {
+    background-image:
+      radial-gradient(circle at top right, rgba(94,234,212,0.25) 0%, transparent 60%) !important;
+    box-shadow:
+      0 24px 50px rgba(0, 0, 0, 0.55),
+      0 0 0 1px rgba(94,234,212,0.25),
+      inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
+  }
+  /* メインカードは常に光る */
+  .stat-card-premium.accent-card {
+    border-color: rgba(94,234,212,0.32) !important;
+    background-image:
+      radial-gradient(circle at top right, rgba(94,234,212,0.22) 0%, transparent 55%),
+      linear-gradient(135deg, rgba(167,139,250,0.06), transparent 60%) !important;
+    box-shadow:
+      0 12px 36px rgba(94,234,212,0.12),
+      0 8px 32px rgba(0, 0, 0, 0.5),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+  }
+  .stat-card-premium.accent-card .stat-icon {
+    opacity: 0.7;
   }
   .stat-label {
     color: var(--text-dim);
@@ -263,7 +557,14 @@
     .tab { white-space: nowrap; width: auto; }
   }
   .tab-content { display: none; }
-  .tab-content.active { display: block; }
+  .tab-content.active {
+    display: block;
+    animation: tabFadeIn 0.32s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  @keyframes tabFadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
   .filter-row {
     display: flex;
     gap: 10px;
@@ -1321,17 +1622,7 @@ body {
   min-height: 100vh !important;
   overflow-x: hidden;
 }
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background:
-    linear-gradient(135deg, rgba(10, 14, 26, 0.78) 0%, rgba(10, 14, 26, 0.88) 100%),
-    radial-gradient(ellipse 50% 40% at 20% 20%, rgba(0, 149, 246, 0.15), transparent 70%);
-  z-index: -1;
-  pointer-events: none;
-  backdrop-filter: blur(2px);
-}
+/* === [REMOVED] old body::before — conflicted with aurora blobs at the top of file === */
 
 /* ===== サイドバーメニュー (threads-api-app と同じ構成) ===== */
 .macos-sidebar {
@@ -1451,15 +1742,17 @@ body::before {
     padding-top: 60px !important;
   }
 }
-body::after {
+/* === ✨ ドットグリッド (背景テクスチャ・aurora と両立) === */
+.container::before {
   content: '';
   position: fixed;
   inset: 0;
   background:
-    radial-gradient(circle at 1px 1px, rgba(255,255,255,0.04) 1px, transparent 0);
+    radial-gradient(circle at 1px 1px, rgba(255,255,255,0.035) 1px, transparent 0);
   background-size: 32px 32px;
   z-index: -1;
   pointer-events: none;
+  opacity: 0.6;
 }
 
 /* ===== Glassmorphism: 全カード 2重ガラス効果 ===== */
@@ -1897,7 +2190,7 @@ body > button[onclick*="auto-analysis"]:hover {
     }
     // localStorage の app version 比較で1回だけ強制リロード
     // 重要バグ修正があった場合は必ずバンプ。これで全モバイル端末が次回起動時に新HTMLを取りに行く
-    var V = '20260519-gemini-aurora-v12';
+    var V = '20260519-hero-toast-v13';
     if (localStorage.getItem('_app_v') !== V) {
       localStorage.setItem('_app_v', V);
       // セッション内で reload を1回だけに制限 (無限ループ防止)
@@ -1983,39 +2276,153 @@ window.refreshAllAppData = async function(reason) {
     fetchJson('./data/advisor.json').then(d => { window.__ADVISOR__ = d; }).catch(e => console.warn('[refresh:adv]', e)),
     fetchJson('./data/analysis.json').then(d => { window.__ANALYSIS__ = d; }).catch(e => console.warn('[refresh:ana]', e))
   ];
-  await Promise.allSettled(tasks);
+  const results = await Promise.allSettled(tasks);
   // ヘッダの最終更新表示を更新
   try { updateDataFreshnessBadge(); } catch(_) {}
   console.log('[refreshAll]', reason || 'manual', 'done');
+  // manual / pull-to-refresh の時だけ toast
+  if (reason === 'manual' || reason === 'pull-to-refresh') {
+    const failed = results.filter(r => r.status === 'rejected').length;
+    if (typeof window.toast === 'function') {
+      if (failed === 0) window.toast('データを最新化しました', 'ok');
+      else window.toast(`一部失敗しました (${failed}/${results.length})`, 'warn');
+    }
+  }
 };
 
 window.updateDataFreshnessBadge = function() {
   const el = document.getElementById('dataFreshnessBadge');
-  if (!el) return;
+  const sbData = document.getElementById('sbDataAge');
   const snap = window.__SNAPSHOT__;
+  function setBoth(text, color) {
+    if (el) { el.textContent = text; el.style.color = color; }
+    if (sbData) { sbData.textContent = text; sbData.style.color = color; }
+  }
   if (!snap || !snap.generated_at) {
-    el.textContent = '⚠️ データ未取得';
-    el.style.color = '#ff7392';
+    setBoth('⚠️ データ未取得', '#ff7392');
     return;
   }
   const age = (Date.now() - new Date(snap.generated_at).getTime()) / 60000;
   const ageMin = Math.round(age);
   if (age < 30) {
-    el.textContent = `🟢 ${ageMin}分前`;
-    el.style.color = '#64ffda';
+    setBoth(`🟢 ${ageMin}分前`, '#5eead4');
   } else if (age < 180) {
-    el.textContent = `🟡 ${ageMin}分前`;
-    el.style.color = '#ffd166';
+    setBoth(`🟡 ${ageMin}分前`, '#fbbf24');
   } else {
-    el.textContent = `🔴 ${Math.round(age/60)}時間前`;
-    el.style.color = '#ff7392';
+    setBoth(`🔴 ${Math.round(age/60)}時間前`, '#ff7392');
   }
 };
+
+// === マーケット状態 (日本時間ベース) ===
+window.updateMarketStatus = function() {
+  const el = document.getElementById('sbMarketStatus');
+  if (!el) return;
+  // 日本時間を取得
+  const now = new Date();
+  const jstStr = now.toLocaleString('en-US', { timeZone: 'Asia/Tokyo' });
+  const jst = new Date(jstStr);
+  const day = jst.getDay(); // 0=Sun, 6=Sat
+  const h = jst.getHours();
+  const m = jst.getMinutes();
+  const t = h * 60 + m;
+
+  let label, cls;
+  if (day === 0 || day === 6) {
+    label = '🌙 週末 (市場休場)';
+    cls = 'closed';
+  } else if (t < 9 * 60) {
+    const mins = (9 * 60) - t;
+    label = `🌅 開場まで ${Math.floor(mins/60)}h${mins%60}m`;
+    cls = 'pre';
+  } else if (t < 11 * 60 + 30) {
+    label = '🟢 前場開催中';
+    cls = 'open';
+  } else if (t < 12 * 60 + 30) {
+    label = '☕ 昼休み';
+    cls = 'pre';
+  } else if (t < 15 * 60 + 30) {
+    label = '🟢 後場開催中';
+    cls = 'open';
+  } else {
+    label = '🌆 終場 (15:30〜)';
+    cls = 'closed';
+  }
+  el.textContent = label;
+  el.className = 'sb-mkt ' + cls;
+};
+setInterval(() => { try { window.updateMarketStatus(); } catch(_) {} }, 30 * 1000);
+window.addEventListener('load', () => setTimeout(() => { try { window.updateMarketStatus(); } catch(_) {} }, 500));
 
 // 30秒ごとに鮮度表示を更新
 setInterval(() => { try { window.updateDataFreshnessBadge(); } catch(_) {} }, 30 * 1000);
 // 5分ごとに全データを強制更新
 setInterval(() => { try { window.refreshAllAppData('periodic'); } catch(_) {} }, 5 * 60 * 1000);
+
+// === 📳 Haptic feedback (モバイル) ===
+// bottom-nav・送信ボタン押下で微振動
+window.haptic = function(pattern) {
+  if (!navigator.vibrate) return;
+  try { navigator.vibrate(pattern || 12); } catch(_){}
+};
+
+// === 🍞 Toast 通知 ===
+// window.toast("更新完了", "ok") / "err" / "info" / "warn"
+(function setupToast() {
+  let container;
+  function ensureContainer() {
+    if (container) return container;
+    container = document.createElement('div');
+    container.id = 'toastContainer';
+    document.body.appendChild(container);
+    return container;
+  }
+  window.toast = function(message, type, duration) {
+    type = type || 'info';
+    duration = duration || 2800;
+    const root = ensureContainer();
+    const t = document.createElement('div');
+    t.className = 'app-toast app-toast-' + type;
+    const icons = { ok: '✅', err: '⚠️', info: 'ℹ️', warn: '⚠️' };
+    t.innerHTML = `<span class="t-icon">${icons[type] || 'ℹ️'}</span><span class="t-text">${message}</span>`;
+    root.appendChild(t);
+    requestAnimationFrame(() => t.classList.add('visible'));
+    setTimeout(() => {
+      t.classList.remove('visible');
+      setTimeout(() => t.remove(), 350);
+    }, duration);
+  };
+})();
+
+// === ✨ Click ripple effect (Material風) ===
+window.attachRipple = function(el) {
+  if (!el || el.dataset.rippleBound === '1') return;
+  el.dataset.rippleBound = '1';
+  el.addEventListener('pointerdown', function(e) {
+    const rect = el.getBoundingClientRect();
+    const r = document.createElement('span');
+    r.className = 'click-ripple';
+    const size = Math.max(rect.width, rect.height) * 1.4;
+    r.style.width = r.style.height = size + 'px';
+    r.style.left = (e.clientX - rect.left - size/2) + 'px';
+    r.style.top = (e.clientY - rect.top - size/2) + 'px';
+    el.appendChild(r);
+    setTimeout(() => r.remove(), 700);
+  });
+};
+// bottom-nav と hero-link / hero-menu-btn にリップル+振動
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.querySelectorAll('.bottom-nav-item, .hero-link, .hero-menu-btn, .chat-quick, .tab').forEach(el => {
+      try {
+        const cs = getComputedStyle(el);
+        if (cs.position === 'static') el.style.position = 'relative';
+        el.style.overflow = 'hidden';
+        window.attachRipple(el);
+        el.addEventListener('pointerdown', () => window.haptic(10));
+      } catch(_){}
+    });
+  }, 800);
+});
 </script>
 
 <!-- ===== サイドバーメニュー ===== -->
@@ -2049,27 +2456,47 @@ setInterval(() => { try { window.refreshAllAppData('periodic'); } catch(_) {} },
   </div>
 </aside>
 
-<!-- バージョンバナー -->
-<div style="background:linear-gradient(90deg,#0095f6 0%,#00d4ff 100%); color:#fff; padding:8px 16px; text-align:center; font-weight:600; font-size:12px; position:sticky; top:0; z-index:9998;">
-  ✨ v2026-05-01 macOS構成 - threads-app統一
-  <a href="#auto-analysis" style="color:#fff; text-decoration:underline; margin-left:8px;">📊分析</a>
-  <a href="#auto-snapshot" style="color:#fff; text-decoration:underline; margin-left:6px;">📡データ</a>
+<!-- ✨ Premium Status Bar (旧バージョンバナーを置き換え) -->
+<div class="status-bar" id="statusBar">
+  <div class="sb-left">
+    <span class="sb-pulse"></span>
+    <span class="sb-label">LIVE</span>
+    <span class="sb-divider"></span>
+    <span class="sb-mkt" id="sbMarketStatus">📊 マーケット判定中…</span>
+  </div>
+  <div class="sb-center" id="sbHero">
+    <span class="sb-hero-text">養豚場から這い上がる投資ダッシュボード</span>
+  </div>
+  <div class="sb-right">
+    <span class="sb-data" id="sbDataAge">📡 取得中…</span>
+  </div>
 </div>
 <!-- floating ボタン削除済 (bottom-nav に統合) -->
 
 <div class="container">
 
-  <header>
-    <div>
-      <h1>📈 Investment Dashboard</h1>
-      <div class="header-sub">日本株 NISA ポートフォリオ管理 · 2026年4月版</div>
+  <header class="hero-header">
+    <div class="hero-left">
+      <div class="hero-logo">
+        <div class="hero-logo-orb"></div>
+        <div class="hero-logo-glyph">📈</div>
+      </div>
+      <div>
+        <h1 class="hero-title">Investment Dashboard</h1>
+        <div class="header-sub">日本株 NISA · AI相棒付きトレード管理</div>
+      </div>
     </div>
-    <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
-      <a class="action-btn" href="https://finance.yahoo.co.jp/" target="_blank">Yahoo ↗</a>
-      <a class="action-btn" href="https://kabutan.jp/" target="_blank">株探 ↗</a>
-      <button class="menu-btn" onclick="openMenu()">
-        ☰ メニュー
-        <span class="menu-badge" id="menuBadge">0</span>
+    <div class="hero-actions">
+      <a class="hero-link" href="https://finance.yahoo.co.jp/" target="_blank" title="Yahoo Finance">
+        <span>Yahoo</span><span class="hero-link-arrow">↗</span>
+      </a>
+      <a class="hero-link" href="https://kabutan.jp/" target="_blank" title="株探">
+        <span>株探</span><span class="hero-link-arrow">↗</span>
+      </a>
+      <button class="hero-menu-btn" onclick="openMenu()" aria-label="メニュー">
+        <span class="hm-icon">☰</span>
+        <span class="hm-label">メニュー</span>
+        <span class="hm-badge" id="menuBadge">0</span>
       </button>
     </div>
   </header>
@@ -2089,22 +2516,26 @@ setInterval(() => { try { window.refreshAllAppData('periodic'); } catch(_) {} },
   </div>
 
   <div class="stats-row">
-    <div class="stat-card">
+    <div class="stat-card stat-card-premium">
+      <div class="stat-icon">💴</div>
       <div class="stat-label">NISA投入額（元本）</div>
       <div class="stat-value skeleton s-num" id="nisaPrincipal">¥0</div>
       <div class="stat-sub" id="nisaPrincipalSub">読み込み中…</div>
     </div>
-    <div class="stat-card">
+    <div class="stat-card stat-card-premium accent-card">
+      <div class="stat-icon">💎</div>
       <div class="stat-label">NISA現在評価額</div>
       <div class="stat-value accent skeleton s-num" id="nisaCurrent">¥0</div>
       <div class="stat-sub" id="nisaPnL">損益: -</div>
     </div>
-    <div class="stat-card">
+    <div class="stat-card stat-card-premium">
+      <div class="stat-icon">📋</div>
       <div class="stat-label">保有中銘柄</div>
       <div class="stat-value skeleton s-num" id="ownedCount">0</div>
       <div class="stat-sub">想定価値: <span id="totalValue">¥0</span></div>
     </div>
-    <div class="stat-card">
+    <div class="stat-card stat-card-premium">
+      <div class="stat-icon">🎯</div>
       <div class="stat-label">Nikkei目標</div>
       <div class="stat-value">¥60,000</div>
       <div class="stat-sub">野村 2026年末</div>
