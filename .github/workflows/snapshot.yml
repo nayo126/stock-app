@@ -60,4 +60,14 @@ jobs:
             exit 0
           fi
           git commit -m "auto: snapshot $(date -u +%Y-%m-%dT%H:%MZ)"
-          git push
+          # 並行runや手動pushとのレースで push が弾かれることがあるので
+          # rebase してリトライ (最大5回)。これで「全自動で確実に」更新が通る。
+          for attempt in 1 2 3 4 5; do
+            if git push; then
+              echo "push ok (attempt $attempt)"
+              break
+            fi
+            echo "push rejected, rebasing and retrying (attempt $attempt)..."
+            git pull --rebase --autostash origin main || true
+            sleep $((attempt * 3))
+          done
