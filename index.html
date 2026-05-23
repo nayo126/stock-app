@@ -2139,10 +2139,14 @@ body > button[onclick*="auto-analysis"]:hover {
   .macos-sidebar a { font-size: 15px !important; min-height: 44px; padding: 12px 14px !important; }
 }
 
-/* PC では tabs を縦リストで表示 */
+/* PC: ナビは左サイドバーに統一。冗長な全幅タブ羅列は隠す */
 @media (min-width: 769px) {
   .home-tiles { display: none !important; }
   .bottom-nav { display: none !important; }
+  .tabs { display: none !important; }
+  /* content-area を全幅に */
+  .main-layout { display: block !important; }
+  .content-area { width: 100% !important; max-width: 100% !important; }
 }
 
 /* ===== 元: AIチャット〜マクロ環境のタブを縦並びに ===== */
@@ -2192,7 +2196,7 @@ body > button[onclick*="auto-analysis"]:hover {
     }
     // localStorage の app version 比較で1回だけ強制リロード
     // 重要バグ修正があった場合は必ずバンプ。これで全モバイル端末が次回起動時に新HTMLを取りに行く
-    var V = '20260523-mint-theme-v14';
+    var V = '20260524-nav-fix-v15';
     if (localStorage.getItem('_app_v') !== V) {
       localStorage.setItem('_app_v', V);
       // セッション内で reload を1回だけに制限 (無限ループ防止)
@@ -2242,28 +2246,67 @@ body > button[onclick*="auto-analysis"]:hover {
 
 <!-- グローバル switchTab 関数 -->
 <script>
-window.switchTab = function(target) {
-  // 既存タブシステム呼び出し
+// 空タブ(orphan)→ 実コンテンツへのエイリアス。詳細分析/自動データの中身は tab-info にある。
+window.TAB_ALIAS = { analysis: 'info', autodata: 'info' };
+// タブを開いた時に自動スクロールする先のアンカー
+window.TAB_SCROLL = { analysis: 'auto-analysis', autodata: 'auto-snapshot' };
+
+// === 統一ナビゲーション: これ1つで全ボタン/リンク/サイドバーが確実に動く ===
+window.navTo = function(target, opts) {
+  opts = opts || {};
+  const realTab = window.TAB_ALIAS[target] || target;
+
+  // タブ & コンテンツの active 切替
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
   document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
-  const tab = document.querySelector('[data-tab="' + target + '"]');
-  const content = document.getElementById('tab-' + target);
-  if (tab) tab.classList.add('active');
-  if (content) {
-    content.classList.add('active');
-    setTimeout(() => content.scrollIntoView({behavior: 'smooth', block: 'start'}), 100);
-  }
-  // 下部ナビの active 切替
+  // クリックされたボタン(エイリアス元)をハイライト。無ければ実タブのボタン
+  const btn = document.querySelector('.tab[data-tab="' + target + '"]')
+           || document.querySelector('.tab[data-tab="' + realTab + '"]');
+  if (btn) btn.classList.add('active');
+  const content = document.getElementById('tab-' + realTab);
+  if (content) content.classList.add('active');
+
+  // 下部ナビ
   document.querySelectorAll('.bottom-nav-item').forEach(b => b.classList.remove('active'));
   const bn = document.querySelector('.bottom-nav-item[data-target="' + target + '"]');
   if (bn) bn.classList.add('active');
+
   // サイドバー閉じる
   document.querySelector('.macos-sidebar')?.classList.remove('open');
-  // チャットタブを開いたら最新データを強制リフレッシュ
-  if (target === 'chat' && typeof window.refreshAllAppData === 'function') {
+
+  // 銘柄カテゴリ(メイン20/3000円以下/大化け/ギャンブル)の切替ボタンを押す
+  const anchorId = opts.anchor || window.TAB_SCROLL[target];
+  setTimeout(() => {
+    if (opts.cat) {
+      const cb = document.querySelector('[data-cat="' + opts.cat + '"]');
+      if (cb) cb.click();
+    }
+    // スクロール: 指定アンカー → 無ければコンテンツ先頭
+    let el = anchorId ? document.getElementById(anchorId) : null;
+    if (!el || el.offsetParent === null) el = content;
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 130);
+
+  // チャットを開いたら最新データを取得
+  if (realTab === 'chat' && typeof window.refreshAllAppData === 'function') {
     window.refreshAllAppData('tab-open').catch(e => console.warn('[refresh] err:', e));
   }
 };
+// 後方互換: 既存の switchTab 呼び出しは navTo に委譲
+window.switchTab = function(target) { return window.navTo(target); };
+
+// 起動時: デフォルトの空タブ(analysis)ではなくダッシュボードに着地
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    try {
+      var active = document.querySelector('.tab-content.active');
+      // 空のorphanタブ(tab-analysis等)が初期activeなら home に切替
+      if (!active || active.id === 'tab-analysis' || active.id === 'tab-autodata' || active.children.length === 0) {
+        window.navTo('home');
+      }
+    } catch (e) { console.warn('[init nav]', e); }
+  }, 400);
+});
 
 // === 全データ一括リフレッシュ（チャット送信前・タブ切替時用） ===
 window.refreshAllAppData = async function(reason) {
@@ -2434,23 +2477,37 @@ window.addEventListener('load', () => {
     <div class="sub">投資ダッシュボード v2</div>
   </div>
 
-  <div class="group-label">━ 分析</div>
-  <a href="#auto-analysis" onclick="document.querySelector('.macos-sidebar').classList.remove('open')">📊 詳細分析・予想</a>
-  <a href="#auto-snapshot" onclick="document.querySelector('.macos-sidebar').classList.remove('open')">📡 自動取得データ</a>
+  <div class="group-label">━ ホーム</div>
+  <a href="#" onclick="navTo('home');return false;">🏠 ダッシュボード</a>
+
+  <div class="group-label">━ 分析・予想</div>
+  <a href="#" onclick="navTo('analysis',{anchor:'auto-analysis'});return false;">📊 詳細分析・予想</a>
+  <a href="#" onclick="navTo('ai-judge');return false;">🎯 AI判断</a>
+  <a href="#" onclick="navTo('advisor');return false;">🤖 AIアドバイザー</a>
 
   <div class="group-label">━ 銘柄</div>
-  <a href="#stocksMain" onclick="document.querySelector('.macos-sidebar').classList.remove('open')">⭐ メイン20</a>
-  <a href="#stocksUnder3000" onclick="document.querySelector('.macos-sidebar').classList.remove('open')">💰 3000円以下</a>
-  <a href="#stocksTenbagger" onclick="document.querySelector('.macos-sidebar').classList.remove('open')">🚀 大化け候補</a>
-  <a href="#" onclick="event.preventDefault(); document.querySelector('[data-cat=STOCKS_GAMBLE]')?.click(); document.getElementById('auto-analysis').scrollIntoView({behavior:'smooth'}); document.querySelector('.macos-sidebar').classList.remove('open')">🎰 ギャンブル30</a>
+  <a href="#" onclick="navTo('analysis',{anchor:'auto-analysis',cat:'STOCKS_MAIN'});return false;">⭐ メイン20</a>
+  <a href="#" onclick="navTo('analysis',{anchor:'auto-analysis',cat:'STOCKS_UNDER3000'});return false;">💰 3000円以下</a>
+  <a href="#" onclick="navTo('analysis',{anchor:'auto-analysis',cat:'STOCKS_TENBAGGER'});return false;">🚀 大化け候補</a>
+  <a href="#" onclick="navTo('analysis',{anchor:'auto-analysis',cat:'STOCKS_GAMBLE'});return false;">🎰 ギャンブル30</a>
+  <a href="#" onclick="navTo('watchlist');return false;">📋 保有銘柄</a>
+  <a href="#" onclick="navTo('yutai');return false;">🎁 株主優待</a>
+
+  <div class="group-label">━ データ</div>
+  <a href="#" onclick="navTo('autodata',{anchor:'auto-snapshot'});return false;">📡 自動取得データ</a>
+  <a href="#" onclick="navTo('live');return false;">📈 ライブ監視</a>
+  <a href="#" onclick="navTo('autodata',{anchor:'snap-news'});return false;">📰 自動収集</a>
 
   <div class="group-label">━ NISA管理</div>
-  <a href="#nisaSection" onclick="document.querySelector('.macos-sidebar').classList.remove('open')">💳 NISA状況</a>
-  <a href="#chatSection" onclick="document.querySelector('.macos-sidebar').classList.remove('open')">💬 AIチャット</a>
+  <a href="#" onclick="navTo('nisa');return false;">💳 NISA状況</a>
+  <a href="#" onclick="navTo('nisa-holdings');return false;">💼 NISA口座</a>
+
+  <div class="group-label">━ AI・訓練</div>
+  <a href="#" onclick="navTo('chat');return false;">💬 AIチャット</a>
+  <a href="#" onclick="navTo('daytrade');return false;">🎓 デイトレ訓練</a>
 
   <div class="group-label">━ ニュース</div>
-  <a href="#majorThemes" onclick="document.querySelector('.macos-sidebar').classList.remove('open')">🌍 大型テーマ</a>
-  <a href="#snap-news" onclick="document.querySelector('.macos-sidebar').classList.remove('open')">📰 自動収集</a>
+  <a href="#" onclick="navTo('news',{anchor:'majorThemes'});return false;">🌍 大型テーマ</a>
 
   <div class="macos-sidebar-footer">
     自動更新中 · 15分毎<br>
@@ -4708,10 +4765,8 @@ if (notesArea) {
 // ========================================
 document.querySelectorAll(".tab").forEach(tab => {
   tab.addEventListener("click", () => {
-    document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
-    document.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active"));
-    tab.classList.add("active");
-    document.getElementById("tab-" + tab.dataset.tab).classList.add("active");
+    // 統一ナビへ委譲（スクロール・空タブのエイリアス込み）
+    window.navTo(tab.dataset.tab);
   });
 });
 
