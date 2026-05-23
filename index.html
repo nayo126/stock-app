@@ -7,11 +7,17 @@
 <meta name="description" content="日本株 NISA ポートフォリオ管理 + AIアドバイザー">
 <!-- PWA -->
 <link rel="manifest" href="manifest.webmanifest">
-<meta name="theme-color" content="#64ffda">
+<meta name="theme-color" content="#5eead4">
+<meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="投資管理">
-<link rel="apple-touch-icon" href="icon-192.svg">
+<!-- iOS ホーム画面アイコン (PNG必須・SVG不可) -->
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<!-- 通常アイコン -->
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
 <link rel="icon" type="image/svg+xml" href="icon-192.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2196,7 +2202,7 @@ body > button[onclick*="auto-analysis"]:hover {
     }
     // localStorage の app version 比較で1回だけ強制リロード
     // 重要バグ修正があった場合は必ずバンプ。これで全モバイル端末が次回起動時に新HTMLを取りに行く
-    var V = '20260524-advisor-scroll-v16';
+    var V = '20260524-pwa-icons-v17';
     if (localStorage.getItem('_app_v') !== V) {
       localStorage.setItem('_app_v', V);
       // セッション内で reload を1回だけに制限 (無限ループ防止)
