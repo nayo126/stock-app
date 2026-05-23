@@ -2196,7 +2196,7 @@ body > button[onclick*="auto-analysis"]:hover {
     }
     // localStorage の app version 比較で1回だけ強制リロード
     // 重要バグ修正があった場合は必ずバンプ。これで全モバイル端末が次回起動時に新HTMLを取りに行く
-    var V = '20260524-nav-fix-v15';
+    var V = '20260524-advisor-scroll-v16';
     if (localStorage.getItem('_app_v') !== V) {
       localStorage.setItem('_app_v', V);
       // セッション内で reload を1回だけに制限 (無限ループ防止)
@@ -3765,7 +3765,7 @@ window.addEventListener('load', () => {
             </select>
           </div>
         </div>
-        <button class="action-btn primary" onclick="runAdvisor()" style="margin-top: 12px; padding: 10px 20px; font-size: 14px; width: 100%;">🚀 アドバイザーを実行</button>
+        <button class="action-btn primary" onclick="runAdvisorAndScroll()" style="margin-top: 12px; padding: 10px 20px; font-size: 14px; width: 100%;">🚀 アドバイザーを実行</button>
       </div>
 
       <!-- Trading Rules (User-configurable) -->
@@ -9754,6 +9754,19 @@ function computeAdvisorResult(options = {}) {
     cash, sectorDist, recs
   };
 }
+
+// 実行ボタン専用: アドバイザーを走らせて結果まで自動スクロール（設定変更のonchangeはスクロールしない）
+window.runAdvisorAndScroll = function() {
+  runAdvisor();
+  setTimeout(function() {
+    const r = document.getElementById("advisorResult");
+    if (r) {
+      // 上部固定ステータスバー(~50px)分のオフセットを引いて見やすい位置に
+      const y = r.getBoundingClientRect().top + window.scrollY - 64;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  }, 90);
+};
 
 function runAdvisor() {
   const risk = document.getElementById("advisorRisk").value;
