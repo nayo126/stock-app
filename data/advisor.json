@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-05-29T02:12:16.519846+09:00",
+  "generated_at": "2026-05-29T02:31:53.831933+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 434200.0,
-    "total_pl": -416700.0,
-    "total_pl_pct": -48.97,
+    "total_value": 473150.0,
+    "total_pl": -377750.0,
+    "total_pl_pct": -44.39,
     "health_score": 20,
     "total_recovery_if_sell": 329500.0,
     "expected_gain_3m": 0,
@@ -133,14 +133,16 @@
       "name": "日産自",
       "avg_price": 426.0,
       "shares": 100,
-      "current": null,
+      "current": 389.5,
       "cost_total": 42600.0,
-      "value_total": 0,
-      "action": "DATA_NA",
-      "label": "❓ データ無し",
-      "priority": 99,
-      "reason": "価格データ取得不可",
-      "color": "gray"
+      "value_total": 38950.0,
+      "action": "HOLD",
+      "label": "✋ 保有継続",
+      "priority": 6,
+      "reason": "-8.6%。レンジ内、判断保留",
+      "color": "gray",
+      "pl_total": -3650.0,
+      "pl_pct": -8.568075117370892
     },
     {
       "code": "7527",
