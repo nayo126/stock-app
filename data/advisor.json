@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-05-28T22:30:11.617058+09:00",
+  "generated_at": "2026-05-28T22:54:45.438893+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 448700.0,
-    "total_pl": -402200.0,
-    "total_pl_pct": -47.27,
+    "total_value": 488600.0,
+    "total_pl": -362300.0,
+    "total_pl_pct": -42.58,
     "health_score": 0,
     "total_recovery_if_sell": 344500.0,
-    "expected_gain_3m": 0,
-    "expected_gain_3m_high": 0
+    "expected_gain_3m": 133969.0,
+    "expected_gain_3m_high": 323535.0
   },
   "judgments": [
     {
@@ -150,16 +150,108 @@
       "name": "日産自",
       "avg_price": 426.0,
       "shares": 100,
-      "current": null,
+      "current": 399.0,
       "cost_total": 42600.0,
-      "value_total": 0,
-      "action": "DATA_NA",
-      "label": "❓ データ無し",
-      "priority": 99,
-      "reason": "価格データ取得不可",
-      "color": "gray"
+      "value_total": 39900.0,
+      "action": "HOLD",
+      "label": "✋ 保有継続",
+      "priority": 6,
+      "reason": "-6.3%。レンジ内、判断保留",
+      "color": "gray",
+      "pl_total": -2700.0,
+      "pl_pct": -6.338028169014084
     }
   ],
-  "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約344,500円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "recommended_buys": [
+    {
+      "code": "4062",
+      "name": "イビデン",
+      "tier": "S",
+      "category": "STOCKS_MAIN",
+      "current": 19740.0,
+      "forecast_3m_mid": 41442.0,
+      "forecast_3m_pct": 109.9,
+      "forecast_3m_high": 65824.0,
+      "forecast_3m_high_pct": 233.5,
+      "tags": [
+        "NVIDIA",
+        "ABF基板",
+        "独占"
+      ],
+      "summary": "NVIDIA向けABF基板独占、FY2027 +42.5%増益予想",
+      "buy_shares": 4,
+      "invest_amt": 78960.0,
+      "estimated_3m_value": 165768.0,
+      "estimated_3m_value_high": 263296.0,
+      "expected_gain_3m": 86808.0,
+      "expected_gain_3m_high": 184336.0
+    },
+    {
+      "code": "6506",
+      "name": "安川電機",
+      "tier": "A",
+      "category": "STOCKS_MAIN",
+      "current": 7136.0,
+      "forecast_3m_mid": 9274.0,
+      "forecast_3m_pct": 30.0,
+      "forecast_3m_high": 12753.0,
+      "forecast_3m_high_pct": 78.7,
+      "tags": [
+        "ロボット",
+        "NVIDIA"
+      ],
+      "summary": "NVIDIA+SBフィジカルAI提携、FY2027 +26.8%予想",
+      "buy_shares": 12,
+      "invest_amt": 85632.0,
+      "estimated_3m_value": 111288.0,
+      "estimated_3m_value_high": 153036.0,
+      "expected_gain_3m": 25656.0,
+      "expected_gain_3m_high": 67404.0
+    },
+    {
+      "code": "8035",
+      "name": "東京エレクトロン",
+      "tier": "S",
+      "category": "STOCKS_MAIN",
+      "current": 52320.0,
+      "forecast_3m_mid": 62975.0,
+      "forecast_3m_pct": 20.4,
+      "forecast_3m_high": 81795.0,
+      "forecast_3m_high_pct": 56.3,
+      "tags": [
+        "半導体装置",
+        "HBM4"
+      ],
+      "summary": "前工程2位、HBM4スーパーサイクル、目標52,000円",
+      "buy_shares": 1,
+      "invest_amt": 52320.0,
+      "estimated_3m_value": 62975.0,
+      "estimated_3m_value_high": 81795.0,
+      "expected_gain_3m": 10655.0,
+      "expected_gain_3m_high": 29475.0
+    },
+    {
+      "code": "6954",
+      "name": "ファナック",
+      "tier": "A",
+      "category": "STOCKS_MAIN",
+      "current": 7984.0,
+      "forecast_3m_mid": 9069.0,
+      "forecast_3m_pct": 13.6,
+      "forecast_3m_high": 12216.0,
+      "forecast_3m_high_pct": 53.0,
+      "tags": [
+        "ロボット",
+        "NVIDIA"
+      ],
+      "summary": "NVIDIAフィジカルAI提携、1000台超受注、米143億円投資",
+      "buy_shares": 10,
+      "invest_amt": 79840.0,
+      "estimated_3m_value": 90690.0,
+      "estimated_3m_value_high": 122160.0,
+      "expected_gain_3m": 10850.0,
+      "expected_gain_3m_high": 42320.0
+    }
+  ],
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約344,500円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+133,969円の利益期待. 高値ケースなら最大+323,535円."
 }
