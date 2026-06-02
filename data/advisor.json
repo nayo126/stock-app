@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-06-02T10:23:52.239622+09:00",
+  "generated_at": "2026-06-02T10:44:02.682519+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 476860.0,
-    "total_pl": -374040.0,
-    "total_pl_pct": -43.96,
+    "total_value": 475020.0,
+    "total_pl": -375880.0,
+    "total_pl_pct": -44.17,
     "health_score": 0,
-    "total_recovery_if_sell": 338500.0,
-    "expected_gain_3m": 223756.0,
-    "expected_gain_3m_high": 455991.0
+    "total_recovery_if_sell": 336300.0,
+    "expected_gain_3m": 190155.0,
+    "expected_gain_3m_high": 388910.0
   },
   "judgments": [
     {
@@ -16,17 +16,17 @@
       "name": "JHD",
       "avg_price": 207.0,
       "shares": 2200,
-      "current": 118.0,
+      "current": 117.0,
       "cost_total": 455400.0,
-      "value_total": 259600.0,
+      "value_total": 257400.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-43.0%。元本回復に+75%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 259600.0,
+      "reason": "-43.5%。元本回復に+77%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 257400.0,
       "color": "red",
-      "pl_total": -195800.0,
-      "pl_pct": -42.99516908212561
+      "pl_total": -198000.0,
+      "pl_pct": -43.47826086956522
     },
     {
       "code": "3664",
@@ -118,16 +118,16 @@
       "name": "いちご",
       "avg_price": 356.0,
       "shares": 100,
-      "current": 442.0,
+      "current": 444.0,
       "cost_total": 35600.0,
-      "value_total": 44200.0,
+      "value_total": 44400.0,
       "action": "HOLD_WATCH",
       "label": "👀 保有・利確待ち",
       "priority": 5,
-      "reason": "+24.2%。+30%到達でTRIM",
+      "reason": "+24.7%。+30%到達でTRIM",
       "color": "blue",
-      "pl_total": 8600.0,
-      "pl_pct": 24.15730337078652
+      "pl_total": 8800.0,
+      "pl_pct": 24.719101123595504
     },
     {
       "code": "2134",
@@ -150,16 +150,16 @@
       "name": "日産自",
       "avg_price": 426.0,
       "shares": 100,
-      "current": 365.6,
+      "current": 367.2,
       "cost_total": 42600.0,
-      "value_total": 36560.0,
+      "value_total": 36720.0,
       "action": "HOLD",
       "label": "✋ 保有継続",
       "priority": 6,
-      "reason": "-14.2%。レンジ内、判断保留",
+      "reason": "-13.8%。レンジ内、判断保留",
       "color": "gray",
-      "pl_total": -6039.999999999998,
-      "pl_pct": -14.17840375586854
+      "pl_total": -5880.000000000001,
+      "pl_pct": -13.802816901408455
     }
   ],
   "recommended_buys": [
@@ -168,90 +168,90 @@
       "name": "イビデン",
       "tier": "S",
       "category": "STOCKS_MAIN",
-      "current": 21050.0,
-      "forecast_3m_mid": 56768.0,
-      "forecast_3m_pct": 169.7,
-      "forecast_3m_high": 90826.0,
-      "forecast_3m_high_pct": 331.5,
+      "current": 21065.0,
+      "forecast_3m_mid": 56850.0,
+      "forecast_3m_pct": 169.9,
+      "forecast_3m_high": 90949.0,
+      "forecast_3m_high_pct": 331.8,
       "tags": [
         "NVIDIA",
         "ABF基板",
         "独占"
       ],
       "summary": "NVIDIA向けABF基板独占、FY2027 +42.5%増益予想",
-      "buy_shares": 4,
-      "invest_amt": 84200.0,
-      "estimated_3m_value": 227072.0,
-      "estimated_3m_value_high": 363304.0,
-      "expected_gain_3m": 142872.0,
-      "expected_gain_3m_high": 279104.0
+      "buy_shares": 3,
+      "invest_amt": 63195.0,
+      "estimated_3m_value": 170550.0,
+      "estimated_3m_value_high": 272847.0,
+      "expected_gain_3m": 107355.0,
+      "expected_gain_3m_high": 209652.0
     },
     {
       "code": "6506",
       "name": "安川電機",
       "tier": "A",
       "category": "STOCKS_MAIN",
-      "current": 6678.0,
-      "forecast_3m_mid": 9669.0,
-      "forecast_3m_pct": 44.8,
-      "forecast_3m_high": 13140.0,
-      "forecast_3m_high_pct": 96.8,
+      "current": 6697.0,
+      "forecast_3m_mid": 9724.0,
+      "forecast_3m_pct": 45.2,
+      "forecast_3m_high": 13207.0,
+      "forecast_3m_high_pct": 97.2,
       "tags": [
         "ロボット",
         "NVIDIA"
       ],
       "summary": "NVIDIA+SBフィジカルAI提携、FY2027 +26.8%予想",
       "buy_shares": 12,
-      "invest_amt": 80136.0,
-      "estimated_3m_value": 116028.0,
-      "estimated_3m_value_high": 157680.0,
-      "expected_gain_3m": 35892.0,
-      "expected_gain_3m_high": 77544.0
+      "invest_amt": 80364.0,
+      "estimated_3m_value": 116688.0,
+      "estimated_3m_value_high": 158484.0,
+      "expected_gain_3m": 36324.0,
+      "expected_gain_3m_high": 78120.0
     },
     {
       "code": "6584",
       "name": "三櫻工業",
       "tier": "A",
       "category": "STOCKS_UNDER3000",
-      "current": 954.0,
-      "forecast_3m_mid": 1273.0,
-      "forecast_3m_pct": 33.5,
-      "forecast_3m_high": 1660.0,
-      "forecast_3m_high_pct": 74.0,
+      "current": 962.0,
+      "forecast_3m_mid": 1295.0,
+      "forecast_3m_pct": 34.6,
+      "forecast_3m_high": 1687.0,
+      "forecast_3m_high_pct": 75.3,
       "tags": [
         "DC液冷",
         "独自技術"
       ],
       "summary": "富岳採用水冷配管、DC液冷市場 $13B予測",
-      "buy_shares": 88,
-      "invest_amt": 83952.0,
-      "estimated_3m_value": 112024.0,
-      "estimated_3m_value_high": 146080.0,
-      "expected_gain_3m": 28072.0,
-      "expected_gain_3m_high": 62128.0
+      "buy_shares": 87,
+      "invest_amt": 83694.0,
+      "estimated_3m_value": 112665.0,
+      "estimated_3m_value_high": 146769.0,
+      "expected_gain_3m": 28971.0,
+      "expected_gain_3m_high": 63075.0
     },
     {
       "code": "8035",
       "name": "東京エレクトロン",
       "tier": "S",
       "category": "STOCKS_MAIN",
-      "current": 52950.0,
-      "forecast_3m_mid": 69870.0,
-      "forecast_3m_pct": 32.0,
-      "forecast_3m_high": 90165.0,
-      "forecast_3m_high_pct": 70.3,
+      "current": 53300.0,
+      "forecast_3m_mid": 70805.0,
+      "forecast_3m_pct": 32.8,
+      "forecast_3m_high": 91363.0,
+      "forecast_3m_high_pct": 71.4,
       "tags": [
         "半導体装置",
         "HBM4"
       ],
       "summary": "前工程2位、HBM4スーパーサイクル、目標52,000円",
       "buy_shares": 1,
-      "invest_amt": 52950.0,
-      "estimated_3m_value": 69870.0,
-      "estimated_3m_value_high": 90165.0,
-      "expected_gain_3m": 16920.0,
-      "expected_gain_3m_high": 37215.0
+      "invest_amt": 53300.0,
+      "estimated_3m_value": 70805.0,
+      "estimated_3m_value_high": 91363.0,
+      "expected_gain_3m": 17505.0,
+      "expected_gain_3m_high": 38063.0
     }
   ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約338,500円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+223,756円の利益期待. 高値ケースなら最大+455,991円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約336,300円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+190,155円の利益期待. 高値ケースなら最大+388,910円."
 }
