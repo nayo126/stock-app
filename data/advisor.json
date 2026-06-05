@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-06-05T15:46:05.663012+09:00",
+  "generated_at": "2026-06-05T18:30:41.487460+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 470640.0,
-    "total_pl": -380260.0,
-    "total_pl_pct": -44.69,
+    "total_value": 471880.0,
+    "total_pl": -379020.0,
+    "total_pl_pct": -44.54,
     "health_score": 0,
-    "total_recovery_if_sell": 337500.0,
-    "expected_gain_3m": 256482.0,
-    "expected_gain_3m_high": 497939.0
+    "total_recovery_if_sell": 338500.0,
+    "expected_gain_3m": 257175.0,
+    "expected_gain_3m_high": 499220.0
   },
   "judgments": [
     {
@@ -33,17 +33,17 @@
       "name": "WIZE",
       "avg_price": 65.0,
       "shares": 500,
-      "current": 26.0,
+      "current": 28.0,
       "cost_total": 32500.0,
-      "value_total": 13000.0,
+      "value_total": 14000.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-60.0%。元本回復に+150%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 13000.0,
+      "reason": "-56.9%。元本回復に+132%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 14000.0,
       "color": "red",
-      "pl_total": -19500.0,
-      "pl_pct": -60.0
+      "pl_total": -18500.0,
+      "pl_pct": -56.92307692307692
     },
     {
       "code": "5856",
@@ -118,32 +118,32 @@
       "name": "日産自",
       "avg_price": 426.0,
       "shares": 100,
-      "current": 347.4,
+      "current": 347.8,
       "cost_total": 42600.0,
-      "value_total": 34740.0,
+      "value_total": 34780.0,
       "action": "WATCH_DROP",
       "label": "🔻 損切り検討",
       "priority": 4,
-      "reason": "-18.5%。-20%到達したら半分損切り",
+      "reason": "-18.4%。-20%到達したら半分損切り",
       "color": "yellow",
-      "pl_total": -7860.000000000002,
-      "pl_pct": -18.45070422535212
+      "pl_total": -7819.999999999999,
+      "pl_pct": -18.356807511737085
     },
     {
       "code": "2337",
       "name": "いちご",
       "avg_price": 356.0,
       "shares": 100,
-      "current": 446.0,
+      "current": 448.0,
       "cost_total": 35600.0,
-      "value_total": 44600.0,
+      "value_total": 44800.0,
       "action": "HOLD_WATCH",
       "label": "👀 保有・利確待ち",
       "priority": 5,
-      "reason": "+25.3%。+30%到達でTRIM",
+      "reason": "+25.8%。+30%到達でTRIM",
       "color": "blue",
-      "pl_total": 9000.0,
-      "pl_pct": 25.280898876404496
+      "pl_total": 9200.0,
+      "pl_pct": 25.842696629213485
     },
     {
       "code": "2134",
@@ -201,12 +201,12 @@
         "独自技術"
       ],
       "summary": "富岳採用水冷配管、DC液冷市場 $13B予測",
-      "buy_shares": 74,
-      "invest_amt": 83398.0,
-      "estimated_3m_value": 134680.0,
-      "estimated_3m_value_high": 178192.0,
-      "expected_gain_3m": 51282.0,
-      "expected_gain_3m_high": 94794.0
+      "buy_shares": 75,
+      "invest_amt": 84525.0,
+      "estimated_3m_value": 136500.0,
+      "estimated_3m_value_high": 180600.0,
+      "expected_gain_3m": 51975.0,
+      "expected_gain_3m_high": 96075.0
     },
     {
       "code": "6506",
@@ -253,5 +253,5 @@
       "expected_gain_3m_high": 63177.0
     }
   ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約337,500円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+256,482円の利益期待. 高値ケースなら最大+497,939円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約338,500円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+257,175円の利益期待. 高値ケースなら最大+499,220円."
 }
