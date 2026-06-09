@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-06-09T15:47:20.274230+09:00",
+  "generated_at": "2026-06-09T16:06:06.020760+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 455250.0,
-    "total_pl": -395650.0,
-    "total_pl_pct": -46.5,
+    "total_value": 452150.0,
+    "total_pl": -398750.0,
+    "total_pl_pct": -46.86,
     "health_score": 0,
-    "total_recovery_if_sell": 341325.0,
-    "expected_gain_3m": 207112.0,
-    "expected_gain_3m_high": 437443.0
+    "total_recovery_if_sell": 337325.0,
+    "expected_gain_3m": 206622.0,
+    "expected_gain_3m_high": 436425.0
   },
   "judgments": [
     {
@@ -50,17 +50,17 @@
       "name": "エルアイイーエイチ",
       "avg_price": 39.0,
       "shares": 4000,
-      "current": 7.0,
+      "current": 6.0,
       "cost_total": 156000.0,
-      "value_total": 28000.0,
+      "value_total": 24000.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-82.1%。元本回復に+457%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 28000.0,
+      "reason": "-84.6%。元本回復に+550%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 24000.0,
       "color": "red",
-      "pl_total": -128000.0,
-      "pl_pct": -82.05128205128204
+      "pl_total": -132000.0,
+      "pl_pct": -84.61538461538461
     },
     {
       "code": "7527",
@@ -135,32 +135,32 @@
       "name": "いちご",
       "avg_price": 356.0,
       "shares": 100,
-      "current": 435.0,
+      "current": 437.0,
       "cost_total": 35600.0,
-      "value_total": 43500.0,
+      "value_total": 43700.0,
       "action": "HOLD_WATCH",
       "label": "👀 保有・利確待ち",
       "priority": 5,
-      "reason": "+22.2%。+30%到達でTRIM",
+      "reason": "+22.8%。+30%到達でTRIM",
       "color": "blue",
-      "pl_total": 7900.0,
-      "pl_pct": 22.191011235955056
+      "pl_total": 8100.0,
+      "pl_pct": 22.752808988764045
     },
     {
       "code": "2134",
       "name": "キタハマキャピタル",
       "avg_price": 28.0,
       "shares": 700,
-      "current": 25.0,
+      "current": 26.0,
       "cost_total": 19600.0,
-      "value_total": 17500.0,
+      "value_total": 18200.0,
       "action": "HOLD",
       "label": "✋ 保有継続",
       "priority": 6,
-      "reason": "-10.7%。レンジ内、判断保留",
+      "reason": "-7.1%。レンジ内、判断保留",
       "color": "gray",
-      "pl_total": -2100.0,
-      "pl_pct": -10.714285714285714
+      "pl_total": -1400.0,
+      "pl_pct": -7.142857142857142
     }
   ],
   "recommended_buys": [
@@ -224,12 +224,12 @@
         "独自技術"
       ],
       "summary": "富岳採用水冷配管、DC液冷市場 $13B予測",
-      "buy_shares": 80,
-      "invest_amt": 85040.0,
-      "estimated_3m_value": 124240.0,
-      "estimated_3m_value_high": 166480.0,
-      "expected_gain_3m": 39200.0,
-      "expected_gain_3m_high": 81440.0
+      "buy_shares": 79,
+      "invest_amt": 83977.0,
+      "estimated_3m_value": 122687.0,
+      "estimated_3m_value_high": 164399.0,
+      "expected_gain_3m": 38710.0,
+      "expected_gain_3m_high": 80422.0
     },
     {
       "code": "6506",
@@ -254,5 +254,5 @@
       "expected_gain_3m_high": 73632.0
     }
   ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約341,325円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+207,112円の利益期待. 高値ケースなら最大+437,443円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約337,325円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+206,622円の利益期待. 高値ケースなら最大+436,425円."
 }
