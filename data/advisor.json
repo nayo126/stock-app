@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-06-09T11:45:59.952378+09:00",
+  "generated_at": "2026-06-09T12:07:36.792027+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 460330.0,
-    "total_pl": -390570.0,
-    "total_pl_pct": -45.9,
+    "total_value": 456550.0,
+    "total_pl": -394350.0,
+    "total_pl_pct": -46.35,
     "health_score": 0,
-    "total_recovery_if_sell": 344865.0,
-    "expected_gain_3m": 166320.0,
-    "expected_gain_3m_high": 355289.0
+    "total_recovery_if_sell": 340875.0,
+    "expected_gain_3m": 165646.0,
+    "expected_gain_3m_high": 353977.0
   },
   "judgments": [
     {
@@ -50,17 +50,17 @@
       "name": "エルアイイーエイチ",
       "avg_price": 39.0,
       "shares": 4000,
-      "current": 7.0,
+      "current": 6.0,
       "cost_total": 156000.0,
-      "value_total": 28000.0,
+      "value_total": 24000.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-82.1%。元本回復に+457%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 28000.0,
+      "reason": "-84.6%。元本回復に+550%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 24000.0,
       "color": "red",
-      "pl_total": -128000.0,
-      "pl_pct": -82.05128205128204
+      "pl_total": -132000.0,
+      "pl_pct": -84.61538461538461
     },
     {
       "code": "7527",
@@ -118,33 +118,33 @@
       "name": "日産自",
       "avg_price": 426.0,
       "shares": 100,
-      "current": 339.3,
+      "current": 339.5,
       "cost_total": 42600.0,
-      "value_total": 33930.0,
+      "value_total": 33950.0,
       "action": "SELL_HALF",
       "label": "⚠️ 半分損切り",
       "priority": 2,
-      "reason": "-20.4%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 16965.0,
+      "reason": "-20.3%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 16975.0,
       "color": "orange",
-      "pl_total": -8669.999999999998,
-      "pl_pct": -20.352112676056336
+      "pl_total": -8650.0,
+      "pl_pct": -20.305164319248824
     },
     {
       "code": "2337",
       "name": "いちご",
       "avg_price": 356.0,
       "shares": 100,
-      "current": 440.0,
+      "current": 442.0,
       "cost_total": 35600.0,
-      "value_total": 44000.0,
+      "value_total": 44200.0,
       "action": "HOLD_WATCH",
       "label": "👀 保有・利確待ち",
       "priority": 5,
-      "reason": "+23.6%。+30%到達でTRIM",
+      "reason": "+24.2%。+30%到達でTRIM",
       "color": "blue",
-      "pl_total": 8400.0,
-      "pl_pct": 23.595505617977526
+      "pl_total": 8600.0,
+      "pl_pct": 24.15730337078652
     },
     {
       "code": "2134",
@@ -246,13 +246,13 @@
         "メガバンク"
       ],
       "summary": "メガバンク、金利上昇最大恩恵、年間74円増配",
-      "buy_shares": 27,
-      "invest_amt": 85914.0,
-      "estimated_3m_value": 104112.0,
-      "estimated_3m_value_high": 121338.0,
-      "expected_gain_3m": 18198.0,
-      "expected_gain_3m_high": 35424.0
+      "buy_shares": 26,
+      "invest_amt": 82732.0,
+      "estimated_3m_value": 100256.0,
+      "estimated_3m_value_high": 116844.0,
+      "expected_gain_3m": 17524.0,
+      "expected_gain_3m_high": 34112.0
     }
   ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約344,865円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+166,320円の利益期待. 高値ケースなら最大+355,289円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約340,875円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+165,646円の利益期待. 高値ケースなら最大+353,977円."
 }
