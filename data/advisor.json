@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-06-17T09:14:39.159842+09:00",
+  "generated_at": "2026-06-17T11:38:48.353526+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 466690.0,
-    "total_pl": -384210.0,
-    "total_pl_pct": -45.15,
+    "total_value": 465510.0,
+    "total_pl": -385390.0,
+    "total_pl_pct": -45.29,
     "health_score": 0,
-    "total_recovery_if_sell": 332300.0,
-    "expected_gain_3m": 0,
-    "expected_gain_3m_high": 0
+    "total_recovery_if_sell": 332800.0,
+    "expected_gain_3m": 291165.0,
+    "expected_gain_3m_high": 576778.0
   },
   "judgments": [
     {
@@ -67,17 +67,17 @@
       "name": "システムソフト",
       "avg_price": 78.0,
       "shares": 100,
-      "current": 45.0,
+      "current": 48.0,
       "cost_total": 7800.0,
-      "value_total": 4500.0,
+      "value_total": 4800.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-42.3%。元本回復に+73%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 4500.0,
+      "reason": "-38.5%。元本回復に+62%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 4800.0,
       "color": "red",
-      "pl_total": -3300.0,
-      "pl_pct": -42.30769230769231
+      "pl_total": -3000.0,
+      "pl_pct": -38.46153846153847
     },
     {
       "code": "4564",
@@ -101,67 +101,157 @@
       "name": "昭和HD",
       "avg_price": 51.0,
       "shares": 400,
-      "current": 38.0,
+      "current": 39.0,
       "cost_total": 20400.0,
-      "value_total": 15200.0,
+      "value_total": 15600.0,
       "action": "SELL_HALF",
       "label": "⚠️ 半分損切り",
       "priority": 2,
-      "reason": "-25.5%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 7600.0,
+      "reason": "-23.5%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 7800.0,
       "color": "orange",
-      "pl_total": -5200.0,
-      "pl_pct": -25.49019607843137
+      "pl_total": -4800.0,
+      "pl_pct": -23.52941176470588
     },
     {
       "code": "7201",
       "name": "日産自",
       "avg_price": 426.0,
       "shares": 100,
-      "current": 352.9,
+      "current": 348.1,
       "cost_total": 42600.0,
-      "value_total": 35290.0,
+      "value_total": 34810.0,
       "action": "WATCH_DROP",
       "label": "🔻 損切り検討",
       "priority": 4,
-      "reason": "-17.2%。-20%到達したら半分損切り",
+      "reason": "-18.3%。-20%到達したら半分損切り",
       "color": "yellow",
-      "pl_total": -7310.000000000002,
-      "pl_pct": -17.159624413145544
+      "pl_total": -7789.999999999998,
+      "pl_pct": -18.286384976525817
     },
     {
       "code": "2337",
       "name": "いちご",
       "avg_price": 356.0,
       "shares": 100,
-      "current": 441.0,
+      "current": 434.0,
       "cost_total": 35600.0,
-      "value_total": 44100.0,
+      "value_total": 43400.0,
       "action": "HOLD_WATCH",
       "label": "👀 保有・利確待ち",
       "priority": 5,
-      "reason": "+23.9%。+30%到達でTRIM",
+      "reason": "+21.9%。+30%到達でTRIM",
       "color": "blue",
-      "pl_total": 8500.0,
-      "pl_pct": 23.876404494382022
+      "pl_total": 7800.0,
+      "pl_pct": 21.910112359550563
     },
     {
       "code": "2134",
       "name": "キタハマキャピタル",
       "avg_price": 28.0,
       "shares": 700,
-      "current": 27.0,
+      "current": 26.0,
       "cost_total": 19600.0,
-      "value_total": 18900.0,
+      "value_total": 18200.0,
       "action": "HOLD",
       "label": "✋ 保有継続",
       "priority": 6,
-      "reason": "-3.6%。レンジ内、判断保留",
+      "reason": "-7.1%。レンジ内、判断保留",
       "color": "gray",
-      "pl_total": -700.0,
-      "pl_pct": -3.571428571428571
+      "pl_total": -1400.0,
+      "pl_pct": -7.142857142857142
     }
   ],
-  "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約332,300円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "recommended_buys": [
+    {
+      "code": "4062",
+      "name": "イビデン",
+      "tier": "S",
+      "category": "STOCKS_MAIN",
+      "current": 23535.0,
+      "forecast_3m_mid": 68317.0,
+      "forecast_3m_pct": 190.3,
+      "forecast_3m_high": 115143.0,
+      "forecast_3m_high_pct": 389.2,
+      "tags": [
+        "NVIDIA",
+        "ABF基板",
+        "独占"
+      ],
+      "summary": "NVIDIA向けABF基板独占、FY2027 +42.5%増益予想",
+      "buy_shares": 3,
+      "invest_amt": 70605.0,
+      "estimated_3m_value": 204951.0,
+      "estimated_3m_value_high": 345429.0,
+      "expected_gain_3m": 134346.0,
+      "expected_gain_3m_high": 274824.0
+    },
+    {
+      "code": "8035",
+      "name": "東京エレクトロン",
+      "tier": "S",
+      "category": "STOCKS_MAIN",
+      "current": 72430.0,
+      "forecast_3m_mid": 136056.0,
+      "forecast_3m_pct": 87.8,
+      "forecast_3m_high": 186104.0,
+      "forecast_3m_high_pct": 156.9,
+      "tags": [
+        "半導体装置",
+        "HBM4"
+      ],
+      "summary": "前工程2位、HBM4スーパーサイクル、目標52,000円",
+      "buy_shares": 1,
+      "invest_amt": 72430.0,
+      "estimated_3m_value": 136056.0,
+      "estimated_3m_value_high": 186104.0,
+      "expected_gain_3m": 63626.0,
+      "expected_gain_3m_high": 113674.0
+    },
+    {
+      "code": "6506",
+      "name": "安川電機",
+      "tier": "A",
+      "category": "STOCKS_MAIN",
+      "current": 7051.0,
+      "forecast_3m_mid": 11293.0,
+      "forecast_3m_pct": 60.2,
+      "forecast_3m_high": 15542.0,
+      "forecast_3m_high_pct": 120.4,
+      "tags": [
+        "ロボット",
+        "NVIDIA"
+      ],
+      "summary": "NVIDIA+SBフィジカルAI提携、FY2027 +26.8%予想",
+      "buy_shares": 11,
+      "invest_amt": 77561.0,
+      "estimated_3m_value": 124223.0,
+      "estimated_3m_value_high": 170962.0,
+      "expected_gain_3m": 46662.0,
+      "expected_gain_3m_high": 93401.0
+    },
+    {
+      "code": "6584",
+      "name": "三櫻工業",
+      "tier": "A",
+      "category": "STOCKS_UNDER3000",
+      "current": 1046.0,
+      "forecast_3m_mid": 1635.0,
+      "forecast_3m_pct": 56.3,
+      "forecast_3m_high": 2247.0,
+      "forecast_3m_high_pct": 114.8,
+      "tags": [
+        "DC液冷",
+        "独自技術"
+      ],
+      "summary": "富岳採用水冷配管、DC液冷市場 $13B予測",
+      "buy_shares": 79,
+      "invest_amt": 82634.0,
+      "estimated_3m_value": 129165.0,
+      "estimated_3m_value_high": 177513.0,
+      "expected_gain_3m": 46531.0,
+      "expected_gain_3m_high": 94879.0
+    }
+  ],
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約332,800円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+291,165円の利益期待. 高値ケースなら最大+576,778円."
 }
