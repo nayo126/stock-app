@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-06-19T11:47:44.803910+09:00",
+  "generated_at": "2026-06-19T11:52:49.719361+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 474200.0,
-    "total_pl": -376700.0,
-    "total_pl_pct": -44.27,
+    "total_value": 479700.0,
+    "total_pl": -371200.0,
+    "total_pl_pct": -43.62,
     "health_score": 0,
-    "total_recovery_if_sell": 356400.0,
-    "expected_gain_3m": 358725.0,
-    "expected_gain_3m_high": 688662.0
+    "total_recovery_if_sell": 359700.0,
+    "expected_gain_3m": 359331.0,
+    "expected_gain_3m_high": 689873.0
   },
   "judgments": [
     {
@@ -16,17 +16,17 @@
       "name": "JHD",
       "avg_price": 207.0,
       "shares": 2200,
-      "current": 121.0,
+      "current": 120.0,
       "cost_total": 455400.0,
-      "value_total": 266200.0,
+      "value_total": 264000.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-41.5%。元本回復に+71%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 266200.0,
+      "reason": "-42.0%。元本回復に+72%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 264000.0,
       "color": "red",
-      "pl_total": -189200.0,
-      "pl_pct": -41.54589371980676
+      "pl_total": -191400.0,
+      "pl_pct": -42.028985507246375
     },
     {
       "code": "3664",
@@ -50,17 +50,17 @@
       "name": "エルアイイーエイチ",
       "avg_price": 39.0,
       "shares": 4000,
-      "current": 5.0,
+      "current": 6.0,
       "cost_total": 156000.0,
-      "value_total": 20000.0,
+      "value_total": 24000.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-87.2%。元本回復に+680%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 20000.0,
+      "reason": "-84.6%。元本回復に+550%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 24000.0,
       "color": "red",
-      "pl_total": -136000.0,
-      "pl_pct": -87.17948717948718
+      "pl_total": -132000.0,
+      "pl_pct": -84.61538461538461
     },
     {
       "code": "7527",
@@ -84,17 +84,17 @@
       "name": "OTS",
       "avg_price": 27.0,
       "shares": 3000,
-      "current": 20.0,
+      "current": 21.0,
       "cost_total": 81000.0,
-      "value_total": 60000.0,
+      "value_total": 63000.0,
       "action": "SELL_HALF",
       "label": "⚠️ 半分損切り",
       "priority": 2,
-      "reason": "-25.9%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 30000.0,
+      "reason": "-22.2%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 31500.0,
       "color": "orange",
-      "pl_total": -21000.0,
-      "pl_pct": -25.925925925925924
+      "pl_total": -18000.0,
+      "pl_pct": -22.22222222222222
     },
     {
       "code": "5103",
@@ -151,16 +151,16 @@
       "name": "キタハマキャピタル",
       "avg_price": 28.0,
       "shares": 700,
-      "current": 29.0,
+      "current": 30.0,
       "cost_total": 19600.0,
-      "value_total": 20300.0,
+      "value_total": 21000.0,
       "action": "HOLD",
       "label": "✋ 保有継続",
       "priority": 6,
-      "reason": "+3.6%。レンジ内、判断保留",
+      "reason": "+7.1%。レンジ内、判断保留",
       "color": "gray",
-      "pl_total": 700.0,
-      "pl_pct": 3.571428571428571
+      "pl_total": 1400.0,
+      "pl_pct": 7.142857142857142
     }
   ],
   "recommended_buys": [
@@ -246,13 +246,13 @@
         "独自技術"
       ],
       "summary": "富岳採用水冷配管、DC液冷市場 $13B予測",
-      "buy_shares": 85,
-      "invest_amt": 88825.0,
-      "estimated_3m_value": 140335.0,
-      "estimated_3m_value_high": 191760.0,
-      "expected_gain_3m": 51510.0,
-      "expected_gain_3m_high": 102935.0
+      "buy_shares": 86,
+      "invest_amt": 89870.0,
+      "estimated_3m_value": 141986.0,
+      "estimated_3m_value_high": 194016.0,
+      "expected_gain_3m": 52116.0,
+      "expected_gain_3m_high": 104146.0
     }
   ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約356,400円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+358,725円の利益期待. 高値ケースなら最大+688,662円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約359,700円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+359,331円の利益期待. 高値ケースなら最大+689,873円."
 }
