@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-22T08:40:46.440119+09:00",
+  "generated_at": "2026-06-22T09:00:27.380804+09:00",
   "summary": {
     "total_cost": 850900.0,
     "total_value": 475580.0,
@@ -7,8 +7,8 @@
     "total_pl_pct": -44.11,
     "health_score": 0,
     "total_recovery_if_sell": 357090.0,
-    "expected_gain_3m": 339921.0,
-    "expected_gain_3m_high": 657415.0
+    "expected_gain_3m": 336395.0,
+    "expected_gain_3m_high": 652943.0
   },
   "judgments": [
     {
@@ -237,10 +237,10 @@
       "tier": "A",
       "category": "STOCKS_UNDER3000",
       "current": 1035.0,
-      "forecast_3m_mid": 1620.0,
-      "forecast_3m_pct": 56.5,
-      "forecast_3m_high": 2213.0,
-      "forecast_3m_high_pct": 113.8,
+      "forecast_3m_mid": 1579.0,
+      "forecast_3m_pct": 52.6,
+      "forecast_3m_high": 2161.0,
+      "forecast_3m_high_pct": 108.8,
       "tags": [
         "DC液冷",
         "独自技術"
@@ -248,11 +248,11 @@
       "summary": "富岳採用水冷配管、DC液冷市場 $13B予測",
       "buy_shares": 86,
       "invest_amt": 89010.0,
-      "estimated_3m_value": 139320.0,
-      "estimated_3m_value_high": 190318.0,
-      "expected_gain_3m": 50310.0,
-      "expected_gain_3m_high": 101308.0
+      "estimated_3m_value": 135794.0,
+      "estimated_3m_value_high": 185846.0,
+      "expected_gain_3m": 46784.0,
+      "expected_gain_3m_high": 96836.0
     }
   ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約357,090円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+339,921円の利益期待. 高値ケースなら最大+657,415円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約357,090円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+336,395円の利益期待. 高値ケースなら最大+652,943円."
 }
