@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-23T08:49:34.752377+09:00",
+  "generated_at": "2026-06-23T09:04:59.159345+09:00",
   "summary": {
     "total_cost": 850900.0,
     "total_value": 455430.0,
@@ -7,8 +7,8 @@
     "total_pl_pct": -46.48,
     "health_score": 0,
     "total_recovery_if_sell": 341465.0,
-    "expected_gain_3m": 361584.0,
-    "expected_gain_3m_high": 694986.0
+    "expected_gain_3m": 375733.0,
+    "expected_gain_3m_high": 719123.0
   },
   "judgments": [
     {
@@ -170,10 +170,10 @@
       "tier": "S",
       "category": "STOCKS_MAIN",
       "current": 26425.0,
-      "forecast_3m_mid": 84121.0,
-      "forecast_3m_pct": 218.3,
-      "forecast_3m_high": 141065.0,
-      "forecast_3m_high_pct": 433.8,
+      "forecast_3m_mid": 86007.0,
+      "forecast_3m_pct": 225.5,
+      "forecast_3m_high": 144810.0,
+      "forecast_3m_high_pct": 448.0,
       "tags": [
         "NVIDIA",
         "ABF基板",
@@ -182,10 +182,10 @@
       "summary": "NVIDIA向けABF基板独占、FY2027 +42.5%増益予想",
       "buy_shares": 3,
       "invest_amt": 79275.0,
-      "estimated_3m_value": 252363.0,
-      "estimated_3m_value_high": 423195.0,
-      "expected_gain_3m": 173088.0,
-      "expected_gain_3m_high": 343920.0
+      "estimated_3m_value": 258021.0,
+      "estimated_3m_value_high": 434430.0,
+      "expected_gain_3m": 178746.0,
+      "expected_gain_3m_high": 355155.0
     },
     {
       "code": "8035",
@@ -193,10 +193,10 @@
       "tier": "S",
       "category": "STOCKS_MAIN",
       "current": 77800.0,
-      "forecast_3m_mid": 153091.0,
-      "forecast_3m_pct": 96.8,
-      "forecast_3m_high": 209496.0,
-      "forecast_3m_high_pct": 169.3,
+      "forecast_3m_mid": 154216.0,
+      "forecast_3m_pct": 98.2,
+      "forecast_3m_high": 211597.0,
+      "forecast_3m_high_pct": 172.0,
       "tags": [
         "半導体装置",
         "HBM4"
@@ -204,10 +204,10 @@
       "summary": "前工程2位、HBM4スーパーサイクル、目標52,000円",
       "buy_shares": 1,
       "invest_amt": 77800.0,
-      "estimated_3m_value": 153091.0,
-      "estimated_3m_value_high": 209496.0,
-      "expected_gain_3m": 75291.0,
-      "expected_gain_3m_high": 131696.0
+      "estimated_3m_value": 154216.0,
+      "estimated_3m_value_high": 211597.0,
+      "expected_gain_3m": 76416.0,
+      "expected_gain_3m_high": 133797.0
     },
     {
       "code": "6506",
@@ -215,10 +215,10 @@
       "tier": "A",
       "category": "STOCKS_MAIN",
       "current": 7655.0,
-      "forecast_3m_mid": 13110.0,
-      "forecast_3m_pct": 71.3,
-      "forecast_3m_high": 18077.0,
-      "forecast_3m_high_pct": 136.1,
+      "forecast_3m_mid": 13524.0,
+      "forecast_3m_pct": 76.7,
+      "forecast_3m_high": 18672.0,
+      "forecast_3m_high_pct": 143.9,
       "tags": [
         "ロボット",
         "NVIDIA"
@@ -226,10 +226,10 @@
       "summary": "NVIDIA+SBフィジカルAI提携、FY2027 +26.8%予想",
       "buy_shares": 11,
       "invest_amt": 84205.0,
-      "estimated_3m_value": 144210.0,
-      "estimated_3m_value_high": 198847.0,
-      "expected_gain_3m": 60005.0,
-      "expected_gain_3m_high": 114642.0
+      "estimated_3m_value": 148764.0,
+      "estimated_3m_value_high": 205392.0,
+      "expected_gain_3m": 64559.0,
+      "expected_gain_3m_high": 121187.0
     },
     {
       "code": "6584",
@@ -237,10 +237,10 @@
       "tier": "A",
       "category": "STOCKS_UNDER3000",
       "current": 1112.0,
-      "forecast_3m_mid": 1812.0,
-      "forecast_3m_pct": 63.0,
-      "forecast_3m_high": 2490.0,
-      "forecast_3m_high_pct": 123.9,
+      "forecast_3m_mid": 1849.0,
+      "forecast_3m_pct": 66.3,
+      "forecast_3m_high": 2546.0,
+      "forecast_3m_high_pct": 129.0,
       "tags": [
         "DC液冷",
         "独自技術"
@@ -248,11 +248,11 @@
       "summary": "富岳採用水冷配管、DC液冷市場 $13B予測",
       "buy_shares": 76,
       "invest_amt": 84512.0,
-      "estimated_3m_value": 137712.0,
-      "estimated_3m_value_high": 189240.0,
-      "expected_gain_3m": 53200.0,
-      "expected_gain_3m_high": 104728.0
+      "estimated_3m_value": 140524.0,
+      "estimated_3m_value_high": 193496.0,
+      "expected_gain_3m": 56012.0,
+      "expected_gain_3m_high": 108984.0
     }
   ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約341,465円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+361,584円の利益期待. 高値ケースなら最大+694,986円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約341,465円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+375,733円の利益期待. 高値ケースなら最大+719,123円."
 }
