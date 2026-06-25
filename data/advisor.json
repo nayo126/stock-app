@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-25T09:02:40.852480+09:00",
+  "generated_at": "2026-06-25T09:21:26.503742+09:00",
   "summary": {
     "total_cost": 850900.0,
     "total_value": 454400.0,
@@ -7,8 +7,8 @@
     "total_pl_pct": -46.6,
     "health_score": 0,
     "total_recovery_if_sell": 342950.0,
-    "expected_gain_3m": 341457.0,
-    "expected_gain_3m_high": 670795.0
+    "expected_gain_3m": 350756.0,
+    "expected_gain_3m_high": 681731.0
   },
   "judgments": [
     {
@@ -192,67 +192,67 @@
       "name": "東京エレクトロン",
       "tier": "S",
       "category": "STOCKS_MAIN",
-      "current": 69900.0,
-      "forecast_3m_mid": 128373.0,
-      "forecast_3m_pct": 83.7,
-      "forecast_3m_high": 178045.0,
-      "forecast_3m_high_pct": 154.7,
+      "current": 73380.0,
+      "forecast_3m_mid": 140139.0,
+      "forecast_3m_pct": 91.0,
+      "forecast_3m_high": 194262.0,
+      "forecast_3m_high_pct": 164.7,
       "tags": [
         "半導体装置",
         "HBM4"
       ],
       "summary": "前工程2位、HBM4スーパーサイクル、目標52,000円",
       "buy_shares": 1,
-      "invest_amt": 69900.0,
-      "estimated_3m_value": 128373.0,
-      "estimated_3m_value_high": 178045.0,
-      "expected_gain_3m": 58473.0,
-      "expected_gain_3m_high": 108145.0
+      "invest_amt": 73380.0,
+      "estimated_3m_value": 140139.0,
+      "estimated_3m_value_high": 194262.0,
+      "expected_gain_3m": 66759.0,
+      "expected_gain_3m_high": 120882.0
     },
     {
       "code": "6506",
       "name": "安川電機",
       "tier": "A",
       "category": "STOCKS_MAIN",
-      "current": 7071.0,
-      "forecast_3m_mid": 12339.0,
-      "forecast_3m_pct": 74.5,
-      "forecast_3m_high": 17100.0,
-      "forecast_3m_high_pct": 141.8,
+      "current": 7266.0,
+      "forecast_3m_mid": 12913.0,
+      "forecast_3m_pct": 77.7,
+      "forecast_3m_high": 17854.0,
+      "forecast_3m_high_pct": 145.7,
       "tags": [
         "ロボット",
         "NVIDIA"
       ],
       "summary": "NVIDIA+SBフィジカルAI提携、FY2027 +26.8%予想",
-      "buy_shares": 12,
-      "invest_amt": 84852.0,
-      "estimated_3m_value": 148068.0,
-      "estimated_3m_value_high": 205200.0,
-      "expected_gain_3m": 63216.0,
-      "expected_gain_3m_high": 120348.0
+      "buy_shares": 11,
+      "invest_amt": 79926.0,
+      "estimated_3m_value": 142043.0,
+      "estimated_3m_value_high": 196394.0,
+      "expected_gain_3m": 62117.0,
+      "expected_gain_3m_high": 116468.0
     },
     {
       "code": "6584",
       "name": "三櫻工業",
       "tier": "A",
       "category": "STOCKS_UNDER3000",
-      "current": 1020.0,
-      "forecast_3m_mid": 1585.0,
-      "forecast_3m_pct": 55.4,
-      "forecast_3m_high": 2217.0,
-      "forecast_3m_high_pct": 117.4,
+      "current": 1047.0,
+      "forecast_3m_mid": 1659.0,
+      "forecast_3m_pct": 58.4,
+      "forecast_3m_high": 2314.0,
+      "forecast_3m_high_pct": 121.0,
       "tags": [
         "DC液冷",
         "独自技術"
       ],
       "summary": "富岳採用水冷配管、DC液冷市場 $13B予測",
-      "buy_shares": 84,
-      "invest_amt": 85680.0,
-      "estimated_3m_value": 133140.0,
-      "estimated_3m_value_high": 186228.0,
-      "expected_gain_3m": 47460.0,
-      "expected_gain_3m_high": 100548.0
+      "buy_shares": 81,
+      "invest_amt": 84807.0,
+      "estimated_3m_value": 134379.0,
+      "estimated_3m_value_high": 187434.0,
+      "expected_gain_3m": 49572.0,
+      "expected_gain_3m_high": 102627.0
     }
   ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約342,950円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+341,457円の利益期待. 高値ケースなら最大+670,795円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約342,950円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+350,756円の利益期待. 高値ケースなら最大+681,731円."
 }
