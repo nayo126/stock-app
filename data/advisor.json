@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-06-26T15:48:40.170586+09:00",
+  "generated_at": "2026-06-26T18:59:41.370905+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 437700.0,
-    "total_pl": -413200.0,
-    "total_pl_pct": -48.56,
+    "total_value": 440100.0,
+    "total_pl": -410800.0,
+    "total_pl_pct": -48.28,
     "health_score": 0,
-    "total_recovery_if_sell": 326000.0,
-    "expected_gain_3m": 331276.0,
-    "expected_gain_3m_high": 651116.0
+    "total_recovery_if_sell": 327500.0,
+    "expected_gain_3m": 336106.0,
+    "expected_gain_3m_high": 660481.0
   },
   "judgments": [
     {
@@ -84,17 +84,17 @@
       "name": "OTS",
       "avg_price": 27.0,
       "shares": 3000,
-      "current": 18.0,
+      "current": 19.0,
       "cost_total": 81000.0,
-      "value_total": 54000.0,
+      "value_total": 57000.0,
       "action": "SELL_HALF",
       "label": "⚠️ 半分損切り",
       "priority": 2,
-      "reason": "-33.3%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 27000.0,
+      "reason": "-29.6%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 28500.0,
       "color": "orange",
-      "pl_total": -27000.0,
-      "pl_pct": -33.33333333333333
+      "pl_total": -24000.0,
+      "pl_pct": -29.629629629629626
     },
     {
       "code": "5103",
@@ -135,32 +135,32 @@
       "name": "いちご",
       "avg_price": 356.0,
       "shares": 100,
-      "current": 434.0,
+      "current": 435.0,
       "cost_total": 35600.0,
-      "value_total": 43400.0,
+      "value_total": 43500.0,
       "action": "HOLD_WATCH",
       "label": "👀 保有・利確待ち",
       "priority": 5,
-      "reason": "+21.9%。+30%到達でTRIM",
+      "reason": "+22.2%。+30%到達でTRIM",
       "color": "blue",
-      "pl_total": 7800.0,
-      "pl_pct": 21.910112359550563
+      "pl_total": 7900.0,
+      "pl_pct": 22.191011235955056
     },
     {
       "code": "2134",
       "name": "キタハマキャピタル",
       "avg_price": 28.0,
       "shares": 700,
-      "current": 27.0,
+      "current": 26.0,
       "cost_total": 19600.0,
-      "value_total": 18900.0,
+      "value_total": 18200.0,
       "action": "HOLD",
       "label": "✋ 保有継続",
       "priority": 6,
-      "reason": "-3.6%。レンジ内、判断保留",
+      "reason": "-7.1%。レンジ内、判断保留",
       "color": "gray",
-      "pl_total": -700.0,
-      "pl_pct": -3.571428571428571
+      "pl_total": -1400.0,
+      "pl_pct": -7.142857142857142
     }
   ],
   "recommended_buys": [
@@ -224,12 +224,12 @@
         "NVIDIA"
       ],
       "summary": "NVIDIA+SBフィジカルAI提携、FY2027 +26.8%予想",
-      "buy_shares": 11,
-      "invest_amt": 74910.0,
-      "estimated_3m_value": 128040.0,
-      "estimated_3m_value_high": 177925.0,
-      "expected_gain_3m": 53130.0,
-      "expected_gain_3m_high": 103015.0
+      "buy_shares": 12,
+      "invest_amt": 81720.0,
+      "estimated_3m_value": 139680.0,
+      "estimated_3m_value_high": 194100.0,
+      "expected_gain_3m": 57960.0,
+      "expected_gain_3m_high": 112380.0
     },
     {
       "code": "6857",
@@ -255,5 +255,5 @@
       "expected_gain_3m_high": 86874.0
     }
   ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約326,000円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+331,276円の利益期待. 高値ケースなら最大+651,116円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約327,500円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+336,106円の利益期待. 高値ケースなら最大+660,481円."
 }
