@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-06-27T03:25:51.182676+09:00",
+  "generated_at": "2026-06-27T05:32:57.567741+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 448800.0,
-    "total_pl": -402100.0,
-    "total_pl_pct": -47.26,
+    "total_value": 440100.0,
+    "total_pl": -410800.0,
+    "total_pl_pct": -48.28,
     "health_score": 0,
-    "total_recovery_if_sell": 337000.0,
+    "total_recovery_if_sell": 327500.0,
     "expected_gain_3m": 336106.0,
     "expected_gain_3m_high": 660481.0
   },
@@ -16,34 +16,34 @@
       "name": "JHD",
       "avg_price": 207.0,
       "shares": 2200,
-      "current": 121.0,
+      "current": 117.0,
       "cost_total": 455400.0,
-      "value_total": 266200.0,
+      "value_total": 257400.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-41.5%。元本回復に+71%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 266200.0,
+      "reason": "-43.5%。元本回復に+77%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 257400.0,
       "color": "red",
-      "pl_total": -189200.0,
-      "pl_pct": -41.54589371980676
+      "pl_total": -198000.0,
+      "pl_pct": -43.47826086956522
     },
     {
       "code": "3664",
       "name": "WIZE",
       "avg_price": 65.0,
       "shares": 500,
-      "current": 22.0,
+      "current": 21.0,
       "cost_total": 32500.0,
-      "value_total": 11000.0,
+      "value_total": 10500.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-66.2%。元本回復に+195%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 11000.0,
+      "reason": "-67.7%。元本回復に+210%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 10500.0,
       "color": "red",
-      "pl_total": -21500.0,
-      "pl_pct": -66.15384615384615
+      "pl_total": -22000.0,
+      "pl_pct": -67.6923076923077
     },
     {
       "code": "5856",
@@ -101,17 +101,17 @@
       "name": "昭和HD",
       "avg_price": 51.0,
       "shares": 400,
-      "current": 38.0,
+      "current": 37.0,
       "cost_total": 20400.0,
-      "value_total": 15200.0,
+      "value_total": 14800.0,
       "action": "SELL_HALF",
       "label": "⚠️ 半分損切り",
       "priority": 2,
-      "reason": "-25.5%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 7600.0,
+      "reason": "-27.5%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 7400.0,
       "color": "orange",
-      "pl_total": -5200.0,
-      "pl_pct": -25.49019607843137
+      "pl_total": -5600.0,
+      "pl_pct": -27.450980392156865
     },
     {
       "code": "7201",
@@ -135,16 +135,16 @@
       "name": "いちご",
       "avg_price": 356.0,
       "shares": 100,
-      "current": 425.0,
+      "current": 435.0,
       "cost_total": 35600.0,
-      "value_total": 42500.0,
+      "value_total": 43500.0,
       "action": "HOLD_WATCH",
       "label": "👀 保有・利確待ち",
       "priority": 5,
-      "reason": "+19.4%。+30%到達でTRIM",
+      "reason": "+22.2%。+30%到達でTRIM",
       "color": "blue",
-      "pl_total": 6900.0,
-      "pl_pct": 19.382022471910112
+      "pl_total": 7900.0,
+      "pl_pct": 22.191011235955056
     },
     {
       "code": "2134",
@@ -255,5 +255,5 @@
       "expected_gain_3m_high": 86874.0
     }
   ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約337,000円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+336,106円の利益期待. 高値ケースなら最大+660,481円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約327,500円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+336,106円の利益期待. 高値ケースなら最大+660,481円."
 }
