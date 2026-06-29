@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-06-29T12:56:53.994134+09:00",
+  "generated_at": "2026-06-29T13:18:05.458030+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 444320.0,
-    "total_pl": -406580.0,
+    "total_value": 444310.0,
+    "total_pl": -406590.0,
     "total_pl_pct": -47.78,
     "health_score": 0,
-    "total_recovery_if_sell": 329810.0,
-    "expected_gain_3m": 272542.0,
-    "expected_gain_3m_high": 555226.0
+    "total_recovery_if_sell": 329805.0,
+    "expected_gain_3m": 279520.0,
+    "expected_gain_3m_high": 566825.0
   },
   "judgments": [
     {
@@ -118,17 +118,17 @@
       "name": "日産自",
       "avg_price": 426.0,
       "shares": 100,
-      "current": 300.2,
+      "current": 300.1,
       "cost_total": 42600.0,
-      "value_total": 30020.0,
+      "value_total": 30010.000000000004,
       "action": "SELL_HALF",
       "label": "⚠️ 半分損切り",
       "priority": 2,
-      "reason": "-29.5%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 15010.0,
+      "reason": "-29.6%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 15005.000000000002,
       "color": "orange",
-      "pl_total": -12580.000000000002,
-      "pl_pct": -29.530516431924887
+      "pl_total": -12589.999999999998,
+      "pl_pct": -29.553990610328633
     },
     {
       "code": "2337",
@@ -169,11 +169,11 @@
       "name": "イビデン",
       "tier": "S",
       "category": "STOCKS_MAIN",
-      "current": 23305.0,
-      "forecast_3m_mid": 68522.0,
-      "forecast_3m_pct": 194.0,
-      "forecast_3m_high": 115833.0,
-      "forecast_3m_high_pct": 397.0,
+      "current": 23600.0,
+      "forecast_3m_mid": 70283.0,
+      "forecast_3m_pct": 197.8,
+      "forecast_3m_high": 118688.0,
+      "forecast_3m_high_pct": 402.9,
       "tags": [
         "NVIDIA",
         "ABF基板",
@@ -181,66 +181,66 @@
       ],
       "summary": "NVIDIA向けABF基板独占、FY2027 +42.5%増益予想",
       "buy_shares": 3,
-      "invest_amt": 69915.0,
-      "estimated_3m_value": 205566.0,
-      "estimated_3m_value_high": 347499.0,
-      "expected_gain_3m": 135651.0,
-      "expected_gain_3m_high": 277584.0
+      "invest_amt": 70800.0,
+      "estimated_3m_value": 210849.0,
+      "estimated_3m_value_high": 356064.0,
+      "expected_gain_3m": 140049.0,
+      "expected_gain_3m_high": 285264.0
     },
     {
       "code": "8035",
       "name": "東京エレクトロン",
       "tier": "S",
       "category": "STOCKS_MAIN",
-      "current": 72910.0,
-      "forecast_3m_mid": 136759.0,
-      "forecast_3m_pct": 87.6,
-      "forecast_3m_high": 189586.0,
-      "forecast_3m_high_pct": 160.0,
+      "current": 73720.0,
+      "forecast_3m_mid": 139841.0,
+      "forecast_3m_pct": 89.7,
+      "forecast_3m_high": 193823.0,
+      "forecast_3m_high_pct": 162.9,
       "tags": [
         "半導体装置",
         "HBM4"
       ],
       "summary": "前工程2位、HBM4スーパーサイクル、目標52,000円",
       "buy_shares": 1,
-      "invest_amt": 72910.0,
-      "estimated_3m_value": 136759.0,
-      "estimated_3m_value_high": 189586.0,
-      "expected_gain_3m": 63849.0,
-      "expected_gain_3m_high": 116676.0
+      "invest_amt": 73720.0,
+      "estimated_3m_value": 139841.0,
+      "estimated_3m_value_high": 193823.0,
+      "expected_gain_3m": 66121.0,
+      "expected_gain_3m_high": 120103.0
     },
     {
       "code": "6506",
       "name": "安川電機",
       "tier": "A",
       "category": "STOCKS_MAIN",
-      "current": 6822.0,
-      "forecast_3m_mid": 10852.0,
-      "forecast_3m_pct": 59.1,
-      "forecast_3m_high": 14983.0,
-      "forecast_3m_high_pct": 119.6,
+      "current": 6809.0,
+      "forecast_3m_mid": 10810.0,
+      "forecast_3m_pct": 58.8,
+      "forecast_3m_high": 14926.0,
+      "forecast_3m_high_pct": 119.2,
       "tags": [
         "ロボット",
         "NVIDIA"
       ],
       "summary": "NVIDIA+SBフィジカルAI提携、FY2027 +26.8%予想",
       "buy_shares": 12,
-      "invest_amt": 81864.0,
-      "estimated_3m_value": 130224.0,
-      "estimated_3m_value_high": 179796.0,
-      "expected_gain_3m": 48360.0,
-      "expected_gain_3m_high": 97932.0
+      "invest_amt": 81708.0,
+      "estimated_3m_value": 129720.0,
+      "estimated_3m_value_high": 179112.0,
+      "expected_gain_3m": 48012.0,
+      "expected_gain_3m_high": 97404.0
     },
     {
       "code": "6857",
       "name": "アドバンテスト",
       "tier": "S",
       "category": "STOCKS_MAIN",
-      "current": 31220.0,
-      "forecast_3m_mid": 43561.0,
-      "forecast_3m_pct": 39.5,
-      "forecast_3m_high": 62737.0,
-      "forecast_3m_high_pct": 101.0,
+      "current": 31400.0,
+      "forecast_3m_mid": 44069.0,
+      "forecast_3m_pct": 40.3,
+      "forecast_3m_high": 63427.0,
+      "forecast_3m_high_pct": 102.0,
       "tags": [
         "AI半導体",
         "NVIDIA",
@@ -248,12 +248,12 @@
       ],
       "summary": "半導体テスタ世界50%シェア、AI独占。営業利益+110.8%、目標27,150円",
       "buy_shares": 2,
-      "invest_amt": 62440.0,
-      "estimated_3m_value": 87122.0,
-      "estimated_3m_value_high": 125474.0,
-      "expected_gain_3m": 24682.0,
-      "expected_gain_3m_high": 63034.0
+      "invest_amt": 62800.0,
+      "estimated_3m_value": 88138.0,
+      "estimated_3m_value_high": 126854.0,
+      "expected_gain_3m": 25338.0,
+      "expected_gain_3m_high": 64054.0
     }
   ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約329,810円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+272,542円の利益期待. 高値ケースなら最大+555,226円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約329,805円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+279,520円の利益期待. 高値ケースなら最大+566,825円."
 }
