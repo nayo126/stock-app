@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-07-02T03:16:39.524562+09:00",
+  "generated_at": "2026-07-02T03:37:05.706485+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 449870.0,
-    "total_pl": -401030.0,
-    "total_pl_pct": -47.13,
+    "total_value": 453470.0,
+    "total_pl": -397430.0,
+    "total_pl_pct": -46.71,
     "health_score": 0,
-    "total_recovery_if_sell": 335685.0,
+    "total_recovery_if_sell": 340085.0,
     "expected_gain_3m": 344763.0,
     "expected_gain_3m_high": 671177.0
   },
@@ -16,17 +16,17 @@
       "name": "JHD",
       "avg_price": 207.0,
       "shares": 2200,
-      "current": 120.0,
+      "current": 122.0,
       "cost_total": 455400.0,
-      "value_total": 264000.0,
+      "value_total": 268400.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-42.0%。元本回復に+72%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 264000.0,
+      "reason": "-41.1%。元本回復に+70%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 268400.0,
       "color": "red",
-      "pl_total": -191400.0,
-      "pl_pct": -42.028985507246375
+      "pl_total": -187000.0,
+      "pl_pct": -41.06280193236715
     },
     {
       "code": "3664",
@@ -135,16 +135,16 @@
       "name": "いちご",
       "avg_price": 356.0,
       "shares": 100,
-      "current": 440.0,
+      "current": 432.0,
       "cost_total": 35600.0,
-      "value_total": 44000.0,
+      "value_total": 43200.0,
       "action": "HOLD_WATCH",
       "label": "👀 保有・利確待ち",
       "priority": 5,
-      "reason": "+23.6%。+30%到達でTRIM",
+      "reason": "+21.3%。+30%到達でTRIM",
       "color": "blue",
-      "pl_total": 8400.0,
-      "pl_pct": 23.595505617977526
+      "pl_total": 7600.0,
+      "pl_pct": 21.34831460674157
     },
     {
       "code": "2134",
@@ -255,5 +255,5 @@
       "expected_gain_3m_high": 72542.0
     }
   ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約335,685円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+344,763円の利益期待. 高値ケースなら最大+671,177円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約340,085円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+344,763円の利益期待. 高値ケースなら最大+671,177円."
 }
