@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-07-01T15:49:26.472448+09:00",
+  "generated_at": "2026-07-01T16:08:26.771697+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 452870.0,
-    "total_pl": -398030.0,
-    "total_pl_pct": -46.78,
+    "total_value": 453470.0,
+    "total_pl": -397430.0,
+    "total_pl_pct": -46.71,
     "health_score": 0,
-    "total_recovery_if_sell": 339585.0,
+    "total_recovery_if_sell": 340085.0,
     "expected_gain_3m": 344763.0,
     "expected_gain_3m_high": 671177.0
   },
@@ -33,17 +33,17 @@
       "name": "WIZE",
       "avg_price": 65.0,
       "shares": 500,
-      "current": 22.0,
+      "current": 23.0,
       "cost_total": 32500.0,
-      "value_total": 11000.0,
+      "value_total": 11500.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-66.2%。元本回復に+195%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 11000.0,
+      "reason": "-64.6%。元本回復に+183%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 11500.0,
       "color": "red",
-      "pl_total": -21500.0,
-      "pl_pct": -66.15384615384615
+      "pl_total": -21000.0,
+      "pl_pct": -64.61538461538461
     },
     {
       "code": "5856",
@@ -135,16 +135,16 @@
       "name": "いちご",
       "avg_price": 356.0,
       "shares": 100,
-      "current": 431.0,
+      "current": 432.0,
       "cost_total": 35600.0,
-      "value_total": 43100.0,
+      "value_total": 43200.0,
       "action": "HOLD_WATCH",
       "label": "👀 保有・利確待ち",
       "priority": 5,
-      "reason": "+21.1%。+30%到達でTRIM",
+      "reason": "+21.3%。+30%到達でTRIM",
       "color": "blue",
-      "pl_total": 7500.0,
-      "pl_pct": 21.06741573033708
+      "pl_total": 7600.0,
+      "pl_pct": 21.34831460674157
     },
     {
       "code": "2134",
@@ -255,5 +255,5 @@
       "expected_gain_3m_high": 72542.0
     }
   ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約339,585円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+344,763円の利益期待. 高値ケースなら最大+671,177円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約340,085円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+344,763円の利益期待. 高値ケースなら最大+671,177円."
 }
