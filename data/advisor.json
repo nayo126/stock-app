@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-07-02T13:06:10.862278+09:00",
+  "generated_at": "2026-07-02T13:26:48.025343+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 455390.0,
-    "total_pl": -395510.0,
-    "total_pl_pct": -46.48,
+    "total_value": 454730.0,
+    "total_pl": -396170.0,
+    "total_pl_pct": -46.56,
     "health_score": 0,
-    "total_recovery_if_sell": 341245.0,
-    "expected_gain_3m": 289106.0,
-    "expected_gain_3m_high": 586949.0
+    "total_recovery_if_sell": 341265.0,
+    "expected_gain_3m": 290670.0,
+    "expected_gain_3m_high": 591813.0
   },
   "judgments": [
     {
@@ -118,17 +118,17 @@
       "name": "日産自",
       "avg_price": 426.0,
       "shares": 100,
-      "current": 314.9,
+      "current": 315.3,
       "cost_total": 42600.0,
-      "value_total": 31489.999999999996,
+      "value_total": 31530.0,
       "action": "SELL_HALF",
       "label": "⚠️ 半分損切り",
       "priority": 2,
-      "reason": "-26.1%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 15744.999999999998,
+      "reason": "-26.0%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 15765.0,
       "color": "orange",
-      "pl_total": -11110.000000000002,
-      "pl_pct": -26.07981220657278
+      "pl_total": -11069.999999999998,
+      "pl_pct": -25.985915492957744
     },
     {
       "code": "2337",
@@ -151,16 +151,16 @@
       "name": "キタハマキャピタル",
       "avg_price": 28.0,
       "shares": 700,
-      "current": 27.0,
+      "current": 26.0,
       "cost_total": 19600.0,
-      "value_total": 18900.0,
+      "value_total": 18200.0,
       "action": "HOLD",
       "label": "✋ 保有継続",
       "priority": 6,
-      "reason": "-3.6%。レンジ内、判断保留",
+      "reason": "-7.1%。レンジ内、判断保留",
       "color": "gray",
-      "pl_total": -700.0,
-      "pl_pct": -3.571428571428571
+      "pl_total": -1400.0,
+      "pl_pct": -7.142857142857142
     }
   ],
   "recommended_buys": [
@@ -169,11 +169,11 @@
       "name": "イビデン",
       "tier": "S",
       "category": "STOCKS_MAIN",
-      "current": 23925.0,
-      "forecast_3m_mid": 68093.0,
-      "forecast_3m_pct": 184.6,
-      "forecast_3m_high": 115825.0,
-      "forecast_3m_high_pct": 384.1,
+      "current": 23860.0,
+      "forecast_3m_mid": 67721.0,
+      "forecast_3m_pct": 183.8,
+      "forecast_3m_high": 115248.0,
+      "forecast_3m_high_pct": 383.0,
       "tags": [
         "NVIDIA",
         "ABF基板",
@@ -181,78 +181,78 @@
       ],
       "summary": "NVIDIA向けABF基板独占、FY2027 +42.5%増益予想",
       "buy_shares": 3,
-      "invest_amt": 71775.0,
-      "estimated_3m_value": 204279.0,
-      "estimated_3m_value_high": 347475.0,
-      "expected_gain_3m": 132504.0,
-      "expected_gain_3m_high": 275700.0
+      "invest_amt": 71580.0,
+      "estimated_3m_value": 203163.0,
+      "estimated_3m_value_high": 345744.0,
+      "expected_gain_3m": 131583.0,
+      "expected_gain_3m_high": 274164.0
     },
     {
       "code": "8035",
       "name": "東京エレクトロン",
       "tier": "S",
       "category": "STOCKS_MAIN",
-      "current": 74380.0,
-      "forecast_3m_mid": 145812.0,
-      "forecast_3m_pct": 96.0,
-      "forecast_3m_high": 203182.0,
-      "forecast_3m_high_pct": 173.2,
+      "current": 73950.0,
+      "forecast_3m_mid": 144117.0,
+      "forecast_3m_pct": 94.9,
+      "forecast_3m_high": 201081.0,
+      "forecast_3m_high_pct": 171.9,
       "tags": [
         "半導体装置",
         "HBM4"
       ],
       "summary": "前工程2位、HBM4スーパーサイクル、目標52,000円",
       "buy_shares": 1,
-      "invest_amt": 74380.0,
-      "estimated_3m_value": 145812.0,
-      "estimated_3m_value_high": 203182.0,
-      "expected_gain_3m": 71432.0,
-      "expected_gain_3m_high": 128802.0
+      "invest_amt": 73950.0,
+      "estimated_3m_value": 144117.0,
+      "estimated_3m_value_high": 201081.0,
+      "expected_gain_3m": 70167.0,
+      "expected_gain_3m_high": 127131.0
     },
     {
       "code": "6506",
       "name": "安川電機",
       "tier": "A",
       "category": "STOCKS_MAIN",
-      "current": 7116.0,
-      "forecast_3m_mid": 11857.0,
-      "forecast_3m_pct": 66.6,
-      "forecast_3m_high": 16396.0,
-      "forecast_3m_high_pct": 130.4,
+      "current": 7077.0,
+      "forecast_3m_mid": 11727.0,
+      "forecast_3m_pct": 65.7,
+      "forecast_3m_high": 16226.0,
+      "forecast_3m_high_pct": 129.3,
       "tags": [
         "ロボット",
         "NVIDIA"
       ],
       "summary": "NVIDIA+SBフィジカルAI提携、FY2027 +26.8%予想",
-      "buy_shares": 11,
-      "invest_amt": 78276.0,
-      "estimated_3m_value": 130427.0,
-      "estimated_3m_value_high": 180356.0,
-      "expected_gain_3m": 52151.0,
-      "expected_gain_3m_high": 102080.0
+      "buy_shares": 12,
+      "invest_amt": 84924.0,
+      "estimated_3m_value": 140724.0,
+      "estimated_3m_value_high": 194712.0,
+      "expected_gain_3m": 55800.0,
+      "expected_gain_3m_high": 109788.0
     },
     {
       "code": "6584",
       "name": "三櫻工業",
       "tier": "A",
       "category": "STOCKS_UNDER3000",
-      "current": 948.0,
-      "forecast_3m_mid": 1319.0,
-      "forecast_3m_pct": 39.2,
-      "forecast_3m_high": 1851.0,
-      "forecast_3m_high_pct": 95.3,
+      "current": 946.0,
+      "forecast_3m_mid": 1314.0,
+      "forecast_3m_pct": 38.9,
+      "forecast_3m_high": 1843.0,
+      "forecast_3m_high_pct": 94.9,
       "tags": [
         "DC液冷",
         "独自技術"
       ],
       "summary": "富岳採用水冷配管、DC液冷市場 $13B予測",
-      "buy_shares": 89,
-      "invest_amt": 84372.0,
-      "estimated_3m_value": 117391.0,
-      "estimated_3m_value_high": 164739.0,
-      "expected_gain_3m": 33019.0,
-      "expected_gain_3m_high": 80367.0
+      "buy_shares": 90,
+      "invest_amt": 85140.0,
+      "estimated_3m_value": 118260.0,
+      "estimated_3m_value_high": 165870.0,
+      "expected_gain_3m": 33120.0,
+      "expected_gain_3m_high": 80730.0
     }
   ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約341,245円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+289,106円の利益期待. 高値ケースなら最大+586,949円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約341,265円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+290,670円の利益期待. 高値ケースなら最大+591,813円."
 }
