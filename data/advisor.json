@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-07-02T11:46:59.532349+09:00",
+  "generated_at": "2026-07-02T12:06:40.178254+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 454550.0,
-    "total_pl": -396350.0,
-    "total_pl_pct": -46.58,
+    "total_value": 458250.0,
+    "total_pl": -392650.0,
+    "total_pl_pct": -46.15,
     "health_score": 0,
-    "total_recovery_if_sell": 341175.0,
-    "expected_gain_3m": 288061.0,
-    "expected_gain_3m_high": 584835.0
+    "total_recovery_if_sell": 342675.0,
+    "expected_gain_3m": 293222.0,
+    "expected_gain_3m_high": 595089.0
   },
   "judgments": [
     {
@@ -84,17 +84,17 @@
       "name": "OTS",
       "avg_price": 27.0,
       "shares": 3000,
-      "current": 19.0,
+      "current": 20.0,
       "cost_total": 81000.0,
-      "value_total": 57000.0,
+      "value_total": 60000.0,
       "action": "SELL_HALF",
       "label": "⚠️ 半分損切り",
       "priority": 2,
-      "reason": "-29.6%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 28500.0,
+      "reason": "-25.9%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 30000.0,
       "color": "orange",
-      "pl_total": -24000.0,
-      "pl_pct": -29.629629629629626
+      "pl_total": -21000.0,
+      "pl_pct": -25.925925925925924
     },
     {
       "code": "5103",
@@ -151,16 +151,16 @@
       "name": "キタハマキャピタル",
       "avg_price": 28.0,
       "shares": 700,
-      "current": 26.0,
+      "current": 27.0,
       "cost_total": 19600.0,
-      "value_total": 18200.0,
+      "value_total": 18900.0,
       "action": "HOLD",
       "label": "✋ 保有継続",
       "priority": 6,
-      "reason": "-7.1%。レンジ内、判断保留",
+      "reason": "-3.6%。レンジ内、判断保留",
       "color": "gray",
-      "pl_total": -1400.0,
-      "pl_pct": -7.142857142857142
+      "pl_total": -700.0,
+      "pl_pct": -3.571428571428571
     }
   ],
   "recommended_buys": [
@@ -224,12 +224,12 @@
         "NVIDIA"
       ],
       "summary": "NVIDIA+SBフィジカルAI提携、FY2027 +26.8%予想",
-      "buy_shares": 11,
-      "invest_amt": 78485.0,
-      "estimated_3m_value": 131131.0,
-      "estimated_3m_value_high": 181280.0,
-      "expected_gain_3m": 52646.0,
-      "expected_gain_3m_high": 102795.0
+      "buy_shares": 12,
+      "invest_amt": 85620.0,
+      "estimated_3m_value": 143052.0,
+      "estimated_3m_value_high": 197760.0,
+      "expected_gain_3m": 57432.0,
+      "expected_gain_3m_high": 112140.0
     },
     {
       "code": "6584",
@@ -246,13 +246,13 @@
         "独自技術"
       ],
       "summary": "富岳採用水冷配管、DC液冷市場 $13B予測",
-      "buy_shares": 89,
-      "invest_amt": 84550.0,
-      "estimated_3m_value": 117925.0,
-      "estimated_3m_value_high": 165451.0,
-      "expected_gain_3m": 33375.0,
-      "expected_gain_3m_high": 80901.0
+      "buy_shares": 90,
+      "invest_amt": 85500.0,
+      "estimated_3m_value": 119250.0,
+      "estimated_3m_value_high": 167310.0,
+      "expected_gain_3m": 33750.0,
+      "expected_gain_3m_high": 81810.0
     }
   ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約341,175円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+288,061円の利益期待. 高値ケースなら最大+584,835円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約342,675円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+293,222円の利益期待. 高値ケースなら最大+595,089円."
 }
