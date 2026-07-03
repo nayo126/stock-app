@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-07-03T08:02:04.600392+09:00",
+  "generated_at": "2026-07-03T09:06:00.755802+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 454800.0,
-    "total_pl": -396100.0,
-    "total_pl_pct": -46.55,
-    "health_score": 0,
-    "total_recovery_if_sell": 341500.0,
-    "expected_gain_3m": 276838.0,
-    "expected_gain_3m_high": 571061.0
+    "total_value": 450800.0,
+    "total_pl": -400100.0,
+    "total_pl_pct": -47.02,
+    "health_score": 10,
+    "total_recovery_if_sell": 337500.0,
+    "expected_gain_3m": 279057.0,
+    "expected_gain_3m_high": 576789.0
   },
   "judgments": [
     {
@@ -44,23 +44,6 @@
       "color": "red",
       "pl_total": -20000.0,
       "pl_pct": -61.53846153846154
-    },
-    {
-      "code": "5856",
-      "name": "エルアイイーエイチ",
-      "avg_price": 39.0,
-      "shares": 4000,
-      "current": 1.0,
-      "cost_total": 156000.0,
-      "value_total": 4000.0,
-      "action": "SELL_ALL",
-      "label": "🚨 即損切り (全株)",
-      "priority": 1,
-      "reason": "-97.4%。元本回復に+3800%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 4000.0,
-      "color": "red",
-      "pl_total": -152000.0,
-      "pl_pct": -97.43589743589743
     },
     {
       "code": "7527",
@@ -161,6 +144,20 @@
       "color": "gray",
       "pl_total": -1400.0,
       "pl_pct": -7.142857142857142
+    },
+    {
+      "code": "5856",
+      "name": "エルアイイーエイチ",
+      "avg_price": 39.0,
+      "shares": 4000,
+      "current": null,
+      "cost_total": 156000.0,
+      "value_total": 0,
+      "action": "DATA_NA",
+      "label": "❓ データ無し",
+      "priority": 99,
+      "reason": "価格データ取得不可",
+      "color": "gray"
     }
   ],
   "recommended_buys": [
@@ -170,10 +167,10 @@
       "tier": "S",
       "category": "STOCKS_MAIN",
       "current": 23420.0,
-      "forecast_3m_mid": 65226.0,
-      "forecast_3m_pct": 178.5,
-      "forecast_3m_high": 111420.0,
-      "forecast_3m_high_pct": 375.7,
+      "forecast_3m_mid": 65096.0,
+      "forecast_3m_pct": 178.0,
+      "forecast_3m_high": 111720.0,
+      "forecast_3m_high_pct": 377.0,
       "tags": [
         "NVIDIA",
         "ABF基板",
@@ -182,10 +179,10 @@
       "summary": "NVIDIA向けABF基板独占、FY2027 +42.5%増益予想",
       "buy_shares": 3,
       "invest_amt": 70260.0,
-      "estimated_3m_value": 195678.0,
-      "estimated_3m_value_high": 334260.0,
-      "expected_gain_3m": 125418.0,
-      "expected_gain_3m_high": 264000.0
+      "estimated_3m_value": 195288.0,
+      "estimated_3m_value_high": 335160.0,
+      "expected_gain_3m": 125028.0,
+      "expected_gain_3m_high": 264900.0
     },
     {
       "code": "8035",
@@ -193,10 +190,10 @@
       "tier": "S",
       "category": "STOCKS_MAIN",
       "current": 72940.0,
-      "forecast_3m_mid": 140174.0,
-      "forecast_3m_pct": 92.2,
-      "forecast_3m_high": 196257.0,
-      "forecast_3m_high_pct": 169.1,
+      "forecast_3m_mid": 141495.0,
+      "forecast_3m_pct": 94.0,
+      "forecast_3m_high": 198664.0,
+      "forecast_3m_high_pct": 172.4,
       "tags": [
         "半導体装置",
         "HBM4"
@@ -204,10 +201,10 @@
       "summary": "前工程2位、HBM4スーパーサイクル、目標52,000円",
       "buy_shares": 1,
       "invest_amt": 72940.0,
-      "estimated_3m_value": 140174.0,
-      "estimated_3m_value_high": 196257.0,
-      "expected_gain_3m": 67234.0,
-      "expected_gain_3m_high": 123317.0
+      "estimated_3m_value": 141495.0,
+      "estimated_3m_value_high": 198664.0,
+      "expected_gain_3m": 68555.0,
+      "expected_gain_3m_high": 125724.0
     },
     {
       "code": "6506",
@@ -215,10 +212,10 @@
       "tier": "A",
       "category": "STOCKS_MAIN",
       "current": 6942.0,
-      "forecast_3m_mid": 11280.0,
-      "forecast_3m_pct": 62.5,
-      "forecast_3m_high": 15654.0,
-      "forecast_3m_high_pct": 125.5,
+      "forecast_3m_mid": 11291.0,
+      "forecast_3m_pct": 62.6,
+      "forecast_3m_high": 15714.0,
+      "forecast_3m_high_pct": 126.4,
       "tags": [
         "ロボット",
         "NVIDIA"
@@ -226,10 +223,10 @@
       "summary": "NVIDIA+SBフィジカルAI提携、FY2027 +26.8%予想",
       "buy_shares": 12,
       "invest_amt": 83304.0,
-      "estimated_3m_value": 135360.0,
-      "estimated_3m_value_high": 187848.0,
-      "expected_gain_3m": 52056.0,
-      "expected_gain_3m_high": 104544.0
+      "estimated_3m_value": 135492.0,
+      "estimated_3m_value_high": 188568.0,
+      "expected_gain_3m": 52188.0,
+      "expected_gain_3m_high": 105264.0
     },
     {
       "code": "6584",
@@ -237,22 +234,22 @@
       "tier": "A",
       "category": "STOCKS_UNDER3000",
       "current": 940.0,
-      "forecast_3m_mid": 1297.0,
-      "forecast_3m_pct": 38.0,
-      "forecast_3m_high": 1820.0,
-      "forecast_3m_high_pct": 93.6,
+      "forecast_3m_mid": 1314.0,
+      "forecast_3m_pct": 39.8,
+      "forecast_3m_high": 1849.0,
+      "forecast_3m_high_pct": 96.7,
       "tags": [
         "DC液冷",
         "独自技術"
       ],
       "summary": "富岳採用水冷配管、DC液冷市場 $13B予測",
-      "buy_shares": 90,
-      "invest_amt": 84600.0,
-      "estimated_3m_value": 116730.0,
-      "estimated_3m_value_high": 163800.0,
-      "expected_gain_3m": 32130.0,
-      "expected_gain_3m_high": 79200.0
+      "buy_shares": 89,
+      "invest_amt": 83660.0,
+      "estimated_3m_value": 116946.0,
+      "estimated_3m_value_high": 164561.0,
+      "expected_gain_3m": 33286.0,
+      "expected_gain_3m_high": 80901.0
     }
   ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約341,500円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+276,838円の利益期待. 高値ケースなら最大+571,061円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約337,500円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+279,057円の利益期待. 高値ケースなら最大+576,789円."
 }
