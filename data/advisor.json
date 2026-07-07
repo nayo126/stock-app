@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-07-08T06:35:02.500013+09:00",
+  "generated_at": "2026-07-08T06:56:54.435768+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 459980.0,
-    "total_pl": -390920.0,
-    "total_pl_pct": -45.94,
+    "total_value": 465580.0,
+    "total_pl": -385320.0,
+    "total_pl_pct": -45.28,
     "health_score": 10,
-    "total_recovery_if_sell": 343190.0,
-    "expected_gain_3m": 193218.0,
-    "expected_gain_3m_high": 449766.0
+    "total_recovery_if_sell": 346890.0,
+    "expected_gain_3m": 193456.0,
+    "expected_gain_3m_high": 450455.0
   },
   "judgments": [
     {
@@ -16,17 +16,17 @@
       "name": "JHD",
       "avg_price": 207.0,
       "shares": 2200,
-      "current": 124.0,
+      "current": 125.0,
       "cost_total": 455400.0,
-      "value_total": 272800.0,
+      "value_total": 275000.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-40.1%。元本回復に+67%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 272800.0,
+      "reason": "-39.6%。元本回復に+66%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 275000.0,
       "color": "red",
-      "pl_total": -182600.0,
-      "pl_pct": -40.09661835748793
+      "pl_total": -180400.0,
+      "pl_pct": -39.61352657004831
     },
     {
       "code": "3664",
@@ -67,17 +67,17 @@
       "name": "OTS",
       "avg_price": 27.0,
       "shares": 3000,
-      "current": 20.0,
+      "current": 21.0,
       "cost_total": 81000.0,
-      "value_total": 60000.0,
+      "value_total": 63000.0,
       "action": "SELL_HALF",
       "label": "⚠️ 半分損切り",
       "priority": 2,
-      "reason": "-25.9%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 30000.0,
+      "reason": "-22.2%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 31500.0,
       "color": "orange",
-      "pl_total": -21000.0,
-      "pl_pct": -25.925925925925924
+      "pl_total": -18000.0,
+      "pl_pct": -22.22222222222222
     },
     {
       "code": "5103",
@@ -118,16 +118,16 @@
       "name": "いちご",
       "avg_price": 356.0,
       "shares": 100,
-      "current": 444.0,
+      "current": 448.0,
       "cost_total": 35600.0,
-      "value_total": 44400.0,
+      "value_total": 44800.0,
       "action": "HOLD_WATCH",
       "label": "👀 保有・利確待ち",
       "priority": 5,
-      "reason": "+24.7%。+30%到達でTRIM",
+      "reason": "+25.8%。+30%到達でTRIM",
       "color": "blue",
-      "pl_total": 8800.0,
-      "pl_pct": 24.719101123595504
+      "pl_total": 9200.0,
+      "pl_pct": 25.842696629213485
     },
     {
       "code": "2134",
@@ -243,13 +243,13 @@
         "独自技術"
       ],
       "summary": "富岳採用水冷配管、DC液冷市場 $13B予測",
-      "buy_shares": 98,
-      "invest_amt": 85554.0,
-      "estimated_3m_value": 108878.0,
-      "estimated_3m_value_high": 153076.0,
-      "expected_gain_3m": 23324.0,
-      "expected_gain_3m_high": 67522.0
+      "buy_shares": 99,
+      "invest_amt": 86427.0,
+      "estimated_3m_value": 109989.0,
+      "estimated_3m_value_high": 154638.0,
+      "expected_gain_3m": 23562.0,
+      "expected_gain_3m_high": 68211.0
     }
   ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約343,190円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+193,218円の利益期待. 高値ケースなら最大+449,766円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約346,890円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+193,456円の利益期待. 高値ケースなら最大+450,455円."
 }
