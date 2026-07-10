@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-07-10T22:22:30.718790+09:00",
+  "generated_at": "2026-07-10T22:41:18.912438+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 425500.0,
-    "total_pl": -425400.0,
-    "total_pl_pct": -49.99,
-    "health_score": 30,
-    "total_recovery_if_sell": 331600.0,
+    "total_value": 456550.0,
+    "total_pl": -394350.0,
+    "total_pl_pct": -46.35,
+    "health_score": 20,
+    "total_recovery_if_sell": 347125.0,
     "expected_gain_3m": 0,
     "expected_gain_3m_high": 0
   },
@@ -80,6 +80,23 @@
       "pl_pct": -25.925925925925924
     },
     {
+      "code": "7201",
+      "name": "日産自",
+      "avg_price": 426.0,
+      "shares": 100,
+      "current": 310.5,
+      "cost_total": 42600.0,
+      "value_total": 31050.0,
+      "action": "SELL_HALF",
+      "label": "⚠️ 半分損切り",
+      "priority": 2,
+      "reason": "-27.1%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 15525.0,
+      "color": "orange",
+      "pl_total": -11550.0,
+      "pl_pct": -27.11267605633803
+    },
+    {
       "code": "2337",
       "name": "いちご",
       "avg_price": 356.0,
@@ -126,20 +143,6 @@
       "color": "gray"
     },
     {
-      "code": "7201",
-      "name": "日産自",
-      "avg_price": 426.0,
-      "shares": 100,
-      "current": null,
-      "cost_total": 42600.0,
-      "value_total": 0,
-      "action": "DATA_NA",
-      "label": "❓ データ無し",
-      "priority": 99,
-      "reason": "価格データ取得不可",
-      "color": "gray"
-    },
-    {
       "code": "7527",
       "name": "システムソフト",
       "avg_price": 78.0,
@@ -155,5 +158,5 @@
     }
   ],
   "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約331,600円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約347,125円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
