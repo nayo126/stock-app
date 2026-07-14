@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-07-14T11:47:44.171989+09:00",
+  "generated_at": "2026-07-14T12:05:09.929514+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 460740.0,
-    "total_pl": -390160.0,
-    "total_pl_pct": -45.85,
+    "total_value": 460340.0,
+    "total_pl": -390560.0,
+    "total_pl_pct": -45.9,
     "health_score": 10,
-    "total_recovery_if_sell": 350270.0,
+    "total_recovery_if_sell": 349870.0,
     "expected_gain_3m": 141348.0,
     "expected_gain_3m_high": 321228.0
   },
@@ -50,17 +50,17 @@
       "name": "昭和HD",
       "avg_price": 51.0,
       "shares": 400,
-      "current": 29.0,
+      "current": 28.0,
       "cost_total": 20400.0,
-      "value_total": 11600.0,
+      "value_total": 11200.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-43.1%。元本回復に+76%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 11600.0,
+      "reason": "-45.1%。元本回復に+82%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 11200.0,
       "color": "red",
-      "pl_total": -8800.0,
-      "pl_pct": -43.13725490196079
+      "pl_total": -9200.0,
+      "pl_pct": -45.09803921568628
     },
     {
       "code": "4564",
@@ -251,5 +251,5 @@
       "expected_gain_3m_high": 41033.0
     }
   ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約350,270円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+141,348円の利益期待. 高値ケースなら最大+321,228円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約349,870円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+141,348円の利益期待. 高値ケースなら最大+321,228円."
 }
