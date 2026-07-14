@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-14T08:47:02.774977+09:00",
+  "generated_at": "2026-07-14T09:04:50.763502+09:00",
   "summary": {
     "total_cost": 850900.0,
     "total_value": 458510.0,
@@ -7,8 +7,8 @@
     "total_pl_pct": -46.11,
     "health_score": 0,
     "total_recovery_if_sell": 350655.0,
-    "expected_gain_3m": 161704.0,
-    "expected_gain_3m_high": 376844.0
+    "expected_gain_3m": 158248.0,
+    "expected_gain_3m_high": 352018.0
   },
   "judgments": [
     {
@@ -167,10 +167,10 @@
       "tier": "S",
       "category": "STOCKS_MAIN",
       "current": 18690.0,
-      "forecast_3m_mid": 37678.0,
-      "forecast_3m_pct": 101.6,
-      "forecast_3m_high": 64968.0,
-      "forecast_3m_high_pct": 247.6,
+      "forecast_3m_mid": 37345.0,
+      "forecast_3m_pct": 99.8,
+      "forecast_3m_high": 64697.0,
+      "forecast_3m_high_pct": 246.2,
       "tags": [
         "NVIDIA",
         "ABF基板",
@@ -179,10 +179,10 @@
       "summary": "NVIDIA向けABF基板独占、FY2027 +42.5%増益予想",
       "buy_shares": 4,
       "invest_amt": 74760.0,
-      "estimated_3m_value": 150712.0,
-      "estimated_3m_value_high": 259872.0,
-      "expected_gain_3m": 75952.0,
-      "expected_gain_3m_high": 185112.0
+      "estimated_3m_value": 149380.0,
+      "estimated_3m_value_high": 258788.0,
+      "expected_gain_3m": 74620.0,
+      "expected_gain_3m_high": 184028.0
     },
     {
       "code": "8035",
@@ -190,10 +190,10 @@
       "tier": "S",
       "category": "STOCKS_MAIN",
       "current": 71300.0,
-      "forecast_3m_mid": 117849.0,
-      "forecast_3m_pct": 65.3,
-      "forecast_3m_high": 163967.0,
-      "forecast_3m_high_pct": 130.0,
+      "forecast_3m_mid": 112654.0,
+      "forecast_3m_pct": 58.0,
+      "forecast_3m_high": 156709.0,
+      "forecast_3m_high_pct": 119.8,
       "tags": [
         "半導体装置",
         "HBM4"
@@ -201,55 +201,55 @@
       "summary": "前工程2位、HBM4スーパーサイクル、目標52,000円",
       "buy_shares": 1,
       "invest_amt": 71300.0,
-      "estimated_3m_value": 117849.0,
-      "estimated_3m_value_high": 163967.0,
-      "expected_gain_3m": 46549.0,
-      "expected_gain_3m_high": 92667.0
+      "estimated_3m_value": 112654.0,
+      "estimated_3m_value_high": 156709.0,
+      "expected_gain_3m": 41354.0,
+      "expected_gain_3m_high": 85409.0
     },
     {
-      "code": "8316",
-      "name": "三井住友FG",
-      "tier": "A",
-      "category": "STOCKS_MAIN",
-      "current": 6925.0,
-      "forecast_3m_mid": 8517.0,
-      "forecast_3m_pct": 23.0,
-      "forecast_3m_high": 9819.0,
-      "forecast_3m_high_pct": 41.8,
-      "tags": [
-        "金融",
-        "高配当"
-      ],
-      "summary": "メガバンク、5期連続増配、年間157円、利回り2.8%",
-      "buy_shares": 12,
-      "invest_amt": 83100.0,
-      "estimated_3m_value": 102204.0,
-      "estimated_3m_value_high": 117828.0,
-      "expected_gain_3m": 19104.0,
-      "expected_gain_3m_high": 34728.0
-    },
-    {
-      "code": "6584",
-      "name": "三櫻工業",
+      "code": "8331",
+      "name": "千葉銀行",
       "tier": "A",
       "category": "STOCKS_UNDER3000",
-      "current": 864.0,
-      "forecast_3m_mid": 1063.0,
-      "forecast_3m_pct": 23.0,
-      "forecast_3m_high": 1501.0,
-      "forecast_3m_high_pct": 73.7,
+      "current": 2753.0,
+      "forecast_3m_mid": 3431.0,
+      "forecast_3m_pct": 24.6,
+      "forecast_3m_high": 4033.0,
+      "forecast_3m_high_pct": 46.5,
       "tags": [
-        "DC液冷",
-        "独自技術"
+        "地銀",
+        "統合"
       ],
-      "summary": "富岳採用水冷配管、DC液冷市場 $13B予測",
-      "buy_shares": 101,
-      "invest_amt": 87264.0,
-      "estimated_3m_value": 107363.0,
-      "estimated_3m_value_high": 151601.0,
-      "expected_gain_3m": 20099.0,
-      "expected_gain_3m_high": 64337.0
+      "summary": "純利益+26.1%、千葉興業銀行との経営統合",
+      "buy_shares": 31,
+      "invest_amt": 85343.0,
+      "estimated_3m_value": 106361.0,
+      "estimated_3m_value_high": 125023.0,
+      "expected_gain_3m": 21018.0,
+      "expected_gain_3m_high": 39680.0
+    },
+    {
+      "code": "8308",
+      "name": "りそなHD",
+      "tier": "S",
+      "category": "STOCKS_UNDER3000",
+      "current": 2362.5,
+      "forecast_3m_mid": 2937.0,
+      "forecast_3m_pct": 24.3,
+      "forecast_3m_high": 3522.0,
+      "forecast_3m_high_pct": 49.1,
+      "tags": [
+        "金融",
+        "高成長"
+      ],
+      "summary": "純利益+31.3%、貸出金利息+34.1%",
+      "buy_shares": 37,
+      "invest_amt": 87412.5,
+      "estimated_3m_value": 108669.0,
+      "estimated_3m_value_high": 130314.0,
+      "expected_gain_3m": 21256.5,
+      "expected_gain_3m_high": 42901.5
     }
   ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約350,655円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+161,704円の利益期待. 高値ケースなら最大+376,844円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約350,655円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+158,248円の利益期待. 高値ケースなら最大+352,018円."
 }
