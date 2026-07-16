@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-07-16T15:05:46.167744+09:00",
+  "generated_at": "2026-07-16T15:27:10.104836+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 500480.0,
-    "total_pl": -350420.0,
-    "total_pl_pct": -41.18,
+    "total_value": 499480.0,
+    "total_pl": -351420.0,
+    "total_pl_pct": -41.3,
     "health_score": 10,
-    "total_recovery_if_sell": 231790.0,
-    "expected_gain_3m": 73955.0,
-    "expected_gain_3m_high": 166620.0
+    "total_recovery_if_sell": 231740.0,
+    "expected_gain_3m": 73345.0,
+    "expected_gain_3m_high": 165947.0
   },
   "judgments": [
     {
@@ -101,49 +101,49 @@
       "name": "日産自",
       "avg_price": 426.0,
       "shares": 100,
-      "current": 329.8,
+      "current": 328.8,
       "cost_total": 42600.0,
-      "value_total": 32980.0,
+      "value_total": 32880.0,
       "action": "SELL_HALF",
       "label": "⚠️ 半分損切り",
       "priority": 2,
-      "reason": "-22.6%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 16490.0,
+      "reason": "-22.8%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 16440.0,
       "color": "orange",
-      "pl_total": -9619.999999999998,
-      "pl_pct": -22.58215962441314
+      "pl_total": -9719.999999999998,
+      "pl_pct": -22.8169014084507
     },
     {
       "code": "2337",
       "name": "いちご",
       "avg_price": 356.0,
       "shares": 100,
-      "current": 416.0,
+      "current": 414.0,
       "cost_total": 35600.0,
-      "value_total": 41600.0,
+      "value_total": 41400.0,
       "action": "HOLD_WATCH",
       "label": "👀 保有・利確待ち",
       "priority": 5,
-      "reason": "+16.9%。+30%到達でTRIM",
+      "reason": "+16.3%。+30%到達でTRIM",
       "color": "blue",
-      "pl_total": 6000.0,
-      "pl_pct": 16.853932584269664
+      "pl_total": 5800.0,
+      "pl_pct": 16.292134831460675
     },
     {
       "code": "2134",
       "name": "キタハマキャピタル",
       "avg_price": 28.0,
       "shares": 700,
-      "current": 27.0,
+      "current": 26.0,
       "cost_total": 19600.0,
-      "value_total": 18900.0,
+      "value_total": 18200.0,
       "action": "HOLD",
       "label": "✋ 保有継続",
       "priority": 6,
-      "reason": "-3.6%。レンジ内、判断保留",
+      "reason": "-7.1%。レンジ内、判断保留",
       "color": "gray",
-      "pl_total": -700.0,
-      "pl_pct": -3.571428571428571
+      "pl_total": -1400.0,
+      "pl_pct": -7.142857142857142
     },
     {
       "code": "5856",
@@ -189,11 +189,11 @@
       "name": "東京エレクトロン",
       "tier": "S",
       "category": "STOCKS_MAIN",
-      "current": 69450.0,
-      "forecast_3m_mid": 109837.0,
-      "forecast_3m_pct": 58.2,
-      "forecast_3m_high": 153445.0,
-      "forecast_3m_high_pct": 120.9,
+      "current": 70850.0,
+      "forecast_3m_mid": 114349.0,
+      "forecast_3m_pct": 61.4,
+      "forecast_3m_high": 159109.0,
+      "forecast_3m_high_pct": 124.6,
       "tags": [
         "半導体装置",
         "HBM4"
@@ -211,45 +211,45 @@
       "name": "三菱UFJフィナンシャル・グループ",
       "tier": "S",
       "category": "STOCKS_UNDER3000",
-      "current": 3637.0,
-      "forecast_3m_mid": 4627.0,
-      "forecast_3m_pct": 27.2,
-      "forecast_3m_high": 5249.0,
-      "forecast_3m_high_pct": 44.3,
+      "current": 3628.0,
+      "forecast_3m_mid": 4604.0,
+      "forecast_3m_pct": 26.9,
+      "forecast_3m_high": 5225.0,
+      "forecast_3m_high_pct": 44.0,
       "tags": [
         "金融",
         "メガバンク"
       ],
       "summary": "メガバンク、金利上昇最大恩恵、年間74円増配",
       "buy_shares": 15,
-      "invest_amt": 54555.0,
-      "estimated_3m_value": 69405.0,
-      "estimated_3m_value_high": 78735.0,
-      "expected_gain_3m": 14850.0,
-      "expected_gain_3m_high": 24180.0
+      "invest_amt": 54420.0,
+      "estimated_3m_value": 69060.0,
+      "estimated_3m_value_high": 78375.0,
+      "expected_gain_3m": 14640.0,
+      "expected_gain_3m_high": 23955.0
     },
     {
       "code": "8316",
       "name": "三井住友FG",
       "tier": "A",
       "category": "STOCKS_MAIN",
-      "current": 7036.0,
-      "forecast_3m_mid": 8915.0,
-      "forecast_3m_pct": 26.7,
-      "forecast_3m_high": 10282.0,
-      "forecast_3m_high_pct": 46.1,
+      "current": 7004.0,
+      "forecast_3m_mid": 8833.0,
+      "forecast_3m_pct": 26.1,
+      "forecast_3m_high": 10194.0,
+      "forecast_3m_high_pct": 45.5,
       "tags": [
         "金融",
         "高配当"
       ],
       "summary": "メガバンク、5期連続増配、年間157円、利回り2.8%",
       "buy_shares": 8,
-      "invest_amt": 56288.0,
-      "estimated_3m_value": 71320.0,
-      "estimated_3m_value_high": 82256.0,
-      "expected_gain_3m": 15032.0,
-      "expected_gain_3m_high": 25968.0
+      "invest_amt": 56032.0,
+      "estimated_3m_value": 70664.0,
+      "estimated_3m_value_high": 81552.0,
+      "expected_gain_3m": 14632.0,
+      "expected_gain_3m_high": 25520.0
     }
   ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約231,790円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+73,955円の利益期待. 高値ケースなら最大+166,620円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約231,740円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+73,345円の利益期待. 高値ケースなら最大+165,947円."
 }
