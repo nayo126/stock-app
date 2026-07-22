@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-22T08:50:03.287915+09:00",
+  "generated_at": "2026-07-22T09:16:13.402645+09:00",
   "summary": {
     "total_cost": 850900.0,
     "total_value": 497530.0,
@@ -7,8 +7,8 @@
     "total_pl_pct": -41.53,
     "health_score": 10,
     "total_recovery_if_sell": 230015.0,
-    "expected_gain_3m": 63132.0,
-    "expected_gain_3m_high": 150773.0
+    "expected_gain_3m": 65565.0,
+    "expected_gain_3m_high": 154880.0
   },
   "judgments": [
     {
@@ -167,10 +167,10 @@
       "tier": "S",
       "category": "STOCKS_MAIN",
       "current": 17415.0,
-      "forecast_3m_mid": 27282.0,
-      "forecast_3m_pct": 56.7,
-      "forecast_3m_high": 48297.0,
-      "forecast_3m_high_pct": 177.3,
+      "forecast_3m_mid": 27660.0,
+      "forecast_3m_pct": 58.8,
+      "forecast_3m_high": 49203.0,
+      "forecast_3m_high_pct": 182.5,
       "tags": [
         "NVIDIA",
         "ABF基板",
@@ -179,10 +179,10 @@
       "summary": "NVIDIA向けABF基板独占、FY2027 +42.5%増益予想",
       "buy_shares": 3,
       "invest_amt": 52245.0,
-      "estimated_3m_value": 81846.0,
-      "estimated_3m_value_high": 144891.0,
-      "expected_gain_3m": 29601.0,
-      "expected_gain_3m_high": 92646.0
+      "estimated_3m_value": 82980.0,
+      "estimated_3m_value_high": 147609.0,
+      "expected_gain_3m": 30735.0,
+      "expected_gain_3m_high": 95364.0
     },
     {
       "code": "8035",
@@ -190,10 +190,10 @@
       "tier": "S",
       "category": "STOCKS_MAIN",
       "current": 66570.0,
-      "forecast_3m_mid": 98027.0,
-      "forecast_3m_pct": 47.3,
-      "forecast_3m_high": 138048.0,
-      "forecast_3m_high_pct": 107.4,
+      "forecast_3m_mid": 98728.0,
+      "forecast_3m_pct": 48.3,
+      "forecast_3m_high": 139441.0,
+      "forecast_3m_high_pct": 109.5,
       "tags": [
         "半導体装置",
         "HBM4"
@@ -212,10 +212,10 @@
       "tier": "A",
       "category": "STOCKS_UNDER3000",
       "current": 2659.0,
-      "forecast_3m_mid": 3474.0,
-      "forecast_3m_pct": 30.6,
-      "forecast_3m_high": 4134.0,
-      "forecast_3m_high_pct": 55.5,
+      "forecast_3m_mid": 3481.0,
+      "forecast_3m_pct": 30.9,
+      "forecast_3m_high": 4143.0,
+      "forecast_3m_high_pct": 55.8,
       "tags": [
         "地銀",
         "統合"
@@ -223,10 +223,10 @@
       "summary": "純利益+26.1%、千葉興業銀行との経営統合",
       "buy_shares": 21,
       "invest_amt": 55839.0,
-      "estimated_3m_value": 72954.0,
-      "estimated_3m_value_high": 86814.0,
-      "expected_gain_3m": 17115.0,
-      "expected_gain_3m_high": 30975.0
+      "estimated_3m_value": 73101.0,
+      "estimated_3m_value_high": 87003.0,
+      "expected_gain_3m": 17262.0,
+      "expected_gain_3m_high": 31164.0
     },
     {
       "code": "8306",
@@ -234,10 +234,10 @@
       "tier": "S",
       "category": "STOCKS_UNDER3000",
       "current": 3580.0,
-      "forecast_3m_mid": 4606.0,
-      "forecast_3m_pct": 28.7,
-      "forecast_3m_high": 5277.0,
-      "forecast_3m_high_pct": 47.4,
+      "forecast_3m_mid": 4678.0,
+      "forecast_3m_pct": 30.7,
+      "forecast_3m_high": 5352.0,
+      "forecast_3m_high_pct": 49.5,
       "tags": [
         "金融",
         "メガバンク"
@@ -245,11 +245,11 @@
       "summary": "メガバンク、金利上昇最大恩恵、年間74円増配",
       "buy_shares": 16,
       "invest_amt": 57280.0,
-      "estimated_3m_value": 73696.0,
-      "estimated_3m_value_high": 84432.0,
-      "expected_gain_3m": 16416.0,
-      "expected_gain_3m_high": 27152.0
+      "estimated_3m_value": 74848.0,
+      "estimated_3m_value_high": 85632.0,
+      "expected_gain_3m": 17568.0,
+      "expected_gain_3m_high": 28352.0
     }
   ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約230,015円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+63,132円の利益期待. 高値ケースなら最大+150,773円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約230,015円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+65,565円の利益期待. 高値ケースなら最大+154,880円."
 }
