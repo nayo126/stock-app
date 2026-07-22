@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-22T12:24:45.740165+09:00",
+  "generated_at": "2026-07-22T12:45:54.194441+09:00",
   "summary": {
     "total_cost": 850900.0,
     "total_value": 496110.0,
@@ -7,8 +7,8 @@
     "total_pl_pct": -41.7,
     "health_score": 10,
     "total_recovery_if_sell": 229005.0,
-    "expected_gain_3m": 66598.0,
-    "expected_gain_3m_high": 144252.0
+    "expected_gain_3m": 66342.0,
+    "expected_gain_3m_high": 143468.0
   },
   "judgments": [
     {
@@ -166,11 +166,11 @@
       "name": "イビデン",
       "tier": "S",
       "category": "STOCKS_MAIN",
-      "current": 19195.0,
-      "forecast_3m_mid": 33396.0,
-      "forecast_3m_pct": 74.0,
-      "forecast_3m_high": 59533.0,
-      "forecast_3m_high_pct": 210.1,
+      "current": 19095.0,
+      "forecast_3m_mid": 33046.0,
+      "forecast_3m_pct": 73.1,
+      "forecast_3m_high": 58862.0,
+      "forecast_3m_high_pct": 208.3,
       "tags": [
         "NVIDIA",
         "ABF基板",
@@ -178,22 +178,22 @@
       ],
       "summary": "NVIDIA向けABF基板独占、FY2027 +42.5%増益予想",
       "buy_shares": 2,
-      "invest_amt": 38390.0,
-      "estimated_3m_value": 66792.0,
-      "estimated_3m_value_high": 119066.0,
-      "expected_gain_3m": 28402.0,
-      "expected_gain_3m_high": 80676.0
+      "invest_amt": 38190.0,
+      "estimated_3m_value": 66092.0,
+      "estimated_3m_value_high": 117724.0,
+      "expected_gain_3m": 27902.0,
+      "expected_gain_3m_high": 79534.0
     },
     {
       "code": "8035",
       "name": "東京エレクトロン",
       "tier": "S",
       "category": "STOCKS_MAIN",
-      "current": 69280.0,
-      "forecast_3m_mid": 106290.0,
-      "forecast_3m_pct": 53.4,
-      "forecast_3m_high": 149920.0,
-      "forecast_3m_high_pct": 116.4,
+      "current": 68810.0,
+      "forecast_3m_mid": 104841.0,
+      "forecast_3m_pct": 52.4,
+      "forecast_3m_high": 147786.0,
+      "forecast_3m_high_pct": 114.8,
       "tags": [
         "半導体装置",
         "HBM4"
@@ -211,45 +211,45 @@
       "name": "三菱UFJフィナンシャル・グループ",
       "tier": "S",
       "category": "STOCKS_UNDER3000",
-      "current": 3675.0,
-      "forecast_3m_mid": 4932.0,
-      "forecast_3m_pct": 34.2,
-      "forecast_3m_high": 5651.0,
-      "forecast_3m_high_pct": 53.8,
+      "current": 3677.0,
+      "forecast_3m_mid": 4937.0,
+      "forecast_3m_pct": 34.3,
+      "forecast_3m_high": 5658.0,
+      "forecast_3m_high_pct": 53.9,
       "tags": [
         "金融",
         "メガバンク"
       ],
       "summary": "メガバンク、金利上昇最大恩恵、年間74円増配",
       "buy_shares": 15,
-      "invest_amt": 55125.0,
-      "estimated_3m_value": 73980.0,
-      "estimated_3m_value_high": 84765.0,
-      "expected_gain_3m": 18855.0,
-      "expected_gain_3m_high": 29640.0
+      "invest_amt": 55155.0,
+      "estimated_3m_value": 74055.0,
+      "estimated_3m_value_high": 84870.0,
+      "expected_gain_3m": 18900.0,
+      "expected_gain_3m_high": 29715.0
     },
     {
       "code": "8331",
       "name": "千葉銀行",
       "tier": "A",
       "category": "STOCKS_UNDER3000",
-      "current": 2718.0,
-      "forecast_3m_mid": 3639.0,
-      "forecast_3m_pct": 33.9,
-      "forecast_3m_high": 4334.0,
-      "forecast_3m_high_pct": 59.5,
+      "current": 2723.5,
+      "forecast_3m_mid": 3654.0,
+      "forecast_3m_pct": 34.2,
+      "forecast_3m_high": 4353.0,
+      "forecast_3m_high_pct": 59.8,
       "tags": [
         "地銀",
         "統合"
       ],
       "summary": "純利益+26.1%、千葉興業銀行との経営統合",
       "buy_shares": 21,
-      "invest_amt": 57078.0,
-      "estimated_3m_value": 76419.0,
-      "estimated_3m_value_high": 91014.0,
-      "expected_gain_3m": 19341.0,
-      "expected_gain_3m_high": 33936.0
+      "invest_amt": 57193.5,
+      "estimated_3m_value": 76734.0,
+      "estimated_3m_value_high": 91413.0,
+      "expected_gain_3m": 19540.5,
+      "expected_gain_3m_high": 34219.5
     }
   ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約229,005円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+66,598円の利益期待. 高値ケースなら最大+144,252円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約229,005円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+66,342円の利益期待. 高値ケースなら最大+143,468円."
 }
