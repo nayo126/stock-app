@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-07-27T14:25:29.281588+09:00",
+  "generated_at": "2026-07-27T14:40:35.442736+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 469560.0,
-    "total_pl": -381340.0,
-    "total_pl_pct": -44.82,
+    "total_value": 474760.0,
+    "total_pl": -376140.0,
+    "total_pl_pct": -44.2,
     "health_score": 10,
-    "total_recovery_if_sell": 214480.0,
-    "expected_gain_3m": 49547.0,
-    "expected_gain_3m_high": 122034.0
+    "total_recovery_if_sell": 217080.0,
+    "expected_gain_3m": 49654.0,
+    "expected_gain_3m_high": 122330.0
   },
   "judgments": [
     {
@@ -67,34 +67,34 @@
       "name": "JHD",
       "avg_price": 207.0,
       "shares": 2200,
-      "current": 136.0,
+      "current": 137.0,
       "cost_total": 455400.0,
-      "value_total": 299200.0,
+      "value_total": 301400.0,
       "action": "SELL_HALF",
       "label": "⚠️ 半分損切り",
       "priority": 2,
-      "reason": "-34.3%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 149600.0,
+      "reason": "-33.8%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 150700.0,
       "color": "orange",
-      "pl_total": -156200.0,
-      "pl_pct": -34.29951690821256
+      "pl_total": -154000.0,
+      "pl_pct": -33.81642512077295
     },
     {
       "code": "4564",
       "name": "OTS",
       "avg_price": 27.0,
       "shares": 3000,
-      "current": 19.0,
+      "current": 20.0,
       "cost_total": 81000.0,
-      "value_total": 57000.0,
+      "value_total": 60000.0,
       "action": "SELL_HALF",
       "label": "⚠️ 半分損切り",
       "priority": 2,
-      "reason": "-29.6%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 28500.0,
+      "reason": "-25.9%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 30000.0,
       "color": "orange",
-      "pl_total": -24000.0,
-      "pl_pct": -29.629629629629626
+      "pl_total": -21000.0,
+      "pl_pct": -25.925925925925924
     },
     {
       "code": "7201",
@@ -166,11 +166,11 @@
       "name": "東京エレクトロン",
       "tier": "S",
       "category": "STOCKS_MAIN",
-      "current": 62590.0,
-      "forecast_3m_mid": 87248.0,
-      "forecast_3m_pct": 39.4,
-      "forecast_3m_high": 123011.0,
-      "forecast_3m_high_pct": 96.5,
+      "current": 62530.0,
+      "forecast_3m_mid": 87080.0,
+      "forecast_3m_pct": 39.3,
+      "forecast_3m_high": 122776.0,
+      "forecast_3m_high_pct": 96.3,
       "tags": [
         "半導体装置",
         "HBM4"
@@ -184,37 +184,15 @@
       "expected_gain_3m_high": 0.0
     },
     {
-      "code": "8306",
-      "name": "三菱UFJフィナンシャル・グループ",
-      "tier": "S",
-      "category": "STOCKS_UNDER3000",
-      "current": 3809.0,
-      "forecast_3m_mid": 5071.0,
-      "forecast_3m_pct": 33.1,
-      "forecast_3m_high": 5802.0,
-      "forecast_3m_high_pct": 52.3,
-      "tags": [
-        "金融",
-        "メガバンク"
-      ],
-      "summary": "メガバンク、金利上昇最大恩恵、年間74円増配",
-      "buy_shares": 14,
-      "invest_amt": 53326.0,
-      "estimated_3m_value": 70994.0,
-      "estimated_3m_value_high": 81228.0,
-      "expected_gain_3m": 17668.0,
-      "expected_gain_3m_high": 27902.0
-    },
-    {
       "code": "4062",
       "name": "イビデン",
       "tier": "S",
       "category": "STOCKS_MAIN",
-      "current": 16605.0,
-      "forecast_3m_mid": 22057.0,
-      "forecast_3m_pct": 32.8,
-      "forecast_3m_high": 38818.0,
-      "forecast_3m_high_pct": 133.8,
+      "current": 16645.0,
+      "forecast_3m_mid": 22164.0,
+      "forecast_3m_pct": 33.2,
+      "forecast_3m_high": 38999.0,
+      "forecast_3m_high_pct": 134.3,
       "tags": [
         "NVIDIA",
         "ABF基板",
@@ -222,21 +200,43 @@
       ],
       "summary": "NVIDIA向けABF基板独占、FY2027 +42.5%増益予想",
       "buy_shares": 3,
-      "invest_amt": 49815.0,
-      "estimated_3m_value": 66171.0,
-      "estimated_3m_value_high": 116454.0,
-      "expected_gain_3m": 16356.0,
-      "expected_gain_3m_high": 66639.0
+      "invest_amt": 49935.0,
+      "estimated_3m_value": 66492.0,
+      "estimated_3m_value_high": 116997.0,
+      "expected_gain_3m": 16557.0,
+      "expected_gain_3m_high": 67062.0
+    },
+    {
+      "code": "8306",
+      "name": "三菱UFJフィナンシャル・グループ",
+      "tier": "S",
+      "category": "STOCKS_UNDER3000",
+      "current": 3806.0,
+      "forecast_3m_mid": 5062.0,
+      "forecast_3m_pct": 33.0,
+      "forecast_3m_high": 5792.0,
+      "forecast_3m_high_pct": 52.2,
+      "tags": [
+        "金融",
+        "メガバンク"
+      ],
+      "summary": "メガバンク、金利上昇最大恩恵、年間74円増配",
+      "buy_shares": 14,
+      "invest_amt": 53284.0,
+      "estimated_3m_value": 70868.0,
+      "estimated_3m_value_high": 81088.0,
+      "expected_gain_3m": 17584.0,
+      "expected_gain_3m_high": 27804.0
     },
     {
       "code": "8331",
       "name": "千葉銀行",
       "tier": "A",
       "category": "STOCKS_UNDER3000",
-      "current": 2818.0,
-      "forecast_3m_mid": 3635.0,
+      "current": 2817.5,
+      "forecast_3m_mid": 3634.0,
       "forecast_3m_pct": 29.0,
-      "forecast_3m_high": 4265.0,
+      "forecast_3m_high": 4263.0,
       "forecast_3m_high_pct": 51.3,
       "tags": [
         "地銀",
@@ -244,12 +244,12 @@
       ],
       "summary": "純利益+26.1%、千葉興業銀行との経営統合",
       "buy_shares": 19,
-      "invest_amt": 53542.0,
-      "estimated_3m_value": 69065.0,
-      "estimated_3m_value_high": 81035.0,
-      "expected_gain_3m": 15523.0,
-      "expected_gain_3m_high": 27493.0
+      "invest_amt": 53532.5,
+      "estimated_3m_value": 69046.0,
+      "estimated_3m_value_high": 80997.0,
+      "expected_gain_3m": 15513.5,
+      "expected_gain_3m_high": 27464.5
     }
   ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約214,480円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+49,547円の利益期待. 高値ケースなら最大+122,034円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約217,080円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+49,654円の利益期待. 高値ケースなら最大+122,330円."
 }
