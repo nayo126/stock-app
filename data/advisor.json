@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-27T12:25:10.675257+09:00",
+  "generated_at": "2026-07-27T12:45:46.291792+09:00",
   "summary": {
     "total_cost": 850900.0,
     "total_value": 472450.0,
@@ -7,8 +7,8 @@
     "total_pl_pct": -44.48,
     "health_score": 10,
     "total_recovery_if_sell": 216325.0,
-    "expected_gain_3m": 47675.0,
-    "expected_gain_3m_high": 118171.0
+    "expected_gain_3m": 47970.0,
+    "expected_gain_3m_high": 118703.0
   },
   "judgments": [
     {
@@ -166,11 +166,11 @@
       "name": "東京エレクトロン",
       "tier": "S",
       "category": "STOCKS_MAIN",
-      "current": 62380.0,
-      "forecast_3m_mid": 86659.0,
-      "forecast_3m_pct": 38.9,
-      "forecast_3m_high": 122191.0,
-      "forecast_3m_high_pct": 95.9,
+      "current": 62420.0,
+      "forecast_3m_mid": 86771.0,
+      "forecast_3m_pct": 39.0,
+      "forecast_3m_high": 122346.0,
+      "forecast_3m_high_pct": 96.0,
       "tags": [
         "半導体装置",
         "HBM4"
@@ -188,11 +188,11 @@
       "name": "イビデン",
       "tier": "S",
       "category": "STOCKS_MAIN",
-      "current": 16600.0,
-      "forecast_3m_mid": 22043.0,
-      "forecast_3m_pct": 32.8,
-      "forecast_3m_high": 38796.0,
-      "forecast_3m_high_pct": 133.7,
+      "current": 16640.0,
+      "forecast_3m_mid": 22151.0,
+      "forecast_3m_pct": 33.1,
+      "forecast_3m_high": 38976.0,
+      "forecast_3m_high_pct": 134.2,
       "tags": [
         "NVIDIA",
         "ABF基板",
@@ -200,56 +200,56 @@
       ],
       "summary": "NVIDIA向けABF基板独占、FY2027 +42.5%増益予想",
       "buy_shares": 3,
-      "invest_amt": 49800.0,
-      "estimated_3m_value": 66129.0,
-      "estimated_3m_value_high": 116388.0,
-      "expected_gain_3m": 16329.0,
-      "expected_gain_3m_high": 66588.0
+      "invest_amt": 49920.0,
+      "estimated_3m_value": 66453.0,
+      "estimated_3m_value_high": 116928.0,
+      "expected_gain_3m": 16533.0,
+      "expected_gain_3m_high": 67008.0
     },
     {
       "code": "8306",
       "name": "三菱UFJフィナンシャル・グループ",
       "tier": "S",
       "category": "STOCKS_UNDER3000",
-      "current": 3793.0,
-      "forecast_3m_mid": 5028.0,
-      "forecast_3m_pct": 32.6,
-      "forecast_3m_high": 5751.0,
-      "forecast_3m_high_pct": 51.6,
+      "current": 3790.0,
+      "forecast_3m_mid": 5020.0,
+      "forecast_3m_pct": 32.4,
+      "forecast_3m_high": 5742.0,
+      "forecast_3m_high_pct": 51.5,
       "tags": [
         "金融",
         "メガバンク"
       ],
       "summary": "メガバンク、金利上昇最大恩恵、年間74円増配",
       "buy_shares": 14,
-      "invest_amt": 53102.0,
-      "estimated_3m_value": 70392.0,
-      "estimated_3m_value_high": 80514.0,
-      "expected_gain_3m": 17290.0,
-      "expected_gain_3m_high": 27412.0
+      "invest_amt": 53060.0,
+      "estimated_3m_value": 70280.0,
+      "estimated_3m_value_high": 80388.0,
+      "expected_gain_3m": 17220.0,
+      "expected_gain_3m_high": 27328.0
     },
     {
       "code": "8316",
       "name": "三井住友FG",
       "tier": "A",
       "category": "STOCKS_MAIN",
-      "current": 7195.0,
-      "forecast_3m_mid": 9203.0,
-      "forecast_3m_pct": 27.9,
-      "forecast_3m_high": 10648.0,
-      "forecast_3m_high_pct": 48.0,
+      "current": 7209.0,
+      "forecast_3m_mid": 9240.0,
+      "forecast_3m_pct": 28.2,
+      "forecast_3m_high": 10690.0,
+      "forecast_3m_high_pct": 48.3,
       "tags": [
         "金融",
         "高配当"
       ],
       "summary": "メガバンク、5期連続増配、年間157円、利回り2.8%",
       "buy_shares": 7,
-      "invest_amt": 50365.0,
-      "estimated_3m_value": 64421.0,
-      "estimated_3m_value_high": 74536.0,
-      "expected_gain_3m": 14056.0,
-      "expected_gain_3m_high": 24171.0
+      "invest_amt": 50463.0,
+      "estimated_3m_value": 64680.0,
+      "estimated_3m_value_high": 74830.0,
+      "expected_gain_3m": 14217.0,
+      "expected_gain_3m_high": 24367.0
     }
   ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約216,325円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+47,675円の利益期待. 高値ケースなら最大+118,171円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約216,325円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+47,970円の利益期待. 高値ケースなら最大+118,703円."
 }
