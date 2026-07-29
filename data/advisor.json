@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-29T15:47:32.371045+09:00",
+  "generated_at": "2026-07-29T16:05:40.068322+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 475820.0,
-    "total_pl": -375080.0,
-    "total_pl_pct": -44.08,
+    "total_value": 475920.0,
+    "total_pl": -374980.0,
+    "total_pl_pct": -44.07,
     "health_score": 15,
     "total_recovery_if_sell": 199500.0,
     "expected_gain_3m": 49775.0,
@@ -117,16 +117,16 @@
       "name": "いちご",
       "avg_price": 356.0,
       "shares": 100,
-      "current": 430.0,
+      "current": 431.0,
       "cost_total": 35600.0,
-      "value_total": 43000.0,
+      "value_total": 43100.0,
       "action": "HOLD_WATCH",
       "label": "👀 保有・利確待ち",
       "priority": 5,
-      "reason": "+20.8%。+30%到達でTRIM",
+      "reason": "+21.1%。+30%到達でTRIM",
       "color": "blue",
-      "pl_total": 7400.0,
-      "pl_pct": 20.786516853932586
+      "pl_total": 7500.0,
+      "pl_pct": 21.06741573033708
     },
     {
       "code": "2134",
