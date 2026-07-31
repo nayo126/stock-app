@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-07-31T15:51:02.427379+09:00",
+  "generated_at": "2026-07-31T16:09:54.799085+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 504720.0,
-    "total_pl": -346180.0,
-    "total_pl_pct": -40.68,
+    "total_value": 501720.0,
+    "total_pl": -349180.0,
+    "total_pl_pct": -41.04,
     "health_score": 10,
-    "total_recovery_if_sell": 232110.0,
-    "expected_gain_3m": 51346.0,
-    "expected_gain_3m_high": 94752.0
+    "total_recovery_if_sell": 231010.0,
+    "expected_gain_3m": 50759.0,
+    "expected_gain_3m_high": 93602.0
   },
   "judgments": [
     {
@@ -67,17 +67,17 @@
       "name": "JHD",
       "avg_price": 207.0,
       "shares": 2200,
-      "current": 153.0,
+      "current": 152.0,
       "cost_total": 455400.0,
-      "value_total": 336600.0,
+      "value_total": 334400.0,
       "action": "SELL_HALF",
       "label": "⚠️ 半分損切り",
       "priority": 2,
-      "reason": "-26.1%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 168300.0,
+      "reason": "-26.6%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 167200.0,
       "color": "orange",
-      "pl_total": -118800.0,
-      "pl_pct": -26.08695652173913
+      "pl_total": -121000.0,
+      "pl_pct": -26.570048309178745
     },
     {
       "code": "4564",
@@ -118,32 +118,32 @@
       "name": "いちご",
       "avg_price": 356.0,
       "shares": 100,
-      "current": 415.0,
+      "current": 414.0,
       "cost_total": 35600.0,
-      "value_total": 41500.0,
+      "value_total": 41400.0,
       "action": "HOLD_WATCH",
       "label": "👀 保有・利確待ち",
       "priority": 5,
-      "reason": "+16.6%。+30%到達でTRIM",
+      "reason": "+16.3%。+30%到達でTRIM",
       "color": "blue",
-      "pl_total": 5900.0,
-      "pl_pct": 16.573033707865168
+      "pl_total": 5800.0,
+      "pl_pct": 16.292134831460675
     },
     {
       "code": "2134",
       "name": "キタハマキャピタル",
       "avg_price": 28.0,
       "shares": 700,
-      "current": 25.0,
+      "current": 24.0,
       "cost_total": 19600.0,
-      "value_total": 17500.0,
+      "value_total": 16800.0,
       "action": "HOLD",
       "label": "✋ 保有継続",
       "priority": 6,
-      "reason": "-10.7%。レンジ内、判断保留",
+      "reason": "-14.3%。レンジ内、判断保留",
       "color": "gray",
-      "pl_total": -2100.0,
-      "pl_pct": -10.714285714285714
+      "pl_total": -2800.0,
+      "pl_pct": -14.285714285714285
     },
     {
       "code": "5856",
@@ -220,12 +220,12 @@
         "統合"
       ],
       "summary": "純利益+26.1%、千葉興業銀行との経営統合",
-      "buy_shares": 22,
-      "invest_amt": 57794.0,
-      "estimated_3m_value": 70708.0,
-      "estimated_3m_value_high": 83094.0,
-      "expected_gain_3m": 12914.0,
-      "expected_gain_3m_high": 25300.0
+      "buy_shares": 21,
+      "invest_amt": 55167.0,
+      "estimated_3m_value": 67494.0,
+      "estimated_3m_value_high": 79317.0,
+      "expected_gain_3m": 12327.0,
+      "expected_gain_3m_high": 24150.0
     },
     {
       "code": "8304",
@@ -250,5 +250,5 @@
       "expected_gain_3m_high": 18924.0
     }
   ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約232,110円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+51,346円の利益期待. 高値ケースなら最大+94,752円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約231,010円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+50,759円の利益期待. 高値ケースなら最大+93,602円."
 }
