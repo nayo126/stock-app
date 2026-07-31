@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-01T08:35:07.197481+09:00",
+  "generated_at": "2026-08-01T08:55:13.633214+09:00",
   "summary": {
     "total_cost": 850900.0,
     "total_value": 501720.0,
@@ -7,8 +7,8 @@
     "total_pl_pct": -41.04,
     "health_score": 10,
     "total_recovery_if_sell": 231010.0,
-    "expected_gain_3m": 50759.0,
-    "expected_gain_3m_high": 93602.0
+    "expected_gain_3m": 51405.0,
+    "expected_gain_3m_high": 94286.0
   },
   "judgments": [
     {
@@ -233,10 +233,10 @@
       "tier": "A",
       "category": "STOCKS_UNDER3000",
       "current": 3038.0,
-      "forecast_3m_mid": 3558.0,
-      "forecast_3m_pct": 17.1,
-      "forecast_3m_high": 4034.0,
-      "forecast_3m_high_pct": 32.8,
+      "forecast_3m_mid": 3592.0,
+      "forecast_3m_pct": 18.2,
+      "forecast_3m_high": 4070.0,
+      "forecast_3m_high_pct": 34.0,
       "tags": [
         "金融",
         "V字回復"
@@ -244,11 +244,11 @@
       "summary": "経常利益+78.0%、業績回復",
       "buy_shares": 19,
       "invest_amt": 57722.0,
-      "estimated_3m_value": 67602.0,
-      "estimated_3m_value_high": 76646.0,
-      "expected_gain_3m": 9880.0,
-      "expected_gain_3m_high": 18924.0
+      "estimated_3m_value": 68248.0,
+      "estimated_3m_value_high": 77330.0,
+      "expected_gain_3m": 10526.0,
+      "expected_gain_3m_high": 19608.0
     }
   ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約231,010円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+50,759円の利益期待. 高値ケースなら最大+93,602円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約231,010円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+51,405円の利益期待. 高値ケースなら最大+94,286円."
 }
