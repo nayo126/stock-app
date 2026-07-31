@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-31T08:56:30.038176+09:00",
+  "generated_at": "2026-07-31T09:19:24.092048+09:00",
   "summary": {
     "total_cost": 850900.0,
     "total_value": 496600.0,
@@ -7,8 +7,8 @@
     "total_pl_pct": -41.64,
     "health_score": 15,
     "total_recovery_if_sell": 210200.0,
-    "expected_gain_3m": 40021.0,
-    "expected_gain_3m_high": 77521.0
+    "expected_gain_3m": 44571.0,
+    "expected_gain_3m_high": 82256.0
   },
   "judgments": [
     {
@@ -166,10 +166,10 @@
       "tier": "S",
       "category": "STOCKS_UNDER3000",
       "current": 3525.0,
-      "forecast_3m_mid": 4355.0,
-      "forecast_3m_pct": 23.6,
-      "forecast_3m_high": 5022.0,
-      "forecast_3m_high_pct": 42.5,
+      "forecast_3m_mid": 4445.0,
+      "forecast_3m_pct": 26.1,
+      "forecast_3m_high": 5115.0,
+      "forecast_3m_high_pct": 45.1,
       "tags": [
         "金融",
         "メガバンク"
@@ -177,32 +177,10 @@
       "summary": "メガバンク、金利上昇最大恩恵、年間74円増配",
       "buy_shares": 14,
       "invest_amt": 49350.0,
-      "estimated_3m_value": 60970.0,
-      "estimated_3m_value_high": 70308.0,
-      "expected_gain_3m": 11620.0,
-      "expected_gain_3m_high": 20958.0
-    },
-    {
-      "code": "9433",
-      "name": "KDDI",
-      "tier": "A",
-      "category": "STOCKS_UNDER3000",
-      "current": 3051.0,
-      "forecast_3m_mid": 3698.0,
-      "forecast_3m_pct": 21.2,
-      "forecast_3m_high": 4176.0,
-      "forecast_3m_high_pct": 36.9,
-      "tags": [
-        "通信",
-        "高配当"
-      ],
-      "summary": "売上+3.8%、純利益+5.1%、安定増配",
-      "buy_shares": 17,
-      "invest_amt": 51867.0,
-      "estimated_3m_value": 62866.0,
-      "estimated_3m_value_high": 70992.0,
-      "expected_gain_3m": 10999.0,
-      "expected_gain_3m_high": 19125.0
+      "estimated_3m_value": 62230.0,
+      "estimated_3m_value_high": 71610.0,
+      "expected_gain_3m": 12880.0,
+      "expected_gain_3m_high": 22260.0
     },
     {
       "code": "8331",
@@ -210,10 +188,10 @@
       "tier": "A",
       "category": "STOCKS_UNDER3000",
       "current": 2608.0,
-      "forecast_3m_mid": 3070.0,
-      "forecast_3m_pct": 17.7,
-      "forecast_3m_high": 3621.0,
-      "forecast_3m_high_pct": 38.8,
+      "forecast_3m_mid": 3167.0,
+      "forecast_3m_pct": 21.4,
+      "forecast_3m_high": 3722.0,
+      "forecast_3m_high_pct": 42.7,
       "tags": [
         "地銀",
         "統合"
@@ -221,10 +199,32 @@
       "summary": "純利益+26.1%、千葉興業銀行との経営統合",
       "buy_shares": 20,
       "invest_amt": 52160.0,
-      "estimated_3m_value": 61400.0,
-      "estimated_3m_value_high": 72420.0,
-      "expected_gain_3m": 9240.0,
-      "expected_gain_3m_high": 20260.0
+      "estimated_3m_value": 63340.0,
+      "estimated_3m_value_high": 74440.0,
+      "expected_gain_3m": 11180.0,
+      "expected_gain_3m_high": 22280.0
+    },
+    {
+      "code": "9433",
+      "name": "KDDI",
+      "tier": "A",
+      "category": "STOCKS_UNDER3000",
+      "current": 3051.0,
+      "forecast_3m_mid": 3693.0,
+      "forecast_3m_pct": 21.0,
+      "forecast_3m_high": 4171.0,
+      "forecast_3m_high_pct": 36.7,
+      "tags": [
+        "通信",
+        "高配当"
+      ],
+      "summary": "売上+3.8%、純利益+5.1%、安定増配",
+      "buy_shares": 17,
+      "invest_amt": 51867.0,
+      "estimated_3m_value": 62781.0,
+      "estimated_3m_value_high": 70907.0,
+      "expected_gain_3m": 10914.0,
+      "expected_gain_3m_high": 19040.0
     },
     {
       "code": "8316",
@@ -232,10 +232,10 @@
       "tier": "A",
       "category": "STOCKS_MAIN",
       "current": 6666.0,
-      "forecast_3m_mid": 7832.0,
-      "forecast_3m_pct": 17.5,
-      "forecast_3m_high": 9120.0,
-      "forecast_3m_high_pct": 36.8,
+      "forecast_3m_mid": 8037.0,
+      "forecast_3m_pct": 20.6,
+      "forecast_3m_high": 9334.0,
+      "forecast_3m_high_pct": 40.0,
       "tags": [
         "金融",
         "高配当"
@@ -243,11 +243,11 @@
       "summary": "メガバンク、5期連続増配、年間157円、利回り2.8%",
       "buy_shares": 7,
       "invest_amt": 46662.0,
-      "estimated_3m_value": 54824.0,
-      "estimated_3m_value_high": 63840.0,
-      "expected_gain_3m": 8162.0,
-      "expected_gain_3m_high": 17178.0
+      "estimated_3m_value": 56259.0,
+      "estimated_3m_value_high": 65338.0,
+      "expected_gain_3m": 9597.0,
+      "expected_gain_3m_high": 18676.0
     }
   ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約210,200円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+40,021円の利益期待. 高値ケースなら最大+77,521円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約210,200円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+44,571円の利益期待. 高値ケースなら最大+82,256円."
 }
