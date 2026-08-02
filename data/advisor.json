@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-08-03T02:24:57.010578+09:00",
+  "generated_at": "2026-08-03T02:46:05.464799+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 497020.0,
-    "total_pl": -353880.0,
-    "total_pl_pct": -41.59,
-    "health_score": 30,
-    "total_recovery_if_sell": 226310.0,
+    "total_value": 501720.0,
+    "total_pl": -349180.0,
+    "total_pl_pct": -41.04,
+    "health_score": 10,
+    "total_recovery_if_sell": 231010.0,
     "expected_gain_3m": 0,
     "expected_gain_3m_high": 0
   },
@@ -44,6 +44,23 @@
       "color": "red",
       "pl_total": -17600.0,
       "pl_pct": -86.27450980392157
+    },
+    {
+      "code": "7527",
+      "name": "システムソフト",
+      "avg_price": 78.0,
+      "shares": 100,
+      "current": 47.0,
+      "cost_total": 7800.0,
+      "value_total": 4700.0,
+      "action": "SELL_ALL",
+      "label": "🚨 即損切り (全株)",
+      "priority": 1,
+      "reason": "-39.7%。元本回復に+66%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 4700.0,
+      "color": "red",
+      "pl_total": -3100.0,
+      "pl_pct": -39.743589743589745
     },
     {
       "code": "2721",
@@ -141,22 +158,8 @@
       "priority": 99,
       "reason": "価格データ取得不可",
       "color": "gray"
-    },
-    {
-      "code": "7527",
-      "name": "システムソフト",
-      "avg_price": 78.0,
-      "shares": 100,
-      "current": null,
-      "cost_total": 7800.0,
-      "value_total": 0,
-      "action": "DATA_NA",
-      "label": "❓ データ無し",
-      "priority": 99,
-      "reason": "価格データ取得不可",
-      "color": "gray"
     }
   ],
   "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約226,310円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約231,010円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
