@@ -1,33 +1,16 @@
 {
-  "generated_at": "2026-08-03T23:54:11.373683+09:00",
+  "generated_at": "2026-08-04T00:14:09.762823+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 442500.0,
-    "total_pl": -408400.0,
-    "total_pl_pct": -48.0,
-    "health_score": 20,
-    "total_recovery_if_sell": 340150.0,
+    "total_value": 497020.0,
+    "total_pl": -353880.0,
+    "total_pl_pct": -41.59,
+    "health_score": 30,
+    "total_recovery_if_sell": 226310.0,
     "expected_gain_3m": 0,
     "expected_gain_3m_high": 0
   },
   "judgments": [
-    {
-      "code": "2721",
-      "name": "JHD",
-      "avg_price": 207.0,
-      "shares": 2200,
-      "current": 128.0,
-      "cost_total": 455400.0,
-      "value_total": 281600.0,
-      "action": "SELL_ALL",
-      "label": "🚨 即損切り (全株)",
-      "priority": 1,
-      "reason": "-38.2%。元本回復に+62%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 281600.0,
-      "color": "red",
-      "pl_total": -173800.0,
-      "pl_pct": -38.164251207729464
-    },
     {
       "code": "3664",
       "name": "WIZE",
@@ -63,6 +46,23 @@
       "pl_pct": -86.27450980392157
     },
     {
+      "code": "2721",
+      "name": "JHD",
+      "avg_price": 207.0,
+      "shares": 2200,
+      "current": 152.0,
+      "cost_total": 455400.0,
+      "value_total": 334400.0,
+      "action": "SELL_HALF",
+      "label": "⚠️ 半分損切り",
+      "priority": 2,
+      "reason": "-26.6%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 167200.0,
+      "color": "orange",
+      "pl_total": -121000.0,
+      "pl_pct": -26.570048309178745
+    },
+    {
       "code": "4564",
       "name": "OTS",
       "avg_price": 27.0,
@@ -84,49 +84,49 @@
       "name": "日産自",
       "avg_price": 426.0,
       "shares": 100,
-      "current": 325.0,
+      "current": 336.2,
       "cost_total": 42600.0,
-      "value_total": 32500.0,
+      "value_total": 33620.0,
       "action": "SELL_HALF",
       "label": "⚠️ 半分損切り",
       "priority": 2,
-      "reason": "-23.7%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 16250.0,
+      "reason": "-21.1%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 16810.0,
       "color": "orange",
-      "pl_total": -10100.0,
-      "pl_pct": -23.708920187793428
-    },
-    {
-      "code": "2134",
-      "name": "キタハマキャピタル",
-      "avg_price": 28.0,
-      "shares": 700,
-      "current": 25.0,
-      "cost_total": 19600.0,
-      "value_total": 17500.0,
-      "action": "HOLD",
-      "label": "✋ 保有継続",
-      "priority": 6,
-      "reason": "-10.7%。レンジ内、判断保留",
-      "color": "gray",
-      "pl_total": -2100.0,
-      "pl_pct": -10.714285714285714
+      "pl_total": -8980.000000000002,
+      "pl_pct": -21.07981220657277
     },
     {
       "code": "2337",
       "name": "いちご",
       "avg_price": 356.0,
       "shares": 100,
-      "current": 401.0,
+      "current": 414.0,
       "cost_total": 35600.0,
-      "value_total": 40100.0,
+      "value_total": 41400.0,
+      "action": "HOLD_WATCH",
+      "label": "👀 保有・利確待ち",
+      "priority": 5,
+      "reason": "+16.3%。+30%到達でTRIM",
+      "color": "blue",
+      "pl_total": 5800.0,
+      "pl_pct": 16.292134831460675
+    },
+    {
+      "code": "2134",
+      "name": "キタハマキャピタル",
+      "avg_price": 28.0,
+      "shares": 700,
+      "current": 24.0,
+      "cost_total": 19600.0,
+      "value_total": 16800.0,
       "action": "HOLD",
       "label": "✋ 保有継続",
       "priority": 6,
-      "reason": "+12.6%。レンジ内、判断保留",
+      "reason": "-14.3%。レンジ内、判断保留",
       "color": "gray",
-      "pl_total": 4500.0,
-      "pl_pct": 12.640449438202248
+      "pl_total": -2800.0,
+      "pl_pct": -14.285714285714285
     },
     {
       "code": "5856",
@@ -158,5 +158,5 @@
     }
   ],
   "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約340,150円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約226,310円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
