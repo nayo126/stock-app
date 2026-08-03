@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-08-03T10:16:15.878607+09:00",
+  "generated_at": "2026-08-03T10:31:19.693164+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 442160.0,
-    "total_pl": -408740.0,
-    "total_pl_pct": -48.04,
-    "health_score": 0,
-    "total_recovery_if_sell": 339030.0,
+    "total_value": 413300.0,
+    "total_pl": -437600.0,
+    "total_pl_pct": -51.43,
+    "health_score": 10,
+    "total_recovery_if_sell": 325600.0,
     "expected_gain_3m": 0,
     "expected_gain_3m_high": 0
   },
@@ -16,17 +16,17 @@
       "name": "JHD",
       "avg_price": 207.0,
       "shares": 2200,
-      "current": 125.0,
+      "current": 126.0,
       "cost_total": 455400.0,
-      "value_total": 275000.0,
+      "value_total": 277200.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-39.6%。元本回復に+66%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 275000.0,
+      "reason": "-39.1%。元本回復に+64%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 277200.0,
       "color": "red",
-      "pl_total": -180400.0,
-      "pl_pct": -39.61352657004831
+      "pl_total": -178200.0,
+      "pl_pct": -39.130434782608695
     },
     {
       "code": "3664",
@@ -50,17 +50,17 @@
       "name": "昭和HD",
       "avg_price": 51.0,
       "shares": 400,
-      "current": 6.0,
+      "current": 7.0,
       "cost_total": 20400.0,
-      "value_total": 2400.0,
+      "value_total": 2800.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-88.2%。元本回復に+750%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 2400.0,
+      "reason": "-86.3%。元本回復に+629%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 2800.0,
       "color": "red",
-      "pl_total": -18000.0,
-      "pl_pct": -88.23529411764706
+      "pl_total": -17600.0,
+      "pl_pct": -86.27450980392157
     },
     {
       "code": "7527",
@@ -97,53 +97,36 @@
       "pl_pct": -25.925925925925924
     },
     {
-      "code": "7201",
-      "name": "日産自",
-      "avg_price": 426.0,
-      "shares": 100,
-      "current": 320.6,
-      "cost_total": 42600.0,
-      "value_total": 32060.000000000004,
-      "action": "SELL_HALF",
-      "label": "⚠️ 半分損切り",
-      "priority": 2,
-      "reason": "-24.7%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 16030.000000000002,
-      "color": "orange",
-      "pl_total": -10539.999999999998,
-      "pl_pct": -24.74178403755868
-    },
-    {
       "code": "2134",
       "name": "キタハマキャピタル",
       "avg_price": 28.0,
       "shares": 700,
-      "current": 24.0,
+      "current": 25.0,
       "cost_total": 19600.0,
-      "value_total": 16800.0,
+      "value_total": 17500.0,
       "action": "HOLD",
       "label": "✋ 保有継続",
       "priority": 6,
-      "reason": "-14.3%。レンジ内、判断保留",
+      "reason": "-10.7%。レンジ内、判断保留",
       "color": "gray",
-      "pl_total": -2800.0,
-      "pl_pct": -14.285714285714285
+      "pl_total": -2100.0,
+      "pl_pct": -10.714285714285714
     },
     {
       "code": "2337",
       "name": "いちご",
       "avg_price": 356.0,
       "shares": 100,
-      "current": 403.0,
+      "current": 402.0,
       "cost_total": 35600.0,
-      "value_total": 40300.0,
+      "value_total": 40200.0,
       "action": "HOLD",
       "label": "✋ 保有継続",
       "priority": 6,
-      "reason": "+13.2%。レンジ内、判断保留",
+      "reason": "+12.9%。レンジ内、判断保留",
       "color": "gray",
-      "pl_total": 4700.0,
-      "pl_pct": 13.202247191011235
+      "pl_total": 4600.0,
+      "pl_pct": 12.921348314606742
     },
     {
       "code": "5856",
@@ -158,8 +141,22 @@
       "priority": 99,
       "reason": "価格データ取得不可",
       "color": "gray"
+    },
+    {
+      "code": "7201",
+      "name": "日産自",
+      "avg_price": 426.0,
+      "shares": 100,
+      "current": null,
+      "cost_total": 42600.0,
+      "value_total": 0,
+      "action": "DATA_NA",
+      "label": "❓ データ無し",
+      "priority": 99,
+      "reason": "価格データ取得不可",
+      "color": "gray"
     }
   ],
   "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約339,030円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約325,600円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
