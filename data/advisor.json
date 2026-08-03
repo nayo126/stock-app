@@ -1,16 +1,33 @@
 {
-  "generated_at": "2026-08-03T09:39:18.355203+09:00",
+  "generated_at": "2026-08-03T09:57:22.388011+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 468380.0,
-    "total_pl": -382520.0,
-    "total_pl_pct": -44.95,
-    "health_score": 10,
-    "total_recovery_if_sell": 214240.0,
-    "expected_gain_3m": 41759.0,
-    "expected_gain_3m_high": 81441.0
+    "total_value": 406400.0,
+    "total_pl": -444500.0,
+    "total_pl_pct": -52.24,
+    "health_score": 30,
+    "total_recovery_if_sell": 318400.0,
+    "expected_gain_3m": 0,
+    "expected_gain_3m_high": 0
   },
   "judgments": [
+    {
+      "code": "2721",
+      "name": "JHD",
+      "avg_price": 207.0,
+      "shares": 2200,
+      "current": 125.0,
+      "cost_total": 455400.0,
+      "value_total": 275000.0,
+      "action": "SELL_ALL",
+      "label": "🚨 即損切り (全株)",
+      "priority": 1,
+      "reason": "-39.6%。元本回復に+66%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 275000.0,
+      "color": "red",
+      "pl_total": -180400.0,
+      "pl_pct": -39.61352657004831
+    },
     {
       "code": "3664",
       "name": "WIZE",
@@ -33,51 +50,17 @@
       "name": "昭和HD",
       "avg_price": 51.0,
       "shares": 400,
-      "current": 7.0,
+      "current": 6.0,
       "cost_total": 20400.0,
-      "value_total": 2800.0,
+      "value_total": 2400.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-86.3%。元本回復に+629%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 2800.0,
+      "reason": "-88.2%。元本回復に+750%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 2400.0,
       "color": "red",
-      "pl_total": -17600.0,
-      "pl_pct": -86.27450980392157
-    },
-    {
-      "code": "7527",
-      "name": "システムソフト",
-      "avg_price": 78.0,
-      "shares": 100,
-      "current": 46.0,
-      "cost_total": 7800.0,
-      "value_total": 4600.0,
-      "action": "SELL_ALL",
-      "label": "🚨 即損切り (全株)",
-      "priority": 1,
-      "reason": "-41.0%。元本回復に+70%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 4600.0,
-      "color": "red",
-      "pl_total": -3200.0,
-      "pl_pct": -41.02564102564102
-    },
-    {
-      "code": "2721",
-      "name": "JHD",
-      "avg_price": 207.0,
-      "shares": 2200,
-      "current": 136.0,
-      "cost_total": 455400.0,
-      "value_total": 299200.0,
-      "action": "SELL_HALF",
-      "label": "⚠️ 半分損切り",
-      "priority": 2,
-      "reason": "-34.3%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 149600.0,
-      "color": "orange",
-      "pl_total": -156200.0,
-      "pl_pct": -34.29951690821256
+      "pl_total": -18000.0,
+      "pl_pct": -88.23529411764706
     },
     {
       "code": "4564",
@@ -95,23 +78,6 @@
       "color": "orange",
       "pl_total": -21000.0,
       "pl_pct": -25.925925925925924
-    },
-    {
-      "code": "7201",
-      "name": "日産自",
-      "avg_price": 426.0,
-      "shares": 100,
-      "current": 324.8,
-      "cost_total": 42600.0,
-      "value_total": 32480.0,
-      "action": "SELL_HALF",
-      "label": "⚠️ 半分損切り",
-      "priority": 2,
-      "reason": "-23.8%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 16240.0,
-      "color": "orange",
-      "pl_total": -10119.999999999998,
-      "pl_pct": -23.755868544600936
     },
     {
       "code": "2134",
@@ -134,16 +100,16 @@
       "name": "いちご",
       "avg_price": 356.0,
       "shares": 100,
-      "current": 408.0,
+      "current": 405.0,
       "cost_total": 35600.0,
-      "value_total": 40800.0,
+      "value_total": 40500.0,
       "action": "HOLD",
       "label": "✋ 保有継続",
       "priority": 6,
-      "reason": "+14.6%。レンジ内、判断保留",
+      "reason": "+13.8%。レンジ内、判断保留",
       "color": "gray",
-      "pl_total": 5200.0,
-      "pl_pct": 14.606741573033707
+      "pl_total": 4900.0,
+      "pl_pct": 13.764044943820226
     },
     {
       "code": "5856",
@@ -158,97 +124,36 @@
       "priority": 99,
       "reason": "価格データ取得不可",
       "color": "gray"
+    },
+    {
+      "code": "7201",
+      "name": "日産自",
+      "avg_price": 426.0,
+      "shares": 100,
+      "current": null,
+      "cost_total": 42600.0,
+      "value_total": 0,
+      "action": "DATA_NA",
+      "label": "❓ データ無し",
+      "priority": 99,
+      "reason": "価格データ取得不可",
+      "color": "gray"
+    },
+    {
+      "code": "7527",
+      "name": "システムソフト",
+      "avg_price": 78.0,
+      "shares": 100,
+      "current": null,
+      "cost_total": 7800.0,
+      "value_total": 0,
+      "action": "DATA_NA",
+      "label": "❓ データ無し",
+      "priority": 99,
+      "reason": "価格データ取得不可",
+      "color": "gray"
     }
   ],
-  "recommended_buys": [
-    {
-      "code": "8304",
-      "name": "あおぞら銀行",
-      "tier": "A",
-      "category": "STOCKS_UNDER3000",
-      "current": 3190.0,
-      "forecast_3m_mid": 3951.0,
-      "forecast_3m_pct": 23.9,
-      "forecast_3m_high": 4515.0,
-      "forecast_3m_high_pct": 41.5,
-      "tags": [
-        "金融",
-        "V字回復"
-      ],
-      "summary": "経常利益+78.0%、業績回復",
-      "buy_shares": 16,
-      "invest_amt": 51040.0,
-      "estimated_3m_value": 63216.0,
-      "estimated_3m_value_high": 72240.0,
-      "expected_gain_3m": 12176.0,
-      "expected_gain_3m_high": 21200.0
-    },
-    {
-      "code": "8306",
-      "name": "三菱UFJフィナンシャル・グループ",
-      "tier": "S",
-      "category": "STOCKS_UNDER3000",
-      "current": 3504.0,
-      "forecast_3m_mid": 4313.0,
-      "forecast_3m_pct": 23.1,
-      "forecast_3m_high": 4971.0,
-      "forecast_3m_high_pct": 41.9,
-      "tags": [
-        "金融",
-        "メガバンク"
-      ],
-      "summary": "メガバンク、金利上昇最大恩恵、年間74円増配",
-      "buy_shares": 15,
-      "invest_amt": 52560.0,
-      "estimated_3m_value": 64695.0,
-      "estimated_3m_value_high": 74565.0,
-      "expected_gain_3m": 12135.0,
-      "expected_gain_3m_high": 22005.0
-    },
-    {
-      "code": "8331",
-      "name": "千葉銀行",
-      "tier": "A",
-      "category": "STOCKS_UNDER3000",
-      "current": 2586.0,
-      "forecast_3m_mid": 3028.0,
-      "forecast_3m_pct": 17.1,
-      "forecast_3m_high": 3555.0,
-      "forecast_3m_high_pct": 37.5,
-      "tags": [
-        "地銀",
-        "統合"
-      ],
-      "summary": "純利益+26.1%、千葉興業銀行との経営統合",
-      "buy_shares": 20,
-      "invest_amt": 51720.0,
-      "estimated_3m_value": 60560.0,
-      "estimated_3m_value_high": 71100.0,
-      "expected_gain_3m": 8840.0,
-      "expected_gain_3m_high": 19380.0
-    },
-    {
-      "code": "8316",
-      "name": "三井住友FG",
-      "tier": "A",
-      "category": "STOCKS_MAIN",
-      "current": 6571.0,
-      "forecast_3m_mid": 7647.0,
-      "forecast_3m_pct": 16.4,
-      "forecast_3m_high": 8928.0,
-      "forecast_3m_high_pct": 35.9,
-      "tags": [
-        "金融",
-        "高配当"
-      ],
-      "summary": "メガバンク、5期連続増配、年間157円、利回り2.8%",
-      "buy_shares": 8,
-      "invest_amt": 52568.0,
-      "estimated_3m_value": 61176.0,
-      "estimated_3m_value_high": 71424.0,
-      "expected_gain_3m": 8608.0,
-      "expected_gain_3m_high": 18856.0
-    }
-  ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約214,240円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+41,759円の利益期待. 高値ケースなら最大+81,441円."
+  "recommended_buys": [],
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約318,400円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
