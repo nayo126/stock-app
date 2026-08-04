@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-08-04T12:13:50.846562+09:00",
+  "generated_at": "2026-08-04T12:36:22.911134+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 414200.0,
-    "total_pl": -436700.0,
-    "total_pl_pct": -51.32,
-    "health_score": 30,
-    "total_recovery_if_sell": 328400.0,
-    "expected_gain_3m": 0,
-    "expected_gain_3m_high": 0
+    "total_value": 451100.0,
+    "total_pl": -399800.0,
+    "total_pl_pct": -46.99,
+    "health_score": 0,
+    "total_recovery_if_sell": 349200.0,
+    "expected_gain_3m": 63125.0,
+    "expected_gain_3m_high": 125888.0
   },
   "judgments": [
     {
@@ -63,6 +63,23 @@
       "pl_pct": -88.23529411764706
     },
     {
+      "code": "7527",
+      "name": "システムソフト",
+      "avg_price": 78.0,
+      "shares": 100,
+      "current": 47.0,
+      "cost_total": 7800.0,
+      "value_total": 4700.0,
+      "action": "SELL_ALL",
+      "label": "🚨 即損切り (全株)",
+      "priority": 1,
+      "reason": "-39.7%。元本回復に+66%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 4700.0,
+      "color": "red",
+      "pl_total": -3100.0,
+      "pl_pct": -39.743589743589745
+    },
+    {
       "code": "4564",
       "name": "OTS",
       "avg_price": 27.0,
@@ -78,6 +95,23 @@
       "color": "orange",
       "pl_total": -24000.0,
       "pl_pct": -29.629629629629626
+    },
+    {
+      "code": "7201",
+      "name": "日産自",
+      "avg_price": 426.0,
+      "shares": 100,
+      "current": 322.0,
+      "cost_total": 42600.0,
+      "value_total": 32200.0,
+      "action": "SELL_HALF",
+      "label": "⚠️ 半分損切り",
+      "priority": 2,
+      "reason": "-24.4%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 16100.0,
+      "color": "orange",
+      "pl_total": -10400.0,
+      "pl_pct": -24.413145539906104
     },
     {
       "code": "2134",
@@ -124,36 +158,97 @@
       "priority": 99,
       "reason": "価格データ取得不可",
       "color": "gray"
-    },
-    {
-      "code": "7201",
-      "name": "日産自",
-      "avg_price": 426.0,
-      "shares": 100,
-      "current": null,
-      "cost_total": 42600.0,
-      "value_total": 0,
-      "action": "DATA_NA",
-      "label": "❓ データ無し",
-      "priority": 99,
-      "reason": "価格データ取得不可",
-      "color": "gray"
-    },
-    {
-      "code": "7527",
-      "name": "システムソフト",
-      "avg_price": 78.0,
-      "shares": 100,
-      "current": null,
-      "cost_total": 7800.0,
-      "value_total": 0,
-      "action": "DATA_NA",
-      "label": "❓ データ無し",
-      "priority": 99,
-      "reason": "価格データ取得不可",
-      "color": "gray"
     }
   ],
-  "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約328,400円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "recommended_buys": [
+    {
+      "code": "8304",
+      "name": "あおぞら銀行",
+      "tier": "A",
+      "category": "STOCKS_UNDER3000",
+      "current": 3166.0,
+      "forecast_3m_mid": 3833.0,
+      "forecast_3m_pct": 21.1,
+      "forecast_3m_high": 4395.0,
+      "forecast_3m_high_pct": 38.8,
+      "tags": [
+        "金融",
+        "V字回復"
+      ],
+      "summary": "経常利益+78.0%、業績回復",
+      "buy_shares": 27,
+      "invest_amt": 85482.0,
+      "estimated_3m_value": 103491.0,
+      "estimated_3m_value_high": 118665.0,
+      "expected_gain_3m": 18009.0,
+      "expected_gain_3m_high": 33183.0
+    },
+    {
+      "code": "8306",
+      "name": "三菱UFJフィナンシャル・グループ",
+      "tier": "S",
+      "category": "STOCKS_UNDER3000",
+      "current": 3462.0,
+      "forecast_3m_mid": 4166.0,
+      "forecast_3m_pct": 20.3,
+      "forecast_3m_high": 4811.0,
+      "forecast_3m_high_pct": 39.0,
+      "tags": [
+        "金融",
+        "メガバンク"
+      ],
+      "summary": "メガバンク、金利上昇最大恩恵、年間74円増配",
+      "buy_shares": 25,
+      "invest_amt": 86550.0,
+      "estimated_3m_value": 104150.0,
+      "estimated_3m_value_high": 120275.0,
+      "expected_gain_3m": 17600.0,
+      "expected_gain_3m_high": 33725.0
+    },
+    {
+      "code": "8331",
+      "name": "千葉銀行",
+      "tier": "A",
+      "category": "STOCKS_UNDER3000",
+      "current": 2625.0,
+      "forecast_3m_mid": 3107.0,
+      "forecast_3m_pct": 18.4,
+      "forecast_3m_high": 3645.0,
+      "forecast_3m_high_pct": 38.9,
+      "tags": [
+        "地銀",
+        "統合"
+      ],
+      "summary": "純利益+26.1%、千葉興業銀行との経営統合",
+      "buy_shares": 33,
+      "invest_amt": 86625.0,
+      "estimated_3m_value": 102531.0,
+      "estimated_3m_value_high": 120285.0,
+      "expected_gain_3m": 15906.0,
+      "expected_gain_3m_high": 33660.0
+    },
+    {
+      "code": "9433",
+      "name": "KDDI",
+      "tier": "A",
+      "category": "STOCKS_UNDER3000",
+      "current": 2865.0,
+      "forecast_3m_mid": 3252.0,
+      "forecast_3m_pct": 13.5,
+      "forecast_3m_high": 3709.0,
+      "forecast_3m_high_pct": 29.4,
+      "tags": [
+        "通信",
+        "高配当"
+      ],
+      "summary": "売上+3.8%、純利益+5.1%、安定増配",
+      "buy_shares": 30,
+      "invest_amt": 85950.0,
+      "estimated_3m_value": 97560.0,
+      "estimated_3m_value_high": 111270.0,
+      "expected_gain_3m": 11610.0,
+      "expected_gain_3m_high": 25320.0
+    }
+  ],
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約349,200円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+63,125円の利益期待. 高値ケースなら最大+125,888円."
 }
