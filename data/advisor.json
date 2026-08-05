@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-08-05T14:34:32.599419+09:00",
+  "generated_at": "2026-08-05T14:57:01.433688+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 445370.0,
-    "total_pl": -405530.0,
-    "total_pl_pct": -47.66,
-    "health_score": 20,
-    "total_recovery_if_sell": 341935.0,
-    "expected_gain_3m": 0,
-    "expected_gain_3m_high": 0
+    "total_value": 449440.0,
+    "total_pl": -401460.0,
+    "total_pl_pct": -47.18,
+    "health_score": 0,
+    "total_recovery_if_sell": 346770.0,
+    "expected_gain_3m": 65964.0,
+    "expected_gain_3m_high": 223294.0
   },
   "judgments": [
     {
@@ -63,6 +63,23 @@
       "pl_pct": -86.27450980392157
     },
     {
+      "code": "7527",
+      "name": "システムソフト",
+      "avg_price": 78.0,
+      "shares": 100,
+      "current": 49.0,
+      "cost_total": 7800.0,
+      "value_total": 4900.0,
+      "action": "SELL_ALL",
+      "label": "🚨 即損切り (全株)",
+      "priority": 1,
+      "reason": "-37.2%。元本回復に+59%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 4900.0,
+      "color": "red",
+      "pl_total": -2900.0,
+      "pl_pct": -37.17948717948718
+    },
+    {
       "code": "4564",
       "name": "OTS",
       "avg_price": 27.0,
@@ -84,33 +101,33 @@
       "name": "日産自",
       "avg_price": 426.0,
       "shares": 100,
-      "current": 330.7,
+      "current": 329.4,
       "cost_total": 42600.0,
-      "value_total": 33070.0,
+      "value_total": 32940.0,
       "action": "SELL_HALF",
       "label": "⚠️ 半分損切り",
       "priority": 2,
-      "reason": "-22.4%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 16535.0,
+      "reason": "-22.7%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 16470.0,
       "color": "orange",
-      "pl_total": -9530.000000000002,
-      "pl_pct": -22.370892018779344
+      "pl_total": -9660.000000000002,
+      "pl_pct": -22.676056338028175
     },
     {
       "code": "2134",
       "name": "キタハマキャピタル",
       "avg_price": 28.0,
       "shares": 700,
-      "current": 25.0,
+      "current": 24.0,
       "cost_total": 19600.0,
-      "value_total": 17500.0,
+      "value_total": 16800.0,
       "action": "HOLD",
       "label": "✋ 保有継続",
       "priority": 6,
-      "reason": "-10.7%。レンジ内、判断保留",
+      "reason": "-14.3%。レンジ内、判断保留",
       "color": "gray",
-      "pl_total": -2100.0,
-      "pl_pct": -10.714285714285714
+      "pl_total": -2800.0,
+      "pl_pct": -14.285714285714285
     },
     {
       "code": "2337",
@@ -141,22 +158,99 @@
       "priority": 99,
       "reason": "価格データ取得不可",
       "color": "gray"
-    },
-    {
-      "code": "7527",
-      "name": "システムソフト",
-      "avg_price": 78.0,
-      "shares": 100,
-      "current": null,
-      "cost_total": 7800.0,
-      "value_total": 0,
-      "action": "DATA_NA",
-      "label": "❓ データ無し",
-      "priority": 99,
-      "reason": "価格データ取得不可",
-      "color": "gray"
     }
   ],
-  "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約341,935円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "recommended_buys": [
+    {
+      "code": "8304",
+      "name": "あおぞら銀行",
+      "tier": "A",
+      "category": "STOCKS_UNDER3000",
+      "current": 3200.0,
+      "forecast_3m_mid": 3922.0,
+      "forecast_3m_pct": 22.6,
+      "forecast_3m_high": 4494.0,
+      "forecast_3m_high_pct": 40.4,
+      "tags": [
+        "金融",
+        "V字回復"
+      ],
+      "summary": "経常利益+78.0%、業績回復",
+      "buy_shares": 27,
+      "invest_amt": 86400.0,
+      "estimated_3m_value": 105894.0,
+      "estimated_3m_value_high": 121338.0,
+      "expected_gain_3m": 19494.0,
+      "expected_gain_3m_high": 34938.0
+    },
+    {
+      "code": "8306",
+      "name": "三菱UFJフィナンシャル・グループ",
+      "tier": "S",
+      "category": "STOCKS_UNDER3000",
+      "current": 3536.0,
+      "forecast_3m_mid": 4286.0,
+      "forecast_3m_pct": 21.2,
+      "forecast_3m_high": 4950.0,
+      "forecast_3m_high_pct": 40.0,
+      "tags": [
+        "金融",
+        "メガバンク"
+      ],
+      "summary": "メガバンク、金利上昇最大恩恵、年間74円増配",
+      "buy_shares": 24,
+      "invest_amt": 84864.0,
+      "estimated_3m_value": 102864.0,
+      "estimated_3m_value_high": 118800.0,
+      "expected_gain_3m": 18000.0,
+      "expected_gain_3m_high": 33936.0
+    },
+    {
+      "code": "4062",
+      "name": "イビデン",
+      "tier": "S",
+      "category": "STOCKS_MAIN",
+      "current": 20330.0,
+      "forecast_3m_mid": 24299.0,
+      "forecast_3m_pct": 19.5,
+      "forecast_3m_high": 45276.0,
+      "forecast_3m_high_pct": 122.7,
+      "tags": [
+        "NVIDIA",
+        "ABF基板",
+        "独占"
+      ],
+      "summary": "NVIDIA向けABF基板独占、FY2027 +42.5%増益予想",
+      "buy_shares": 4,
+      "invest_amt": 81320.0,
+      "estimated_3m_value": 97196.0,
+      "estimated_3m_value_high": 181104.0,
+      "expected_gain_3m": 15876.0,
+      "expected_gain_3m_high": 99784.0
+    },
+    {
+      "code": "6857",
+      "name": "アドバンテスト",
+      "tier": "S",
+      "category": "STOCKS_MAIN",
+      "current": 33510.0,
+      "forecast_3m_mid": 39807.0,
+      "forecast_3m_pct": 18.8,
+      "forecast_3m_high": 60828.0,
+      "forecast_3m_high_pct": 81.5,
+      "tags": [
+        "AI半導体",
+        "NVIDIA",
+        "上方修正"
+      ],
+      "summary": "半導体テスタ世界50%シェア、AI独占。営業利益+110.8%、目標27,150円",
+      "buy_shares": 2,
+      "invest_amt": 67020.0,
+      "estimated_3m_value": 79614.0,
+      "estimated_3m_value_high": 121656.0,
+      "expected_gain_3m": 12594.0,
+      "expected_gain_3m_high": 54636.0
+    }
+  ],
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約346,770円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+65,964円の利益期待. 高値ケースなら最大+223,294円."
 }
