@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-08-05T14:57:01.433688+09:00",
+  "generated_at": "2026-08-05T15:17:25.122636+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 449440.0,
-    "total_pl": -401460.0,
-    "total_pl_pct": -47.18,
+    "total_value": 449220.0,
+    "total_pl": -401680.0,
+    "total_pl_pct": -47.21,
     "health_score": 0,
-    "total_recovery_if_sell": 346770.0,
-    "expected_gain_3m": 65964.0,
-    "expected_gain_3m_high": 223294.0
+    "total_recovery_if_sell": 346710.0,
+    "expected_gain_3m": 67285.0,
+    "expected_gain_3m_high": 225532.0
   },
   "judgments": [
     {
@@ -67,17 +67,17 @@
       "name": "システムソフト",
       "avg_price": 78.0,
       "shares": 100,
-      "current": 49.0,
+      "current": 48.0,
       "cost_total": 7800.0,
-      "value_total": 4900.0,
+      "value_total": 4800.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-37.2%。元本回復に+59%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 4900.0,
+      "reason": "-38.5%。元本回復に+62%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 4800.0,
       "color": "red",
-      "pl_total": -2900.0,
-      "pl_pct": -37.17948717948718
+      "pl_total": -3000.0,
+      "pl_pct": -38.46153846153847
     },
     {
       "code": "4564",
@@ -101,17 +101,17 @@
       "name": "日産自",
       "avg_price": 426.0,
       "shares": 100,
-      "current": 329.4,
+      "current": 330.2,
       "cost_total": 42600.0,
-      "value_total": 32940.0,
+      "value_total": 33020.0,
       "action": "SELL_HALF",
       "label": "⚠️ 半分損切り",
       "priority": 2,
-      "reason": "-22.7%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 16470.0,
+      "reason": "-22.5%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 16510.0,
       "color": "orange",
-      "pl_total": -9660.000000000002,
-      "pl_pct": -22.676056338028175
+      "pl_total": -9580.000000000002,
+      "pl_pct": -22.488262910798124
     },
     {
       "code": "2134",
@@ -134,16 +134,16 @@
       "name": "いちご",
       "avg_price": 356.0,
       "shares": 100,
-      "current": 394.0,
+      "current": 392.0,
       "cost_total": 35600.0,
-      "value_total": 39400.0,
+      "value_total": 39200.0,
       "action": "HOLD",
       "label": "✋ 保有継続",
       "priority": 6,
-      "reason": "+10.7%。レンジ内、判断保留",
+      "reason": "+10.1%。レンジ内、判断保留",
       "color": "gray",
-      "pl_total": 3800.0,
-      "pl_pct": 10.674157303370785
+      "pl_total": 3600.0,
+      "pl_pct": 10.112359550561797
     },
     {
       "code": "5856",
@@ -166,44 +166,67 @@
       "name": "あおぞら銀行",
       "tier": "A",
       "category": "STOCKS_UNDER3000",
-      "current": 3200.0,
-      "forecast_3m_mid": 3922.0,
-      "forecast_3m_pct": 22.6,
-      "forecast_3m_high": 4494.0,
-      "forecast_3m_high_pct": 40.4,
+      "current": 3206.0,
+      "forecast_3m_mid": 3937.0,
+      "forecast_3m_pct": 22.8,
+      "forecast_3m_high": 4510.0,
+      "forecast_3m_high_pct": 40.7,
       "tags": [
         "金融",
         "V字回復"
       ],
       "summary": "経常利益+78.0%、業績回復",
       "buy_shares": 27,
-      "invest_amt": 86400.0,
-      "estimated_3m_value": 105894.0,
-      "estimated_3m_value_high": 121338.0,
-      "expected_gain_3m": 19494.0,
-      "expected_gain_3m_high": 34938.0
+      "invest_amt": 86562.0,
+      "estimated_3m_value": 106299.0,
+      "estimated_3m_value_high": 121770.0,
+      "expected_gain_3m": 19737.0,
+      "expected_gain_3m_high": 35208.0
     },
     {
       "code": "8306",
       "name": "三菱UFJフィナンシャル・グループ",
       "tier": "S",
       "category": "STOCKS_UNDER3000",
-      "current": 3536.0,
-      "forecast_3m_mid": 4286.0,
-      "forecast_3m_pct": 21.2,
-      "forecast_3m_high": 4950.0,
-      "forecast_3m_high_pct": 40.0,
+      "current": 3548.0,
+      "forecast_3m_mid": 4316.0,
+      "forecast_3m_pct": 21.6,
+      "forecast_3m_high": 4986.0,
+      "forecast_3m_high_pct": 40.5,
       "tags": [
         "金融",
         "メガバンク"
       ],
       "summary": "メガバンク、金利上昇最大恩恵、年間74円増配",
       "buy_shares": 24,
-      "invest_amt": 84864.0,
-      "estimated_3m_value": 102864.0,
-      "estimated_3m_value_high": 118800.0,
-      "expected_gain_3m": 18000.0,
-      "expected_gain_3m_high": 33936.0
+      "invest_amt": 85152.0,
+      "estimated_3m_value": 103584.0,
+      "estimated_3m_value_high": 119664.0,
+      "expected_gain_3m": 18432.0,
+      "expected_gain_3m_high": 34512.0
+    },
+    {
+      "code": "6857",
+      "name": "アドバンテスト",
+      "tier": "S",
+      "category": "STOCKS_MAIN",
+      "current": 33740.0,
+      "forecast_3m_mid": 40360.0,
+      "forecast_3m_pct": 19.6,
+      "forecast_3m_high": 61754.0,
+      "forecast_3m_high_pct": 83.0,
+      "tags": [
+        "AI半導体",
+        "NVIDIA",
+        "上方修正"
+      ],
+      "summary": "半導体テスタ世界50%シェア、AI独占。営業利益+110.8%、目標27,150円",
+      "buy_shares": 2,
+      "invest_amt": 67480.0,
+      "estimated_3m_value": 80720.0,
+      "estimated_3m_value_high": 123508.0,
+      "expected_gain_3m": 13240.0,
+      "expected_gain_3m_high": 56028.0
     },
     {
       "code": "4062",
@@ -227,30 +250,7 @@
       "estimated_3m_value_high": 181104.0,
       "expected_gain_3m": 15876.0,
       "expected_gain_3m_high": 99784.0
-    },
-    {
-      "code": "6857",
-      "name": "アドバンテスト",
-      "tier": "S",
-      "category": "STOCKS_MAIN",
-      "current": 33510.0,
-      "forecast_3m_mid": 39807.0,
-      "forecast_3m_pct": 18.8,
-      "forecast_3m_high": 60828.0,
-      "forecast_3m_high_pct": 81.5,
-      "tags": [
-        "AI半導体",
-        "NVIDIA",
-        "上方修正"
-      ],
-      "summary": "半導体テスタ世界50%シェア、AI独占。営業利益+110.8%、目標27,150円",
-      "buy_shares": 2,
-      "invest_amt": 67020.0,
-      "estimated_3m_value": 79614.0,
-      "estimated_3m_value_high": 121656.0,
-      "expected_gain_3m": 12594.0,
-      "expected_gain_3m_high": 54636.0
     }
   ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約346,770円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+65,964円の利益期待. 高値ケースなら最大+223,294円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約346,710円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+67,285円の利益期待. 高値ケースなら最大+225,532円."
 }
