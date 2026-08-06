@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-08-06T15:01:22.020286+09:00",
+  "generated_at": "2026-08-06T15:22:14.613380+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 443500.0,
-    "total_pl": -407400.0,
-    "total_pl_pct": -47.88,
-    "health_score": 20,
-    "total_recovery_if_sell": 340400.0,
+    "total_value": 410800.0,
+    "total_pl": -440100.0,
+    "total_pl_pct": -51.72,
+    "health_score": 30,
+    "total_recovery_if_sell": 323700.0,
     "expected_gain_3m": 0,
     "expected_gain_3m_high": 0
   },
@@ -80,37 +80,20 @@
       "pl_pct": -25.925925925925924
     },
     {
-      "code": "7201",
-      "name": "日産自",
-      "avg_price": 426.0,
-      "shares": 100,
-      "current": 334.0,
-      "cost_total": 42600.0,
-      "value_total": 33400.0,
-      "action": "SELL_HALF",
-      "label": "⚠️ 半分損切り",
-      "priority": 2,
-      "reason": "-21.6%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 16700.0,
-      "color": "orange",
-      "pl_total": -9200.0,
-      "pl_pct": -21.5962441314554
-    },
-    {
       "code": "2134",
       "name": "キタハマキャピタル",
       "avg_price": 28.0,
       "shares": 700,
-      "current": 24.0,
+      "current": 25.0,
       "cost_total": 19600.0,
-      "value_total": 16800.0,
+      "value_total": 17500.0,
       "action": "HOLD",
       "label": "✋ 保有継続",
       "priority": 6,
-      "reason": "-14.3%。レンジ内、判断保留",
+      "reason": "-10.7%。レンジ内、判断保留",
       "color": "gray",
-      "pl_total": -2800.0,
-      "pl_pct": -14.285714285714285
+      "pl_total": -2100.0,
+      "pl_pct": -10.714285714285714
     },
     {
       "code": "2337",
@@ -143,6 +126,20 @@
       "color": "gray"
     },
     {
+      "code": "7201",
+      "name": "日産自",
+      "avg_price": 426.0,
+      "shares": 100,
+      "current": null,
+      "cost_total": 42600.0,
+      "value_total": 0,
+      "action": "DATA_NA",
+      "label": "❓ データ無し",
+      "priority": 99,
+      "reason": "価格データ取得不可",
+      "color": "gray"
+    },
+    {
       "code": "7527",
       "name": "システムソフト",
       "avg_price": 78.0,
@@ -158,5 +155,5 @@
     }
   ],
   "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約340,400円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約323,700円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
