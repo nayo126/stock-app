@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-08-06T13:41:57.813214+09:00",
+  "generated_at": "2026-08-06T13:59:19.614014+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 449240.0,
-    "total_pl": -401660.0,
-    "total_pl_pct": -47.2,
+    "total_value": 446160.0,
+    "total_pl": -404740.0,
+    "total_pl_pct": -47.57,
     "health_score": 0,
-    "total_recovery_if_sell": 345520.0,
-    "expected_gain_3m": 75511.0,
-    "expected_gain_3m_high": 142583.0
+    "total_recovery_if_sell": 344030.0,
+    "expected_gain_3m": 72777.0,
+    "expected_gain_3m_high": 138665.0
   },
   "judgments": [
     {
@@ -84,34 +84,34 @@
       "name": "OTS",
       "avg_price": 27.0,
       "shares": 3000,
-      "current": 20.0,
+      "current": 19.0,
       "cost_total": 81000.0,
-      "value_total": 60000.0,
+      "value_total": 57000.0,
       "action": "SELL_HALF",
       "label": "⚠️ 半分損切り",
       "priority": 2,
-      "reason": "-25.9%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 30000.0,
+      "reason": "-29.6%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 28500.0,
       "color": "orange",
-      "pl_total": -21000.0,
-      "pl_pct": -25.925925925925924
+      "pl_total": -24000.0,
+      "pl_pct": -29.629629629629626
     },
     {
       "code": "7201",
       "name": "日産自",
       "avg_price": 426.0,
       "shares": 100,
-      "current": 332.4,
+      "current": 332.6,
       "cost_total": 42600.0,
-      "value_total": 33240.0,
+      "value_total": 33260.0,
       "action": "SELL_HALF",
       "label": "⚠️ 半分損切り",
       "priority": 2,
-      "reason": "-22.0%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 16620.0,
+      "reason": "-21.9%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 16630.0,
       "color": "orange",
-      "pl_total": -9360.000000000002,
-      "pl_pct": -21.971830985915496
+      "pl_total": -9339.999999999998,
+      "pl_pct": -21.924882629107977
     },
     {
       "code": "2134",
@@ -134,16 +134,16 @@
       "name": "いちご",
       "avg_price": 356.0,
       "shares": 100,
-      "current": 396.0,
+      "current": 395.0,
       "cost_total": 35600.0,
-      "value_total": 39600.0,
+      "value_total": 39500.0,
       "action": "HOLD",
       "label": "✋ 保有継続",
       "priority": 6,
-      "reason": "+11.2%。レンジ内、判断保留",
+      "reason": "+11.0%。レンジ内、判断保留",
       "color": "gray",
-      "pl_total": 4000.0,
-      "pl_pct": 11.235955056179774
+      "pl_total": 3900.0,
+      "pl_pct": 10.955056179775282
     },
     {
       "code": "5856",
@@ -162,81 +162,81 @@
   ],
   "recommended_buys": [
     {
-      "code": "8306",
-      "name": "三菱UFJフィナンシャル・グループ",
-      "tier": "S",
-      "category": "STOCKS_UNDER3000",
-      "current": 3574.0,
-      "forecast_3m_mid": 4491.0,
-      "forecast_3m_pct": 25.7,
-      "forecast_3m_high": 5168.0,
-      "forecast_3m_high_pct": 44.6,
-      "tags": [
-        "金融",
-        "メガバンク"
-      ],
-      "summary": "メガバンク、金利上昇最大恩恵、年間74円増配",
-      "buy_shares": 24,
-      "invest_amt": 85776.0,
-      "estimated_3m_value": 107784.0,
-      "estimated_3m_value_high": 124032.0,
-      "expected_gain_3m": 22008.0,
-      "expected_gain_3m_high": 38256.0
-    },
-    {
       "code": "8304",
       "name": "あおぞら銀行",
       "tier": "A",
       "category": "STOCKS_UNDER3000",
-      "current": 3245.0,
-      "forecast_3m_mid": 4075.0,
-      "forecast_3m_pct": 25.6,
-      "forecast_3m_high": 4677.0,
-      "forecast_3m_high_pct": 44.1,
+      "current": 3249.0,
+      "forecast_3m_mid": 4053.0,
+      "forecast_3m_pct": 24.8,
+      "forecast_3m_high": 4642.0,
+      "forecast_3m_high_pct": 42.9,
       "tags": [
         "金融",
         "V字回復"
       ],
       "summary": "経常利益+78.0%、業績回復",
       "buy_shares": 26,
-      "invest_amt": 84370.0,
-      "estimated_3m_value": 105950.0,
-      "estimated_3m_value_high": 121602.0,
-      "expected_gain_3m": 21580.0,
-      "expected_gain_3m_high": 37232.0
+      "invest_amt": 84474.0,
+      "estimated_3m_value": 105378.0,
+      "estimated_3m_value_high": 120692.0,
+      "expected_gain_3m": 20904.0,
+      "expected_gain_3m_high": 36218.0
+    },
+    {
+      "code": "8306",
+      "name": "三菱UFJフィナンシャル・グループ",
+      "tier": "S",
+      "category": "STOCKS_UNDER3000",
+      "current": 3571.0,
+      "forecast_3m_mid": 4449.0,
+      "forecast_3m_pct": 24.6,
+      "forecast_3m_high": 5131.0,
+      "forecast_3m_high_pct": 43.7,
+      "tags": [
+        "金融",
+        "メガバンク"
+      ],
+      "summary": "メガバンク、金利上昇最大恩恵、年間74円増配",
+      "buy_shares": 24,
+      "invest_amt": 85704.0,
+      "estimated_3m_value": 106776.0,
+      "estimated_3m_value_high": 123144.0,
+      "expected_gain_3m": 21072.0,
+      "expected_gain_3m_high": 37440.0
     },
     {
       "code": "8316",
       "name": "三井住友FG",
       "tier": "A",
       "category": "STOCKS_MAIN",
-      "current": 6748.0,
-      "forecast_3m_mid": 8097.0,
-      "forecast_3m_pct": 20.0,
-      "forecast_3m_high": 9423.0,
-      "forecast_3m_high_pct": 39.6,
+      "current": 6754.0,
+      "forecast_3m_mid": 8062.0,
+      "forecast_3m_pct": 19.4,
+      "forecast_3m_high": 9375.0,
+      "forecast_3m_high_pct": 38.8,
       "tags": [
         "金融",
         "高配当"
       ],
       "summary": "メガバンク、5期連続増配、年間157円、利回り2.8%",
       "buy_shares": 12,
-      "invest_amt": 80976.0,
-      "estimated_3m_value": 97164.0,
-      "estimated_3m_value_high": 113076.0,
-      "expected_gain_3m": 16188.0,
-      "expected_gain_3m_high": 32100.0
+      "invest_amt": 81048.0,
+      "estimated_3m_value": 96744.0,
+      "estimated_3m_value_high": 112500.0,
+      "expected_gain_3m": 15696.0,
+      "expected_gain_3m_high": 31452.0
     },
     {
       "code": "6501",
       "name": "日立製作所",
       "tier": "S",
       "category": "STOCKS_MAIN",
-      "current": 5512.0,
-      "forecast_3m_mid": 6561.0,
-      "forecast_3m_pct": 19.0,
-      "forecast_3m_high": 7845.0,
-      "forecast_3m_high_pct": 42.3,
+      "current": 5509.0,
+      "forecast_3m_mid": 6516.0,
+      "forecast_3m_pct": 18.3,
+      "forecast_3m_high": 7746.0,
+      "forecast_3m_high_pct": 40.6,
       "tags": [
         "AI",
         "電力",
@@ -244,12 +244,12 @@
       ],
       "summary": "OpenAI戦略提携、Lumada+17%、時価総額30兆円論",
       "buy_shares": 15,
-      "invest_amt": 82680.0,
-      "estimated_3m_value": 98415.0,
-      "estimated_3m_value_high": 117675.0,
-      "expected_gain_3m": 15735.0,
-      "expected_gain_3m_high": 34995.0
+      "invest_amt": 82635.0,
+      "estimated_3m_value": 97740.0,
+      "estimated_3m_value_high": 116190.0,
+      "expected_gain_3m": 15105.0,
+      "expected_gain_3m_high": 33555.0
     }
   ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約345,520円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+75,511円の利益期待. 高値ケースなら最大+142,583円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約344,030円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+72,777円の利益期待. 高値ケースなら最大+138,665円."
 }
