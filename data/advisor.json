@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-08-08T06:26:06.409122+09:00",
+  "generated_at": "2026-08-08T06:29:45.500329+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 453180.0,
-    "total_pl": -397720.0,
-    "total_pl_pct": -46.74,
+    "total_value": 438580.0,
+    "total_pl": -412320.0,
+    "total_pl_pct": -48.46,
     "health_score": 10,
-    "total_recovery_if_sell": 347190.0,
-    "expected_gain_3m": 68620.0,
-    "expected_gain_3m_high": 220650.0
+    "total_recovery_if_sell": 332290.0,
+    "expected_gain_3m": 67138.0,
+    "expected_gain_3m_high": 217940.0
   },
   "judgments": [
     {
@@ -16,34 +16,34 @@
       "name": "JHD",
       "avg_price": 207.0,
       "shares": 2200,
-      "current": 129.0,
+      "current": 122.0,
       "cost_total": 455400.0,
-      "value_total": 283800.0,
+      "value_total": 268400.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-37.7%。元本回復に+60%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 283800.0,
+      "reason": "-41.1%。元本回復に+70%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 268400.0,
       "color": "red",
-      "pl_total": -171600.0,
-      "pl_pct": -37.68115942028986
+      "pl_total": -187000.0,
+      "pl_pct": -41.06280193236715
     },
     {
       "code": "3664",
       "name": "WIZE",
       "avg_price": 65.0,
       "shares": 500,
-      "current": 22.0,
+      "current": 23.0,
       "cost_total": 32500.0,
-      "value_total": 11000.0,
+      "value_total": 11500.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-66.2%。元本回復に+195%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 11000.0,
+      "reason": "-64.6%。元本回復に+183%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 11500.0,
       "color": "red",
-      "pl_total": -21500.0,
-      "pl_pct": -66.15384615384615
+      "pl_total": -21000.0,
+      "pl_pct": -64.61538461538461
     },
     {
       "code": "5103",
@@ -134,16 +134,16 @@
       "name": "いちご",
       "avg_price": 356.0,
       "shares": 100,
-      "current": 396.0,
+      "current": 399.0,
       "cost_total": 35600.0,
-      "value_total": 39600.0,
+      "value_total": 39900.0,
       "action": "HOLD",
       "label": "✋ 保有継続",
       "priority": 6,
-      "reason": "+11.2%。レンジ内、判断保留",
+      "reason": "+12.1%。レンジ内、判断保留",
       "color": "gray",
-      "pl_total": 4000.0,
-      "pl_pct": 11.235955056179774
+      "pl_total": 4300.0,
+      "pl_pct": 12.07865168539326
     },
     {
       "code": "5856",
@@ -222,12 +222,12 @@
         "メガバンク"
       ],
       "summary": "メガバンク、金利上昇最大恩恵、年間74円増配",
-      "buy_shares": 24,
-      "invest_amt": 85536.0,
-      "estimated_3m_value": 104424.0,
-      "estimated_3m_value_high": 120360.0,
-      "expected_gain_3m": 18888.0,
-      "expected_gain_3m_high": 34824.0
+      "buy_shares": 23,
+      "invest_amt": 81972.0,
+      "estimated_3m_value": 100073.0,
+      "estimated_3m_value_high": 115345.0,
+      "expected_gain_3m": 18101.0,
+      "expected_gain_3m_high": 33373.0
     },
     {
       "code": "8304",
@@ -244,13 +244,13 @@
         "V字回復"
       ],
       "summary": "経常利益+78.0%、業績回復",
-      "buy_shares": 26,
-      "invest_amt": 84734.0,
-      "estimated_3m_value": 102804.0,
-      "estimated_3m_value_high": 117468.0,
-      "expected_gain_3m": 18070.0,
-      "expected_gain_3m_high": 32734.0
+      "buy_shares": 25,
+      "invest_amt": 81475.0,
+      "estimated_3m_value": 98850.0,
+      "estimated_3m_value_high": 112950.0,
+      "expected_gain_3m": 17375.0,
+      "expected_gain_3m_high": 31475.0
     }
   ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約347,190円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+68,620円の利益期待. 高値ケースなら最大+220,650円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約332,290円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+67,138円の利益期待. 高値ケースなら最大+217,940円."
 }
