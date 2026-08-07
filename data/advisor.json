@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-08-07T14:44:17.254402+09:00",
+  "generated_at": "2026-08-07T15:01:58.674132+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 438780.0,
-    "total_pl": -412120.0,
-    "total_pl_pct": -48.43,
-    "health_score": 5,
-    "total_recovery_if_sell": 317200.0,
-    "expected_gain_3m": 66892.0,
-    "expected_gain_3m_high": 218126.0
+    "total_value": 403000.0,
+    "total_pl": -447900.0,
+    "total_pl_pct": -52.64,
+    "health_score": 10,
+    "total_recovery_if_sell": 317900.0,
+    "expected_gain_3m": 0,
+    "expected_gain_3m_high": 0
   },
   "judgments": [
     {
@@ -16,17 +16,17 @@
       "name": "JHD",
       "avg_price": 207.0,
       "shares": 2200,
-      "current": 122.0,
+      "current": 123.0,
       "cost_total": 455400.0,
-      "value_total": 268400.0,
+      "value_total": 270600.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-41.1%。元本回復に+70%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 268400.0,
+      "reason": "-40.6%。元本回復に+68%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 270600.0,
       "color": "red",
-      "pl_total": -187000.0,
-      "pl_pct": -41.06280193236715
+      "pl_total": -184800.0,
+      "pl_pct": -40.57971014492754
     },
     {
       "code": "3664",
@@ -84,65 +84,49 @@
       "name": "OTS",
       "avg_price": 27.0,
       "shares": 3000,
-      "current": 20.0,
+      "current": 19.0,
       "cost_total": 81000.0,
-      "value_total": 60000.0,
+      "value_total": 57000.0,
       "action": "SELL_HALF",
       "label": "⚠️ 半分損切り",
       "priority": 2,
-      "reason": "-25.9%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 30000.0,
+      "reason": "-29.6%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 28500.0,
       "color": "orange",
-      "pl_total": -21000.0,
-      "pl_pct": -25.925925925925924
-    },
-    {
-      "code": "7201",
-      "name": "日産自",
-      "avg_price": 426.0,
-      "shares": 100,
-      "current": 341.8,
-      "cost_total": 42600.0,
-      "value_total": 34180.0,
-      "action": "WATCH_DROP",
-      "label": "🔻 損切り検討",
-      "priority": 4,
-      "reason": "-19.8%。-20%到達したら半分損切り",
-      "color": "yellow",
-      "pl_total": -8419.999999999998,
-      "pl_pct": -19.76525821596244
+      "pl_total": -24000.0,
+      "pl_pct": -29.629629629629626
     },
     {
       "code": "2134",
       "name": "キタハマキャピタル",
       "avg_price": 28.0,
       "shares": 700,
-      "current": 25.0,
+      "current": 24.0,
       "cost_total": 19600.0,
-      "value_total": 17500.0,
+      "value_total": 16800.0,
       "action": "HOLD",
       "label": "✋ 保有継続",
       "priority": 6,
-      "reason": "-10.7%。レンジ内、判断保留",
+      "reason": "-14.3%。レンジ内、判断保留",
       "color": "gray",
-      "pl_total": -2100.0,
-      "pl_pct": -10.714285714285714
+      "pl_total": -2800.0,
+      "pl_pct": -14.285714285714285
     },
     {
       "code": "2337",
       "name": "いちご",
       "avg_price": 356.0,
       "shares": 100,
-      "current": 399.0,
+      "current": 398.0,
       "cost_total": 35600.0,
-      "value_total": 39900.0,
+      "value_total": 39800.0,
       "action": "HOLD",
       "label": "✋ 保有継続",
       "priority": 6,
-      "reason": "+12.1%。レンジ内、判断保留",
+      "reason": "+11.8%。レンジ内、判断保留",
       "color": "gray",
-      "pl_total": 4300.0,
-      "pl_pct": 12.07865168539326
+      "pl_total": 4200.0,
+      "pl_pct": 11.797752808988763
     },
     {
       "code": "5856",
@@ -157,99 +141,22 @@
       "priority": 99,
       "reason": "価格データ取得不可",
       "color": "gray"
+    },
+    {
+      "code": "7201",
+      "name": "日産自",
+      "avg_price": 426.0,
+      "shares": 100,
+      "current": null,
+      "cost_total": 42600.0,
+      "value_total": 0,
+      "action": "DATA_NA",
+      "label": "❓ データ無し",
+      "priority": 99,
+      "reason": "価格データ取得不可",
+      "color": "gray"
     }
   ],
-  "recommended_buys": [
-    {
-      "code": "4062",
-      "name": "イビデン",
-      "tier": "S",
-      "category": "STOCKS_MAIN",
-      "current": 19315.0,
-      "forecast_3m_mid": 23908.0,
-      "forecast_3m_pct": 23.8,
-      "forecast_3m_high": 44479.0,
-      "forecast_3m_high_pct": 130.3,
-      "tags": [
-        "NVIDIA",
-        "ABF基板",
-        "独占"
-      ],
-      "summary": "NVIDIA向けABF基板独占、FY2027 +42.5%増益予想",
-      "buy_shares": 4,
-      "invest_amt": 77260.0,
-      "estimated_3m_value": 95632.0,
-      "estimated_3m_value_high": 177916.0,
-      "expected_gain_3m": 18372.0,
-      "expected_gain_3m_high": 100656.0
-    },
-    {
-      "code": "6857",
-      "name": "アドバンテスト",
-      "tier": "S",
-      "category": "STOCKS_MAIN",
-      "current": 32120.0,
-      "forecast_3m_mid": 39270.0,
-      "forecast_3m_pct": 22.3,
-      "forecast_3m_high": 59651.0,
-      "forecast_3m_high_pct": 85.7,
-      "tags": [
-        "AI半導体",
-        "NVIDIA",
-        "上方修正"
-      ],
-      "summary": "半導体テスタ世界50%シェア、AI独占。営業利益+110.8%、目標27,150円",
-      "buy_shares": 2,
-      "invest_amt": 64240.0,
-      "estimated_3m_value": 78540.0,
-      "estimated_3m_value_high": 119302.0,
-      "expected_gain_3m": 14300.0,
-      "expected_gain_3m_high": 55062.0
-    },
-    {
-      "code": "8306",
-      "name": "三菱UFJフィナンシャル・グループ",
-      "tier": "S",
-      "category": "STOCKS_UNDER3000",
-      "current": 3569.0,
-      "forecast_3m_mid": 4363.0,
-      "forecast_3m_pct": 22.3,
-      "forecast_3m_high": 5029.0,
-      "forecast_3m_high_pct": 40.9,
-      "tags": [
-        "金融",
-        "メガバンク"
-      ],
-      "summary": "メガバンク、金利上昇最大恩恵、年間74円増配",
-      "buy_shares": 22,
-      "invest_amt": 78518.0,
-      "estimated_3m_value": 95986.0,
-      "estimated_3m_value_high": 110638.0,
-      "expected_gain_3m": 17468.0,
-      "expected_gain_3m_high": 32120.0
-    },
-    {
-      "code": "8304",
-      "name": "あおぞら銀行",
-      "tier": "A",
-      "category": "STOCKS_UNDER3000",
-      "current": 3261.0,
-      "forecast_3m_mid": 3959.0,
-      "forecast_3m_pct": 21.4,
-      "forecast_3m_high": 4523.0,
-      "forecast_3m_high_pct": 38.7,
-      "tags": [
-        "金融",
-        "V字回復"
-      ],
-      "summary": "経常利益+78.0%、業績回復",
-      "buy_shares": 24,
-      "invest_amt": 78264.0,
-      "estimated_3m_value": 95016.0,
-      "estimated_3m_value_high": 108552.0,
-      "expected_gain_3m": 16752.0,
-      "expected_gain_3m_high": 30288.0
-    }
-  ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約317,200円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+66,892円の利益期待. 高値ケースなら最大+218,126円."
+  "recommended_buys": [],
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約317,900円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
