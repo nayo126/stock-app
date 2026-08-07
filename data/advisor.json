@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-08-07T14:01:23.466155+09:00",
+  "generated_at": "2026-08-07T14:23:47.278176+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 406100.0,
-    "total_pl": -444800.0,
-    "total_pl_pct": -52.27,
-    "health_score": 10,
-    "total_recovery_if_sell": 320100.0,
-    "expected_gain_3m": 0,
-    "expected_gain_3m_high": 0
+    "total_value": 442310.0,
+    "total_pl": -408590.0,
+    "total_pl_pct": -48.02,
+    "health_score": 5,
+    "total_recovery_if_sell": 321600.0,
+    "expected_gain_3m": 64250.0,
+    "expected_gain_3m_high": 212818.0
   },
   "judgments": [
     {
@@ -84,49 +84,65 @@
       "name": "OTS",
       "avg_price": 27.0,
       "shares": 3000,
-      "current": 19.0,
+      "current": 20.0,
       "cost_total": 81000.0,
-      "value_total": 57000.0,
+      "value_total": 60000.0,
       "action": "SELL_HALF",
       "label": "⚠️ 半分損切り",
       "priority": 2,
-      "reason": "-29.6%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 28500.0,
+      "reason": "-25.9%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 30000.0,
       "color": "orange",
-      "pl_total": -24000.0,
-      "pl_pct": -29.629629629629626
+      "pl_total": -21000.0,
+      "pl_pct": -25.925925925925924
+    },
+    {
+      "code": "7201",
+      "name": "日産自",
+      "avg_price": 426.0,
+      "shares": 100,
+      "current": 341.1,
+      "cost_total": 42600.0,
+      "value_total": 34110.0,
+      "action": "WATCH_DROP",
+      "label": "🔻 損切り検討",
+      "priority": 4,
+      "reason": "-19.9%。-20%到達したら半分損切り",
+      "color": "yellow",
+      "pl_total": -8489.999999999998,
+      "pl_pct": -19.92957746478873
     },
     {
       "code": "2134",
       "name": "キタハマキャピタル",
       "avg_price": 28.0,
       "shares": 700,
-      "current": 25.0,
+      "current": 24.0,
       "cost_total": 19600.0,
-      "value_total": 17500.0,
+      "value_total": 16800.0,
       "action": "HOLD",
       "label": "✋ 保有継続",
       "priority": 6,
-      "reason": "-10.7%。レンジ内、判断保留",
+      "reason": "-14.3%。レンジ内、判断保留",
       "color": "gray",
-      "pl_total": -2100.0,
-      "pl_pct": -10.714285714285714
+      "pl_total": -2800.0,
+      "pl_pct": -14.285714285714285
     },
     {
       "code": "2337",
       "name": "いちご",
       "avg_price": 356.0,
       "shares": 100,
-      "current": 400.0,
+      "current": 398.0,
       "cost_total": 35600.0,
-      "value_total": 40000.0,
+      "value_total": 39800.0,
       "action": "HOLD",
       "label": "✋ 保有継続",
       "priority": 6,
-      "reason": "+12.4%。レンジ内、判断保留",
+      "reason": "+11.8%。レンジ内、判断保留",
       "color": "gray",
-      "pl_total": 4400.0,
-      "pl_pct": 12.359550561797752
+      "pl_total": 4200.0,
+      "pl_pct": 11.797752808988763
     },
     {
       "code": "5856",
@@ -141,22 +157,99 @@
       "priority": 99,
       "reason": "価格データ取得不可",
       "color": "gray"
-    },
-    {
-      "code": "7201",
-      "name": "日産自",
-      "avg_price": 426.0,
-      "shares": 100,
-      "current": null,
-      "cost_total": 42600.0,
-      "value_total": 0,
-      "action": "DATA_NA",
-      "label": "❓ データ無し",
-      "priority": 99,
-      "reason": "価格データ取得不可",
-      "color": "gray"
     }
   ],
-  "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約320,100円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "recommended_buys": [
+    {
+      "code": "4062",
+      "name": "イビデン",
+      "tier": "S",
+      "category": "STOCKS_MAIN",
+      "current": 19100.0,
+      "forecast_3m_mid": 23374.0,
+      "forecast_3m_pct": 22.4,
+      "forecast_3m_high": 43480.0,
+      "forecast_3m_high_pct": 127.6,
+      "tags": [
+        "NVIDIA",
+        "ABF基板",
+        "独占"
+      ],
+      "summary": "NVIDIA向けABF基板独占、FY2027 +42.5%増益予想",
+      "buy_shares": 4,
+      "invest_amt": 76400.0,
+      "estimated_3m_value": 93496.0,
+      "estimated_3m_value_high": 173920.0,
+      "expected_gain_3m": 17096.0,
+      "expected_gain_3m_high": 97520.0
+    },
+    {
+      "code": "8306",
+      "name": "三菱UFJフィナンシャル・グループ",
+      "tier": "S",
+      "category": "STOCKS_UNDER3000",
+      "current": 3560.0,
+      "forecast_3m_mid": 4341.0,
+      "forecast_3m_pct": 21.9,
+      "forecast_3m_high": 5004.0,
+      "forecast_3m_high_pct": 40.6,
+      "tags": [
+        "金融",
+        "メガバンク"
+      ],
+      "summary": "メガバンク、金利上昇最大恩恵、年間74円増配",
+      "buy_shares": 22,
+      "invest_amt": 78320.0,
+      "estimated_3m_value": 95502.0,
+      "estimated_3m_value_high": 110088.0,
+      "expected_gain_3m": 17182.0,
+      "expected_gain_3m_high": 31768.0
+    },
+    {
+      "code": "8304",
+      "name": "あおぞら銀行",
+      "tier": "A",
+      "category": "STOCKS_UNDER3000",
+      "current": 3258.0,
+      "forecast_3m_mid": 3951.0,
+      "forecast_3m_pct": 21.3,
+      "forecast_3m_high": 4515.0,
+      "forecast_3m_high_pct": 38.6,
+      "tags": [
+        "金融",
+        "V字回復"
+      ],
+      "summary": "経常利益+78.0%、業績回復",
+      "buy_shares": 24,
+      "invest_amt": 78192.0,
+      "estimated_3m_value": 94824.0,
+      "estimated_3m_value_high": 108360.0,
+      "expected_gain_3m": 16632.0,
+      "expected_gain_3m_high": 30168.0
+    },
+    {
+      "code": "6857",
+      "name": "アドバンテスト",
+      "tier": "S",
+      "category": "STOCKS_MAIN",
+      "current": 31790.0,
+      "forecast_3m_mid": 38460.0,
+      "forecast_3m_pct": 21.0,
+      "forecast_3m_high": 58471.0,
+      "forecast_3m_high_pct": 83.9,
+      "tags": [
+        "AI半導体",
+        "NVIDIA",
+        "上方修正"
+      ],
+      "summary": "半導体テスタ世界50%シェア、AI独占。営業利益+110.8%、目標27,150円",
+      "buy_shares": 2,
+      "invest_amt": 63580.0,
+      "estimated_3m_value": 76920.0,
+      "estimated_3m_value_high": 116942.0,
+      "expected_gain_3m": 13340.0,
+      "expected_gain_3m_high": 53362.0
+    }
+  ],
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約321,600円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+64,250円の利益期待. 高値ケースなら最大+212,818円."
 }
