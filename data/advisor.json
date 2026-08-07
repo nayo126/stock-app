@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-07T12:03:33.218270+09:00",
+  "generated_at": "2026-08-07T12:23:43.782727+09:00",
   "summary": {
     "total_cost": 850900.0,
     "total_value": 440650.0,
@@ -7,8 +7,8 @@
     "total_pl_pct": -48.21,
     "health_score": 5,
     "total_recovery_if_sell": 319900.0,
-    "expected_gain_3m": 0,
-    "expected_gain_3m_high": 0
+    "expected_gain_3m": 64547.0,
+    "expected_gain_3m_high": 184952.0
   },
   "judgments": [
     {
@@ -159,6 +159,96 @@
       "color": "gray"
     }
   ],
-  "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約319,900円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "recommended_buys": [
+    {
+      "code": "8306",
+      "name": "三菱UFJフィナンシャル・グループ",
+      "tier": "S",
+      "category": "STOCKS_UNDER3000",
+      "current": 3576.0,
+      "forecast_3m_mid": 4381.0,
+      "forecast_3m_pct": 22.5,
+      "forecast_3m_high": 5049.0,
+      "forecast_3m_high_pct": 41.2,
+      "tags": [
+        "金融",
+        "メガバンク"
+      ],
+      "summary": "メガバンク、金利上昇最大恩恵、年間74円増配",
+      "buy_shares": 22,
+      "invest_amt": 78672.0,
+      "estimated_3m_value": 96382.0,
+      "estimated_3m_value_high": 111078.0,
+      "expected_gain_3m": 17710.0,
+      "expected_gain_3m_high": 32406.0
+    },
+    {
+      "code": "8304",
+      "name": "あおぞら銀行",
+      "tier": "A",
+      "category": "STOCKS_UNDER3000",
+      "current": 3265.0,
+      "forecast_3m_mid": 3968.0,
+      "forecast_3m_pct": 21.5,
+      "forecast_3m_high": 4534.0,
+      "forecast_3m_high_pct": 38.9,
+      "tags": [
+        "金融",
+        "V字回復"
+      ],
+      "summary": "経常利益+78.0%、業績回復",
+      "buy_shares": 24,
+      "invest_amt": 78360.0,
+      "estimated_3m_value": 95232.0,
+      "estimated_3m_value_high": 108816.0,
+      "expected_gain_3m": 16872.0,
+      "expected_gain_3m_high": 30456.0
+    },
+    {
+      "code": "4062",
+      "name": "イビデン",
+      "tier": "S",
+      "category": "STOCKS_MAIN",
+      "current": 18740.0,
+      "forecast_3m_mid": 22494.0,
+      "forecast_3m_pct": 20.0,
+      "forecast_3m_high": 41854.0,
+      "forecast_3m_high_pct": 123.3,
+      "tags": [
+        "NVIDIA",
+        "ABF基板",
+        "独占"
+      ],
+      "summary": "NVIDIA向けABF基板独占、FY2027 +42.5%増益予想",
+      "buy_shares": 4,
+      "invest_amt": 74960.0,
+      "estimated_3m_value": 89976.0,
+      "estimated_3m_value_high": 167416.0,
+      "expected_gain_3m": 15016.0,
+      "expected_gain_3m_high": 92456.0
+    },
+    {
+      "code": "8316",
+      "name": "三井住友FG",
+      "tier": "A",
+      "category": "STOCKS_MAIN",
+      "current": 6818.0,
+      "forecast_3m_mid": 8177.0,
+      "forecast_3m_pct": 19.9,
+      "forecast_3m_high": 9512.0,
+      "forecast_3m_high_pct": 39.5,
+      "tags": [
+        "金融",
+        "高配当"
+      ],
+      "summary": "メガバンク、5期連続増配、年間157円、利回り2.8%",
+      "buy_shares": 11,
+      "invest_amt": 74998.0,
+      "estimated_3m_value": 89947.0,
+      "estimated_3m_value_high": 104632.0,
+      "expected_gain_3m": 14949.0,
+      "expected_gain_3m_high": 29634.0
+    }
+  ],
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約319,900円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+64,547円の利益期待. 高値ケースなら最大+184,952円."
 }
