@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-11T14:37:36.854398+09:00",
+  "generated_at": "2026-08-11T14:48:57.809703+09:00",
   "summary": {
     "total_cost": 850900.0,
     "total_value": 424500.0,
@@ -7,8 +7,8 @@
     "total_pl_pct": -50.11,
     "health_score": 5,
     "total_recovery_if_sell": 304300.0,
-    "expected_gain_3m": 69581.0,
-    "expected_gain_3m_high": 210714.0
+    "expected_gain_3m": 0,
+    "expected_gain_3m_high": 0
   },
   "judgments": [
     {
@@ -159,97 +159,6 @@
       "color": "gray"
     }
   ],
-  "recommended_buys": [
-    {
-      "code": "6857",
-      "name": "アドバンテスト",
-      "tier": "S",
-      "category": "STOCKS_MAIN",
-      "current": 34260.0,
-      "forecast_3m_mid": 45091.0,
-      "forecast_3m_pct": 31.6,
-      "forecast_3m_high": 68758.0,
-      "forecast_3m_high_pct": 100.7,
-      "tags": [
-        "AI半導体",
-        "NVIDIA",
-        "上方修正"
-      ],
-      "summary": "半導体テスタ世界50%シェア、AI独占。営業利益+110.8%、目標27,150円",
-      "buy_shares": 2,
-      "invest_amt": 68520.0,
-      "estimated_3m_value": 90182.0,
-      "estimated_3m_value_high": 137516.0,
-      "expected_gain_3m": 21662.0,
-      "expected_gain_3m_high": 68996.0
-    },
-    {
-      "code": "4062",
-      "name": "イビデン",
-      "tier": "S",
-      "category": "STOCKS_MAIN",
-      "current": 19880.0,
-      "forecast_3m_mid": 25381.0,
-      "forecast_3m_pct": 27.7,
-      "forecast_3m_high": 47262.0,
-      "forecast_3m_high_pct": 137.7,
-      "tags": [
-        "NVIDIA",
-        "ABF基板",
-        "独占"
-      ],
-      "summary": "NVIDIA向けABF基板独占、FY2027 +42.5%増益予想",
-      "buy_shares": 3,
-      "invest_amt": 59640.0,
-      "estimated_3m_value": 76143.0,
-      "estimated_3m_value_high": 141786.0,
-      "expected_gain_3m": 16503.0,
-      "expected_gain_3m_high": 82146.0
-    },
-    {
-      "code": "8304",
-      "name": "あおぞら銀行",
-      "tier": "A",
-      "category": "STOCKS_UNDER3000",
-      "current": 3264.0,
-      "forecast_3m_mid": 4048.0,
-      "forecast_3m_pct": 24.0,
-      "forecast_3m_high": 4616.0,
-      "forecast_3m_high_pct": 41.4,
-      "tags": [
-        "金融",
-        "V字回復"
-      ],
-      "summary": "経常利益+78.0%、業績回復",
-      "buy_shares": 23,
-      "invest_amt": 75072.0,
-      "estimated_3m_value": 93104.0,
-      "estimated_3m_value_high": 106168.0,
-      "expected_gain_3m": 18032.0,
-      "expected_gain_3m_high": 31096.0
-    },
-    {
-      "code": "8331",
-      "name": "千葉銀行",
-      "tier": "A",
-      "category": "STOCKS_UNDER3000",
-      "current": 2674.0,
-      "forecast_3m_mid": 3152.0,
-      "forecast_3m_pct": 17.9,
-      "forecast_3m_high": 3691.0,
-      "forecast_3m_high_pct": 38.0,
-      "tags": [
-        "地銀",
-        "統合"
-      ],
-      "summary": "純利益+26.1%、千葉興業銀行との経営統合",
-      "buy_shares": 28,
-      "invest_amt": 74872.0,
-      "estimated_3m_value": 88256.0,
-      "estimated_3m_value_high": 103348.0,
-      "expected_gain_3m": 13384.0,
-      "expected_gain_3m_high": 28476.0
-    }
-  ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約304,300円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+69,581円の利益期待. 高値ケースなら最大+210,714円."
+  "recommended_buys": [],
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約304,300円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
