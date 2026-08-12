@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-08-13T00:51:15.375749+09:00",
+  "generated_at": "2026-08-13T01:47:52.742525+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 384500.0,
-    "total_pl": -466400.0,
-    "total_pl_pct": -54.81,
-    "health_score": 30,
+    "total_value": 419500.0,
+    "total_pl": -431400.0,
+    "total_pl_pct": -50.7,
+    "health_score": 25,
     "total_recovery_if_sell": 299300.0,
     "expected_gain_3m": 0,
     "expected_gain_3m_high": 0
@@ -80,6 +80,22 @@
       "pl_pct": -29.629629629629626
     },
     {
+      "code": "7201",
+      "name": "日産自",
+      "avg_price": 426.0,
+      "shares": 100,
+      "current": 350.0,
+      "cost_total": 42600.0,
+      "value_total": 35000.0,
+      "action": "WATCH_DROP",
+      "label": "🔻 損切り検討",
+      "priority": 4,
+      "reason": "-17.8%。-20%到達したら半分損切り",
+      "color": "yellow",
+      "pl_total": -7600.0,
+      "pl_pct": -17.84037558685446
+    },
+    {
       "code": "2134",
       "name": "キタハマキャピタル",
       "avg_price": 28.0,
@@ -118,20 +134,6 @@
       "shares": 4000,
       "current": null,
       "cost_total": 156000.0,
-      "value_total": 0,
-      "action": "DATA_NA",
-      "label": "❓ データ無し",
-      "priority": 99,
-      "reason": "価格データ取得不可",
-      "color": "gray"
-    },
-    {
-      "code": "7201",
-      "name": "日産自",
-      "avg_price": 426.0,
-      "shares": 100,
-      "current": null,
-      "cost_total": 42600.0,
       "value_total": 0,
       "action": "DATA_NA",
       "label": "❓ データ無し",
