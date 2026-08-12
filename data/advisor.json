@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-12T20:41:04.867144+09:00",
+  "generated_at": "2026-08-12T21:43:29.000244+09:00",
   "summary": {
     "total_cost": 850900.0,
     "total_value": 431510.0,
@@ -7,8 +7,8 @@
     "total_pl_pct": -49.29,
     "health_score": 10,
     "total_recovery_if_sell": 325055.0,
-    "expected_gain_3m": 0,
-    "expected_gain_3m_high": 0
+    "expected_gain_3m": 77531.0,
+    "expected_gain_3m_high": 244599.0
   },
   "judgments": [
     {
@@ -160,6 +160,97 @@
       "color": "gray"
     }
   ],
-  "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約325,055円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "recommended_buys": [
+    {
+      "code": "6857",
+      "name": "アドバンテスト",
+      "tier": "S",
+      "category": "STOCKS_MAIN",
+      "current": 34550.0,
+      "forecast_3m_mid": 47451.0,
+      "forecast_3m_pct": 37.3,
+      "forecast_3m_high": 72227.0,
+      "forecast_3m_high_pct": 109.1,
+      "tags": [
+        "AI半導体",
+        "NVIDIA",
+        "上方修正"
+      ],
+      "summary": "半導体テスタ世界50%シェア、AI独占。営業利益+110.8%、目標27,150円",
+      "buy_shares": 2,
+      "invest_amt": 69100.0,
+      "estimated_3m_value": 94902.0,
+      "estimated_3m_value_high": 144454.0,
+      "expected_gain_3m": 25802.0,
+      "expected_gain_3m_high": 75354.0
+    },
+    {
+      "code": "4062",
+      "name": "イビデン",
+      "tier": "S",
+      "category": "STOCKS_MAIN",
+      "current": 20480.0,
+      "forecast_3m_mid": 27513.0,
+      "forecast_3m_pct": 34.3,
+      "forecast_3m_high": 51234.0,
+      "forecast_3m_high_pct": 150.2,
+      "tags": [
+        "NVIDIA",
+        "ABF基板",
+        "独占"
+      ],
+      "summary": "NVIDIA向けABF基板独占、FY2027 +42.5%増益予想",
+      "buy_shares": 3,
+      "invest_amt": 61440.0,
+      "estimated_3m_value": 82539.0,
+      "estimated_3m_value_high": 153702.0,
+      "expected_gain_3m": 21099.0,
+      "expected_gain_3m_high": 92262.0
+    },
+    {
+      "code": "8035",
+      "name": "東京エレクトロン",
+      "tier": "S",
+      "category": "STOCKS_MAIN",
+      "current": 58230.0,
+      "forecast_3m_mid": 72156.0,
+      "forecast_3m_pct": 23.9,
+      "forecast_3m_high": 105453.0,
+      "forecast_3m_high_pct": 81.1,
+      "tags": [
+        "半導体装置",
+        "HBM4"
+      ],
+      "summary": "前工程2位、HBM4スーパーサイクル、目標52,000円",
+      "buy_shares": 1,
+      "invest_amt": 58230.0,
+      "estimated_3m_value": 72156.0,
+      "estimated_3m_value_high": 105453.0,
+      "expected_gain_3m": 13926.0,
+      "expected_gain_3m_high": 47223.0
+    },
+    {
+      "code": "8304",
+      "name": "あおぞら銀行",
+      "tier": "A",
+      "category": "STOCKS_UNDER3000",
+      "current": 3298.0,
+      "forecast_3m_mid": 3994.0,
+      "forecast_3m_pct": 21.1,
+      "forecast_3m_high": 4538.0,
+      "forecast_3m_high_pct": 37.6,
+      "tags": [
+        "金融",
+        "V字回復"
+      ],
+      "summary": "経常利益+78.0%、業績回復",
+      "buy_shares": 24,
+      "invest_amt": 79152.0,
+      "estimated_3m_value": 95856.0,
+      "estimated_3m_value_high": 108912.0,
+      "expected_gain_3m": 16704.0,
+      "expected_gain_3m_high": 29760.0
+    }
+  ],
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約325,055円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+77,531円の利益期待. 高値ケースなら最大+244,599円."
 }
