@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-08-14T06:36:31.144653+09:00",
+  "generated_at": "2026-08-14T06:56:13.782764+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 425850.0,
-    "total_pl": -425050.0,
-    "total_pl_pct": -49.95,
+    "total_value": 426410.0,
+    "total_pl": -424490.0,
+    "total_pl_pct": -49.89,
     "health_score": 20,
-    "total_recovery_if_sell": 322225.0,
+    "total_recovery_if_sell": 322505.0,
     "expected_gain_3m": 0,
     "expected_gain_3m_high": 0
   },
@@ -84,17 +84,17 @@
       "name": "日産自",
       "avg_price": 426.0,
       "shares": 100,
-      "current": 330.5,
+      "current": 336.1,
       "cost_total": 42600.0,
-      "value_total": 33050.0,
+      "value_total": 33610.0,
       "action": "SELL_HALF",
       "label": "⚠️ 半分損切り",
       "priority": 2,
-      "reason": "-22.4%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 16525.0,
+      "reason": "-21.1%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 16805.0,
       "color": "orange",
-      "pl_total": -9550.0,
-      "pl_pct": -22.417840375586852
+      "pl_total": -8989.999999999998,
+      "pl_pct": -21.10328638497652
     },
     {
       "code": "2134",
@@ -158,5 +158,5 @@
     }
   ],
   "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約322,225円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約322,505円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
