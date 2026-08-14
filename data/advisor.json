@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-08-14T10:36:54.937337+09:00",
+  "generated_at": "2026-08-14T10:58:39.267529+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 435160.0,
-    "total_pl": -415740.0,
-    "total_pl_pct": -48.86,
+    "total_value": 429780.0,
+    "total_pl": -421120.0,
+    "total_pl_pct": -49.49,
     "health_score": 10,
-    "total_recovery_if_sell": 326080.0,
+    "total_recovery_if_sell": 322290.0,
     "expected_gain_3m": 0,
     "expected_gain_3m_high": 0
   },
@@ -16,17 +16,17 @@
       "name": "JHD",
       "avg_price": 207.0,
       "shares": 2200,
-      "current": 119.0,
+      "current": 118.0,
       "cost_total": 455400.0,
-      "value_total": 261800.0,
+      "value_total": 259600.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-42.5%。元本回復に+74%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 261800.0,
+      "reason": "-43.0%。元本回復に+75%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 259600.0,
       "color": "red",
-      "pl_total": -193600.0,
-      "pl_pct": -42.51207729468599
+      "pl_total": -195800.0,
+      "pl_pct": -42.99516908212561
     },
     {
       "code": "3664",
@@ -67,34 +67,34 @@
       "name": "OTS",
       "avg_price": 27.0,
       "shares": 3000,
-      "current": 21.0,
+      "current": 20.0,
       "cost_total": 81000.0,
-      "value_total": 63000.0,
+      "value_total": 60000.0,
       "action": "SELL_HALF",
       "label": "⚠️ 半分損切り",
       "priority": 2,
-      "reason": "-22.2%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 31500.0,
+      "reason": "-25.9%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 30000.0,
       "color": "orange",
-      "pl_total": -18000.0,
-      "pl_pct": -22.22222222222222
+      "pl_total": -21000.0,
+      "pl_pct": -25.925925925925924
     },
     {
       "code": "7201",
       "name": "日産自",
       "avg_price": 426.0,
       "shares": 100,
-      "current": 331.6,
+      "current": 329.8,
       "cost_total": 42600.0,
-      "value_total": 33160.0,
+      "value_total": 32980.0,
       "action": "SELL_HALF",
       "label": "⚠️ 半分損切り",
       "priority": 2,
-      "reason": "-22.2%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 16580.0,
+      "reason": "-22.6%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 16490.0,
       "color": "orange",
-      "pl_total": -9439.999999999998,
-      "pl_pct": -22.159624413145533
+      "pl_total": -9619.999999999998,
+      "pl_pct": -22.58215962441314
     },
     {
       "code": "7527",
@@ -161,5 +161,5 @@
     }
   ],
   "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約326,080円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約322,290円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
