@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-08-17T20:54:10.272799+09:00",
+  "generated_at": "2026-08-17T21:16:11.212716+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 424020.0,
-    "total_pl": -426880.0,
-    "total_pl_pct": -50.17,
-    "health_score": 5,
-    "total_recovery_if_sell": 290360.0,
-    "expected_gain_3m": 59956.0,
-    "expected_gain_3m_high": 148260.0
+    "total_value": 385500.0,
+    "total_pl": -465400.0,
+    "total_pl_pct": -54.7,
+    "health_score": 25,
+    "total_recovery_if_sell": 271100.0,
+    "expected_gain_3m": 0,
+    "expected_gain_3m_high": 0
   },
   "judgments": [
     {
@@ -80,40 +80,6 @@
       "pl_pct": -21.428571428571427
     },
     {
-      "code": "7201",
-      "name": "日産自",
-      "avg_price": 426.0,
-      "shares": 100,
-      "current": 330.2,
-      "cost_total": 42600.0,
-      "value_total": 33020.0,
-      "action": "SELL_HALF",
-      "label": "⚠️ 半分損切り",
-      "priority": 2,
-      "reason": "-22.5%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 16510.0,
-      "color": "orange",
-      "pl_total": -9580.000000000002,
-      "pl_pct": -22.488262910798124
-    },
-    {
-      "code": "7527",
-      "name": "システムソフト",
-      "avg_price": 78.0,
-      "shares": 100,
-      "current": 55.0,
-      "cost_total": 7800.0,
-      "value_total": 5500.0,
-      "action": "SELL_HALF",
-      "label": "⚠️ 半分損切り",
-      "priority": 2,
-      "reason": "-29.5%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 2750.0,
-      "color": "orange",
-      "pl_total": -2300.0,
-      "pl_pct": -29.48717948717949
-    },
-    {
       "code": "4564",
       "name": "OTS",
       "avg_price": 27.0,
@@ -158,98 +124,36 @@
       "priority": 99,
       "reason": "価格データ取得不可",
       "color": "gray"
+    },
+    {
+      "code": "7201",
+      "name": "日産自",
+      "avg_price": 426.0,
+      "shares": 100,
+      "current": null,
+      "cost_total": 42600.0,
+      "value_total": 0,
+      "action": "DATA_NA",
+      "label": "❓ データ無し",
+      "priority": 99,
+      "reason": "価格データ取得不可",
+      "color": "gray"
+    },
+    {
+      "code": "7527",
+      "name": "システムソフト",
+      "avg_price": 78.0,
+      "shares": 100,
+      "current": null,
+      "cost_total": 7800.0,
+      "value_total": 0,
+      "action": "DATA_NA",
+      "label": "❓ データ無し",
+      "priority": 99,
+      "reason": "価格データ取得不可",
+      "color": "gray"
     }
   ],
-  "recommended_buys": [
-    {
-      "code": "6857",
-      "name": "アドバンテスト",
-      "tier": "S",
-      "category": "STOCKS_MAIN",
-      "current": 37780.0,
-      "forecast_3m_mid": 53478.0,
-      "forecast_3m_pct": 41.6,
-      "forecast_3m_high": 81447.0,
-      "forecast_3m_high_pct": 115.6,
-      "tags": [
-        "AI半導体",
-        "NVIDIA",
-        "上方修正"
-      ],
-      "summary": "半導体テスタ世界50%シェア、AI独占。営業利益+110.8%、目標27,150円",
-      "buy_shares": 1,
-      "invest_amt": 37780.0,
-      "estimated_3m_value": 53478.0,
-      "estimated_3m_value_high": 81447.0,
-      "expected_gain_3m": 15698.0,
-      "expected_gain_3m_high": 43667.0
-    },
-    {
-      "code": "8304",
-      "name": "あおぞら銀行",
-      "tier": "A",
-      "category": "STOCKS_UNDER3000",
-      "current": 3428.0,
-      "forecast_3m_mid": 4261.0,
-      "forecast_3m_pct": 24.3,
-      "forecast_3m_high": 4850.0,
-      "forecast_3m_high_pct": 41.5,
-      "tags": [
-        "金融",
-        "V字回復"
-      ],
-      "summary": "経常利益+78.0%、業績回復",
-      "buy_shares": 21,
-      "invest_amt": 71988.0,
-      "estimated_3m_value": 89481.0,
-      "estimated_3m_value_high": 101850.0,
-      "expected_gain_3m": 17493.0,
-      "expected_gain_3m_high": 29862.0
-    },
-    {
-      "code": "8035",
-      "name": "東京エレクトロン",
-      "tier": "S",
-      "category": "STOCKS_MAIN",
-      "current": 60090.0,
-      "forecast_3m_mid": 72693.0,
-      "forecast_3m_pct": 21.0,
-      "forecast_3m_high": 105758.0,
-      "forecast_3m_high_pct": 76.0,
-      "tags": [
-        "半導体装置",
-        "HBM4"
-      ],
-      "summary": "前工程2位、HBM4スーパーサイクル、目標52,000円",
-      "buy_shares": 1,
-      "invest_amt": 60090.0,
-      "estimated_3m_value": 72693.0,
-      "estimated_3m_value_high": 105758.0,
-      "expected_gain_3m": 12603.0,
-      "expected_gain_3m_high": 45668.0
-    },
-    {
-      "code": "8331",
-      "name": "千葉銀行",
-      "tier": "A",
-      "category": "STOCKS_UNDER3000",
-      "current": 2843.5,
-      "forecast_3m_mid": 3410.0,
-      "forecast_3m_pct": 19.9,
-      "forecast_3m_high": 4006.0,
-      "forecast_3m_high_pct": 40.9,
-      "tags": [
-        "地銀",
-        "統合"
-      ],
-      "summary": "純利益+26.1%、千葉興業銀行との経営統合",
-      "buy_shares": 25,
-      "invest_amt": 71087.5,
-      "estimated_3m_value": 85250.0,
-      "estimated_3m_value_high": 100150.0,
-      "expected_gain_3m": 14162.5,
-      "expected_gain_3m_high": 29062.5
-    }
-  ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約290,360円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+59,956円の利益期待. 高値ケースなら最大+148,260円."
+  "recommended_buys": [],
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約271,100円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
