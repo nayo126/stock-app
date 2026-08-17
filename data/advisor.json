@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-08-17T11:34:24.134538+09:00",
+  "generated_at": "2026-08-17T11:54:44.432195+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 426560.0,
-    "total_pl": -424340.0,
-    "total_pl_pct": -49.87,
-    "health_score": 5,
-    "total_recovery_if_sell": 292980.0,
-    "expected_gain_3m": 60769.0,
-    "expected_gain_3m_high": 149063.0
+    "total_value": 423410.0,
+    "total_pl": -427490.0,
+    "total_pl_pct": -50.24,
+    "health_score": 0,
+    "total_recovery_if_sell": 324355.0,
+    "expected_gain_3m": 79375.0,
+    "expected_gain_3m_high": 198149.0
   },
   "judgments": [
     {
@@ -33,34 +33,34 @@
       "name": "WIZE",
       "avg_price": 65.0,
       "shares": 500,
-      "current": 23.0,
+      "current": 22.0,
       "cost_total": 32500.0,
-      "value_total": 11500.0,
+      "value_total": 11000.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-64.6%。元本回復に+183%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 11500.0,
+      "reason": "-66.2%。元本回復に+195%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 11000.0,
       "color": "red",
-      "pl_total": -21000.0,
-      "pl_pct": -64.61538461538461
+      "pl_total": -21500.0,
+      "pl_pct": -66.15384615384615
     },
     {
       "code": "5103",
       "name": "昭和HD",
       "avg_price": 51.0,
       "shares": 400,
-      "current": 4.0,
+      "current": 5.0,
       "cost_total": 20400.0,
-      "value_total": 1600.0,
+      "value_total": 2000.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-92.2%。元本回復に+1175%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 1600.0,
+      "reason": "-90.2%。元本回復に+920%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 2000.0,
       "color": "red",
-      "pl_total": -18800.0,
-      "pl_pct": -92.15686274509804
+      "pl_total": -18400.0,
+      "pl_pct": -90.19607843137256
     },
     {
       "code": "2134",
@@ -80,21 +80,38 @@
       "pl_pct": -21.428571428571427
     },
     {
+      "code": "4564",
+      "name": "OTS",
+      "avg_price": 27.0,
+      "shares": 3000,
+      "current": 21.0,
+      "cost_total": 81000.0,
+      "value_total": 63000.0,
+      "action": "SELL_HALF",
+      "label": "⚠️ 半分損切り",
+      "priority": 2,
+      "reason": "-22.2%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 31500.0,
+      "color": "orange",
+      "pl_total": -18000.0,
+      "pl_pct": -22.22222222222222
+    },
+    {
       "code": "7201",
       "name": "日産自",
       "avg_price": 426.0,
       "shares": 100,
-      "current": 328.6,
+      "current": 328.1,
       "cost_total": 42600.0,
-      "value_total": 32860.0,
+      "value_total": 32810.0,
       "action": "SELL_HALF",
       "label": "⚠️ 半分損切り",
       "priority": 2,
-      "reason": "-22.9%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 16430.0,
+      "reason": "-23.0%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 16405.0,
       "color": "orange",
-      "pl_total": -9739.999999999998,
-      "pl_pct": -22.86384976525821
+      "pl_total": -9789.999999999998,
+      "pl_pct": -22.981220657276992
     },
     {
       "code": "7527",
@@ -112,22 +129,6 @@
       "color": "orange",
       "pl_total": -2300.0,
       "pl_pct": -29.48717948717949
-    },
-    {
-      "code": "4564",
-      "name": "OTS",
-      "avg_price": 27.0,
-      "shares": 3000,
-      "current": 22.0,
-      "cost_total": 81000.0,
-      "value_total": 66000.0,
-      "action": "WATCH_DROP",
-      "label": "🔻 損切り検討",
-      "priority": 4,
-      "reason": "-18.5%。-20%到達したら半分損切り",
-      "color": "yellow",
-      "pl_total": -15000.0,
-      "pl_pct": -18.51851851851852
     },
     {
       "code": "2337",
@@ -166,23 +167,23 @@
       "name": "アドバンテスト",
       "tier": "S",
       "category": "STOCKS_MAIN",
-      "current": 37680.0,
-      "forecast_3m_mid": 53193.0,
-      "forecast_3m_pct": 41.2,
-      "forecast_3m_high": 81004.0,
-      "forecast_3m_high_pct": 115.0,
+      "current": 37590.0,
+      "forecast_3m_mid": 52937.0,
+      "forecast_3m_pct": 40.8,
+      "forecast_3m_high": 80607.0,
+      "forecast_3m_high_pct": 114.4,
       "tags": [
         "AI半導体",
         "NVIDIA",
         "上方修正"
       ],
       "summary": "半導体テスタ世界50%シェア、AI独占。営業利益+110.8%、目標27,150円",
-      "buy_shares": 1,
-      "invest_amt": 37680.0,
-      "estimated_3m_value": 53193.0,
-      "estimated_3m_value_high": 81004.0,
-      "expected_gain_3m": 15513.0,
-      "expected_gain_3m_high": 43324.0
+      "buy_shares": 2,
+      "invest_amt": 75180.0,
+      "estimated_3m_value": 105874.0,
+      "estimated_3m_value_high": 161214.0,
+      "expected_gain_3m": 30694.0,
+      "expected_gain_3m_high": 86034.0
     },
     {
       "code": "8304",
@@ -199,34 +200,34 @@
         "V字回復"
       ],
       "summary": "経常利益+78.0%、業績回復",
-      "buy_shares": 21,
-      "invest_amt": 72765.0,
-      "estimated_3m_value": 91434.0,
-      "estimated_3m_value_high": 104076.0,
-      "expected_gain_3m": 18669.0,
-      "expected_gain_3m_high": 31311.0
+      "buy_shares": 23,
+      "invest_amt": 79695.0,
+      "estimated_3m_value": 100142.0,
+      "estimated_3m_value_high": 113988.0,
+      "expected_gain_3m": 20447.0,
+      "expected_gain_3m_high": 34293.0
     },
     {
       "code": "8035",
       "name": "東京エレクトロン",
       "tier": "S",
       "category": "STOCKS_MAIN",
-      "current": 59940.0,
-      "forecast_3m_mid": 72327.0,
-      "forecast_3m_pct": 20.7,
-      "forecast_3m_high": 105218.0,
-      "forecast_3m_high_pct": 75.5,
+      "current": 59900.0,
+      "forecast_3m_mid": 72230.0,
+      "forecast_3m_pct": 20.6,
+      "forecast_3m_high": 105074.0,
+      "forecast_3m_high_pct": 75.4,
       "tags": [
         "半導体装置",
         "HBM4"
       ],
       "summary": "前工程2位、HBM4スーパーサイクル、目標52,000円",
       "buy_shares": 1,
-      "invest_amt": 59940.0,
-      "estimated_3m_value": 72327.0,
-      "estimated_3m_value_high": 105218.0,
-      "expected_gain_3m": 12387.0,
-      "expected_gain_3m_high": 45278.0
+      "invest_amt": 59900.0,
+      "estimated_3m_value": 72230.0,
+      "estimated_3m_value_high": 105074.0,
+      "expected_gain_3m": 12330.0,
+      "expected_gain_3m_high": 45174.0
     },
     {
       "code": "8331",
@@ -243,13 +244,13 @@
         "統合"
       ],
       "summary": "純利益+26.1%、千葉興業銀行との経営統合",
-      "buy_shares": 25,
-      "invest_amt": 71125.0,
-      "estimated_3m_value": 85325.0,
-      "estimated_3m_value_high": 100275.0,
-      "expected_gain_3m": 14200.0,
-      "expected_gain_3m_high": 29150.0
+      "buy_shares": 28,
+      "invest_amt": 79660.0,
+      "estimated_3m_value": 95564.0,
+      "estimated_3m_value_high": 112308.0,
+      "expected_gain_3m": 15904.0,
+      "expected_gain_3m_high": 32648.0
     }
   ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約292,980円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+60,769円の利益期待. 高値ケースなら最大+149,063円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約324,355円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+79,375円の利益期待. 高値ケースなら最大+198,149円."
 }
