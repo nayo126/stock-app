@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-18T12:11:34.244196+09:00",
+  "generated_at": "2026-08-18T12:36:43.794786+09:00",
   "summary": {
     "total_cost": 850900.0,
     "total_value": 416220.0,
@@ -7,8 +7,8 @@
     "total_pl_pct": -51.08,
     "health_score": 0,
     "total_recovery_if_sell": 318560.0,
-    "expected_gain_3m": 0,
-    "expected_gain_3m_high": 0
+    "expected_gain_3m": 76062.0,
+    "expected_gain_3m_high": 170014.0
   },
   "judgments": [
     {
@@ -161,6 +161,96 @@
       "color": "gray"
     }
   ],
-  "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約318,560円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "recommended_buys": [
+    {
+      "code": "6857",
+      "name": "アドバンテスト",
+      "tier": "S",
+      "category": "STOCKS_MAIN",
+      "current": 36220.0,
+      "forecast_3m_mid": 47480.0,
+      "forecast_3m_pct": 31.1,
+      "forecast_3m_high": 72441.0,
+      "forecast_3m_high_pct": 100.0,
+      "tags": [
+        "AI半導体",
+        "NVIDIA",
+        "上方修正"
+      ],
+      "summary": "半導体テスタ世界50%シェア、AI独占。営業利益+110.8%、目標27,150円",
+      "buy_shares": 2,
+      "invest_amt": 72440.0,
+      "estimated_3m_value": 94960.0,
+      "estimated_3m_value_high": 144882.0,
+      "expected_gain_3m": 22520.0,
+      "expected_gain_3m_high": 72442.0
+    },
+    {
+      "code": "8304",
+      "name": "あおぞら銀行",
+      "tier": "A",
+      "category": "STOCKS_UNDER3000",
+      "current": 3420.0,
+      "forecast_3m_mid": 4292.0,
+      "forecast_3m_pct": 25.5,
+      "forecast_3m_high": 4881.0,
+      "forecast_3m_high_pct": 42.7,
+      "tags": [
+        "金融",
+        "V字回復"
+      ],
+      "summary": "経常利益+78.0%、業績回復",
+      "buy_shares": 23,
+      "invest_amt": 78660.0,
+      "estimated_3m_value": 98716.0,
+      "estimated_3m_value_high": 112263.0,
+      "expected_gain_3m": 20056.0,
+      "expected_gain_3m_high": 33603.0
+    },
+    {
+      "code": "8331",
+      "name": "千葉銀行",
+      "tier": "A",
+      "category": "STOCKS_UNDER3000",
+      "current": 2867.0,
+      "forecast_3m_mid": 3513.0,
+      "forecast_3m_pct": 22.5,
+      "forecast_3m_high": 4124.0,
+      "forecast_3m_high_pct": 43.9,
+      "tags": [
+        "地銀",
+        "統合"
+      ],
+      "summary": "純利益+26.1%、千葉興業銀行との経営統合",
+      "buy_shares": 27,
+      "invest_amt": 77409.0,
+      "estimated_3m_value": 94851.0,
+      "estimated_3m_value_high": 111348.0,
+      "expected_gain_3m": 17442.0,
+      "expected_gain_3m_high": 33939.0
+    },
+    {
+      "code": "8306",
+      "name": "三菱UFJフィナンシャル・グループ",
+      "tier": "S",
+      "category": "STOCKS_UNDER3000",
+      "current": 3689.0,
+      "forecast_3m_mid": 4453.0,
+      "forecast_3m_pct": 20.7,
+      "forecast_3m_high": 5119.0,
+      "forecast_3m_high_pct": 38.8,
+      "tags": [
+        "金融",
+        "メガバンク"
+      ],
+      "summary": "メガバンク、金利上昇最大恩恵、年間74円増配",
+      "buy_shares": 21,
+      "invest_amt": 77469.0,
+      "estimated_3m_value": 93513.0,
+      "estimated_3m_value_high": 107499.0,
+      "expected_gain_3m": 16044.0,
+      "expected_gain_3m_high": 30030.0
+    }
+  ],
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約318,560円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+76,062円の利益期待. 高値ケースなら最大+170,014円."
 }
