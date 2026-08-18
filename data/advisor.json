@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-08-18T13:27:24.921247+09:00",
+  "generated_at": "2026-08-18T13:46:14.118924+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 381400.0,
-    "total_pl": -469500.0,
-    "total_pl_pct": -55.18,
-    "health_score": 25,
-    "total_recovery_if_sell": 293100.0,
+    "total_value": 380500.0,
+    "total_pl": -470400.0,
+    "total_pl_pct": -55.28,
+    "health_score": 20,
+    "total_recovery_if_sell": 300800.0,
     "expected_gain_3m": 0,
     "expected_gain_3m_high": 0
   },
@@ -63,6 +63,23 @@
       "pl_pct": -90.19607843137256
     },
     {
+      "code": "2134",
+      "name": "キタハマキャピタル",
+      "avg_price": 28.0,
+      "shares": 700,
+      "current": 22.0,
+      "cost_total": 19600.0,
+      "value_total": 15400.0,
+      "action": "SELL_HALF",
+      "label": "⚠️ 半分損切り",
+      "priority": 2,
+      "reason": "-21.4%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 7700.0,
+      "color": "orange",
+      "pl_total": -4200.0,
+      "pl_pct": -21.428571428571427
+    },
+    {
       "code": "4564",
       "name": "OTS",
       "avg_price": 27.0,
@@ -80,36 +97,20 @@
       "pl_pct": -22.22222222222222
     },
     {
-      "code": "2134",
-      "name": "キタハマキャピタル",
-      "avg_price": 28.0,
-      "shares": 700,
-      "current": 23.0,
-      "cost_total": 19600.0,
-      "value_total": 16100.0,
-      "action": "WATCH_DROP",
-      "label": "🔻 損切り検討",
-      "priority": 4,
-      "reason": "-17.9%。-20%到達したら半分損切り",
-      "color": "yellow",
-      "pl_total": -3500.0,
-      "pl_pct": -17.857142857142858
-    },
-    {
       "code": "2337",
       "name": "いちご",
       "avg_price": 356.0,
       "shares": 100,
-      "current": 407.0,
+      "current": 405.0,
       "cost_total": 35600.0,
-      "value_total": 40700.0,
+      "value_total": 40500.0,
       "action": "HOLD",
       "label": "✋ 保有継続",
       "priority": 6,
-      "reason": "+14.3%。レンジ内、判断保留",
+      "reason": "+13.8%。レンジ内、判断保留",
       "color": "gray",
-      "pl_total": 5100.0,
-      "pl_pct": 14.325842696629213
+      "pl_total": 4900.0,
+      "pl_pct": 13.764044943820226
     },
     {
       "code": "5856",
@@ -155,5 +156,5 @@
     }
   ],
   "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約293,100円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約300,800円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
