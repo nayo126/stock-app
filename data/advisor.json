@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-18T08:58:12.628279+09:00",
+  "generated_at": "2026-08-18T09:17:08.310901+09:00",
   "summary": {
     "total_cost": 850900.0,
     "total_value": 424020.0,
@@ -7,8 +7,8 @@
     "total_pl_pct": -50.17,
     "health_score": 5,
     "total_recovery_if_sell": 290360.0,
-    "expected_gain_3m": 59956.0,
-    "expected_gain_3m_high": 148260.0
+    "expected_gain_3m": 61220.0,
+    "expected_gain_3m_high": 127990.0
   },
   "judgments": [
     {
@@ -167,10 +167,10 @@
       "tier": "S",
       "category": "STOCKS_MAIN",
       "current": 37780.0,
-      "forecast_3m_mid": 53478.0,
-      "forecast_3m_pct": 41.6,
-      "forecast_3m_high": 81447.0,
-      "forecast_3m_high_pct": 115.6,
+      "forecast_3m_mid": 51695.0,
+      "forecast_3m_pct": 36.8,
+      "forecast_3m_high": 78660.0,
+      "forecast_3m_high_pct": 108.2,
       "tags": [
         "AI半導体",
         "NVIDIA",
@@ -179,10 +179,10 @@
       "summary": "半導体テスタ世界50%シェア、AI独占。営業利益+110.8%、目標27,150円",
       "buy_shares": 1,
       "invest_amt": 37780.0,
-      "estimated_3m_value": 53478.0,
-      "estimated_3m_value_high": 81447.0,
-      "expected_gain_3m": 15698.0,
-      "expected_gain_3m_high": 43667.0
+      "estimated_3m_value": 51695.0,
+      "estimated_3m_value_high": 78660.0,
+      "expected_gain_3m": 13915.0,
+      "expected_gain_3m_high": 40880.0
     },
     {
       "code": "8304",
@@ -190,10 +190,10 @@
       "tier": "A",
       "category": "STOCKS_UNDER3000",
       "current": 3428.0,
-      "forecast_3m_mid": 4261.0,
-      "forecast_3m_pct": 24.3,
-      "forecast_3m_high": 4850.0,
-      "forecast_3m_high_pct": 41.5,
+      "forecast_3m_mid": 4313.0,
+      "forecast_3m_pct": 25.8,
+      "forecast_3m_high": 4904.0,
+      "forecast_3m_high_pct": 43.1,
       "tags": [
         "金融",
         "V字回復"
@@ -201,32 +201,10 @@
       "summary": "経常利益+78.0%、業績回復",
       "buy_shares": 21,
       "invest_amt": 71988.0,
-      "estimated_3m_value": 89481.0,
-      "estimated_3m_value_high": 101850.0,
-      "expected_gain_3m": 17493.0,
-      "expected_gain_3m_high": 29862.0
-    },
-    {
-      "code": "8035",
-      "name": "東京エレクトロン",
-      "tier": "S",
-      "category": "STOCKS_MAIN",
-      "current": 60090.0,
-      "forecast_3m_mid": 72693.0,
-      "forecast_3m_pct": 21.0,
-      "forecast_3m_high": 105758.0,
-      "forecast_3m_high_pct": 76.0,
-      "tags": [
-        "半導体装置",
-        "HBM4"
-      ],
-      "summary": "前工程2位、HBM4スーパーサイクル、目標52,000円",
-      "buy_shares": 1,
-      "invest_amt": 60090.0,
-      "estimated_3m_value": 72693.0,
-      "estimated_3m_value_high": 105758.0,
-      "expected_gain_3m": 12603.0,
-      "expected_gain_3m_high": 45668.0
+      "estimated_3m_value": 90573.0,
+      "estimated_3m_value_high": 102984.0,
+      "expected_gain_3m": 18585.0,
+      "expected_gain_3m_high": 30996.0
     },
     {
       "code": "8331",
@@ -234,10 +212,10 @@
       "tier": "A",
       "category": "STOCKS_UNDER3000",
       "current": 2843.5,
-      "forecast_3m_mid": 3410.0,
-      "forecast_3m_pct": 19.9,
-      "forecast_3m_high": 4006.0,
-      "forecast_3m_high_pct": 40.9,
+      "forecast_3m_mid": 3455.0,
+      "forecast_3m_pct": 21.5,
+      "forecast_3m_high": 4056.0,
+      "forecast_3m_high_pct": 42.6,
       "tags": [
         "地銀",
         "統合"
@@ -245,11 +223,33 @@
       "summary": "純利益+26.1%、千葉興業銀行との経営統合",
       "buy_shares": 25,
       "invest_amt": 71087.5,
-      "estimated_3m_value": 85250.0,
-      "estimated_3m_value_high": 100150.0,
-      "expected_gain_3m": 14162.5,
-      "expected_gain_3m_high": 29062.5
+      "estimated_3m_value": 86375.0,
+      "estimated_3m_value_high": 101400.0,
+      "expected_gain_3m": 15287.5,
+      "expected_gain_3m_high": 30312.5
+    },
+    {
+      "code": "8306",
+      "name": "三菱UFJフィナンシャル・グループ",
+      "tier": "S",
+      "category": "STOCKS_UNDER3000",
+      "current": 3649.0,
+      "forecast_3m_mid": 4356.0,
+      "forecast_3m_pct": 19.4,
+      "forecast_3m_high": 5007.0,
+      "forecast_3m_high_pct": 37.2,
+      "tags": [
+        "金融",
+        "メガバンク"
+      ],
+      "summary": "メガバンク、金利上昇最大恩恵、年間74円増配",
+      "buy_shares": 19,
+      "invest_amt": 69331.0,
+      "estimated_3m_value": 82764.0,
+      "estimated_3m_value_high": 95133.0,
+      "expected_gain_3m": 13433.0,
+      "expected_gain_3m_high": 25802.0
     }
   ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約290,360円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+59,956円の利益期待. 高値ケースなら最大+148,260円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約290,360円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+61,220円の利益期待. 高値ケースなら最大+127,990円."
 }
