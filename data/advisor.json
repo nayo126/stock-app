@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-08-19T10:55:08.458498+09:00",
+  "generated_at": "2026-08-19T11:10:14.448949+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 380200.0,
-    "total_pl": -470700.0,
-    "total_pl_pct": -55.32,
+    "total_value": 406320.0,
+    "total_pl": -444580.0,
+    "total_pl_pct": -52.25,
     "health_score": 10,
-    "total_recovery_if_sell": 298200.0,
+    "total_recovery_if_sell": 311510.0,
     "expected_gain_3m": 0,
     "expected_gain_3m_high": 0
   },
@@ -33,17 +33,17 @@
       "name": "WIZE",
       "avg_price": 65.0,
       "shares": 500,
-      "current": 21.0,
+      "current": 22.0,
       "cost_total": 32500.0,
-      "value_total": 10500.0,
+      "value_total": 11000.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-67.7%。元本回復に+210%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 10500.0,
+      "reason": "-66.2%。元本回復に+195%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 11000.0,
       "color": "red",
-      "pl_total": -22000.0,
-      "pl_pct": -67.6923076923077
+      "pl_total": -21500.0,
+      "pl_pct": -66.15384615384615
     },
     {
       "code": "5103",
@@ -67,17 +67,17 @@
       "name": "キタハマキャピタル",
       "avg_price": 28.0,
       "shares": 700,
-      "current": 22.0,
+      "current": 21.0,
       "cost_total": 19600.0,
-      "value_total": 15400.0,
+      "value_total": 14700.0,
       "action": "SELL_HALF",
       "label": "⚠️ 半分損切り",
       "priority": 2,
-      "reason": "-21.4%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 7700.0,
+      "reason": "-25.0%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 7350.0,
       "color": "orange",
-      "pl_total": -4200.0,
-      "pl_pct": -21.428571428571427
+      "pl_total": -4900.0,
+      "pl_pct": -25.0
     },
     {
       "code": "4564",
@@ -97,21 +97,21 @@
       "pl_pct": -22.22222222222222
     },
     {
-      "code": "7527",
-      "name": "システムソフト",
-      "avg_price": 78.0,
+      "code": "7201",
+      "name": "日産自",
+      "avg_price": 426.0,
       "shares": 100,
-      "current": 54.0,
-      "cost_total": 7800.0,
-      "value_total": 5400.0,
+      "current": 317.2,
+      "cost_total": 42600.0,
+      "value_total": 31720.0,
       "action": "SELL_HALF",
       "label": "⚠️ 半分損切り",
       "priority": 2,
-      "reason": "-30.8%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 2700.0,
+      "reason": "-25.5%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 15860.0,
       "color": "orange",
-      "pl_total": -2400.0,
-      "pl_pct": -30.76923076923077
+      "pl_total": -10880.000000000002,
+      "pl_pct": -25.539906103286388
     },
     {
       "code": "2337",
@@ -144,12 +144,12 @@
       "color": "gray"
     },
     {
-      "code": "7201",
-      "name": "日産自",
-      "avg_price": 426.0,
+      "code": "7527",
+      "name": "システムソフト",
+      "avg_price": 78.0,
       "shares": 100,
       "current": null,
-      "cost_total": 42600.0,
+      "cost_total": 7800.0,
       "value_total": 0,
       "action": "DATA_NA",
       "label": "❓ データ無し",
@@ -159,5 +159,5 @@
     }
   ],
   "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約298,200円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約311,510円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
