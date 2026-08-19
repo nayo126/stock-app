@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-08-19T13:00:11.659023+09:00",
+  "generated_at": "2026-08-19T13:14:40.151184+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 406750.0,
-    "total_pl": -444150.0,
-    "total_pl_pct": -52.2,
-    "health_score": 0,
-    "total_recovery_if_sell": 310525.0,
+    "total_value": 378000.0,
+    "total_pl": -472900.0,
+    "total_pl_pct": -55.58,
+    "health_score": 10,
+    "total_recovery_if_sell": 296150.0,
     "expected_gain_3m": 0,
     "expected_gain_3m_high": 0
   },
@@ -84,34 +84,17 @@
       "name": "OTS",
       "avg_price": 27.0,
       "shares": 3000,
-      "current": 20.0,
+      "current": 21.0,
       "cost_total": 81000.0,
-      "value_total": 60000.0,
+      "value_total": 63000.0,
       "action": "SELL_HALF",
       "label": "⚠️ 半分損切り",
       "priority": 2,
-      "reason": "-25.9%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 30000.0,
+      "reason": "-22.2%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 31500.0,
       "color": "orange",
-      "pl_total": -21000.0,
-      "pl_pct": -25.925925925925924
-    },
-    {
-      "code": "7201",
-      "name": "日産自",
-      "avg_price": 426.0,
-      "shares": 100,
-      "current": 317.5,
-      "cost_total": 42600.0,
-      "value_total": 31750.0,
-      "action": "SELL_HALF",
-      "label": "⚠️ 半分損切り",
-      "priority": 2,
-      "reason": "-25.5%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 15875.0,
-      "color": "orange",
-      "pl_total": -10850.0,
-      "pl_pct": -25.46948356807512
+      "pl_total": -18000.0,
+      "pl_pct": -22.22222222222222
     },
     {
       "code": "7527",
@@ -159,8 +142,22 @@
       "priority": 99,
       "reason": "価格データ取得不可",
       "color": "gray"
+    },
+    {
+      "code": "7201",
+      "name": "日産自",
+      "avg_price": 426.0,
+      "shares": 100,
+      "current": null,
+      "cost_total": 42600.0,
+      "value_total": 0,
+      "action": "DATA_NA",
+      "label": "❓ データ無し",
+      "priority": 99,
+      "reason": "価格データ取得不可",
+      "color": "gray"
     }
   ],
   "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約310,525円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約296,150円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
