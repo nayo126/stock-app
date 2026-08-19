@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-08-19T11:45:50.121479+09:00",
+  "generated_at": "2026-08-19T12:11:46.235201+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 402040.0,
-    "total_pl": -448860.0,
-    "total_pl_pct": -52.75,
-    "health_score": 10,
-    "total_recovery_if_sell": 307170.0,
+    "total_value": 372400.0,
+    "total_pl": -478500.0,
+    "total_pl_pct": -56.23,
+    "health_score": 20,
+    "total_recovery_if_sell": 293450.0,
     "expected_gain_3m": 0,
     "expected_gain_3m_high": 0
   },
@@ -16,17 +16,17 @@
       "name": "JHD",
       "avg_price": 207.0,
       "shares": 2200,
-      "current": 109.0,
+      "current": 110.0,
       "cost_total": 455400.0,
-      "value_total": 239800.0,
+      "value_total": 242000.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-47.3%。元本回復に+90%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 239800.0,
+      "reason": "-46.9%。元本回復に+88%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 242000.0,
       "color": "red",
-      "pl_total": -215600.0,
-      "pl_pct": -47.34299516908212
+      "pl_total": -213400.0,
+      "pl_pct": -46.85990338164252
     },
     {
       "code": "3664",
@@ -97,23 +97,6 @@
       "pl_pct": -22.22222222222222
     },
     {
-      "code": "7201",
-      "name": "日産自",
-      "avg_price": 426.0,
-      "shares": 100,
-      "current": 318.4,
-      "cost_total": 42600.0,
-      "value_total": 31839.999999999996,
-      "action": "SELL_HALF",
-      "label": "⚠️ 半分損切り",
-      "priority": 2,
-      "reason": "-25.3%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 15919.999999999998,
-      "color": "orange",
-      "pl_total": -10760.000000000002,
-      "pl_pct": -25.258215962441323
-    },
-    {
       "code": "2337",
       "name": "いちご",
       "avg_price": 356.0,
@@ -144,6 +127,20 @@
       "color": "gray"
     },
     {
+      "code": "7201",
+      "name": "日産自",
+      "avg_price": 426.0,
+      "shares": 100,
+      "current": null,
+      "cost_total": 42600.0,
+      "value_total": 0,
+      "action": "DATA_NA",
+      "label": "❓ データ無し",
+      "priority": 99,
+      "reason": "価格データ取得不可",
+      "color": "gray"
+    },
+    {
       "code": "7527",
       "name": "システムソフト",
       "avg_price": 78.0,
@@ -159,5 +156,5 @@
     }
   ],
   "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約307,170円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約293,450円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
