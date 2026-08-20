@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-08-20T12:40:39.312068+09:00",
+  "generated_at": "2026-08-20T12:57:24.317940+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 367200.0,
-    "total_pl": -483700.0,
-    "total_pl_pct": -56.85,
-    "health_score": 20,
-    "total_recovery_if_sell": 289350.0,
+    "total_value": 373500.0,
+    "total_pl": -477400.0,
+    "total_pl_pct": -56.11,
+    "health_score": 10,
+    "total_recovery_if_sell": 292950.0,
     "expected_gain_3m": 0,
     "expected_gain_3m_high": 0
   },
@@ -33,34 +33,34 @@
       "name": "WIZE",
       "avg_price": 65.0,
       "shares": 500,
-      "current": 22.0,
+      "current": 23.0,
       "cost_total": 32500.0,
-      "value_total": 11000.0,
+      "value_total": 11500.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-66.2%。元本回復に+195%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 11000.0,
+      "reason": "-64.6%。元本回復に+183%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 11500.0,
       "color": "red",
-      "pl_total": -21500.0,
-      "pl_pct": -66.15384615384615
+      "pl_total": -21000.0,
+      "pl_pct": -64.61538461538461
     },
     {
       "code": "5103",
       "name": "昭和HD",
       "avg_price": 51.0,
       "shares": 400,
-      "current": 3.0,
+      "current": 4.0,
       "cost_total": 20400.0,
-      "value_total": 1200.0,
+      "value_total": 1600.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-94.1%。元本回復に+1600%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 1200.0,
+      "reason": "-92.2%。元本回復に+1175%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 1600.0,
       "color": "red",
-      "pl_total": -19200.0,
-      "pl_pct": -94.11764705882352
+      "pl_total": -18800.0,
+      "pl_pct": -92.15686274509804
     },
     {
       "code": "2134",
@@ -95,6 +95,23 @@
       "color": "orange",
       "pl_total": -21000.0,
       "pl_pct": -25.925925925925924
+    },
+    {
+      "code": "7527",
+      "name": "システムソフト",
+      "avg_price": 78.0,
+      "shares": 100,
+      "current": 54.0,
+      "cost_total": 7800.0,
+      "value_total": 5400.0,
+      "action": "SELL_HALF",
+      "label": "⚠️ 半分損切り",
+      "priority": 2,
+      "reason": "-30.8%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 2700.0,
+      "color": "orange",
+      "pl_total": -2400.0,
+      "pl_pct": -30.76923076923077
     },
     {
       "code": "2337",
@@ -139,22 +156,8 @@
       "priority": 99,
       "reason": "価格データ取得不可",
       "color": "gray"
-    },
-    {
-      "code": "7527",
-      "name": "システムソフト",
-      "avg_price": 78.0,
-      "shares": 100,
-      "current": null,
-      "cost_total": 7800.0,
-      "value_total": 0,
-      "action": "DATA_NA",
-      "label": "❓ データ無し",
-      "priority": 99,
-      "reason": "価格データ取得不可",
-      "color": "gray"
     }
   ],
   "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約289,350円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約292,950円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
