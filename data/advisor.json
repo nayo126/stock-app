@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-08-20T13:48:23.348196+09:00",
+  "generated_at": "2026-08-20T14:04:47.329203+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 401310.0,
-    "total_pl": -449590.0,
-    "total_pl_pct": -52.84,
-    "health_score": 10,
-    "total_recovery_if_sell": 305355.0,
+    "total_value": 368500.0,
+    "total_pl": -482400.0,
+    "total_pl_pct": -56.69,
+    "health_score": 20,
+    "total_recovery_if_sell": 289150.0,
     "expected_gain_3m": 0,
     "expected_gain_3m_high": 0
   },
@@ -33,17 +33,17 @@
       "name": "WIZE",
       "avg_price": 65.0,
       "shares": 500,
-      "current": 22.0,
+      "current": 23.0,
       "cost_total": 32500.0,
-      "value_total": 11000.0,
+      "value_total": 11500.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-66.2%。元本回復に+195%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 11000.0,
+      "reason": "-64.6%。元本回復に+183%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 11500.0,
       "color": "red",
-      "pl_total": -21500.0,
-      "pl_pct": -66.15384615384615
+      "pl_total": -21000.0,
+      "pl_pct": -64.61538461538461
     },
     {
       "code": "5103",
@@ -97,37 +97,20 @@
       "pl_pct": -22.22222222222222
     },
     {
-      "code": "7201",
-      "name": "日産自",
-      "avg_price": 426.0,
-      "shares": 100,
-      "current": 334.1,
-      "cost_total": 42600.0,
-      "value_total": 33410.0,
-      "action": "SELL_HALF",
-      "label": "⚠️ 半分損切り",
-      "priority": 2,
-      "reason": "-21.6%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 16705.0,
-      "color": "orange",
-      "pl_total": -9189.999999999998,
-      "pl_pct": -21.572769953051637
-    },
-    {
       "code": "2337",
       "name": "いちご",
       "avg_price": 356.0,
       "shares": 100,
-      "current": 404.0,
+      "current": 405.0,
       "cost_total": 35600.0,
-      "value_total": 40400.0,
+      "value_total": 40500.0,
       "action": "HOLD",
       "label": "✋ 保有継続",
       "priority": 6,
-      "reason": "+13.5%。レンジ内、判断保留",
+      "reason": "+13.8%。レンジ内、判断保留",
       "color": "gray",
-      "pl_total": 4800.0,
-      "pl_pct": 13.48314606741573
+      "pl_total": 4900.0,
+      "pl_pct": 13.764044943820226
     },
     {
       "code": "5856",
@@ -136,6 +119,20 @@
       "shares": 4000,
       "current": null,
       "cost_total": 156000.0,
+      "value_total": 0,
+      "action": "DATA_NA",
+      "label": "❓ データ無し",
+      "priority": 99,
+      "reason": "価格データ取得不可",
+      "color": "gray"
+    },
+    {
+      "code": "7201",
+      "name": "日産自",
+      "avg_price": 426.0,
+      "shares": 100,
+      "current": null,
+      "cost_total": 42600.0,
       "value_total": 0,
       "action": "DATA_NA",
       "label": "❓ データ無し",
@@ -159,5 +156,5 @@
     }
   ],
   "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約305,355円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約289,150円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
