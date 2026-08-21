@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-08-21T15:16:09.007072+09:00",
+  "generated_at": "2026-08-21T15:27:26.491367+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 408580.0,
-    "total_pl": -442320.0,
-    "total_pl_pct": -51.98,
-    "health_score": 10,
-    "total_recovery_if_sell": 311490.0,
+    "total_value": 412120.0,
+    "total_pl": -438780.0,
+    "total_pl_pct": -51.57,
+    "health_score": 15,
+    "total_recovery_if_sell": 280510.0,
     "expected_gain_3m": 0,
     "expected_gain_3m_high": 0
   },
@@ -33,17 +33,17 @@
       "name": "WIZE",
       "avg_price": 65.0,
       "shares": 500,
-      "current": 27.0,
+      "current": 28.0,
       "cost_total": 32500.0,
-      "value_total": 13500.0,
+      "value_total": 14000.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-58.5%。元本回復に+141%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 13500.0,
+      "reason": "-56.9%。元本回復に+132%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 14000.0,
       "color": "red",
-      "pl_total": -19000.0,
-      "pl_pct": -58.46153846153847
+      "pl_total": -18500.0,
+      "pl_pct": -56.92307692307692
     },
     {
       "code": "5103",
@@ -80,38 +80,37 @@
       "pl_pct": -25.0
     },
     {
-      "code": "4564",
-      "name": "OTS",
-      "avg_price": 27.0,
-      "shares": 3000,
-      "current": 21.0,
-      "cost_total": 81000.0,
-      "value_total": 63000.0,
-      "action": "SELL_HALF",
-      "label": "⚠️ 半分損切り",
-      "priority": 2,
-      "reason": "-22.2%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 31500.0,
-      "color": "orange",
-      "pl_total": -18000.0,
-      "pl_pct": -22.22222222222222
-    },
-    {
       "code": "7201",
       "name": "日産自",
       "avg_price": 426.0,
       "shares": 100,
-      "current": 334.8,
+      "current": 335.2,
       "cost_total": 42600.0,
-      "value_total": 33480.0,
+      "value_total": 33520.0,
       "action": "SELL_HALF",
       "label": "⚠️ 半分損切り",
       "priority": 2,
-      "reason": "-21.4%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 16740.0,
+      "reason": "-21.3%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 16760.0,
       "color": "orange",
-      "pl_total": -9119.999999999998,
-      "pl_pct": -21.40845070422535
+      "pl_total": -9080.000000000002,
+      "pl_pct": -21.31455399061033
+    },
+    {
+      "code": "4564",
+      "name": "OTS",
+      "avg_price": 27.0,
+      "shares": 3000,
+      "current": 22.0,
+      "cost_total": 81000.0,
+      "value_total": 66000.0,
+      "action": "WATCH_DROP",
+      "label": "🔻 損切り検討",
+      "priority": 4,
+      "reason": "-18.5%。-20%到達したら半分損切り",
+      "color": "yellow",
+      "pl_total": -15000.0,
+      "pl_pct": -18.51851851851852
     },
     {
       "code": "2337",
@@ -159,5 +158,5 @@
     }
   ],
   "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約311,490円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約280,510円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
