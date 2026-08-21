@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-08-21T15:27:26.491367+09:00",
+  "generated_at": "2026-08-21T15:45:41.814685+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 412120.0,
-    "total_pl": -438780.0,
-    "total_pl_pct": -51.57,
+    "total_value": 412610.0,
+    "total_pl": -438290.0,
+    "total_pl_pct": -51.51,
     "health_score": 15,
-    "total_recovery_if_sell": 280510.0,
+    "total_recovery_if_sell": 281005.0,
     "expected_gain_3m": 0,
     "expected_gain_3m_high": 0
   },
@@ -33,17 +33,17 @@
       "name": "WIZE",
       "avg_price": 65.0,
       "shares": 500,
-      "current": 28.0,
+      "current": 29.0,
       "cost_total": 32500.0,
-      "value_total": 14000.0,
+      "value_total": 14500.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-56.9%。元本回復に+132%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 14000.0,
+      "reason": "-55.4%。元本回復に+124%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 14500.0,
       "color": "red",
-      "pl_total": -18500.0,
-      "pl_pct": -56.92307692307692
+      "pl_total": -18000.0,
+      "pl_pct": -55.38461538461539
     },
     {
       "code": "5103",
@@ -84,17 +84,17 @@
       "name": "日産自",
       "avg_price": 426.0,
       "shares": 100,
-      "current": 335.2,
+      "current": 335.1,
       "cost_total": 42600.0,
-      "value_total": 33520.0,
+      "value_total": 33510.0,
       "action": "SELL_HALF",
       "label": "⚠️ 半分損切り",
       "priority": 2,
       "reason": "-21.3%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 16760.0,
+      "recover_amt": 16755.0,
       "color": "orange",
-      "pl_total": -9080.000000000002,
-      "pl_pct": -21.31455399061033
+      "pl_total": -9089.999999999998,
+      "pl_pct": -21.338028169014077
     },
     {
       "code": "4564",
@@ -158,5 +158,5 @@
     }
   ],
   "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約280,510円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約281,005円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
