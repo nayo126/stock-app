@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-08-23T20:53:46.828575+09:00",
+  "generated_at": "2026-08-23T21:13:42.202298+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 412900.0,
-    "total_pl": -438000.0,
-    "total_pl_pct": -51.47,
-    "health_score": 10,
-    "total_recovery_if_sell": 315950.0,
+    "total_value": 418300.0,
+    "total_pl": -432600.0,
+    "total_pl_pct": -50.84,
+    "health_score": 0,
+    "total_recovery_if_sell": 318650.0,
     "expected_gain_3m": 0,
     "expected_gain_3m_high": 0
   },
@@ -114,6 +114,23 @@
       "pl_pct": -21.12676056338028
     },
     {
+      "code": "7527",
+      "name": "システムソフト",
+      "avg_price": 78.0,
+      "shares": 100,
+      "current": 54.0,
+      "cost_total": 7800.0,
+      "value_total": 5400.0,
+      "action": "SELL_HALF",
+      "label": "⚠️ 半分損切り",
+      "priority": 2,
+      "reason": "-30.8%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 2700.0,
+      "color": "orange",
+      "pl_total": -2400.0,
+      "pl_pct": -30.76923076923077
+    },
+    {
       "code": "2337",
       "name": "いちご",
       "avg_price": 356.0,
@@ -142,22 +159,8 @@
       "priority": 99,
       "reason": "価格データ取得不可",
       "color": "gray"
-    },
-    {
-      "code": "7527",
-      "name": "システムソフト",
-      "avg_price": 78.0,
-      "shares": 100,
-      "current": null,
-      "cost_total": 7800.0,
-      "value_total": 0,
-      "action": "DATA_NA",
-      "label": "❓ データ無し",
-      "priority": 99,
-      "reason": "価格データ取得不可",
-      "color": "gray"
     }
   ],
   "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約315,950円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約318,650円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
