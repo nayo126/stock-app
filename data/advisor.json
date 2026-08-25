@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-08-25T10:51:38.141101+09:00",
+  "generated_at": "2026-08-25T11:11:18.276336+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 407670.0,
-    "total_pl": -443230.0,
-    "total_pl_pct": -52.09,
+    "total_value": 407860.0,
+    "total_pl": -443040.0,
+    "total_pl_pct": -52.07,
     "health_score": 0,
-    "total_recovery_if_sell": 308585.0,
-    "expected_gain_3m": 0,
-    "expected_gain_3m_high": 0
+    "total_recovery_if_sell": 308630.0,
+    "expected_gain_3m": 71480.0,
+    "expected_gain_3m_high": 164093.0
   },
   "judgments": [
     {
@@ -101,17 +101,17 @@
       "name": "日産自",
       "avg_price": 426.0,
       "shares": 100,
-      "current": 325.7,
+      "current": 326.6,
       "cost_total": 42600.0,
-      "value_total": 32570.0,
+      "value_total": 32660.000000000004,
       "action": "SELL_HALF",
       "label": "⚠️ 半分損切り",
       "priority": 2,
-      "reason": "-23.5%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 16285.0,
+      "reason": "-23.3%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 16330.000000000002,
       "color": "orange",
-      "pl_total": -10030.000000000002,
-      "pl_pct": -23.54460093896714
+      "pl_total": -9939.999999999998,
+      "pl_pct": -23.33333333333333
     },
     {
       "code": "7527",
@@ -135,16 +135,16 @@
       "name": "いちご",
       "avg_price": 356.0,
       "shares": 100,
-      "current": 413.0,
+      "current": 414.0,
       "cost_total": 35600.0,
-      "value_total": 41300.0,
+      "value_total": 41400.0,
       "action": "HOLD_WATCH",
       "label": "👀 保有・利確待ち",
       "priority": 5,
-      "reason": "+16.0%。+30%到達でTRIM",
+      "reason": "+16.3%。+30%到達でTRIM",
       "color": "blue",
-      "pl_total": 5700.0,
-      "pl_pct": 16.01123595505618
+      "pl_total": 5800.0,
+      "pl_pct": 16.292134831460675
     },
     {
       "code": "5856",
@@ -161,6 +161,96 @@
       "color": "gray"
     }
   ],
-  "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約308,585円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "recommended_buys": [
+    {
+      "code": "6857",
+      "name": "アドバンテスト",
+      "tier": "S",
+      "category": "STOCKS_MAIN",
+      "current": 33330.0,
+      "forecast_3m_mid": 43459.0,
+      "forecast_3m_pct": 30.4,
+      "forecast_3m_high": 66134.0,
+      "forecast_3m_high_pct": 98.4,
+      "tags": [
+        "AI半導体",
+        "NVIDIA",
+        "上方修正"
+      ],
+      "summary": "半導体テスタ世界50%シェア、AI独占。営業利益+110.8%、目標27,150円",
+      "buy_shares": 2,
+      "invest_amt": 66660.0,
+      "estimated_3m_value": 86918.0,
+      "estimated_3m_value_high": 132268.0,
+      "expected_gain_3m": 20258.0,
+      "expected_gain_3m_high": 65608.0
+    },
+    {
+      "code": "8304",
+      "name": "あおぞら銀行",
+      "tier": "A",
+      "category": "STOCKS_UNDER3000",
+      "current": 3343.0,
+      "forecast_3m_mid": 4258.0,
+      "forecast_3m_pct": 27.4,
+      "forecast_3m_high": 4855.0,
+      "forecast_3m_high_pct": 45.2,
+      "tags": [
+        "金融",
+        "V字回復"
+      ],
+      "summary": "経常利益+78.0%、業績回復",
+      "buy_shares": 23,
+      "invest_amt": 76889.0,
+      "estimated_3m_value": 97934.0,
+      "estimated_3m_value_high": 111665.0,
+      "expected_gain_3m": 21045.0,
+      "expected_gain_3m_high": 34776.0
+    },
+    {
+      "code": "8331",
+      "name": "千葉銀行",
+      "tier": "A",
+      "category": "STOCKS_UNDER3000",
+      "current": 2763.0,
+      "forecast_3m_mid": 3358.0,
+      "forecast_3m_pct": 21.5,
+      "forecast_3m_high": 3954.0,
+      "forecast_3m_high_pct": 43.1,
+      "tags": [
+        "地銀",
+        "統合"
+      ],
+      "summary": "純利益+26.1%、千葉興業銀行との経営統合",
+      "buy_shares": 27,
+      "invest_amt": 74601.0,
+      "estimated_3m_value": 90666.0,
+      "estimated_3m_value_high": 106758.0,
+      "expected_gain_3m": 16065.0,
+      "expected_gain_3m_high": 32157.0
+    },
+    {
+      "code": "8308",
+      "name": "りそなHD",
+      "tier": "S",
+      "category": "STOCKS_UNDER3000",
+      "current": 2381.0,
+      "forecast_3m_mid": 2822.0,
+      "forecast_3m_pct": 18.5,
+      "forecast_3m_high": 3367.0,
+      "forecast_3m_high_pct": 41.4,
+      "tags": [
+        "金融",
+        "高成長"
+      ],
+      "summary": "純利益+31.3%、貸出金利息+34.1%",
+      "buy_shares": 32,
+      "invest_amt": 76192.0,
+      "estimated_3m_value": 90304.0,
+      "estimated_3m_value_high": 107744.0,
+      "expected_gain_3m": 14112.0,
+      "expected_gain_3m_high": 31552.0
+    }
+  ],
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約308,630円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+71,480円の利益期待. 高値ケースなら最大+164,093円."
 }
