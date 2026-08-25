@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-08-25T13:00:18.283138+09:00",
+  "generated_at": "2026-08-25T13:23:39.237465+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 370100.0,
-    "total_pl": -480800.0,
-    "total_pl_pct": -56.5,
+    "total_value": 373700.0,
+    "total_pl": -477200.0,
+    "total_pl_pct": -56.08,
     "health_score": 20,
-    "total_recovery_if_sell": 291700.0,
+    "total_recovery_if_sell": 293550.0,
     "expected_gain_3m": 0,
     "expected_gain_3m_high": 0
   },
@@ -67,50 +67,50 @@
       "name": "キタハマキャピタル",
       "avg_price": 28.0,
       "shares": 700,
-      "current": 20.0,
+      "current": 21.0,
       "cost_total": 19600.0,
-      "value_total": 14000.0,
+      "value_total": 14700.0,
       "action": "SELL_HALF",
       "label": "⚠️ 半分損切り",
       "priority": 2,
-      "reason": "-28.6%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 7000.0,
+      "reason": "-25.0%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 7350.0,
       "color": "orange",
-      "pl_total": -5600.0,
-      "pl_pct": -28.57142857142857
+      "pl_total": -4900.0,
+      "pl_pct": -25.0
     },
     {
       "code": "4564",
       "name": "OTS",
       "avg_price": 27.0,
       "shares": 3000,
-      "current": 20.0,
+      "current": 21.0,
       "cost_total": 81000.0,
-      "value_total": 60000.0,
+      "value_total": 63000.0,
       "action": "SELL_HALF",
       "label": "⚠️ 半分損切り",
       "priority": 2,
-      "reason": "-25.9%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 30000.0,
+      "reason": "-22.2%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 31500.0,
       "color": "orange",
-      "pl_total": -21000.0,
-      "pl_pct": -25.925925925925924
+      "pl_total": -18000.0,
+      "pl_pct": -22.22222222222222
     },
     {
       "code": "2337",
       "name": "いちご",
       "avg_price": 356.0,
       "shares": 100,
-      "current": 414.0,
+      "current": 413.0,
       "cost_total": 35600.0,
-      "value_total": 41400.0,
+      "value_total": 41300.0,
       "action": "HOLD_WATCH",
       "label": "👀 保有・利確待ち",
       "priority": 5,
-      "reason": "+16.3%。+30%到達でTRIM",
+      "reason": "+16.0%。+30%到達でTRIM",
       "color": "blue",
-      "pl_total": 5800.0,
-      "pl_pct": 16.292134831460675
+      "pl_total": 5700.0,
+      "pl_pct": 16.01123595505618
     },
     {
       "code": "5856",
@@ -156,5 +156,5 @@
     }
   ],
   "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約291,700円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約293,550円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
