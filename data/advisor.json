@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-08-25T15:03:44.618432+09:00",
+  "generated_at": "2026-08-25T15:22:36.129128+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 379000.0,
-    "total_pl": -471900.0,
-    "total_pl_pct": -55.46,
+    "total_value": 379400.0,
+    "total_pl": -471500.0,
+    "total_pl_pct": -55.41,
     "health_score": 10,
-    "total_recovery_if_sell": 296250.0,
+    "total_recovery_if_sell": 296750.0,
     "expected_gain_3m": 0,
     "expected_gain_3m_high": 0
   },
@@ -33,17 +33,17 @@
       "name": "WIZE",
       "avg_price": 65.0,
       "shares": 500,
-      "current": 29.0,
+      "current": 30.0,
       "cost_total": 32500.0,
-      "value_total": 14500.0,
+      "value_total": 15000.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-55.4%。元本回復に+124%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 14500.0,
+      "reason": "-53.8%。元本回復に+117%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 15000.0,
       "color": "red",
-      "pl_total": -18000.0,
-      "pl_pct": -55.38461538461539
+      "pl_total": -17500.0,
+      "pl_pct": -53.84615384615385
     },
     {
       "code": "5103",
@@ -118,16 +118,16 @@
       "name": "いちご",
       "avg_price": 356.0,
       "shares": 100,
-      "current": 412.0,
+      "current": 411.0,
       "cost_total": 35600.0,
-      "value_total": 41200.0,
+      "value_total": 41100.0,
       "action": "HOLD_WATCH",
       "label": "👀 保有・利確待ち",
       "priority": 5,
-      "reason": "+15.7%。+30%到達でTRIM",
+      "reason": "+15.4%。+30%到達でTRIM",
       "color": "blue",
-      "pl_total": 5600.0,
-      "pl_pct": 15.730337078651685
+      "pl_total": 5500.0,
+      "pl_pct": 15.44943820224719
     },
     {
       "code": "5856",
@@ -159,5 +159,5 @@
     }
   ],
   "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約296,250円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約296,750円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
