@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-08-26T11:00:27.493034+09:00",
+  "generated_at": "2026-08-26T11:15:48.455886+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 403360.0,
-    "total_pl": -447540.0,
-    "total_pl_pct": -52.6,
+    "total_value": 376700.0,
+    "total_pl": -474200.0,
+    "total_pl_pct": -55.73,
     "health_score": 10,
-    "total_recovery_if_sell": 308730.0,
+    "total_recovery_if_sell": 295400.0,
     "expected_gain_3m": 0,
     "expected_gain_3m_high": 0
   },
@@ -97,21 +97,21 @@
       "pl_pct": -25.925925925925924
     },
     {
-      "code": "7201",
-      "name": "日産自",
-      "avg_price": 426.0,
+      "code": "7527",
+      "name": "システムソフト",
+      "avg_price": 78.0,
       "shares": 100,
-      "current": 319.6,
-      "cost_total": 42600.0,
-      "value_total": 31960.000000000004,
+      "current": 53.0,
+      "cost_total": 7800.0,
+      "value_total": 5300.0,
       "action": "SELL_HALF",
       "label": "⚠️ 半分損切り",
       "priority": 2,
-      "reason": "-25.0%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 15980.000000000002,
+      "reason": "-32.1%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 2650.0,
       "color": "orange",
-      "pl_total": -10639.999999999998,
-      "pl_pct": -24.976525821596237
+      "pl_total": -2500.0,
+      "pl_pct": -32.05128205128205
     },
     {
       "code": "2337",
@@ -144,12 +144,12 @@
       "color": "gray"
     },
     {
-      "code": "7527",
-      "name": "システムソフト",
-      "avg_price": 78.0,
+      "code": "7201",
+      "name": "日産自",
+      "avg_price": 426.0,
       "shares": 100,
       "current": null,
-      "cost_total": 7800.0,
+      "cost_total": 42600.0,
       "value_total": 0,
       "action": "DATA_NA",
       "label": "❓ データ無し",
@@ -159,5 +159,5 @@
     }
   ],
   "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約308,730円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約295,400円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
