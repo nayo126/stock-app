@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-08-28T14:23:29.359916+09:00",
+  "generated_at": "2026-08-28T14:42:00.287981+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 417580.0,
-    "total_pl": -433320.0,
-    "total_pl_pct": -50.92,
-    "health_score": 5,
-    "total_recovery_if_sell": 284740.0,
+    "total_value": 385900.0,
+    "total_pl": -465000.0,
+    "total_pl_pct": -54.65,
+    "health_score": 15,
+    "total_recovery_if_sell": 269150.0,
     "expected_gain_3m": 0,
     "expected_gain_3m_high": 0
   },
@@ -33,17 +33,17 @@
       "name": "WIZE",
       "avg_price": 65.0,
       "shares": 500,
-      "current": 28.0,
+      "current": 29.0,
       "cost_total": 32500.0,
-      "value_total": 14000.0,
+      "value_total": 14500.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-56.9%。元本回復に+132%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 14000.0,
+      "reason": "-55.4%。元本回復に+124%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 14500.0,
       "color": "red",
-      "pl_total": -18500.0,
-      "pl_pct": -56.92307692307692
+      "pl_total": -18000.0,
+      "pl_pct": -55.38461538461539
     },
     {
       "code": "5103",
@@ -78,23 +78,6 @@
       "color": "orange",
       "pl_total": -4900.0,
       "pl_pct": -25.0
-    },
-    {
-      "code": "7201",
-      "name": "日産自",
-      "avg_price": 426.0,
-      "shares": 100,
-      "current": 321.8,
-      "cost_total": 42600.0,
-      "value_total": 32180.0,
-      "action": "SELL_HALF",
-      "label": "⚠️ 半分損切り",
-      "priority": 2,
-      "reason": "-24.5%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 16090.0,
-      "color": "orange",
-      "pl_total": -10419.999999999998,
-      "pl_pct": -24.460093896713612
     },
     {
       "code": "7527",
@@ -158,8 +141,22 @@
       "priority": 99,
       "reason": "価格データ取得不可",
       "color": "gray"
+    },
+    {
+      "code": "7201",
+      "name": "日産自",
+      "avg_price": 426.0,
+      "shares": 100,
+      "current": null,
+      "cost_total": 42600.0,
+      "value_total": 0,
+      "action": "DATA_NA",
+      "label": "❓ データ無し",
+      "priority": 99,
+      "reason": "価格データ取得不可",
+      "color": "gray"
     }
   ],
   "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約284,740円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約269,150円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
