@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-08-29T17:47:45.251524+09:00",
+  "generated_at": "2026-08-29T18:07:52.363885+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 385500.0,
-    "total_pl": -465400.0,
-    "total_pl_pct": -54.7,
-    "health_score": 15,
-    "total_recovery_if_sell": 268700.0,
+    "total_value": 380000.0,
+    "total_pl": -470900.0,
+    "total_pl_pct": -55.34,
+    "health_score": 25,
+    "total_recovery_if_sell": 265950.0,
     "expected_gain_3m": 0,
     "expected_gain_3m_high": 0
   },
@@ -80,23 +80,6 @@
       "pl_pct": -25.0
     },
     {
-      "code": "7527",
-      "name": "システムソフト",
-      "avg_price": 78.0,
-      "shares": 100,
-      "current": 55.0,
-      "cost_total": 7800.0,
-      "value_total": 5500.0,
-      "action": "SELL_HALF",
-      "label": "⚠️ 半分損切り",
-      "priority": 2,
-      "reason": "-29.5%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 2750.0,
-      "color": "orange",
-      "pl_total": -2300.0,
-      "pl_pct": -29.48717948717949
-    },
-    {
       "code": "4564",
       "name": "OTS",
       "avg_price": 27.0,
@@ -155,8 +138,22 @@
       "priority": 99,
       "reason": "価格データ取得不可",
       "color": "gray"
+    },
+    {
+      "code": "7527",
+      "name": "システムソフト",
+      "avg_price": 78.0,
+      "shares": 100,
+      "current": null,
+      "cost_total": 7800.0,
+      "value_total": 0,
+      "action": "DATA_NA",
+      "label": "❓ データ無し",
+      "priority": 99,
+      "reason": "価格データ取得不可",
+      "color": "gray"
     }
   ],
   "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約268,700円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約265,950円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
