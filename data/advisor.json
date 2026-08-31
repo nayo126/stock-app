@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-08-31T11:07:06.565922+09:00",
+  "generated_at": "2026-08-31T16:50:30.880434+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 376100.0,
-    "total_pl": -474800.0,
-    "total_pl_pct": -55.8,
+    "total_value": 377800.0,
+    "total_pl": -473100.0,
+    "total_pl_pct": -55.6,
     "health_score": 25,
-    "total_recovery_if_sell": 262750.0,
+    "total_recovery_if_sell": 264600.0,
     "expected_gain_3m": 0,
     "expected_gain_3m_high": 0
   },
@@ -16,17 +16,17 @@
       "name": "JHD",
       "avg_price": 207.0,
       "shares": 2200,
-      "current": 110.0,
+      "current": 111.0,
       "cost_total": 455400.0,
-      "value_total": 242000.0,
+      "value_total": 244200.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-46.9%。元本回復に+88%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 242000.0,
+      "reason": "-46.4%。元本回復に+86%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 244200.0,
       "color": "red",
-      "pl_total": -213400.0,
-      "pl_pct": -46.85990338164252
+      "pl_total": -211200.0,
+      "pl_pct": -46.3768115942029
     },
     {
       "code": "3664",
@@ -67,17 +67,17 @@
       "name": "キタハマキャピタル",
       "avg_price": 28.0,
       "shares": 700,
-      "current": 21.0,
+      "current": 20.0,
       "cost_total": 19600.0,
-      "value_total": 14700.0,
+      "value_total": 14000.0,
       "action": "SELL_HALF",
       "label": "⚠️ 半分損切り",
       "priority": 2,
-      "reason": "-25.0%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 7350.0,
+      "reason": "-28.6%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 7000.0,
       "color": "orange",
-      "pl_total": -4900.0,
-      "pl_pct": -25.0
+      "pl_total": -5600.0,
+      "pl_pct": -28.57142857142857
     },
     {
       "code": "4564",
@@ -100,16 +100,16 @@
       "name": "いちご",
       "avg_price": 356.0,
       "shares": 100,
-      "current": 400.0,
+      "current": 402.0,
       "cost_total": 35600.0,
-      "value_total": 40000.0,
+      "value_total": 40200.0,
       "action": "HOLD",
       "label": "✋ 保有継続",
       "priority": 6,
-      "reason": "+12.4%。レンジ内、判断保留",
+      "reason": "+12.9%。レンジ内、判断保留",
       "color": "gray",
-      "pl_total": 4400.0,
-      "pl_pct": 12.359550561797752
+      "pl_total": 4600.0,
+      "pl_pct": 12.921348314606742
     },
     {
       "code": "5856",
@@ -155,5 +155,5 @@
     }
   ],
   "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約262,750円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約264,600円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
