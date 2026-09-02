@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-09-02T10:43:04.903124+09:00",
+  "generated_at": "2026-09-02T10:53:00.646424+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 368900.0,
-    "total_pl": -482000.0,
-    "total_pl_pct": -56.65,
+    "total_value": 368500.0,
+    "total_pl": -482400.0,
+    "total_pl_pct": -56.69,
     "health_score": 40,
-    "total_recovery_if_sell": 291300.0,
+    "total_recovery_if_sell": 290800.0,
     "expected_gain_3m": 0,
     "expected_gain_3m_high": 0
   },
@@ -33,17 +33,17 @@
       "name": "WIZE",
       "avg_price": 65.0,
       "shares": 500,
-      "current": 26.0,
+      "current": 25.0,
       "cost_total": 32500.0,
-      "value_total": 13000.0,
+      "value_total": 12500.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-60.0%。元本回復に+150%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 13000.0,
+      "reason": "-61.5%。元本回復に+160%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 12500.0,
       "color": "red",
-      "pl_total": -19500.0,
-      "pl_pct": -60.0
+      "pl_total": -20000.0,
+      "pl_pct": -61.53846153846154
     },
     {
       "code": "2134",
@@ -84,16 +84,16 @@
       "name": "いちご",
       "avg_price": 356.0,
       "shares": 100,
-      "current": 391.0,
+      "current": 392.0,
       "cost_total": 35600.0,
-      "value_total": 39100.0,
+      "value_total": 39200.0,
       "action": "HOLD",
       "label": "✋ 保有継続",
       "priority": 6,
-      "reason": "+9.8%。レンジ内、判断保留",
+      "reason": "+10.1%。レンジ内、判断保留",
       "color": "gray",
-      "pl_total": 3500.0,
-      "pl_pct": 9.831460674157304
+      "pl_total": 3600.0,
+      "pl_pct": 10.112359550561797
     },
     {
       "code": "5103",
@@ -153,5 +153,5 @@
     }
   ],
   "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約291,300円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約290,800円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
