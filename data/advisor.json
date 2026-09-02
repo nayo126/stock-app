@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-09-02T10:01:53.035141+09:00",
+  "generated_at": "2026-09-02T10:23:45.175691+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 410190.0,
-    "total_pl": -440710.0,
-    "total_pl_pct": -51.79,
+    "total_value": 410710.0,
+    "total_pl": -440190.0,
+    "total_pl_pct": -51.73,
     "health_score": 25,
-    "total_recovery_if_sell": 278545.0,
-    "expected_gain_3m": 56434.0,
-    "expected_gain_3m_high": 131222.0
+    "total_recovery_if_sell": 279055.0,
+    "expected_gain_3m": 0,
+    "expected_gain_3m_high": 0
   },
   "judgments": [
     {
@@ -33,17 +33,17 @@
       "name": "WIZE",
       "avg_price": 65.0,
       "shares": 500,
-      "current": 25.0,
+      "current": 26.0,
       "cost_total": 32500.0,
-      "value_total": 12500.0,
+      "value_total": 13000.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-61.5%。元本回復に+160%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 12500.0,
+      "reason": "-60.0%。元本回復に+150%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 13000.0,
       "color": "red",
-      "pl_total": -20000.0,
-      "pl_pct": -61.53846153846154
+      "pl_total": -19500.0,
+      "pl_pct": -60.0
     },
     {
       "code": "2134",
@@ -67,17 +67,17 @@
       "name": "日産自",
       "avg_price": 426.0,
       "shares": 100,
-      "current": 324.9,
+      "current": 325.1,
       "cost_total": 42600.0,
-      "value_total": 32489.999999999996,
+      "value_total": 32510.000000000004,
       "action": "SELL_HALF",
       "label": "⚠️ 半分損切り",
       "priority": 2,
       "reason": "-23.7%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 16244.999999999998,
+      "recover_amt": 16255.000000000002,
       "color": "orange",
-      "pl_total": -10110.000000000002,
-      "pl_pct": -23.732394366197187
+      "pl_total": -10089.999999999998,
+      "pl_pct": -23.685446009389665
     },
     {
       "code": "7527",
@@ -157,96 +157,6 @@
       "color": "gray"
     }
   ],
-  "recommended_buys": [
-    {
-      "code": "8304",
-      "name": "あおぞら銀行",
-      "tier": "A",
-      "category": "STOCKS_UNDER3000",
-      "current": 3440.0,
-      "forecast_3m_mid": 4373.0,
-      "forecast_3m_pct": 27.1,
-      "forecast_3m_high": 4925.0,
-      "forecast_3m_high_pct": 43.2,
-      "tags": [
-        "金融",
-        "V字回復"
-      ],
-      "summary": "経常利益+78.0%、業績回復",
-      "buy_shares": 20,
-      "invest_amt": 68800.0,
-      "estimated_3m_value": 87460.0,
-      "estimated_3m_value_high": 98500.0,
-      "expected_gain_3m": 18660.0,
-      "expected_gain_3m_high": 29700.0
-    },
-    {
-      "code": "6857",
-      "name": "アドバンテスト",
-      "tier": "S",
-      "category": "STOCKS_MAIN",
-      "current": 32610.0,
-      "forecast_3m_mid": 40535.0,
-      "forecast_3m_pct": 24.3,
-      "forecast_3m_high": 61165.0,
-      "forecast_3m_high_pct": 87.6,
-      "tags": [
-        "AI半導体",
-        "NVIDIA",
-        "上方修正"
-      ],
-      "summary": "半導体テスタ世界50%シェア、AI独占。営業利益+110.8%、目標27,150円",
-      "buy_shares": 2,
-      "invest_amt": 65220.0,
-      "estimated_3m_value": 81070.0,
-      "estimated_3m_value_high": 122330.0,
-      "expected_gain_3m": 15850.0,
-      "expected_gain_3m_high": 57110.0
-    },
-    {
-      "code": "8001",
-      "name": "伊藤忠商事",
-      "tier": "A",
-      "category": "STOCKS_UNDER3000",
-      "current": 2139.5,
-      "forecast_3m_mid": 2483.0,
-      "forecast_3m_pct": 16.1,
-      "forecast_3m_high": 2756.0,
-      "forecast_3m_high_pct": 28.8,
-      "tags": [
-        "商社",
-        "累進配当"
-      ],
-      "summary": "バフェット長期保有、累進配当、総還元性向40%",
-      "buy_shares": 32,
-      "invest_amt": 68464.0,
-      "estimated_3m_value": 79456.0,
-      "estimated_3m_value_high": 88192.0,
-      "expected_gain_3m": 10992.0,
-      "expected_gain_3m_high": 19728.0
-    },
-    {
-      "code": "8331",
-      "name": "千葉銀行",
-      "tier": "A",
-      "category": "STOCKS_UNDER3000",
-      "current": 2825.5,
-      "forecast_3m_mid": 3281.0,
-      "forecast_3m_pct": 16.1,
-      "forecast_3m_high": 3854.0,
-      "forecast_3m_high_pct": 36.4,
-      "tags": [
-        "地銀",
-        "統合"
-      ],
-      "summary": "純利益+26.1%、千葉興業銀行との経営統合",
-      "buy_shares": 24,
-      "invest_amt": 67812.0,
-      "estimated_3m_value": 78744.0,
-      "estimated_3m_value_high": 92496.0,
-      "expected_gain_3m": 10932.0,
-      "expected_gain_3m_high": 24684.0
-    }
-  ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約278,545円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+56,434円の利益期待. 高値ケースなら最大+131,222円."
+  "recommended_buys": [],
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約279,055円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
