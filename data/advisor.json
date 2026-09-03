@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-03T10:54:58.666474+09:00",
+  "generated_at": "2026-09-03T11:10:41.226289+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 376700.0,
-    "total_pl": -474200.0,
-    "total_pl_pct": -55.73,
+    "total_value": 376800.0,
+    "total_pl": -474100.0,
+    "total_pl_pct": -55.72,
     "health_score": 35,
     "total_recovery_if_sell": 261750.0,
     "expected_gain_3m": 0,
@@ -100,16 +100,16 @@
       "name": "いちご",
       "avg_price": 356.0,
       "shares": 100,
-      "current": 390.0,
+      "current": 391.0,
       "cost_total": 35600.0,
-      "value_total": 39000.0,
+      "value_total": 39100.0,
       "action": "HOLD",
       "label": "✋ 保有継続",
       "priority": 6,
-      "reason": "+9.6%。レンジ内、判断保留",
+      "reason": "+9.8%。レンジ内、判断保留",
       "color": "gray",
-      "pl_total": 3400.0,
-      "pl_pct": 9.550561797752808
+      "pl_total": 3500.0,
+      "pl_pct": 9.831460674157304
     },
     {
       "code": "5103",
