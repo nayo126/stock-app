@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-09-03T10:31:32.534298+09:00",
+  "generated_at": "2026-09-03T10:49:47.184785+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 375900.0,
-    "total_pl": -475000.0,
-    "total_pl_pct": -55.82,
+    "total_value": 376700.0,
+    "total_pl": -474200.0,
+    "total_pl_pct": -55.73,
     "health_score": 35,
-    "total_recovery_if_sell": 261400.0,
+    "total_recovery_if_sell": 261750.0,
     "expected_gain_3m": 0,
     "expected_gain_3m_high": 0
   },
@@ -50,17 +50,17 @@
       "name": "キタハマキャピタル",
       "avg_price": 28.0,
       "shares": 700,
-      "current": 20.0,
+      "current": 21.0,
       "cost_total": 19600.0,
-      "value_total": 14000.0,
+      "value_total": 14700.0,
       "action": "SELL_HALF",
       "label": "⚠️ 半分損切り",
       "priority": 2,
-      "reason": "-28.6%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 7000.0,
+      "reason": "-25.0%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 7350.0,
       "color": "orange",
-      "pl_total": -5600.0,
-      "pl_pct": -28.57142857142857
+      "pl_total": -4900.0,
+      "pl_pct": -25.0
     },
     {
       "code": "7527",
@@ -100,16 +100,16 @@
       "name": "いちご",
       "avg_price": 356.0,
       "shares": 100,
-      "current": 389.0,
+      "current": 390.0,
       "cost_total": 35600.0,
-      "value_total": 38900.0,
+      "value_total": 39000.0,
       "action": "HOLD",
       "label": "✋ 保有継続",
       "priority": 6,
-      "reason": "+9.3%。レンジ内、判断保留",
+      "reason": "+9.6%。レンジ内、判断保留",
       "color": "gray",
-      "pl_total": 3300.0,
-      "pl_pct": 9.269662921348315
+      "pl_total": 3400.0,
+      "pl_pct": 9.550561797752808
     },
     {
       "code": "5103",
@@ -155,5 +155,5 @@
     }
   ],
   "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約261,400円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約261,750円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
