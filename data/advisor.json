@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-09-03T13:11:57.482660+09:00",
+  "generated_at": "2026-09-03T13:32:03.747764+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 403590.0,
-    "total_pl": -447310.0,
-    "total_pl_pct": -52.57,
+    "total_value": 404270.0,
+    "total_pl": -446630.0,
+    "total_pl_pct": -52.49,
     "health_score": 35,
-    "total_recovery_if_sell": 275345.0,
+    "total_recovery_if_sell": 275685.0,
     "expected_gain_3m": 0,
     "expected_gain_3m_high": 0
   },
@@ -50,34 +50,34 @@
       "name": "キタハマキャピタル",
       "avg_price": 28.0,
       "shares": 700,
-      "current": 20.0,
+      "current": 21.0,
       "cost_total": 19600.0,
-      "value_total": 14000.0,
+      "value_total": 14700.0,
       "action": "SELL_HALF",
       "label": "⚠️ 半分損切り",
       "priority": 2,
-      "reason": "-28.6%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 7000.0,
+      "reason": "-25.0%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 7350.0,
       "color": "orange",
-      "pl_total": -5600.0,
-      "pl_pct": -28.57142857142857
+      "pl_total": -4900.0,
+      "pl_pct": -25.0
     },
     {
       "code": "7201",
       "name": "日産自",
       "avg_price": 426.0,
       "shares": 100,
-      "current": 320.9,
+      "current": 320.7,
       "cost_total": 42600.0,
-      "value_total": 32089.999999999996,
+      "value_total": 32070.0,
       "action": "SELL_HALF",
       "label": "⚠️ 半分損切り",
       "priority": 2,
       "reason": "-24.7%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 16044.999999999998,
+      "recover_amt": 16035.0,
       "color": "orange",
-      "pl_total": -10510.000000000002,
-      "pl_pct": -24.671361502347423
+      "pl_total": -10530.000000000002,
+      "pl_pct": -24.71830985915493
     },
     {
       "code": "4564",
@@ -155,5 +155,5 @@
     }
   ],
   "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約275,345円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約275,685円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
