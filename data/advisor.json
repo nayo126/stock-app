@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-09-03T12:30:02.362981+09:00",
+  "generated_at": "2026-09-03T12:50:07.212416+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 403960.0,
-    "total_pl": -446940.0,
-    "total_pl_pct": -52.53,
+    "total_value": 403540.0,
+    "total_pl": -447360.0,
+    "total_pl_pct": -52.57,
     "health_score": 35,
-    "total_recovery_if_sell": 275230.0,
+    "total_recovery_if_sell": 275320.0,
     "expected_gain_3m": 0,
     "expected_gain_3m_high": 0
   },
@@ -33,51 +33,51 @@
       "name": "WIZE",
       "avg_price": 65.0,
       "shares": 500,
-      "current": 24.0,
+      "current": 25.0,
       "cost_total": 32500.0,
-      "value_total": 12000.0,
+      "value_total": 12500.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-63.1%。元本回復に+171%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 12000.0,
+      "reason": "-61.5%。元本回復に+160%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 12500.0,
       "color": "red",
-      "pl_total": -20500.0,
-      "pl_pct": -63.07692307692307
+      "pl_total": -20000.0,
+      "pl_pct": -61.53846153846154
     },
     {
       "code": "2134",
       "name": "キタハマキャピタル",
       "avg_price": 28.0,
       "shares": 700,
-      "current": 21.0,
+      "current": 20.0,
       "cost_total": 19600.0,
-      "value_total": 14700.0,
+      "value_total": 14000.0,
       "action": "SELL_HALF",
       "label": "⚠️ 半分損切り",
       "priority": 2,
-      "reason": "-25.0%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 7350.0,
+      "reason": "-28.6%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 7000.0,
       "color": "orange",
-      "pl_total": -4900.0,
-      "pl_pct": -25.0
+      "pl_total": -5600.0,
+      "pl_pct": -28.57142857142857
     },
     {
       "code": "7201",
       "name": "日産自",
       "avg_price": 426.0,
       "shares": 100,
-      "current": 321.6,
+      "current": 320.4,
       "cost_total": 42600.0,
-      "value_total": 32160.000000000004,
+      "value_total": 32039.999999999996,
       "action": "SELL_HALF",
       "label": "⚠️ 半分損切り",
       "priority": 2,
-      "reason": "-24.5%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 16080.000000000002,
+      "reason": "-24.8%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 16019.999999999998,
       "color": "orange",
-      "pl_total": -10439.999999999998,
-      "pl_pct": -24.50704225352112
+      "pl_total": -10560.000000000002,
+      "pl_pct": -24.788732394366203
     },
     {
       "code": "4564",
@@ -100,16 +100,16 @@
       "name": "いちご",
       "avg_price": 356.0,
       "shares": 100,
-      "current": 393.0,
+      "current": 392.0,
       "cost_total": 35600.0,
-      "value_total": 39300.0,
+      "value_total": 39200.0,
       "action": "HOLD",
       "label": "✋ 保有継続",
       "priority": 6,
-      "reason": "+10.4%。レンジ内、判断保留",
+      "reason": "+10.1%。レンジ内、判断保留",
       "color": "gray",
-      "pl_total": 3700.0,
-      "pl_pct": 10.393258426966293
+      "pl_total": 3600.0,
+      "pl_pct": 10.112359550561797
     },
     {
       "code": "5103",
@@ -155,5 +155,5 @@
     }
   ],
   "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約275,230円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約275,320円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
