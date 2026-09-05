@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-09-06T03:43:51.538650+09:00",
+  "generated_at": "2026-09-06T05:52:44.322304+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 372800.0,
-    "total_pl": -478100.0,
-    "total_pl_pct": -56.19,
-    "health_score": 35,
-    "total_recovery_if_sell": 257650.0,
+    "total_value": 404300.0,
+    "total_pl": -446600.0,
+    "total_pl_pct": -52.49,
+    "health_score": 25,
+    "total_recovery_if_sell": 273400.0,
     "expected_gain_3m": 0,
     "expected_gain_3m_high": 0
   },
@@ -61,6 +61,23 @@
       "color": "orange",
       "pl_total": -5600.0,
       "pl_pct": -28.57142857142857
+    },
+    {
+      "code": "7201",
+      "name": "日産自",
+      "avg_price": 426.0,
+      "shares": 100,
+      "current": 315.0,
+      "cost_total": 42600.0,
+      "value_total": 31500.0,
+      "action": "SELL_HALF",
+      "label": "⚠️ 半分損切り",
+      "priority": 2,
+      "reason": "-26.1%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 15750.0,
+      "color": "orange",
+      "pl_total": -11100.0,
+      "pl_pct": -26.056338028169012
     },
     {
       "code": "7527",
@@ -138,22 +155,8 @@
       "priority": 99,
       "reason": "価格データ取得不可",
       "color": "gray"
-    },
-    {
-      "code": "7201",
-      "name": "日産自",
-      "avg_price": 426.0,
-      "shares": 100,
-      "current": null,
-      "cost_total": 42600.0,
-      "value_total": 0,
-      "action": "DATA_NA",
-      "label": "❓ データ無し",
-      "priority": 99,
-      "reason": "価格データ取得不可",
-      "color": "gray"
     }
   ],
   "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約257,650円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約273,400円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
