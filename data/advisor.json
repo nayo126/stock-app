@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-09-07T15:41:45.837763+09:00",
+  "generated_at": "2026-09-07T15:59:17.168095+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 367800.0,
-    "total_pl": -483100.0,
-    "total_pl_pct": -56.78,
+    "total_value": 367700.0,
+    "total_pl": -483200.0,
+    "total_pl_pct": -56.79,
     "health_score": 45,
     "total_recovery_if_sell": 255250.0,
-    "expected_gain_3m": 49992.0,
-    "expected_gain_3m_high": 103886.0
+    "expected_gain_3m": 0,
+    "expected_gain_3m_high": 0
   },
   "judgments": [
     {
@@ -83,16 +83,16 @@
       "name": "いちご",
       "avg_price": 356.0,
       "shares": 100,
-      "current": 392.0,
+      "current": 391.0,
       "cost_total": 35600.0,
-      "value_total": 39200.0,
+      "value_total": 39100.0,
       "action": "HOLD",
       "label": "✋ 保有継続",
       "priority": 6,
-      "reason": "+10.1%。レンジ内、判断保留",
+      "reason": "+9.8%。レンジ内、判断保留",
       "color": "gray",
-      "pl_total": 3600.0,
-      "pl_pct": 10.112359550561797
+      "pl_total": 3500.0,
+      "pl_pct": 9.831460674157304
     },
     {
       "code": "5103",
@@ -151,96 +151,6 @@
       "color": "gray"
     }
   ],
-  "recommended_buys": [
-    {
-      "code": "6857",
-      "name": "アドバンテスト",
-      "tier": "S",
-      "category": "STOCKS_MAIN",
-      "current": 34300.0,
-      "forecast_3m_mid": 43222.0,
-      "forecast_3m_pct": 26.0,
-      "forecast_3m_high": 64679.0,
-      "forecast_3m_high_pct": 88.6,
-      "tags": [
-        "AI半導体",
-        "NVIDIA",
-        "上方修正"
-      ],
-      "summary": "半導体テスタ世界50%シェア、AI独占。営業利益+110.8%、目標27,150円",
-      "buy_shares": 1,
-      "invest_amt": 34300.0,
-      "estimated_3m_value": 43222.0,
-      "estimated_3m_value_high": 64679.0,
-      "expected_gain_3m": 8922.0,
-      "expected_gain_3m_high": 30379.0
-    },
-    {
-      "code": "8304",
-      "name": "あおぞら銀行",
-      "tier": "A",
-      "category": "STOCKS_UNDER3000",
-      "current": 3409.0,
-      "forecast_3m_mid": 4290.0,
-      "forecast_3m_pct": 25.8,
-      "forecast_3m_high": 4825.0,
-      "forecast_3m_high_pct": 41.5,
-      "tags": [
-        "金融",
-        "V字回復"
-      ],
-      "summary": "経常利益+78.0%、業績回復",
-      "buy_shares": 18,
-      "invest_amt": 61362.0,
-      "estimated_3m_value": 77220.0,
-      "estimated_3m_value_high": 86850.0,
-      "expected_gain_3m": 15858.0,
-      "expected_gain_3m_high": 25488.0
-    },
-    {
-      "code": "8001",
-      "name": "伊藤忠商事",
-      "tier": "A",
-      "category": "STOCKS_UNDER3000",
-      "current": 2263.0,
-      "forecast_3m_mid": 2738.0,
-      "forecast_3m_pct": 21.0,
-      "forecast_3m_high": 3040.0,
-      "forecast_3m_high_pct": 34.3,
-      "tags": [
-        "商社",
-        "累進配当"
-      ],
-      "summary": "バフェット長期保有、累進配当、総還元性向40%",
-      "buy_shares": 28,
-      "invest_amt": 63364.0,
-      "estimated_3m_value": 76664.0,
-      "estimated_3m_value_high": 85120.0,
-      "expected_gain_3m": 13300.0,
-      "expected_gain_3m_high": 21756.0
-    },
-    {
-      "code": "8308",
-      "name": "りそなHD",
-      "tier": "S",
-      "category": "STOCKS_UNDER3000",
-      "current": 2542.5,
-      "forecast_3m_mid": 3019.0,
-      "forecast_3m_pct": 18.8,
-      "forecast_3m_high": 3593.0,
-      "forecast_3m_high_pct": 41.3,
-      "tags": [
-        "金融",
-        "高成長"
-      ],
-      "summary": "純利益+31.3%、貸出金利息+34.1%",
-      "buy_shares": 25,
-      "invest_amt": 63562.5,
-      "estimated_3m_value": 75475.0,
-      "estimated_3m_value_high": 89825.0,
-      "expected_gain_3m": 11912.5,
-      "expected_gain_3m_high": 26262.5
-    }
-  ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約255,250円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+49,992円の利益期待. 高値ケースなら最大+103,886円."
+  "recommended_buys": [],
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約255,250円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
