@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-09-08T13:59:33.335532+09:00",
+  "generated_at": "2026-09-08T14:20:45.426072+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 367200.0,
-    "total_pl": -483700.0,
-    "total_pl_pct": -56.85,
+    "total_value": 367100.0,
+    "total_pl": -483800.0,
+    "total_pl_pct": -56.86,
     "health_score": 45,
     "total_recovery_if_sell": 254900.0,
-    "expected_gain_3m": 0,
-    "expected_gain_3m_high": 0
+    "expected_gain_3m": 42945.0,
+    "expected_gain_3m_high": 92039.0
   },
   "judgments": [
     {
@@ -83,16 +83,16 @@
       "name": "いちご",
       "avg_price": 356.0,
       "shares": 100,
-      "current": 393.0,
+      "current": 392.0,
       "cost_total": 35600.0,
-      "value_total": 39300.0,
+      "value_total": 39200.0,
       "action": "HOLD",
       "label": "✋ 保有継続",
       "priority": 6,
-      "reason": "+10.4%。レンジ内、判断保留",
+      "reason": "+10.1%。レンジ内、判断保留",
       "color": "gray",
-      "pl_total": 3700.0,
-      "pl_pct": 10.393258426966293
+      "pl_total": 3600.0,
+      "pl_pct": 10.112359550561797
     },
     {
       "code": "5103",
@@ -151,6 +151,96 @@
       "color": "gray"
     }
   ],
-  "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約254,900円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "recommended_buys": [
+    {
+      "code": "8304",
+      "name": "あおぞら銀行",
+      "tier": "A",
+      "category": "STOCKS_UNDER3000",
+      "current": 3402.0,
+      "forecast_3m_mid": 4201.0,
+      "forecast_3m_pct": 23.5,
+      "forecast_3m_high": 4722.0,
+      "forecast_3m_high_pct": 38.8,
+      "tags": [
+        "金融",
+        "V字回復"
+      ],
+      "summary": "経常利益+78.0%、業績回復",
+      "buy_shares": 18,
+      "invest_amt": 61236.0,
+      "estimated_3m_value": 75618.0,
+      "estimated_3m_value_high": 84996.0,
+      "expected_gain_3m": 14382.0,
+      "expected_gain_3m_high": 23760.0
+    },
+    {
+      "code": "8001",
+      "name": "伊藤忠商事",
+      "tier": "A",
+      "category": "STOCKS_UNDER3000",
+      "current": 2291.0,
+      "forecast_3m_mid": 2761.0,
+      "forecast_3m_pct": 20.5,
+      "forecast_3m_high": 3065.0,
+      "forecast_3m_high_pct": 33.8,
+      "tags": [
+        "商社",
+        "累進配当"
+      ],
+      "summary": "バフェット長期保有、累進配当、総還元性向40%",
+      "buy_shares": 27,
+      "invest_amt": 61857.0,
+      "estimated_3m_value": 74547.0,
+      "estimated_3m_value_high": 82755.0,
+      "expected_gain_3m": 12690.0,
+      "expected_gain_3m_high": 20898.0
+    },
+    {
+      "code": "6857",
+      "name": "アドバンテスト",
+      "tier": "S",
+      "category": "STOCKS_MAIN",
+      "current": 35000.0,
+      "forecast_3m_mid": 41761.0,
+      "forecast_3m_pct": 19.3,
+      "forecast_3m_high": 62134.0,
+      "forecast_3m_high_pct": 77.5,
+      "tags": [
+        "AI半導体",
+        "NVIDIA",
+        "上方修正"
+      ],
+      "summary": "半導体テスタ世界50%シェア、AI独占。営業利益+110.8%、目標27,150円",
+      "buy_shares": 1,
+      "invest_amt": 35000.0,
+      "estimated_3m_value": 41761.0,
+      "estimated_3m_value_high": 62134.0,
+      "expected_gain_3m": 6761.0,
+      "expected_gain_3m_high": 27134.0
+    },
+    {
+      "code": "8306",
+      "name": "三菱UFJフィナンシャル・グループ",
+      "tier": "S",
+      "category": "STOCKS_UNDER3000",
+      "current": 3703.0,
+      "forecast_3m_mid": 4239.0,
+      "forecast_3m_pct": 14.5,
+      "forecast_3m_high": 4894.0,
+      "forecast_3m_high_pct": 32.2,
+      "tags": [
+        "金融",
+        "メガバンク"
+      ],
+      "summary": "メガバンク、金利上昇最大恩恵、年間74円増配",
+      "buy_shares": 17,
+      "invest_amt": 62951.0,
+      "estimated_3m_value": 72063.0,
+      "estimated_3m_value_high": 83198.0,
+      "expected_gain_3m": 9112.0,
+      "expected_gain_3m_high": 20247.0
+    }
+  ],
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約254,900円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+42,945円の利益期待. 高値ケースなら最大+92,039円."
 }
