@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-09-09T10:59:44.334736+09:00",
+  "generated_at": "2026-09-09T14:31:44.180444+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 367900.0,
-    "total_pl": -483000.0,
-    "total_pl_pct": -56.76,
-    "health_score": 35,
-    "total_recovery_if_sell": 253100.0,
+    "total_value": 401800.0,
+    "total_pl": -449100.0,
+    "total_pl_pct": -52.78,
+    "health_score": 30,
+    "total_recovery_if_sell": 268450.0,
     "expected_gain_3m": 0,
     "expected_gain_3m_high": 0
   },
@@ -63,6 +63,23 @@
       "pl_pct": -28.57142857142857
     },
     {
+      "code": "7201",
+      "name": "日産自",
+      "avg_price": 426.0,
+      "shares": 100,
+      "current": 307.0,
+      "cost_total": 42600.0,
+      "value_total": 30700.0,
+      "action": "SELL_HALF",
+      "label": "⚠️ 半分損切り",
+      "priority": 2,
+      "reason": "-27.9%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 15350.0,
+      "color": "orange",
+      "pl_total": -11900.0,
+      "pl_pct": -27.93427230046948
+    },
+    {
       "code": "7527",
       "name": "システムソフト",
       "avg_price": 78.0,
@@ -80,36 +97,36 @@
       "pl_pct": -33.33333333333333
     },
     {
-      "code": "4564",
-      "name": "OTS",
-      "avg_price": 27.0,
-      "shares": 3000,
-      "current": 22.0,
-      "cost_total": 81000.0,
-      "value_total": 66000.0,
-      "action": "WATCH_DROP",
-      "label": "🔻 損切り検討",
-      "priority": 4,
-      "reason": "-18.5%。-20%到達したら半分損切り",
-      "color": "yellow",
-      "pl_total": -15000.0,
-      "pl_pct": -18.51851851851852
-    },
-    {
       "code": "2337",
       "name": "いちご",
       "avg_price": 356.0,
       "shares": 100,
-      "current": 392.0,
+      "current": 394.0,
       "cost_total": 35600.0,
-      "value_total": 39200.0,
+      "value_total": 39400.0,
       "action": "HOLD",
       "label": "✋ 保有継続",
       "priority": 6,
-      "reason": "+10.1%。レンジ内、判断保留",
+      "reason": "+10.7%。レンジ内、判断保留",
       "color": "gray",
-      "pl_total": 3600.0,
-      "pl_pct": 10.112359550561797
+      "pl_total": 3800.0,
+      "pl_pct": 10.674157303370785
+    },
+    {
+      "code": "4564",
+      "name": "OTS",
+      "avg_price": 27.0,
+      "shares": 3000,
+      "current": 23.0,
+      "cost_total": 81000.0,
+      "value_total": 69000.0,
+      "action": "HOLD",
+      "label": "✋ 保有継続",
+      "priority": 6,
+      "reason": "-14.8%。レンジ内、判断保留",
+      "color": "gray",
+      "pl_total": -12000.0,
+      "pl_pct": -14.814814814814813
     },
     {
       "code": "5103",
@@ -138,22 +155,8 @@
       "priority": 99,
       "reason": "価格データ取得不可",
       "color": "gray"
-    },
-    {
-      "code": "7201",
-      "name": "日産自",
-      "avg_price": 426.0,
-      "shares": 100,
-      "current": null,
-      "cost_total": 42600.0,
-      "value_total": 0,
-      "action": "DATA_NA",
-      "label": "❓ データ無し",
-      "priority": 99,
-      "reason": "価格データ取得不可",
-      "color": "gray"
     }
   ],
   "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約253,100円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約268,450円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
