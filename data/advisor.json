@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-09-16T21:52:48.965252+09:00",
+  "generated_at": "2026-09-16T22:09:48.033837+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 365800.0,
-    "total_pl": -485100.0,
-    "total_pl_pct": -57.01,
-    "health_score": 15,
-    "total_recovery_if_sell": 259500.0,
+    "total_value": 397180.0,
+    "total_pl": -453720.0,
+    "total_pl_pct": -53.32,
+    "health_score": 5,
+    "total_recovery_if_sell": 275190.0,
     "expected_gain_3m": 0,
     "expected_gain_3m_high": 0
   },
@@ -80,6 +80,23 @@
       "pl_pct": -37.17948717948718
     },
     {
+      "code": "7201",
+      "name": "日産自",
+      "avg_price": 426.0,
+      "shares": 100,
+      "current": 313.8,
+      "cost_total": 42600.0,
+      "value_total": 31380.0,
+      "action": "SELL_HALF",
+      "label": "⚠️ 半分損切り",
+      "priority": 2,
+      "reason": "-26.3%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 15690.0,
+      "color": "orange",
+      "pl_total": -11219.999999999998,
+      "pl_pct": -26.338028169014084
+    },
+    {
       "code": "4564",
       "name": "OTS",
       "avg_price": 27.0,
@@ -138,22 +155,8 @@
       "priority": 99,
       "reason": "価格データ取得不可",
       "color": "gray"
-    },
-    {
-      "code": "7201",
-      "name": "日産自",
-      "avg_price": 426.0,
-      "shares": 100,
-      "current": null,
-      "cost_total": 42600.0,
-      "value_total": 0,
-      "action": "DATA_NA",
-      "label": "❓ データ無し",
-      "priority": 99,
-      "reason": "価格データ取得不可",
-      "color": "gray"
     }
   ],
   "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約259,500円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約275,190円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
