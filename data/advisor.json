@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-09-17T05:39:19.957787+09:00",
+  "generated_at": "2026-09-17T08:24:35.994643+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 397180.0,
-    "total_pl": -453720.0,
-    "total_pl_pct": -53.32,
-    "health_score": 5,
-    "total_recovery_if_sell": 275190.0,
-    "expected_gain_3m": 57782.0,
-    "expected_gain_3m_high": 101878.0
+    "total_value": 365800.0,
+    "total_pl": -485100.0,
+    "total_pl_pct": -57.01,
+    "health_score": 15,
+    "total_recovery_if_sell": 259500.0,
+    "expected_gain_3m": 0,
+    "expected_gain_3m_high": 0
   },
   "judgments": [
     {
@@ -80,23 +80,6 @@
       "pl_pct": -37.17948717948718
     },
     {
-      "code": "7201",
-      "name": "日産自",
-      "avg_price": 426.0,
-      "shares": 100,
-      "current": 313.8,
-      "cost_total": 42600.0,
-      "value_total": 31380.0,
-      "action": "SELL_HALF",
-      "label": "⚠️ 半分損切り",
-      "priority": 2,
-      "reason": "-26.3%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 15690.0,
-      "color": "orange",
-      "pl_total": -11219.999999999998,
-      "pl_pct": -26.338028169014084
-    },
-    {
       "code": "4564",
       "name": "OTS",
       "avg_price": 27.0,
@@ -155,97 +138,22 @@
       "priority": 99,
       "reason": "価格データ取得不可",
       "color": "gray"
+    },
+    {
+      "code": "7201",
+      "name": "日産自",
+      "avg_price": 426.0,
+      "shares": 100,
+      "current": null,
+      "cost_total": 42600.0,
+      "value_total": 0,
+      "action": "DATA_NA",
+      "label": "❓ データ無し",
+      "priority": 99,
+      "reason": "価格データ取得不可",
+      "color": "gray"
     }
   ],
-  "recommended_buys": [
-    {
-      "code": "8304",
-      "name": "あおぞら銀行",
-      "tier": "A",
-      "category": "STOCKS_UNDER3000",
-      "current": 3508.0,
-      "forecast_3m_mid": 4527.0,
-      "forecast_3m_pct": 29.1,
-      "forecast_3m_high": 5094.0,
-      "forecast_3m_high_pct": 45.2,
-      "tags": [
-        "金融",
-        "V字回復"
-      ],
-      "summary": "経常利益+78.0%、業績回復",
-      "buy_shares": 19,
-      "invest_amt": 66652.0,
-      "estimated_3m_value": 86013.0,
-      "estimated_3m_value_high": 96786.0,
-      "expected_gain_3m": 19361.0,
-      "expected_gain_3m_high": 30134.0
-    },
-    {
-      "code": "8001",
-      "name": "伊藤忠商事",
-      "tier": "A",
-      "category": "STOCKS_UNDER3000",
-      "current": 2322.5,
-      "forecast_3m_mid": 2959.0,
-      "forecast_3m_pct": 27.4,
-      "forecast_3m_high": 3271.0,
-      "forecast_3m_high_pct": 40.9,
-      "tags": [
-        "商社",
-        "累進配当"
-      ],
-      "summary": "バフェット長期保有、累進配当、総還元性向40%",
-      "buy_shares": 29,
-      "invest_amt": 67352.5,
-      "estimated_3m_value": 85811.0,
-      "estimated_3m_value_high": 94859.0,
-      "expected_gain_3m": 18458.5,
-      "expected_gain_3m_high": 27506.5
-    },
-    {
-      "code": "9433",
-      "name": "KDDI",
-      "tier": "A",
-      "category": "STOCKS_UNDER3000",
-      "current": 3079.0,
-      "forecast_3m_mid": 3567.0,
-      "forecast_3m_pct": 15.9,
-      "forecast_3m_high": 4015.0,
-      "forecast_3m_high_pct": 30.4,
-      "tags": [
-        "通信",
-        "高配当"
-      ],
-      "summary": "売上+3.8%、純利益+5.1%、安定増配",
-      "buy_shares": 22,
-      "invest_amt": 67738.0,
-      "estimated_3m_value": 78474.0,
-      "estimated_3m_value_high": 88330.0,
-      "expected_gain_3m": 10736.0,
-      "expected_gain_3m_high": 20592.0
-    },
-    {
-      "code": "8308",
-      "name": "りそなHD",
-      "tier": "S",
-      "category": "STOCKS_UNDER3000",
-      "current": 2447.5,
-      "forecast_3m_mid": 2777.0,
-      "forecast_3m_pct": 13.4,
-      "forecast_3m_high": 3292.0,
-      "forecast_3m_high_pct": 34.5,
-      "tags": [
-        "金融",
-        "高成長"
-      ],
-      "summary": "純利益+31.3%、貸出金利息+34.1%",
-      "buy_shares": 28,
-      "invest_amt": 68530.0,
-      "estimated_3m_value": 77756.0,
-      "estimated_3m_value_high": 92176.0,
-      "expected_gain_3m": 9226.0,
-      "expected_gain_3m_high": 23646.0
-    }
-  ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約275,190円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+57,782円の利益期待. 高値ケースなら最大+101,878円."
+  "recommended_buys": [],
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約259,500円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
