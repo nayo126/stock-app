@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-09-24T19:42:49.752350+09:00",
+  "generated_at": "2026-09-24T21:47:15.354504+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 354000.0,
-    "total_pl": -496900.0,
-    "total_pl_pct": -58.4,
-    "health_score": 10,
-    "total_recovery_if_sell": 282500.0,
+    "total_value": 384350.0,
+    "total_pl": -466550.0,
+    "total_pl_pct": -54.83,
+    "health_score": 0,
+    "total_recovery_if_sell": 297675.0,
     "expected_gain_3m": 0,
     "expected_gain_3m_high": 0
   },
@@ -97,6 +97,23 @@
       "pl_pct": -22.22222222222222
     },
     {
+      "code": "7201",
+      "name": "日産自",
+      "avg_price": 426.0,
+      "shares": 100,
+      "current": 303.5,
+      "cost_total": 42600.0,
+      "value_total": 30350.0,
+      "action": "SELL_HALF",
+      "label": "⚠️ 半分損切り",
+      "priority": 2,
+      "reason": "-28.8%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 15175.0,
+      "color": "orange",
+      "pl_total": -12250.0,
+      "pl_pct": -28.755868544600936
+    },
+    {
       "code": "2337",
       "name": "いちご",
       "avg_price": 356.0,
@@ -139,22 +156,8 @@
       "priority": 99,
       "reason": "価格データ取得不可",
       "color": "gray"
-    },
-    {
-      "code": "7201",
-      "name": "日産自",
-      "avg_price": 426.0,
-      "shares": 100,
-      "current": null,
-      "cost_total": 42600.0,
-      "value_total": 0,
-      "action": "DATA_NA",
-      "label": "❓ データ無し",
-      "priority": 99,
-      "reason": "価格データ取得不可",
-      "color": "gray"
     }
   ],
   "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約282,500円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約297,675円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
