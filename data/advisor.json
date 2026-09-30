@@ -1,16 +1,33 @@
 {
-  "generated_at": "2026-09-30T10:45:29.987289+09:00",
+  "generated_at": "2026-09-30T11:51:15.732865+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 382770.0,
-    "total_pl": -468130.0,
-    "total_pl_pct": -55.02,
+    "total_value": 353000.0,
+    "total_pl": -497900.0,
+    "total_pl_pct": -58.51,
     "health_score": 10,
-    "total_recovery_if_sell": 292385.0,
+    "total_recovery_if_sell": 283800.0,
     "expected_gain_3m": 0,
     "expected_gain_3m_high": 0
   },
   "judgments": [
+    {
+      "code": "2134",
+      "name": "キタハマキャピタル",
+      "avg_price": 28.0,
+      "shares": 700,
+      "current": 18.0,
+      "cost_total": 19600.0,
+      "value_total": 12600.0,
+      "action": "SELL_ALL",
+      "label": "🚨 即損切り (全株)",
+      "priority": 1,
+      "reason": "-35.7%。元本回復に+56%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 12600.0,
+      "color": "red",
+      "pl_total": -7000.0,
+      "pl_pct": -35.714285714285715
+    },
     {
       "code": "2721",
       "name": "JHD",
@@ -63,23 +80,6 @@
       "pl_pct": -38.46153846153847
     },
     {
-      "code": "2134",
-      "name": "キタハマキャピタル",
-      "avg_price": 28.0,
-      "shares": 700,
-      "current": 19.0,
-      "cost_total": 19600.0,
-      "value_total": 13300.0,
-      "action": "SELL_HALF",
-      "label": "⚠️ 半分損切り",
-      "priority": 2,
-      "reason": "-32.1%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 6650.0,
-      "color": "orange",
-      "pl_total": -6300.0,
-      "pl_pct": -32.142857142857146
-    },
-    {
       "code": "4564",
       "name": "OTS",
       "avg_price": 27.0,
@@ -95,23 +95,6 @@
       "color": "orange",
       "pl_total": -21000.0,
       "pl_pct": -25.925925925925924
-    },
-    {
-      "code": "7201",
-      "name": "日産自",
-      "avg_price": 426.0,
-      "shares": 100,
-      "current": 290.7,
-      "cost_total": 42600.0,
-      "value_total": 29070.0,
-      "action": "SELL_HALF",
-      "label": "⚠️ 半分損切り",
-      "priority": 2,
-      "reason": "-31.8%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 14535.0,
-      "color": "orange",
-      "pl_total": -13530.000000000002,
-      "pl_pct": -31.760563380281692
     },
     {
       "code": "2337",
@@ -156,8 +139,22 @@
       "priority": 99,
       "reason": "価格データ取得不可",
       "color": "gray"
+    },
+    {
+      "code": "7201",
+      "name": "日産自",
+      "avg_price": 426.0,
+      "shares": 100,
+      "current": null,
+      "cost_total": 42600.0,
+      "value_total": 0,
+      "action": "DATA_NA",
+      "label": "❓ データ無し",
+      "priority": 99,
+      "reason": "価格データ取得不可",
+      "color": "gray"
     }
   ],
   "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約292,385円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約283,800円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
