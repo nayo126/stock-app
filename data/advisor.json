@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T11:51:43.190495+09:00",
+  "generated_at": "2026-10-01T11:57:31.635406+09:00",
   "summary": {
     "total_cost": 850900.0,
     "total_value": 383680.0,
@@ -7,8 +7,8 @@
     "total_pl_pct": -54.91,
     "health_score": 0,
     "total_recovery_if_sell": 298390.0,
-    "expected_gain_3m": 63769.0,
-    "expected_gain_3m_high": 141766.0
+    "expected_gain_3m": 0,
+    "expected_gain_3m_high": 0
   },
   "judgments": [
     {
@@ -158,97 +158,6 @@
       "color": "gray"
     }
   ],
-  "recommended_buys": [
-    {
-      "code": "6857",
-      "name": "アドバンテスト",
-      "tier": "S",
-      "category": "STOCKS_MAIN",
-      "current": 36930.0,
-      "forecast_3m_mid": 46657.0,
-      "forecast_3m_pct": 26.3,
-      "forecast_3m_high": 66923.0,
-      "forecast_3m_high_pct": 81.2,
-      "tags": [
-        "AI半導体",
-        "NVIDIA",
-        "上方修正"
-      ],
-      "summary": "半導体テスタ世界50%シェア、AI独占。営業利益+110.8%、目標27,150円",
-      "buy_shares": 2,
-      "invest_amt": 73860.0,
-      "estimated_3m_value": 93314.0,
-      "estimated_3m_value_high": 133846.0,
-      "expected_gain_3m": 19454.0,
-      "expected_gain_3m_high": 59986.0
-    },
-    {
-      "code": "8304",
-      "name": "あおぞら銀行",
-      "tier": "A",
-      "category": "STOCKS_UNDER3000",
-      "current": 3491.0,
-      "forecast_3m_mid": 4322.0,
-      "forecast_3m_pct": 23.8,
-      "forecast_3m_high": 4929.0,
-      "forecast_3m_high_pct": 41.2,
-      "tags": [
-        "金融",
-        "V字回復"
-      ],
-      "summary": "経常利益+78.0%、業績回復",
-      "buy_shares": 21,
-      "invest_amt": 73311.0,
-      "estimated_3m_value": 90762.0,
-      "estimated_3m_value_high": 103509.0,
-      "expected_gain_3m": 17451.0,
-      "expected_gain_3m_high": 30198.0
-    },
-    {
-      "code": "6501",
-      "name": "日立製作所",
-      "tier": "S",
-      "category": "STOCKS_MAIN",
-      "current": 5479.0,
-      "forecast_3m_mid": 6558.0,
-      "forecast_3m_pct": 19.7,
-      "forecast_3m_high": 7642.0,
-      "forecast_3m_high_pct": 39.5,
-      "tags": [
-        "AI",
-        "電力",
-        "OpenAI提携"
-      ],
-      "summary": "OpenAI戦略提携、Lumada+17%、時価総額30兆円論",
-      "buy_shares": 13,
-      "invest_amt": 71227.0,
-      "estimated_3m_value": 85254.0,
-      "estimated_3m_value_high": 99346.0,
-      "expected_gain_3m": 14027.0,
-      "expected_gain_3m_high": 28119.0
-    },
-    {
-      "code": "8001",
-      "name": "伊藤忠商事",
-      "tier": "A",
-      "category": "STOCKS_UNDER3000",
-      "current": 2195.0,
-      "forecast_3m_mid": 2584.0,
-      "forecast_3m_pct": 17.7,
-      "forecast_3m_high": 2906.0,
-      "forecast_3m_high_pct": 32.4,
-      "tags": [
-        "商社",
-        "累進配当"
-      ],
-      "summary": "バフェット長期保有、累進配当、総還元性向40%",
-      "buy_shares": 33,
-      "invest_amt": 72435.0,
-      "estimated_3m_value": 85272.0,
-      "estimated_3m_value_high": 95898.0,
-      "expected_gain_3m": 12837.0,
-      "expected_gain_3m_high": 23463.0
-    }
-  ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約298,390円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+63,769円の利益期待. 高値ケースなら最大+141,766円."
+  "recommended_buys": [],
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約298,390円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
