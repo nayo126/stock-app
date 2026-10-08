@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-10-08T07:25:51.666799+09:00",
+  "generated_at": "2026-10-08T11:25:25.892851+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 345600.0,
-    "total_pl": -505300.0,
-    "total_pl_pct": -59.38,
+    "total_value": 347600.0,
+    "total_pl": -503300.0,
+    "total_pl_pct": -59.15,
     "health_score": 10,
-    "total_recovery_if_sell": 277200.0,
+    "total_recovery_if_sell": 279400.0,
     "expected_gain_3m": 0,
     "expected_gain_3m_high": 0
   },
@@ -33,17 +33,17 @@
       "name": "JHD",
       "avg_price": 207.0,
       "shares": 2200,
-      "current": 100.0,
+      "current": 101.0,
       "cost_total": 455400.0,
-      "value_total": 220000.0,
+      "value_total": 222200.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-51.7%。元本回復に+107%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 220000.0,
+      "reason": "-51.2%。元本回復に+105%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 222200.0,
       "color": "red",
-      "pl_total": -235400.0,
-      "pl_pct": -51.690821256038646
+      "pl_total": -233200.0,
+      "pl_pct": -51.20772946859904
     },
     {
       "code": "3664",
@@ -101,16 +101,16 @@
       "name": "いちご",
       "avg_price": 356.0,
       "shares": 100,
-      "current": 384.0,
+      "current": 382.0,
       "cost_total": 35600.0,
-      "value_total": 38400.0,
+      "value_total": 38200.0,
       "action": "HOLD",
       "label": "✋ 保有継続",
       "priority": 6,
-      "reason": "+7.9%。レンジ内、判断保留",
+      "reason": "+7.3%。レンジ内、判断保留",
       "color": "gray",
-      "pl_total": 2800.0,
-      "pl_pct": 7.865168539325842
+      "pl_total": 2600.0,
+      "pl_pct": 7.303370786516854
     },
     {
       "code": "5103",
@@ -156,5 +156,5 @@
     }
   ],
   "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約277,200円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約279,400円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
