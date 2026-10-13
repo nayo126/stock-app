@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-10-13T11:23:13.471360+09:00",
+  "generated_at": "2026-10-13T13:23:24.222830+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 343500.0,
-    "total_pl": -507400.0,
-    "total_pl_pct": -59.63,
+    "total_value": 336900.0,
+    "total_pl": -514000.0,
+    "total_pl_pct": -60.41,
     "health_score": 10,
-    "total_recovery_if_sell": 275700.0,
+    "total_recovery_if_sell": 269100.0,
     "expected_gain_3m": 0,
     "expected_gain_3m_high": 0
   },
@@ -33,17 +33,17 @@
       "name": "JHD",
       "avg_price": 207.0,
       "shares": 2200,
-      "current": 101.0,
+      "current": 98.0,
       "cost_total": 455400.0,
-      "value_total": 222200.0,
+      "value_total": 215600.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-51.2%。元本回復に+105%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 222200.0,
+      "reason": "-52.7%。元本回復に+111%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 215600.0,
       "color": "red",
-      "pl_total": -233200.0,
-      "pl_pct": -51.20772946859904
+      "pl_total": -239800.0,
+      "pl_pct": -52.65700483091788
     },
     {
       "code": "3664",
@@ -156,5 +156,5 @@
     }
   ],
   "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約275,700円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約269,100円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
