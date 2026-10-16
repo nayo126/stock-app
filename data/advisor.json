@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-10-16T07:50:17.570023+09:00",
+  "generated_at": "2026-10-16T09:57:51.944546+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 338600.0,
-    "total_pl": -512300.0,
-    "total_pl_pct": -60.21,
-    "health_score": 10,
-    "total_recovery_if_sell": 271200.0,
+    "total_value": 334900.0,
+    "total_pl": -516000.0,
+    "total_pl_pct": -60.64,
+    "health_score": 30,
+    "total_recovery_if_sell": 266500.0,
     "expected_gain_3m": 0,
     "expected_gain_3m_high": 0
   },
@@ -16,17 +16,17 @@
       "name": "キタハマキャピタル",
       "avg_price": 28.0,
       "shares": 700,
-      "current": 14.0,
+      "current": 15.0,
       "cost_total": 19600.0,
-      "value_total": 9800.0,
+      "value_total": 10500.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-50.0%。元本回復に+100%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 9800.0,
+      "reason": "-46.4%。元本回復に+87%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 10500.0,
       "color": "red",
-      "pl_total": -9800.0,
-      "pl_pct": -50.0
+      "pl_total": -9100.0,
+      "pl_pct": -46.42857142857143
     },
     {
       "code": "2721",
@@ -50,34 +50,17 @@
       "name": "WIZE",
       "avg_price": 65.0,
       "shares": 500,
-      "current": 19.0,
+      "current": 18.0,
       "cost_total": 32500.0,
-      "value_total": 9500.0,
+      "value_total": 9000.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-70.8%。元本回復に+242%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 9500.0,
+      "reason": "-72.3%。元本回復に+261%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 9000.0,
       "color": "red",
-      "pl_total": -23000.0,
-      "pl_pct": -70.76923076923077
-    },
-    {
-      "code": "7527",
-      "name": "システムソフト",
-      "avg_price": 78.0,
-      "shares": 100,
-      "current": 49.0,
-      "cost_total": 7800.0,
-      "value_total": 4900.0,
-      "action": "SELL_ALL",
-      "label": "🚨 即損切り (全株)",
-      "priority": 1,
-      "reason": "-37.2%。元本回復に+59%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 4900.0,
-      "color": "red",
-      "pl_total": -2900.0,
-      "pl_pct": -37.17948717948718
+      "pl_total": -23500.0,
+      "pl_pct": -72.3076923076923
     },
     {
       "code": "4564",
@@ -101,16 +84,16 @@
       "name": "いちご",
       "avg_price": 356.0,
       "shares": 100,
-      "current": 404.0,
+      "current": 414.0,
       "cost_total": 35600.0,
-      "value_total": 40400.0,
-      "action": "HOLD",
-      "label": "✋ 保有継続",
-      "priority": 6,
-      "reason": "+13.5%。レンジ内、判断保留",
-      "color": "gray",
-      "pl_total": 4800.0,
-      "pl_pct": 13.48314606741573
+      "value_total": 41400.0,
+      "action": "HOLD_WATCH",
+      "label": "👀 保有・利確待ち",
+      "priority": 5,
+      "reason": "+16.3%。+30%到達でTRIM",
+      "color": "blue",
+      "pl_total": 5800.0,
+      "pl_pct": 16.292134831460675
     },
     {
       "code": "5103",
@@ -153,8 +136,22 @@
       "priority": 99,
       "reason": "価格データ取得不可",
       "color": "gray"
+    },
+    {
+      "code": "7527",
+      "name": "システムソフト",
+      "avg_price": 78.0,
+      "shares": 100,
+      "current": null,
+      "cost_total": 7800.0,
+      "value_total": 0,
+      "action": "DATA_NA",
+      "label": "❓ データ無し",
+      "priority": 99,
+      "reason": "価格データ取得不可",
+      "color": "gray"
     }
   ],
   "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約271,200円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約266,500円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
