@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-10-19T11:14:19.547679+09:00",
+  "generated_at": "2026-10-19T11:33:46.840845+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 335400.0,
-    "total_pl": -515500.0,
-    "total_pl_pct": -60.58,
-    "health_score": 10,
-    "total_recovery_if_sell": 266400.0,
-    "expected_gain_3m": 0,
-    "expected_gain_3m_high": 0
+    "total_value": 362770.0,
+    "total_pl": -488130.0,
+    "total_pl_pct": -57.37,
+    "health_score": 0,
+    "total_recovery_if_sell": 279885.0,
+    "expected_gain_3m": 42399.0,
+    "expected_gain_3m_high": 145439.0
   },
   "judgments": [
     {
@@ -50,17 +50,17 @@
       "name": "WIZE",
       "avg_price": 65.0,
       "shares": 500,
-      "current": 17.0,
+      "current": 16.0,
       "cost_total": 32500.0,
-      "value_total": 8500.0,
+      "value_total": 8000.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-73.8%。元本回復に+282%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 8500.0,
+      "reason": "-75.4%。元本回復に+306%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 8000.0,
       "color": "red",
-      "pl_total": -24000.0,
-      "pl_pct": -73.84615384615385
+      "pl_total": -24500.0,
+      "pl_pct": -75.38461538461539
     },
     {
       "code": "7527",
@@ -97,20 +97,37 @@
       "pl_pct": -33.33333333333333
     },
     {
+      "code": "7201",
+      "name": "日産自",
+      "avg_price": 426.0,
+      "shares": 100,
+      "current": 279.7,
+      "cost_total": 42600.0,
+      "value_total": 27970.0,
+      "action": "SELL_HALF",
+      "label": "⚠️ 半分損切り",
+      "priority": 2,
+      "reason": "-34.3%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 13985.0,
+      "color": "orange",
+      "pl_total": -14630.000000000002,
+      "pl_pct": -34.34272300469484
+    },
+    {
       "code": "2337",
       "name": "いちご",
       "avg_price": 356.0,
       "shares": 100,
-      "current": 420.0,
+      "current": 419.0,
       "cost_total": 35600.0,
-      "value_total": 42000.0,
+      "value_total": 41900.0,
       "action": "HOLD_WATCH",
       "label": "👀 保有・利確待ち",
       "priority": 5,
-      "reason": "+18.0%。+30%到達でTRIM",
+      "reason": "+17.7%。+30%到達でTRIM",
       "color": "blue",
-      "pl_total": 6400.0,
-      "pl_pct": 17.97752808988764
+      "pl_total": 6300.0,
+      "pl_pct": 17.696629213483146
     },
     {
       "code": "5103",
@@ -139,22 +156,100 @@
       "priority": 99,
       "reason": "価格データ取得不可",
       "color": "gray"
-    },
-    {
-      "code": "7201",
-      "name": "日産自",
-      "avg_price": 426.0,
-      "shares": 100,
-      "current": null,
-      "cost_total": 42600.0,
-      "value_total": 0,
-      "action": "DATA_NA",
-      "label": "❓ データ無し",
-      "priority": 99,
-      "reason": "価格データ取得不可",
-      "color": "gray"
     }
   ],
-  "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約266,400円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "recommended_buys": [
+    {
+      "code": "6501",
+      "name": "日立製作所",
+      "tier": "S",
+      "category": "STOCKS_MAIN",
+      "current": 5719.0,
+      "forecast_3m_mid": 6881.0,
+      "forecast_3m_pct": 20.3,
+      "forecast_3m_high": 7981.0,
+      "forecast_3m_high_pct": 39.6,
+      "tags": [
+        "AI",
+        "電力",
+        "OpenAI提携"
+      ],
+      "summary": "OpenAI戦略提携、Lumada+17%、時価総額30兆円論",
+      "buy_shares": 12,
+      "invest_amt": 68628.0,
+      "estimated_3m_value": 82572.0,
+      "estimated_3m_value_high": 95772.0,
+      "expected_gain_3m": 13944.0,
+      "expected_gain_3m_high": 27144.0
+    },
+    {
+      "code": "8001",
+      "name": "伊藤忠商事",
+      "tier": "A",
+      "category": "STOCKS_UNDER3000",
+      "current": 2311.5,
+      "forecast_3m_mid": 2781.0,
+      "forecast_3m_pct": 20.3,
+      "forecast_3m_high": 3139.0,
+      "forecast_3m_high_pct": 35.8,
+      "tags": [
+        "商社",
+        "累進配当"
+      ],
+      "summary": "バフェット長期保有、累進配当、総還元性向40%",
+      "buy_shares": 30,
+      "invest_amt": 69345.0,
+      "estimated_3m_value": 83430.0,
+      "estimated_3m_value_high": 94170.0,
+      "expected_gain_3m": 14085.0,
+      "expected_gain_3m_high": 24825.0
+    },
+    {
+      "code": "6857",
+      "name": "アドバンテスト",
+      "tier": "S",
+      "category": "STOCKS_MAIN",
+      "current": 33560.0,
+      "forecast_3m_mid": 38092.0,
+      "forecast_3m_pct": 13.5,
+      "forecast_3m_high": 55347.0,
+      "forecast_3m_high_pct": 64.9,
+      "tags": [
+        "AI半導体",
+        "NVIDIA",
+        "上方修正"
+      ],
+      "summary": "半導体テスタ世界50%シェア、AI独占。営業利益+110.8%、目標27,150円",
+      "buy_shares": 2,
+      "invest_amt": 67120.0,
+      "estimated_3m_value": 76184.0,
+      "estimated_3m_value_high": 110694.0,
+      "expected_gain_3m": 9064.0,
+      "expected_gain_3m_high": 43574.0
+    },
+    {
+      "code": "4062",
+      "name": "イビデン",
+      "tier": "S",
+      "category": "STOCKS_MAIN",
+      "current": 9386.0,
+      "forecast_3m_mid": 10144.0,
+      "forecast_3m_pct": 8.1,
+      "forecast_3m_high": 16514.0,
+      "forecast_3m_high_pct": 75.9,
+      "tags": [
+        "NVIDIA",
+        "ABF基板",
+        "独占"
+      ],
+      "summary": "NVIDIA向けABF基板独占、FY2027 +42.5%増益予想",
+      "buy_shares": 7,
+      "invest_amt": 65702.0,
+      "estimated_3m_value": 71008.0,
+      "estimated_3m_value_high": 115598.0,
+      "expected_gain_3m": 5306.0,
+      "expected_gain_3m_high": 49896.0
+    }
+  ],
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約279,885円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+42,399円の利益期待. 高値ケースなら最大+145,439円."
 }
