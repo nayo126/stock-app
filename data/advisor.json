@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-10-21T07:02:52.841832+09:00",
+  "generated_at": "2026-10-21T09:27:08.425006+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 331900.0,
-    "total_pl": -519000.0,
-    "total_pl_pct": -60.99,
+    "total_value": 331400.0,
+    "total_pl": -519500.0,
+    "total_pl_pct": -61.05,
     "health_score": 30,
-    "total_recovery_if_sell": 263800.0,
+    "total_recovery_if_sell": 263100.0,
     "expected_gain_3m": 0,
     "expected_gain_3m_high": 0
   },
@@ -16,17 +16,17 @@
       "name": "キタハマキャピタル",
       "avg_price": 28.0,
       "shares": 700,
-      "current": 15.0,
+      "current": 14.0,
       "cost_total": 19600.0,
-      "value_total": 10500.0,
+      "value_total": 9800.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-46.4%。元本回復に+87%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 10500.0,
+      "reason": "-50.0%。元本回復に+100%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 9800.0,
       "color": "red",
-      "pl_total": -9100.0,
-      "pl_pct": -46.42857142857143
+      "pl_total": -9800.0,
+      "pl_pct": -50.0
     },
     {
       "code": "2721",
@@ -84,16 +84,16 @@
       "name": "いちご",
       "avg_price": 356.0,
       "shares": 100,
-      "current": 411.0,
+      "current": 413.0,
       "cost_total": 35600.0,
-      "value_total": 41100.0,
+      "value_total": 41300.0,
       "action": "HOLD_WATCH",
       "label": "👀 保有・利確待ち",
       "priority": 5,
-      "reason": "+15.4%。+30%到達でTRIM",
+      "reason": "+16.0%。+30%到達でTRIM",
       "color": "blue",
-      "pl_total": 5500.0,
-      "pl_pct": 15.44943820224719
+      "pl_total": 5700.0,
+      "pl_pct": 16.01123595505618
     },
     {
       "code": "5103",
@@ -153,5 +153,5 @@
     }
   ],
   "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約263,800円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約263,100円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
