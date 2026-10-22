@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-10-22T21:40:31.141400+09:00",
+  "generated_at": "2026-10-22T22:14:52.928443+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 301800.0,
-    "total_pl": -549100.0,
-    "total_pl_pct": -64.53,
-    "health_score": 10,
-    "total_recovery_if_sell": 232800.0,
+    "total_value": 328760.0,
+    "total_pl": -522140.0,
+    "total_pl_pct": -61.36,
+    "health_score": 0,
+    "total_recovery_if_sell": 259760.0,
     "expected_gain_3m": 0,
     "expected_gain_3m_high": 0
   },
@@ -61,6 +61,23 @@
       "color": "red",
       "pl_total": -24500.0,
       "pl_pct": -75.38461538461539
+    },
+    {
+      "code": "7201",
+      "name": "日産自",
+      "avg_price": 426.0,
+      "shares": 100,
+      "current": 269.6,
+      "cost_total": 42600.0,
+      "value_total": 26960.000000000004,
+      "action": "SELL_ALL",
+      "label": "🚨 即損切り (全株)",
+      "priority": 1,
+      "reason": "-36.7%。元本回復に+58%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 26960.000000000004,
+      "color": "red",
+      "pl_total": -15639.999999999998,
+      "pl_pct": -36.71361502347417
     },
     {
       "code": "7527",
@@ -139,22 +156,8 @@
       "priority": 99,
       "reason": "価格データ取得不可",
       "color": "gray"
-    },
-    {
-      "code": "7201",
-      "name": "日産自",
-      "avg_price": 426.0,
-      "shares": 100,
-      "current": null,
-      "cost_total": 42600.0,
-      "value_total": 0,
-      "action": "DATA_NA",
-      "label": "❓ データ無し",
-      "priority": 99,
-      "reason": "価格データ取得不可",
-      "color": "gray"
     }
   ],
   "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約232,800円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約259,760円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
