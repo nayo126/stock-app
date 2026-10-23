@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-10-23T11:20:49.617242+09:00",
+  "generated_at": "2026-10-23T16:49:48.071694+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 279300.0,
-    "total_pl": -571600.0,
-    "total_pl_pct": -67.18,
+    "total_value": 283800.0,
+    "total_pl": -567100.0,
+    "total_pl_pct": -66.65,
     "health_score": 10,
-    "total_recovery_if_sell": 210300.0,
+    "total_recovery_if_sell": 214800.0,
     "expected_gain_3m": 0,
     "expected_gain_3m_high": 0
   },
@@ -33,17 +33,17 @@
       "name": "JHD",
       "avg_price": 207.0,
       "shares": 2200,
-      "current": 73.0,
+      "current": 75.0,
       "cost_total": 455400.0,
-      "value_total": 160600.0,
+      "value_total": 165000.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-64.7%。元本回復に+184%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 160600.0,
+      "reason": "-63.8%。元本回復に+176%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 165000.0,
       "color": "red",
-      "pl_total": -294800.0,
-      "pl_pct": -64.73429951690821
+      "pl_total": -290400.0,
+      "pl_pct": -63.76811594202898
     },
     {
       "code": "3664",
@@ -67,17 +67,17 @@
       "name": "システムソフト",
       "avg_price": 78.0,
       "shares": 100,
-      "current": 47.0,
+      "current": 48.0,
       "cost_total": 7800.0,
-      "value_total": 4700.0,
+      "value_total": 4800.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-39.7%。元本回復に+66%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 4700.0,
+      "reason": "-38.5%。元本回復に+62%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 4800.0,
       "color": "red",
-      "pl_total": -3100.0,
-      "pl_pct": -39.743589743589745
+      "pl_total": -3000.0,
+      "pl_pct": -38.46153846153847
     },
     {
       "code": "4564",
@@ -156,5 +156,5 @@
     }
   ],
   "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約210,300円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約214,800円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
