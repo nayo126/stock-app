@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-10-24T03:04:14.340284+09:00",
+  "generated_at": "2026-10-24T06:11:22.915021+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 301800.0,
-    "total_pl": -549100.0,
-    "total_pl_pct": -64.53,
-    "health_score": 10,
-    "total_recovery_if_sell": 232800.0,
+    "total_value": 279000.0,
+    "total_pl": -571900.0,
+    "total_pl_pct": -67.21,
+    "health_score": 30,
+    "total_recovery_if_sell": 210000.0,
     "expected_gain_3m": 0,
     "expected_gain_3m_high": 0
   },
@@ -33,51 +33,34 @@
       "name": "JHD",
       "avg_price": 207.0,
       "shares": 2200,
-      "current": 83.0,
+      "current": 75.0,
       "cost_total": 455400.0,
-      "value_total": 182600.0,
+      "value_total": 165000.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-59.9%。元本回復に+149%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 182600.0,
+      "reason": "-63.8%。元本回復に+176%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 165000.0,
       "color": "red",
-      "pl_total": -272800.0,
-      "pl_pct": -59.90338164251207
+      "pl_total": -290400.0,
+      "pl_pct": -63.76811594202898
     },
     {
       "code": "3664",
       "name": "WIZE",
       "avg_price": 65.0,
       "shares": 500,
-      "current": 16.0,
+      "current": 15.0,
       "cost_total": 32500.0,
-      "value_total": 8000.0,
+      "value_total": 7500.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-75.4%。元本回復に+306%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 8000.0,
+      "reason": "-76.9%。元本回復に+333%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 7500.0,
       "color": "red",
-      "pl_total": -24500.0,
-      "pl_pct": -75.38461538461539
-    },
-    {
-      "code": "7527",
-      "name": "システムソフト",
-      "avg_price": 78.0,
-      "shares": 100,
-      "current": 47.0,
-      "cost_total": 7800.0,
-      "value_total": 4700.0,
-      "action": "SELL_ALL",
-      "label": "🚨 即損切り (全株)",
-      "priority": 1,
-      "reason": "-39.7%。元本回復に+66%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 4700.0,
-      "color": "red",
-      "pl_total": -3100.0,
-      "pl_pct": -39.743589743589745
+      "pl_total": -25000.0,
+      "pl_pct": -76.92307692307693
     },
     {
       "code": "4564",
@@ -153,8 +136,22 @@
       "priority": 99,
       "reason": "価格データ取得不可",
       "color": "gray"
+    },
+    {
+      "code": "7527",
+      "name": "システムソフト",
+      "avg_price": 78.0,
+      "shares": 100,
+      "current": null,
+      "cost_total": 7800.0,
+      "value_total": 0,
+      "action": "DATA_NA",
+      "label": "❓ データ無し",
+      "priority": 99,
+      "reason": "価格データ取得不可",
+      "color": "gray"
     }
   ],
   "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約232,800円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約210,000円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
