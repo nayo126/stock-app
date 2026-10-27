@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-10-27T10:18:34.977497+09:00",
+  "generated_at": "2026-10-27T11:47:55.208311+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 277100.0,
-    "total_pl": -573800.0,
-    "total_pl_pct": -67.43,
-    "health_score": 30,
-    "total_recovery_if_sell": 207800.0,
-    "expected_gain_3m": 0,
-    "expected_gain_3m_high": 0
+    "total_value": 276300.0,
+    "total_pl": -574600.0,
+    "total_pl_pct": -67.53,
+    "health_score": 20,
+    "total_recovery_if_sell": 234000.0,
+    "expected_gain_3m": 49882.0,
+    "expected_gain_3m_high": 135987.0
   },
   "judgments": [
     {
@@ -33,17 +33,17 @@
       "name": "JHD",
       "avg_price": 207.0,
       "shares": 2200,
-      "current": 74.0,
+      "current": 75.0,
       "cost_total": 455400.0,
-      "value_total": 162800.0,
+      "value_total": 165000.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-64.3%。元本回復に+180%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 162800.0,
+      "reason": "-63.8%。元本回復に+176%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 165000.0,
       "color": "red",
-      "pl_total": -292600.0,
-      "pl_pct": -64.25120772946859
+      "pl_total": -290400.0,
+      "pl_pct": -63.76811594202898
     },
     {
       "code": "3664",
@@ -67,17 +67,17 @@
       "name": "OTS",
       "avg_price": 27.0,
       "shares": 3000,
-      "current": 18.0,
+      "current": 17.0,
       "cost_total": 81000.0,
-      "value_total": 54000.0,
-      "action": "SELL_HALF",
-      "label": "⚠️ 半分損切り",
-      "priority": 2,
-      "reason": "-33.3%。リスク半減し残り資金を別銘柄へ",
-      "recover_amt": 27000.0,
-      "color": "orange",
-      "pl_total": -27000.0,
-      "pl_pct": -33.33333333333333
+      "value_total": 51000.0,
+      "action": "SELL_ALL",
+      "label": "🚨 即損切り (全株)",
+      "priority": 1,
+      "reason": "-37.0%。元本回復に+59%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 51000.0,
+      "color": "red",
+      "pl_total": -30000.0,
+      "pl_pct": -37.03703703703704
     },
     {
       "code": "2337",
@@ -152,6 +152,98 @@
       "color": "gray"
     }
   ],
-  "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約207,800円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "recommended_buys": [
+    {
+      "code": "4062",
+      "name": "イビデン",
+      "tier": "S",
+      "category": "STOCKS_MAIN",
+      "current": 9172.0,
+      "forecast_3m_mid": 12574.0,
+      "forecast_3m_pct": 37.1,
+      "forecast_3m_high": 20335.0,
+      "forecast_3m_high_pct": 121.7,
+      "tags": [
+        "NVIDIA",
+        "ABF基板",
+        "独占"
+      ],
+      "summary": "NVIDIA向けABF基板独占、FY2027 +42.5%増益予想",
+      "buy_shares": 6,
+      "invest_amt": 55032.0,
+      "estimated_3m_value": 75444.0,
+      "estimated_3m_value_high": 122010.0,
+      "expected_gain_3m": 20412.0,
+      "expected_gain_3m_high": 66978.0
+    },
+    {
+      "code": "6857",
+      "name": "アドバンテスト",
+      "tier": "S",
+      "category": "STOCKS_MAIN",
+      "current": 34080.0,
+      "forecast_3m_mid": 46326.0,
+      "forecast_3m_pct": 35.9,
+      "forecast_3m_high": 66851.0,
+      "forecast_3m_high_pct": 96.2,
+      "tags": [
+        "AI半導体",
+        "NVIDIA",
+        "上方修正"
+      ],
+      "summary": "半導体テスタ世界50%シェア、AI独占。営業利益+110.8%、目標27,150円",
+      "buy_shares": 1,
+      "invest_amt": 34080.0,
+      "estimated_3m_value": 46326.0,
+      "estimated_3m_value_high": 66851.0,
+      "expected_gain_3m": 12246.0,
+      "expected_gain_3m_high": 32771.0
+    },
+    {
+      "code": "8001",
+      "name": "伊藤忠商事",
+      "tier": "A",
+      "category": "STOCKS_UNDER3000",
+      "current": 2347.5,
+      "forecast_3m_mid": 2731.0,
+      "forecast_3m_pct": 16.3,
+      "forecast_3m_high": 3092.0,
+      "forecast_3m_high_pct": 31.7,
+      "tags": [
+        "商社",
+        "累進配当"
+      ],
+      "summary": "バフェット長期保有、累進配当、総還元性向40%",
+      "buy_shares": 24,
+      "invest_amt": 56340.0,
+      "estimated_3m_value": 65544.0,
+      "estimated_3m_value_high": 74208.0,
+      "expected_gain_3m": 9204.0,
+      "expected_gain_3m_high": 17868.0
+    },
+    {
+      "code": "6501",
+      "name": "日立製作所",
+      "tier": "S",
+      "category": "STOCKS_MAIN",
+      "current": 5623.0,
+      "forecast_3m_mid": 6425.0,
+      "forecast_3m_pct": 14.3,
+      "forecast_3m_high": 7460.0,
+      "forecast_3m_high_pct": 32.7,
+      "tags": [
+        "AI",
+        "電力",
+        "OpenAI提携"
+      ],
+      "summary": "OpenAI戦略提携、Lumada+17%、時価総額30兆円論",
+      "buy_shares": 10,
+      "invest_amt": 56230.0,
+      "estimated_3m_value": 64250.0,
+      "estimated_3m_value_high": 74600.0,
+      "expected_gain_3m": 8020.0,
+      "expected_gain_3m_high": 18370.0
+    }
+  ],
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約234,000円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+49,882円の利益期待. 高値ケースなら最大+135,987円."
 }
