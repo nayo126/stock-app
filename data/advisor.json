@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-11-02T07:35:27.455441+09:00",
+  "generated_at": "2026-11-02T11:00:07.336468+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 292700.0,
-    "total_pl": -558200.0,
-    "total_pl_pct": -65.6,
+    "total_value": 292200.0,
+    "total_pl": -558700.0,
+    "total_pl_pct": -65.66,
     "health_score": 30,
-    "total_recovery_if_sell": 223200.0,
+    "total_recovery_if_sell": 222700.0,
     "expected_gain_3m": 0,
     "expected_gain_3m_high": 0
   },
@@ -50,17 +50,17 @@
       "name": "WIZE",
       "avg_price": 65.0,
       "shares": 500,
-      "current": 15.0,
+      "current": 14.0,
       "cost_total": 32500.0,
-      "value_total": 7500.0,
+      "value_total": 7000.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-76.9%。元本回復に+333%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 7500.0,
+      "reason": "-78.5%。元本回復に+364%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 7000.0,
       "color": "red",
-      "pl_total": -25000.0,
-      "pl_pct": -76.92307692307693
+      "pl_total": -25500.0,
+      "pl_pct": -78.46153846153847
     },
     {
       "code": "4564",
@@ -153,5 +153,5 @@
     }
   ],
   "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約223,200円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約222,700円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
