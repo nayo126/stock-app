@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-11-07T15:46:06.873063+09:00",
+  "generated_at": "2026-11-07T16:06:08.741596+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 276700.0,
-    "total_pl": -574200.0,
-    "total_pl_pct": -67.48,
+    "total_value": 303670.0,
+    "total_pl": -547230.0,
+    "total_pl_pct": -64.31,
     "health_score": 0,
-    "total_recovery_if_sell": 233200.0,
-    "expected_gain_3m": 3202.0,
-    "expected_gain_3m_high": 42049.0
+    "total_recovery_if_sell": 260170.0,
+    "expected_gain_3m": 3596.0,
+    "expected_gain_3m_high": 46420.0
   },
   "judgments": [
     {
@@ -80,6 +80,23 @@
       "pl_pct": -40.74074074074074
     },
     {
+      "code": "7201",
+      "name": "日産自",
+      "avg_price": 426.0,
+      "shares": 100,
+      "current": 269.7,
+      "cost_total": 42600.0,
+      "value_total": 26970.0,
+      "action": "SELL_ALL",
+      "label": "🚨 即損切り (全株)",
+      "priority": 1,
+      "reason": "-36.7%。元本回復に+58%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 26970.0,
+      "color": "red",
+      "pl_total": -15630.000000000002,
+      "pl_pct": -36.690140845070424
+    },
+    {
       "code": "7527",
       "name": "システムソフト",
       "avg_price": 78.0,
@@ -139,20 +156,6 @@
       "priority": 99,
       "reason": "価格データ取得不可",
       "color": "gray"
-    },
-    {
-      "code": "7201",
-      "name": "日産自",
-      "avg_price": 426.0,
-      "shares": 100,
-      "current": null,
-      "cost_total": 42600.0,
-      "value_total": 0,
-      "action": "DATA_NA",
-      "label": "❓ データ無し",
-      "priority": 99,
-      "reason": "価格データ取得不可",
-      "color": "gray"
     }
   ],
   "recommended_buys": [
@@ -171,12 +174,12 @@
         "累進配当"
       ],
       "summary": "バフェット長期保有、累進配当、総還元性向40%",
-      "buy_shares": 26,
-      "invest_amt": 58266.0,
-      "estimated_3m_value": 63492.0,
-      "estimated_3m_value_high": 73814.0,
-      "expected_gain_3m": 5226.0,
-      "expected_gain_3m_high": 15548.0
+      "buy_shares": 29,
+      "invest_amt": 64989.0,
+      "estimated_3m_value": 70818.0,
+      "estimated_3m_value_high": 82331.0,
+      "expected_gain_3m": 5829.0,
+      "expected_gain_3m_high": 17342.0
     },
     {
       "code": "4568",
@@ -193,12 +196,12 @@
         "ADC"
       ],
       "summary": "エンハーツ大成功、ADC評価で株価3倍、アステラス逆転",
-      "buy_shares": 21,
-      "invest_amt": 58107.0,
-      "estimated_3m_value": 59493.0,
-      "estimated_3m_value_high": 73458.0,
-      "expected_gain_3m": 1386.0,
-      "expected_gain_3m_high": 15351.0
+      "buy_shares": 23,
+      "invest_amt": 63641.0,
+      "estimated_3m_value": 65159.0,
+      "estimated_3m_value_high": 80454.0,
+      "expected_gain_3m": 1518.0,
+      "expected_gain_3m_high": 16813.0
     },
     {
       "code": "6544",
@@ -215,12 +218,12 @@
         "高ROE"
       ],
       "summary": "ROE27%、売上+16.9%、営業利益+28.5%",
-      "buy_shares": 40,
-      "invest_amt": 58100.0,
-      "estimated_3m_value": 56760.0,
-      "estimated_3m_value_high": 65040.0,
-      "expected_gain_3m": -1340.0,
-      "expected_gain_3m_high": 6940.0
+      "buy_shares": 44,
+      "invest_amt": 63910.0,
+      "estimated_3m_value": 62436.0,
+      "estimated_3m_value_high": 71544.0,
+      "expected_gain_3m": -1474.0,
+      "expected_gain_3m_high": 7634.0
     },
     {
       "code": "9433",
@@ -237,13 +240,13 @@
         "高配当"
       ],
       "summary": "売上+3.8%、純利益+5.1%、安定増配",
-      "buy_shares": 20,
-      "invest_amt": 56670.0,
-      "estimated_3m_value": 54600.0,
-      "estimated_3m_value_high": 60880.0,
-      "expected_gain_3m": -2070.0,
-      "expected_gain_3m_high": 4210.0
+      "buy_shares": 22,
+      "invest_amt": 62337.0,
+      "estimated_3m_value": 60060.0,
+      "estimated_3m_value_high": 66968.0,
+      "expected_gain_3m": -2277.0,
+      "expected_gain_3m_high": 4631.0
     }
   ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約233,200円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+3,202円の利益期待. 高値ケースなら最大+42,049円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約260,170円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+3,596円の利益期待. 高値ケースなら最大+46,420円."
 }
