@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T15:24:17.311442+09:00",
+  "generated_at": "2026-11-07T15:46:06.873063+09:00",
   "summary": {
     "total_cost": 850900.0,
     "total_value": 276700.0,
@@ -7,8 +7,8 @@
     "total_pl_pct": -67.48,
     "health_score": 0,
     "total_recovery_if_sell": 233200.0,
-    "expected_gain_3m": 0,
-    "expected_gain_3m_high": 0
+    "expected_gain_3m": 3202.0,
+    "expected_gain_3m_high": 42049.0
   },
   "judgments": [
     {
@@ -155,6 +155,95 @@
       "color": "gray"
     }
   ],
-  "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約233,200円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "recommended_buys": [
+    {
+      "code": "8001",
+      "name": "伊藤忠商事",
+      "tier": "A",
+      "category": "STOCKS_UNDER3000",
+      "current": 2241.0,
+      "forecast_3m_mid": 2442.0,
+      "forecast_3m_pct": 9.0,
+      "forecast_3m_high": 2839.0,
+      "forecast_3m_high_pct": 26.7,
+      "tags": [
+        "商社",
+        "累進配当"
+      ],
+      "summary": "バフェット長期保有、累進配当、総還元性向40%",
+      "buy_shares": 26,
+      "invest_amt": 58266.0,
+      "estimated_3m_value": 63492.0,
+      "estimated_3m_value_high": 73814.0,
+      "expected_gain_3m": 5226.0,
+      "expected_gain_3m_high": 15548.0
+    },
+    {
+      "code": "4568",
+      "name": "第一三共",
+      "tier": "A",
+      "category": "STOCKS_MAIN",
+      "current": 2767.0,
+      "forecast_3m_mid": 2833.0,
+      "forecast_3m_pct": 2.4,
+      "forecast_3m_high": 3498.0,
+      "forecast_3m_high_pct": 26.4,
+      "tags": [
+        "製薬",
+        "ADC"
+      ],
+      "summary": "エンハーツ大成功、ADC評価で株価3倍、アステラス逆転",
+      "buy_shares": 21,
+      "invest_amt": 58107.0,
+      "estimated_3m_value": 59493.0,
+      "estimated_3m_value_high": 73458.0,
+      "expected_gain_3m": 1386.0,
+      "expected_gain_3m_high": 15351.0
+    },
+    {
+      "code": "6544",
+      "name": "ジャパンエレベーターサービスHD",
+      "tier": "S",
+      "category": "STOCKS_UNDER3000",
+      "current": 1452.5,
+      "forecast_3m_mid": 1419.0,
+      "forecast_3m_pct": -2.3,
+      "forecast_3m_high": 1626.0,
+      "forecast_3m_high_pct": 12.0,
+      "tags": [
+        "保守",
+        "高ROE"
+      ],
+      "summary": "ROE27%、売上+16.9%、営業利益+28.5%",
+      "buy_shares": 40,
+      "invest_amt": 58100.0,
+      "estimated_3m_value": 56760.0,
+      "estimated_3m_value_high": 65040.0,
+      "expected_gain_3m": -1340.0,
+      "expected_gain_3m_high": 6940.0
+    },
+    {
+      "code": "9433",
+      "name": "KDDI",
+      "tier": "A",
+      "category": "STOCKS_UNDER3000",
+      "current": 2833.5,
+      "forecast_3m_mid": 2730.0,
+      "forecast_3m_pct": -3.6,
+      "forecast_3m_high": 3044.0,
+      "forecast_3m_high_pct": 7.4,
+      "tags": [
+        "通信",
+        "高配当"
+      ],
+      "summary": "売上+3.8%、純利益+5.1%、安定増配",
+      "buy_shares": 20,
+      "invest_amt": 56670.0,
+      "estimated_3m_value": 54600.0,
+      "estimated_3m_value_high": 60880.0,
+      "expected_gain_3m": -2070.0,
+      "expected_gain_3m_high": 4210.0
+    }
+  ],
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約233,200円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+3,202円の利益期待. 高値ケースなら最大+42,049円."
 }
