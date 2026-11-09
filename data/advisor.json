@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-11-09T16:23:12.783663+09:00",
+  "generated_at": "2026-11-09T20:57:18.899918+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 274400.0,
-    "total_pl": -576500.0,
-    "total_pl_pct": -67.75,
-    "health_score": 20,
-    "total_recovery_if_sell": 229700.0,
+    "total_value": 306600.0,
+    "total_pl": -544300.0,
+    "total_pl_pct": -63.97,
+    "health_score": 0,
+    "total_recovery_if_sell": 247950.0,
     "expected_gain_3m": 0,
     "expected_gain_3m_high": 0
   },
@@ -80,6 +80,40 @@
       "pl_pct": -40.74074074074074
     },
     {
+      "code": "7527",
+      "name": "システムソフト",
+      "avg_price": 78.0,
+      "shares": 100,
+      "current": 43.0,
+      "cost_total": 7800.0,
+      "value_total": 4300.0,
+      "action": "SELL_ALL",
+      "label": "🚨 即損切り (全株)",
+      "priority": 1,
+      "reason": "-44.9%。元本回復に+81%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 4300.0,
+      "color": "red",
+      "pl_total": -3500.0,
+      "pl_pct": -44.871794871794876
+    },
+    {
+      "code": "7201",
+      "name": "日産自",
+      "avg_price": 426.0,
+      "shares": 100,
+      "current": 279.0,
+      "cost_total": 42600.0,
+      "value_total": 27900.0,
+      "action": "SELL_HALF",
+      "label": "⚠️ 半分損切り",
+      "priority": 2,
+      "reason": "-34.5%。リスク半減し残り資金を別銘柄へ",
+      "recover_amt": 13950.0,
+      "color": "orange",
+      "pl_total": -14700.0,
+      "pl_pct": -34.50704225352113
+    },
+    {
       "code": "2337",
       "name": "いちご",
       "avg_price": 356.0,
@@ -122,36 +156,8 @@
       "priority": 99,
       "reason": "価格データ取得不可",
       "color": "gray"
-    },
-    {
-      "code": "7201",
-      "name": "日産自",
-      "avg_price": 426.0,
-      "shares": 100,
-      "current": null,
-      "cost_total": 42600.0,
-      "value_total": 0,
-      "action": "DATA_NA",
-      "label": "❓ データ無し",
-      "priority": 99,
-      "reason": "価格データ取得不可",
-      "color": "gray"
-    },
-    {
-      "code": "7527",
-      "name": "システムソフト",
-      "avg_price": 78.0,
-      "shares": 100,
-      "current": null,
-      "cost_total": 7800.0,
-      "value_total": 0,
-      "action": "DATA_NA",
-      "label": "❓ データ無し",
-      "priority": 99,
-      "reason": "価格データ取得不可",
-      "color": "gray"
     }
   ],
   "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約229,700円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約247,950円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
