@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-11-17T14:34:43.869125+09:00",
+  "generated_at": "2026-11-17T18:53:23.367856+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 304260.0,
-    "total_pl": -546640.0,
-    "total_pl_pct": -64.24,
-    "health_score": 0,
-    "total_recovery_if_sell": 258660.0,
-    "expected_gain_3m": 0,
-    "expected_gain_3m_high": 0
+    "total_value": 275600.0,
+    "total_pl": -575300.0,
+    "total_pl_pct": -67.61,
+    "health_score": 20,
+    "total_recovery_if_sell": 230000.0,
+    "expected_gain_3m": 15790.0,
+    "expected_gain_3m_high": 53940.0
   },
   "judgments": [
     {
@@ -16,17 +16,17 @@
       "name": "キタハマキャピタル",
       "avg_price": 28.0,
       "shares": 700,
-      "current": 12.0,
+      "current": 13.0,
       "cost_total": 19600.0,
-      "value_total": 8400.0,
+      "value_total": 9100.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-57.1%。元本回復に+133%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 8400.0,
+      "reason": "-53.6%。元本回復に+115%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 9100.0,
       "color": "red",
-      "pl_total": -11200.0,
-      "pl_pct": -57.14285714285714
+      "pl_total": -10500.0,
+      "pl_pct": -53.57142857142857
     },
     {
       "code": "2721",
@@ -67,34 +67,17 @@
       "name": "OTS",
       "avg_price": 27.0,
       "shares": 3000,
-      "current": 16.0,
+      "current": 15.0,
       "cost_total": 81000.0,
-      "value_total": 48000.0,
+      "value_total": 45000.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-40.7%。元本回復に+69%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 48000.0,
+      "reason": "-44.4%。元本回復に+80%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 45000.0,
       "color": "red",
-      "pl_total": -33000.0,
-      "pl_pct": -40.74074074074074
-    },
-    {
-      "code": "7201",
-      "name": "日産自",
-      "avg_price": 426.0,
-      "shares": 100,
-      "current": 263.6,
-      "cost_total": 42600.0,
-      "value_total": 26360.000000000004,
-      "action": "SELL_ALL",
-      "label": "🚨 即損切り (全株)",
-      "priority": 1,
-      "reason": "-38.1%。元本回復に+62%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 26360.000000000004,
-      "color": "red",
-      "pl_total": -16239.999999999998,
-      "pl_pct": -38.12206572769953
+      "pl_total": -36000.0,
+      "pl_pct": -44.44444444444444
     },
     {
       "code": "2337",
@@ -141,6 +124,20 @@
       "color": "gray"
     },
     {
+      "code": "7201",
+      "name": "日産自",
+      "avg_price": 426.0,
+      "shares": 100,
+      "current": null,
+      "cost_total": 42600.0,
+      "value_total": 0,
+      "action": "DATA_NA",
+      "label": "❓ データ無し",
+      "priority": 99,
+      "reason": "価格データ取得不可",
+      "color": "gray"
+    },
+    {
       "code": "7527",
       "name": "システムソフト",
       "avg_price": 78.0,
@@ -155,6 +152,95 @@
       "color": "gray"
     }
   ],
-  "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約258,660円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "recommended_buys": [
+    {
+      "code": "8001",
+      "name": "伊藤忠商事",
+      "tier": "A",
+      "category": "STOCKS_UNDER3000",
+      "current": 2334.0,
+      "forecast_3m_mid": 2791.0,
+      "forecast_3m_pct": 19.6,
+      "forecast_3m_high": 3260.0,
+      "forecast_3m_high_pct": 39.7,
+      "tags": [
+        "商社",
+        "累進配当"
+      ],
+      "summary": "バフェット長期保有、累進配当、総還元性向40%",
+      "buy_shares": 24,
+      "invest_amt": 56016.0,
+      "estimated_3m_value": 66984.0,
+      "estimated_3m_value_high": 78240.0,
+      "expected_gain_3m": 10968.0,
+      "expected_gain_3m_high": 22224.0
+    },
+    {
+      "code": "9433",
+      "name": "KDDI",
+      "tier": "A",
+      "category": "STOCKS_UNDER3000",
+      "current": 2954.5,
+      "forecast_3m_mid": 3120.0,
+      "forecast_3m_pct": 5.6,
+      "forecast_3m_high": 3454.0,
+      "forecast_3m_high_pct": 16.9,
+      "tags": [
+        "通信",
+        "高配当"
+      ],
+      "summary": "売上+3.8%、純利益+5.1%、安定増配",
+      "buy_shares": 19,
+      "invest_amt": 56135.5,
+      "estimated_3m_value": 59280.0,
+      "estimated_3m_value_high": 65626.0,
+      "expected_gain_3m": 3144.5,
+      "expected_gain_3m_high": 9490.5
+    },
+    {
+      "code": "4568",
+      "name": "第一三共",
+      "tier": "A",
+      "category": "STOCKS_MAIN",
+      "current": 2780.0,
+      "forecast_3m_mid": 2885.0,
+      "forecast_3m_pct": 3.8,
+      "forecast_3m_high": 3574.0,
+      "forecast_3m_high_pct": 28.6,
+      "tags": [
+        "製薬",
+        "ADC"
+      ],
+      "summary": "エンハーツ大成功、ADC評価で株価3倍、アステラス逆転",
+      "buy_shares": 20,
+      "invest_amt": 55600.0,
+      "estimated_3m_value": 57700.0,
+      "estimated_3m_value_high": 71480.0,
+      "expected_gain_3m": 2100.0,
+      "expected_gain_3m_high": 15880.0
+    },
+    {
+      "code": "1861",
+      "name": "熊谷組",
+      "tier": "S",
+      "category": "STOCKS_UNDER3000",
+      "current": 1223.0,
+      "forecast_3m_mid": 1214.0,
+      "forecast_3m_pct": -0.7,
+      "forecast_3m_high": 1358.0,
+      "forecast_3m_high_pct": 11.0,
+      "tags": [
+        "建設",
+        "高配当"
+      ],
+      "summary": "完工高+6.4%、配当利回り3.46%、建築利益率8.7%",
+      "buy_shares": 47,
+      "invest_amt": 57481.0,
+      "estimated_3m_value": 57058.0,
+      "estimated_3m_value_high": 63826.0,
+      "expected_gain_3m": -423.0,
+      "expected_gain_3m_high": 6345.0
+    }
+  ],
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約230,000円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+15,790円の利益期待. 高値ケースなら最大+53,940円."
 }
