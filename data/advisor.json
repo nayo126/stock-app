@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-11-17T23:57:08.909308+09:00",
+  "generated_at": "2026-11-18T03:53:35.681968+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 279900.0,
-    "total_pl": -571000.0,
-    "total_pl_pct": -67.11,
-    "health_score": 0,
-    "total_recovery_if_sell": 234300.0,
-    "expected_gain_3m": 16352.0,
-    "expected_gain_3m_high": 55660.0
+    "total_value": 287400.0,
+    "total_pl": -563500.0,
+    "total_pl_pct": -66.22,
+    "health_score": 5,
+    "total_recovery_if_sell": 264150.0,
+    "expected_gain_3m": 0,
+    "expected_gain_3m_high": 0
   },
   "judgments": [
     {
@@ -16,34 +16,34 @@
       "name": "キタハマキャピタル",
       "avg_price": 28.0,
       "shares": 700,
-      "current": 13.0,
+      "current": 16.0,
       "cost_total": 19600.0,
-      "value_total": 9100.0,
+      "value_total": 11200.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-53.6%。元本回復に+115%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 9100.0,
+      "reason": "-42.9%。元本回復に+75%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 11200.0,
       "color": "red",
-      "pl_total": -10500.0,
-      "pl_pct": -53.57142857142857
+      "pl_total": -8400.0,
+      "pl_pct": -42.857142857142854
     },
     {
       "code": "2721",
       "name": "JHD",
       "avg_price": 207.0,
       "shares": 2200,
-      "current": 77.0,
+      "current": 79.0,
       "cost_total": 455400.0,
-      "value_total": 169400.0,
+      "value_total": 173800.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-62.8%。元本回復に+169%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 169400.0,
+      "reason": "-61.8%。元本回復に+162%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 173800.0,
       "color": "red",
-      "pl_total": -286000.0,
-      "pl_pct": -62.80193236714976
+      "pl_total": -281600.0,
+      "pl_pct": -61.83574879227053
     },
     {
       "code": "3664",
@@ -84,33 +84,34 @@
       "name": "システムソフト",
       "avg_price": 78.0,
       "shares": 100,
-      "current": 43.0,
+      "current": 44.0,
       "cost_total": 7800.0,
-      "value_total": 4300.0,
+      "value_total": 4400.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-44.9%。元本回復に+81%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 4300.0,
+      "reason": "-43.6%。元本回復に+77%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 4400.0,
       "color": "red",
-      "pl_total": -3500.0,
-      "pl_pct": -44.871794871794876
+      "pl_total": -3400.0,
+      "pl_pct": -43.58974358974359
     },
     {
       "code": "2337",
       "name": "いちご",
       "avg_price": 356.0,
       "shares": 100,
-      "current": 456.0,
+      "current": 465.0,
       "cost_total": 35600.0,
-      "value_total": 45600.0,
-      "action": "HOLD_WATCH",
-      "label": "👀 保有・利確待ち",
-      "priority": 5,
-      "reason": "+28.1%。+30%到達でTRIM",
-      "color": "blue",
-      "pl_total": 10000.0,
-      "pl_pct": 28.08988764044944
+      "value_total": 46500.0,
+      "action": "TRIM_HALF",
+      "label": "💰 半分利確",
+      "priority": 3,
+      "reason": "+30.6%。NISA非課税利益を半分確定。残りで伸ばす",
+      "recover_amt": 23250.0,
+      "color": "green",
+      "pl_total": 10900.0,
+      "pl_pct": 30.61797752808989
     },
     {
       "code": "5103",
@@ -155,95 +156,6 @@
       "color": "gray"
     }
   ],
-  "recommended_buys": [
-    {
-      "code": "8001",
-      "name": "伊藤忠商事",
-      "tier": "A",
-      "category": "STOCKS_UNDER3000",
-      "current": 2334.0,
-      "forecast_3m_mid": 2791.0,
-      "forecast_3m_pct": 19.6,
-      "forecast_3m_high": 3260.0,
-      "forecast_3m_high_pct": 39.7,
-      "tags": [
-        "商社",
-        "累進配当"
-      ],
-      "summary": "バフェット長期保有、累進配当、総還元性向40%",
-      "buy_shares": 25,
-      "invest_amt": 58350.0,
-      "estimated_3m_value": 69775.0,
-      "estimated_3m_value_high": 81500.0,
-      "expected_gain_3m": 11425.0,
-      "expected_gain_3m_high": 23150.0
-    },
-    {
-      "code": "9433",
-      "name": "KDDI",
-      "tier": "A",
-      "category": "STOCKS_UNDER3000",
-      "current": 2954.5,
-      "forecast_3m_mid": 3120.0,
-      "forecast_3m_pct": 5.6,
-      "forecast_3m_high": 3454.0,
-      "forecast_3m_high_pct": 16.9,
-      "tags": [
-        "通信",
-        "高配当"
-      ],
-      "summary": "売上+3.8%、純利益+5.1%、安定増配",
-      "buy_shares": 19,
-      "invest_amt": 56135.5,
-      "estimated_3m_value": 59280.0,
-      "estimated_3m_value_high": 65626.0,
-      "expected_gain_3m": 3144.5,
-      "expected_gain_3m_high": 9490.5
-    },
-    {
-      "code": "4568",
-      "name": "第一三共",
-      "tier": "A",
-      "category": "STOCKS_MAIN",
-      "current": 2780.0,
-      "forecast_3m_mid": 2885.0,
-      "forecast_3m_pct": 3.8,
-      "forecast_3m_high": 3574.0,
-      "forecast_3m_high_pct": 28.6,
-      "tags": [
-        "製薬",
-        "ADC"
-      ],
-      "summary": "エンハーツ大成功、ADC評価で株価3倍、アステラス逆転",
-      "buy_shares": 21,
-      "invest_amt": 58380.0,
-      "estimated_3m_value": 60585.0,
-      "estimated_3m_value_high": 75054.0,
-      "expected_gain_3m": 2205.0,
-      "expected_gain_3m_high": 16674.0
-    },
-    {
-      "code": "1861",
-      "name": "熊谷組",
-      "tier": "S",
-      "category": "STOCKS_UNDER3000",
-      "current": 1223.0,
-      "forecast_3m_mid": 1214.0,
-      "forecast_3m_pct": -0.7,
-      "forecast_3m_high": 1358.0,
-      "forecast_3m_high_pct": 11.0,
-      "tags": [
-        "建設",
-        "高配当"
-      ],
-      "summary": "完工高+6.4%、配当利回り3.46%、建築利益率8.7%",
-      "buy_shares": 47,
-      "invest_amt": 57481.0,
-      "estimated_3m_value": 57058.0,
-      "estimated_3m_value_high": 63826.0,
-      "expected_gain_3m": -423.0,
-      "expected_gain_3m_high": 6345.0
-    }
-  ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約234,300円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+16,352円の利益期待. 高値ケースなら最大+55,660円."
+  "recommended_buys": [],
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約264,150円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
