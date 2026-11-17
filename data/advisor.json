@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-11-17T18:53:23.367856+09:00",
+  "generated_at": "2026-11-17T23:57:08.909308+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 275600.0,
-    "total_pl": -575300.0,
-    "total_pl_pct": -67.61,
-    "health_score": 20,
-    "total_recovery_if_sell": 230000.0,
-    "expected_gain_3m": 15790.0,
-    "expected_gain_3m_high": 53940.0
+    "total_value": 279900.0,
+    "total_pl": -571000.0,
+    "total_pl_pct": -67.11,
+    "health_score": 0,
+    "total_recovery_if_sell": 234300.0,
+    "expected_gain_3m": 16352.0,
+    "expected_gain_3m_high": 55660.0
   },
   "judgments": [
     {
@@ -80,6 +80,23 @@
       "pl_pct": -44.44444444444444
     },
     {
+      "code": "7527",
+      "name": "システムソフト",
+      "avg_price": 78.0,
+      "shares": 100,
+      "current": 43.0,
+      "cost_total": 7800.0,
+      "value_total": 4300.0,
+      "action": "SELL_ALL",
+      "label": "🚨 即損切り (全株)",
+      "priority": 1,
+      "reason": "-44.9%。元本回復に+81%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 4300.0,
+      "color": "red",
+      "pl_total": -3500.0,
+      "pl_pct": -44.871794871794876
+    },
+    {
       "code": "2337",
       "name": "いちご",
       "avg_price": 356.0,
@@ -136,20 +153,6 @@
       "priority": 99,
       "reason": "価格データ取得不可",
       "color": "gray"
-    },
-    {
-      "code": "7527",
-      "name": "システムソフト",
-      "avg_price": 78.0,
-      "shares": 100,
-      "current": null,
-      "cost_total": 7800.0,
-      "value_total": 0,
-      "action": "DATA_NA",
-      "label": "❓ データ無し",
-      "priority": 99,
-      "reason": "価格データ取得不可",
-      "color": "gray"
     }
   ],
   "recommended_buys": [
@@ -168,12 +171,12 @@
         "累進配当"
       ],
       "summary": "バフェット長期保有、累進配当、総還元性向40%",
-      "buy_shares": 24,
-      "invest_amt": 56016.0,
-      "estimated_3m_value": 66984.0,
-      "estimated_3m_value_high": 78240.0,
-      "expected_gain_3m": 10968.0,
-      "expected_gain_3m_high": 22224.0
+      "buy_shares": 25,
+      "invest_amt": 58350.0,
+      "estimated_3m_value": 69775.0,
+      "estimated_3m_value_high": 81500.0,
+      "expected_gain_3m": 11425.0,
+      "expected_gain_3m_high": 23150.0
     },
     {
       "code": "9433",
@@ -212,12 +215,12 @@
         "ADC"
       ],
       "summary": "エンハーツ大成功、ADC評価で株価3倍、アステラス逆転",
-      "buy_shares": 20,
-      "invest_amt": 55600.0,
-      "estimated_3m_value": 57700.0,
-      "estimated_3m_value_high": 71480.0,
-      "expected_gain_3m": 2100.0,
-      "expected_gain_3m_high": 15880.0
+      "buy_shares": 21,
+      "invest_amt": 58380.0,
+      "estimated_3m_value": 60585.0,
+      "estimated_3m_value_high": 75054.0,
+      "expected_gain_3m": 2205.0,
+      "expected_gain_3m_high": 16674.0
     },
     {
       "code": "1861",
@@ -242,5 +245,5 @@
       "expected_gain_3m_high": 6345.0
     }
   ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約230,000円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+15,790円の利益期待. 高値ケースなら最大+53,940円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約234,300円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+16,352円の利益期待. 高値ケースなら最大+55,660円."
 }
