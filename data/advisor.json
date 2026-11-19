@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T17:10:12.452902+09:00",
+  "generated_at": "2026-11-19T23:02:13.997052+09:00",
   "summary": {
     "total_cost": 850900.0,
     "total_value": 307060.0,
@@ -7,8 +7,8 @@
     "total_pl_pct": -63.91,
     "health_score": 0,
     "total_recovery_if_sell": 261760.0,
-    "expected_gain_3m": 6964.0,
-    "expected_gain_3m_high": 52426.0
+    "expected_gain_3m": 0,
+    "expected_gain_3m_high": 0
   },
   "judgments": [
     {
@@ -158,96 +158,6 @@
       "color": "gray"
     }
   ],
-  "recommended_buys": [
-    {
-      "code": "8001",
-      "name": "伊藤忠商事",
-      "tier": "A",
-      "category": "STOCKS_UNDER3000",
-      "current": 2291.0,
-      "forecast_3m_mid": 2553.0,
-      "forecast_3m_pct": 11.4,
-      "forecast_3m_high": 2971.0,
-      "forecast_3m_high_pct": 29.7,
-      "tags": [
-        "商社",
-        "累進配当"
-      ],
-      "summary": "バフェット長期保有、累進配当、総還元性向40%",
-      "buy_shares": 28,
-      "invest_amt": 64148.0,
-      "estimated_3m_value": 71484.0,
-      "estimated_3m_value_high": 83188.0,
-      "expected_gain_3m": 7336.0,
-      "expected_gain_3m_high": 19040.0
-    },
-    {
-      "code": "9433",
-      "name": "KDDI",
-      "tier": "A",
-      "category": "STOCKS_UNDER3000",
-      "current": 2977.0,
-      "forecast_3m_mid": 3085.0,
-      "forecast_3m_pct": 3.6,
-      "forecast_3m_high": 3410.0,
-      "forecast_3m_high_pct": 14.5,
-      "tags": [
-        "通信",
-        "高配当"
-      ],
-      "summary": "売上+3.8%、純利益+5.1%、安定増配",
-      "buy_shares": 21,
-      "invest_amt": 62517.0,
-      "estimated_3m_value": 64785.0,
-      "estimated_3m_value_high": 71610.0,
-      "expected_gain_3m": 2268.0,
-      "expected_gain_3m_high": 9093.0
-    },
-    {
-      "code": "4568",
-      "name": "第一三共",
-      "tier": "A",
-      "category": "STOCKS_MAIN",
-      "current": 2762.5,
-      "forecast_3m_mid": 2741.0,
-      "forecast_3m_pct": -0.8,
-      "forecast_3m_high": 3375.0,
-      "forecast_3m_high_pct": 22.2,
-      "tags": [
-        "製薬",
-        "ADC"
-      ],
-      "summary": "エンハーツ大成功、ADC評価で株価3倍、アステラス逆転",
-      "buy_shares": 23,
-      "invest_amt": 63537.5,
-      "estimated_3m_value": 63043.0,
-      "estimated_3m_value_high": 77625.0,
-      "expected_gain_3m": -494.5,
-      "expected_gain_3m_high": 14087.5
-    },
-    {
-      "code": "6501",
-      "name": "日立製作所",
-      "tier": "S",
-      "category": "STOCKS_MAIN",
-      "current": 4998.0,
-      "forecast_3m_mid": 4833.0,
-      "forecast_3m_pct": -3.3,
-      "forecast_3m_high": 5783.0,
-      "forecast_3m_high_pct": 15.7,
-      "tags": [
-        "AI",
-        "電力",
-        "OpenAI提携"
-      ],
-      "summary": "OpenAI戦略提携、Lumada+17%、時価総額30兆円論",
-      "buy_shares": 13,
-      "invest_amt": 64974.0,
-      "estimated_3m_value": 62829.0,
-      "estimated_3m_value_high": 75179.0,
-      "expected_gain_3m": -2145.0,
-      "expected_gain_3m_high": 10205.0
-    }
-  ],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約261,760円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+6,964円の利益期待. 高値ケースなら最大+52,426円."
+  "recommended_buys": [],
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約261,760円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
