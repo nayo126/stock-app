@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-11-18T22:40:38.509599+09:00",
+  "generated_at": "2026-11-19T09:53:21.843773+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 272100.0,
-    "total_pl": -578800.0,
-    "total_pl_pct": -68.02,
+    "total_value": 271800.0,
+    "total_pl": -579100.0,
+    "total_pl_pct": -68.06,
     "health_score": 20,
-    "total_recovery_if_sell": 227100.0,
+    "total_recovery_if_sell": 226400.0,
     "expected_gain_3m": 0,
     "expected_gain_3m_high": 0
   },
@@ -16,17 +16,17 @@
       "name": "キタハマキャピタル",
       "avg_price": 28.0,
       "shares": 700,
-      "current": 12.0,
+      "current": 11.0,
       "cost_total": 19600.0,
-      "value_total": 8400.0,
+      "value_total": 7700.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-57.1%。元本回復に+133%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 8400.0,
+      "reason": "-60.7%。元本回復に+155%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 7700.0,
       "color": "red",
-      "pl_total": -11200.0,
-      "pl_pct": -57.14285714285714
+      "pl_total": -11900.0,
+      "pl_pct": -60.71428571428571
     },
     {
       "code": "2721",
@@ -84,16 +84,16 @@
       "name": "いちご",
       "avg_price": 356.0,
       "shares": 100,
-      "current": 450.0,
+      "current": 454.0,
       "cost_total": 35600.0,
-      "value_total": 45000.0,
+      "value_total": 45400.0,
       "action": "HOLD_WATCH",
       "label": "👀 保有・利確待ち",
       "priority": 5,
-      "reason": "+26.4%。+30%到達でTRIM",
+      "reason": "+27.5%。+30%到達でTRIM",
       "color": "blue",
-      "pl_total": 9400.0,
-      "pl_pct": 26.40449438202247
+      "pl_total": 9800.0,
+      "pl_pct": 27.52808988764045
     },
     {
       "code": "5103",
@@ -153,5 +153,5 @@
     }
   ],
   "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約227,100円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約226,400円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
