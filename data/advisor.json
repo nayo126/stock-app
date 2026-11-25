@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-11-25T04:03:32.309422+09:00",
+  "generated_at": "2026-11-25T10:12:56.740384+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 297130.0,
-    "total_pl": -553770.0,
-    "total_pl_pct": -65.08,
-    "health_score": 0,
-    "total_recovery_if_sell": 252830.0,
+    "total_value": 258900.0,
+    "total_pl": -592000.0,
+    "total_pl_pct": -69.57,
+    "health_score": 20,
+    "total_recovery_if_sell": 215600.0,
     "expected_gain_3m": 0,
     "expected_gain_3m_high": 0
   },
@@ -33,17 +33,17 @@
       "name": "JHD",
       "avg_price": 207.0,
       "shares": 2200,
-      "current": 75.0,
+      "current": 72.0,
       "cost_total": 455400.0,
-      "value_total": 165000.0,
+      "value_total": 158400.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-63.8%。元本回復に+176%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 165000.0,
+      "reason": "-65.2%。元本回復に+188%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 158400.0,
       "color": "red",
-      "pl_total": -290400.0,
-      "pl_pct": -63.76811594202898
+      "pl_total": -297000.0,
+      "pl_pct": -65.21739130434783
     },
     {
       "code": "3664",
@@ -80,54 +80,20 @@
       "pl_pct": -48.148148148148145
     },
     {
-      "code": "7201",
-      "name": "日産自",
-      "avg_price": 426.0,
-      "shares": 100,
-      "current": 266.3,
-      "cost_total": 42600.0,
-      "value_total": 26630.0,
-      "action": "SELL_ALL",
-      "label": "🚨 即損切り (全株)",
-      "priority": 1,
-      "reason": "-37.5%。元本回復に+60%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 26630.0,
-      "color": "red",
-      "pl_total": -15969.999999999998,
-      "pl_pct": -37.48826291079812
-    },
-    {
-      "code": "7527",
-      "name": "システムソフト",
-      "avg_price": 78.0,
-      "shares": 100,
-      "current": 40.0,
-      "cost_total": 7800.0,
-      "value_total": 4000.0,
-      "action": "SELL_ALL",
-      "label": "🚨 即損切り (全株)",
-      "priority": 1,
-      "reason": "-48.7%。元本回復に+95%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 4000.0,
-      "color": "red",
-      "pl_total": -3800.0,
-      "pl_pct": -48.717948717948715
-    },
-    {
       "code": "2337",
       "name": "いちご",
       "avg_price": 356.0,
       "shares": 100,
-      "current": 443.0,
+      "current": 433.0,
       "cost_total": 35600.0,
-      "value_total": 44300.0,
+      "value_total": 43300.0,
       "action": "HOLD_WATCH",
       "label": "👀 保有・利確待ち",
       "priority": 5,
-      "reason": "+24.4%。+30%到達でTRIM",
+      "reason": "+21.6%。+30%到達でTRIM",
       "color": "blue",
-      "pl_total": 8700.0,
-      "pl_pct": 24.43820224719101
+      "pl_total": 7700.0,
+      "pl_pct": 21.629213483146067
     },
     {
       "code": "5103",
@@ -156,8 +122,36 @@
       "priority": 99,
       "reason": "価格データ取得不可",
       "color": "gray"
+    },
+    {
+      "code": "7201",
+      "name": "日産自",
+      "avg_price": 426.0,
+      "shares": 100,
+      "current": null,
+      "cost_total": 42600.0,
+      "value_total": 0,
+      "action": "DATA_NA",
+      "label": "❓ データ無し",
+      "priority": 99,
+      "reason": "価格データ取得不可",
+      "color": "gray"
+    },
+    {
+      "code": "7527",
+      "name": "システムソフト",
+      "avg_price": 78.0,
+      "shares": 100,
+      "current": null,
+      "cost_total": 7800.0,
+      "value_total": 0,
+      "action": "DATA_NA",
+      "label": "❓ データ無し",
+      "priority": 99,
+      "reason": "価格データ取得不可",
+      "color": "gray"
     }
   ],
   "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約252,830円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約215,600円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
