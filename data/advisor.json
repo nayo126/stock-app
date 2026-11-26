@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-11-26T12:18:32.740921+09:00",
+  "generated_at": "2026-11-26T14:49:15.509609+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 271600.0,
-    "total_pl": -579300.0,
-    "total_pl_pct": -68.08,
+    "total_value": 269300.0,
+    "total_pl": -581600.0,
+    "total_pl_pct": -68.35,
     "health_score": 0,
-    "total_recovery_if_sell": 227800.0,
+    "total_recovery_if_sell": 225600.0,
     "expected_gain_3m": 0,
     "expected_gain_3m_high": 0
   },
@@ -33,17 +33,17 @@
       "name": "JHD",
       "avg_price": 207.0,
       "shares": 2200,
-      "current": 74.0,
+      "current": 73.0,
       "cost_total": 455400.0,
-      "value_total": 162800.0,
+      "value_total": 160600.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-64.3%。元本回復に+180%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 162800.0,
+      "reason": "-64.7%。元本回復に+184%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 160600.0,
       "color": "red",
-      "pl_total": -292600.0,
-      "pl_pct": -64.25120772946859
+      "pl_total": -294800.0,
+      "pl_pct": -64.73429951690821
     },
     {
       "code": "3664",
@@ -101,16 +101,16 @@
       "name": "いちご",
       "avg_price": 356.0,
       "shares": 100,
-      "current": 438.0,
+      "current": 437.0,
       "cost_total": 35600.0,
-      "value_total": 43800.0,
+      "value_total": 43700.0,
       "action": "HOLD_WATCH",
       "label": "👀 保有・利確待ち",
       "priority": 5,
-      "reason": "+23.0%。+30%到達でTRIM",
+      "reason": "+22.8%。+30%到達でTRIM",
       "color": "blue",
-      "pl_total": 8200.0,
-      "pl_pct": 23.03370786516854
+      "pl_total": 8100.0,
+      "pl_pct": 22.752808988764045
     },
     {
       "code": "5103",
@@ -156,5 +156,5 @@
     }
   ],
   "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約227,800円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約225,600円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
 }
