@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-11-28T00:37:33.468982+09:00",
+  "generated_at": "2026-11-28T08:05:45.772197+09:00",
   "summary": {
     "total_cost": 850900.0,
-    "total_value": 296630.0,
-    "total_pl": -554270.0,
-    "total_pl_pct": -65.14,
+    "total_value": 274800.0,
+    "total_pl": -576100.0,
+    "total_pl_pct": -67.7,
     "health_score": 0,
-    "total_recovery_if_sell": 252930.0,
-    "expected_gain_3m": 0,
-    "expected_gain_3m_high": 0
+    "total_recovery_if_sell": 231100.0,
+    "expected_gain_3m": 234.0,
+    "expected_gain_3m_high": 41990.0
   },
   "judgments": [
     {
@@ -50,68 +50,51 @@
       "name": "WIZE",
       "avg_price": 65.0,
       "shares": 500,
-      "current": 16.0,
+      "current": 17.0,
       "cost_total": 32500.0,
-      "value_total": 8000.0,
+      "value_total": 8500.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-75.4%。元本回復に+306%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 8000.0,
+      "reason": "-73.8%。元本回復に+282%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 8500.0,
       "color": "red",
-      "pl_total": -24500.0,
-      "pl_pct": -75.38461538461539
+      "pl_total": -24000.0,
+      "pl_pct": -73.84615384615385
     },
     {
       "code": "4564",
       "name": "OTS",
       "avg_price": 27.0,
       "shares": 3000,
-      "current": 14.0,
+      "current": 15.0,
       "cost_total": 81000.0,
-      "value_total": 42000.0,
+      "value_total": 45000.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-48.1%。元本回復に+93%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 42000.0,
+      "reason": "-44.4%。元本回復に+80%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 45000.0,
       "color": "red",
-      "pl_total": -39000.0,
-      "pl_pct": -48.148148148148145
-    },
-    {
-      "code": "7201",
-      "name": "日産自",
-      "avg_price": 426.0,
-      "shares": 100,
-      "current": 255.3,
-      "cost_total": 42600.0,
-      "value_total": 25530.0,
-      "action": "SELL_ALL",
-      "label": "🚨 即損切り (全株)",
-      "priority": 1,
-      "reason": "-40.1%。元本回復に+67%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 25530.0,
-      "color": "red",
-      "pl_total": -17070.0,
-      "pl_pct": -40.070422535211264
+      "pl_total": -36000.0,
+      "pl_pct": -44.44444444444444
     },
     {
       "code": "7527",
       "name": "システムソフト",
       "avg_price": 78.0,
       "shares": 100,
-      "current": 40.0,
+      "current": 42.0,
       "cost_total": 7800.0,
-      "value_total": 4000.0,
+      "value_total": 4200.0,
       "action": "SELL_ALL",
       "label": "🚨 即損切り (全株)",
       "priority": 1,
-      "reason": "-48.7%。元本回復に+95%必要 (現実的不可能)。塩漬け脱出して資金転換",
-      "recover_amt": 4000.0,
+      "reason": "-46.2%。元本回復に+86%必要 (現実的不可能)。塩漬け脱出して資金転換",
+      "recover_amt": 4200.0,
       "color": "red",
-      "pl_total": -3800.0,
-      "pl_pct": -48.717948717948715
+      "pl_total": -3600.0,
+      "pl_pct": -46.15384615384615
     },
     {
       "code": "2337",
@@ -156,8 +139,112 @@
       "priority": 99,
       "reason": "価格データ取得不可",
       "color": "gray"
+    },
+    {
+      "code": "7201",
+      "name": "日産自",
+      "avg_price": 426.0,
+      "shares": 100,
+      "current": null,
+      "cost_total": 42600.0,
+      "value_total": 0,
+      "action": "DATA_NA",
+      "label": "❓ データ無し",
+      "priority": 99,
+      "reason": "価格データ取得不可",
+      "color": "gray"
     }
   ],
-  "recommended_buys": [],
-  "strategy": "1. 損切り推奨銘柄を全部売却 → 約252,930円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+0円の利益期待. 高値ケースなら最大+0円."
+  "recommended_buys": [
+    {
+      "code": "8001",
+      "name": "伊藤忠商事",
+      "tier": "A",
+      "category": "STOCKS_UNDER3000",
+      "current": 2305.5,
+      "forecast_3m_mid": 2541.0,
+      "forecast_3m_pct": 10.2,
+      "forecast_3m_high": 2963.0,
+      "forecast_3m_high_pct": 28.5,
+      "tags": [
+        "商社",
+        "累進配当"
+      ],
+      "summary": "バフェット長期保有、累進配当、総還元性向40%",
+      "buy_shares": 25,
+      "invest_amt": 57637.5,
+      "estimated_3m_value": 63525.0,
+      "estimated_3m_value_high": 74075.0,
+      "expected_gain_3m": 5887.5,
+      "expected_gain_3m_high": 16437.5
+    },
+    {
+      "code": "4568",
+      "name": "第一三共",
+      "tier": "A",
+      "category": "STOCKS_MAIN",
+      "current": 2872.0,
+      "forecast_3m_mid": 2865.0,
+      "forecast_3m_pct": -0.3,
+      "forecast_3m_high": 3551.0,
+      "forecast_3m_high_pct": 23.6,
+      "tags": [
+        "製薬",
+        "ADC"
+      ],
+      "summary": "エンハーツ大成功、ADC評価で株価3倍、アステラス逆転",
+      "buy_shares": 20,
+      "invest_amt": 57440.0,
+      "estimated_3m_value": 57300.0,
+      "estimated_3m_value_high": 71020.0,
+      "expected_gain_3m": -140.0,
+      "expected_gain_3m_high": 13580.0
+    },
+    {
+      "code": "9433",
+      "name": "KDDI",
+      "tier": "A",
+      "category": "STOCKS_UNDER3000",
+      "current": 2786.5,
+      "forecast_3m_mid": 2694.0,
+      "forecast_3m_pct": -3.3,
+      "forecast_3m_high": 3010.0,
+      "forecast_3m_high_pct": 8.0,
+      "tags": [
+        "通信",
+        "高配当"
+      ],
+      "summary": "売上+3.8%、純利益+5.1%、安定増配",
+      "buy_shares": 20,
+      "invest_amt": 55730.0,
+      "estimated_3m_value": 53880.0,
+      "estimated_3m_value_high": 60200.0,
+      "expected_gain_3m": -1850.0,
+      "expected_gain_3m_high": 4470.0
+    },
+    {
+      "code": "6501",
+      "name": "日立製作所",
+      "tier": "S",
+      "category": "STOCKS_MAIN",
+      "current": 5168.0,
+      "forecast_3m_mid": 4835.0,
+      "forecast_3m_pct": -6.4,
+      "forecast_3m_high": 5850.0,
+      "forecast_3m_high_pct": 13.2,
+      "tags": [
+        "AI",
+        "電力",
+        "OpenAI提携"
+      ],
+      "summary": "OpenAI戦略提携、Lumada+17%、時価総額30兆円論",
+      "buy_shares": 11,
+      "invest_amt": 56848.0,
+      "estimated_3m_value": 53185.0,
+      "estimated_3m_value_high": 64350.0,
+      "expected_gain_3m": -3663.0,
+      "expected_gain_3m_high": 7502.0
+    }
+  ],
+  "strategy": "1. 損切り推奨銘柄を全部売却 → 約231,100円回収. 2. 推奨tier S/A銘柄に分散投資. 3. 3ヶ月後中央予想で約+234円の利益期待. 高値ケースなら最大+41,990円."
 }
